@@ -2,57 +2,7 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Collections.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=01e47d67_002D4d8a_002D4555_002Db0c6_002Df4de70a2e9b8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="newPersonBookmark" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.newPersonBookmark&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTypeTitles&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetUser&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.CreateUser&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.ChangePassword&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.UpdateUserCorrect&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.UpdateUserFalse&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetRatingFromUser&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetPersonBookmarkLists&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetPersonBookmark&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetTitleBookmarks&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.newPersonBookmarkList&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.RateMovie&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.DeleteRating&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetRating&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=240d6288_002D04ff_002D4f4e_002D8f19_002D57ca63f0eace/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetTitleBookmarks" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.PersonDataServiceTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getAkas&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=eb599588_002D96c5_002D45a4_002D8dd5_002D1c773a0b1ce0/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="GetPerson" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.PersonDataServiceTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitle&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.GetGenre&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitleEpisodeNumber&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitleGenreNames&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitlePersonName&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getGenres&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetBookmarks&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetBookmark&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetPersonBookmarkLists&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f9adb086_002Db141_002D4ea8_002D8ce9_002D6c0d3d0f1b0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetGenre" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.GetGenre&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.PersonDataServiceTest.GetPerson&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.PersonDataServiceTest&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetPersonBookmarkLists&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetBookmarks&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.newPersonBookmarkList&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getAkas&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	
+	
+	
+	</wpf:ResourceDictionary>

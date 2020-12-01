@@ -1,5 +1,13 @@
 module.exports = function(grunt){
-    
+
+    grunt.loadNpmTasks('grunt-npm-install');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-exec');
+
+
     grunt.initConfig({
         uglify: {
             js: {
@@ -19,6 +27,15 @@ module.exports = function(grunt){
                 dest: 'wwwroot/build/styles.css',
             },
         },
+        exec: {
+            remove_logs: {
+                command: 'rm -f *.log'
+            },
+            list_files: {
+                command: 'npm install moment',
+                stdout: true
+            },
+        },
         watch: {
             js: {
                 files: ['wwwroot/js/**/*.js'],
@@ -33,20 +50,13 @@ module.exports = function(grunt){
             },
         },
     });
-    grunt.loadNpmTasks('grunt-npm-install');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    
-    //kører npm install.
-    grunt.registerTask('default', ['npm-install']);
     
     //Brug denne fremgangsmåde til at installere npm packages automatisk.
     //Her installerer vi 'async' pakkerne.
-    grunt.registerTask('loadpackages', ['npm-install:async']);
+    grunt.registerTask('pack', ['exec']);
     
     //Laver en joined task på alle tasks. Dvs ved 'grunt build' så køres alle tasks.
-    grunt.registerTask('build', ['uglify', 'concat', 'watch', 'default']);
+    grunt.registerTask('build', ['uglify', 'concat', 'watch']);
     
 
 };
