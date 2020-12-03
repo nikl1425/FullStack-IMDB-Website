@@ -5,7 +5,18 @@
     <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <p>hej </p>
+    <div>
+        <ul data-bind="foreach: genres">
+          <li>
+              <span data-bind="text: name"></span>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+
 <script data-main="js/config.js" src="js/lib/node_modules/requirejs/require.js"></script>
 </body>
 </html>
