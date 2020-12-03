@@ -1,7 +1,6 @@
 {
   "name": "gruntproject",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +10,9 @@
   "dependencies": {
     "core-util-is": "^1.0.2",
     "grunt": "^1.3.0",
-    "moment": "^2.29.1"
+    "knockout": "^3.5.1",
+    "moment": "^2.29.1",
+    "requirejs": "^2.3.6"
   },
   "devDependencies": {
     "grunt-contrib-concat": "^1.0.1",
@@ -23,5 +24,6 @@
   },
   "resolutions": {
     "graceful-fs": "4.2.4"
-  }
+  },
+  "description": ""
 }
