@@ -1,3 +1,4 @@
-﻿let  h1 = document.getElementsByName("h1");
+﻿define(['ko'], function hej(ko){
+    console.log("hej niklas");
 
-h1.style.color = "blue";
+})
