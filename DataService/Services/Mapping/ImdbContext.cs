@@ -189,8 +189,8 @@ namespace DataService
             //Person Bookmarklist
             modelBuilder.Entity<Person_Bookmark_list>().ToTable("person_bookmark_list");
             modelBuilder.Entity<Person_Bookmark_list>().Property(x => x.Id).HasColumnName("list_id");
-            modelBuilder.Entity<Person_Bookmark_list>().Property(x => x.User_Id).HasColumnName("user_id");
-            modelBuilder.Entity<Person_Bookmark_list>().Property(x => x.List_Name).HasColumnName("list_name");
+            modelBuilder.Entity<Person_Bookmark_list>().Property(x => x.UserId).HasColumnName("user_id");
+            modelBuilder.Entity<Person_Bookmark_list>().Property(x => x.ListName).HasColumnName("list_name");
             modelBuilder.Entity<Person_Bookmark_list>().HasMany(x => x.PersonBookmarks)
                 .WithOne(c => c.PersonBookmarkList)
                 .HasForeignKey(v => v.List_Id);

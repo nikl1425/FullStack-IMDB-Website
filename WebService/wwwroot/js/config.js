@@ -7,4 +7,4 @@ require.config({
 
 require(['ko', 'title'], function(ko, title) {
     ko.applyBindings(title);
-}); 
+});

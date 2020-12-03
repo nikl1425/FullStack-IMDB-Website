@@ -163,7 +163,7 @@ namespace DataService.Services
         {
             using var ctx = new ImdbContext();
             var x = ctx.person_bookmark_list
-                .Where(b => b.User_Id == userid)
+                .Where(b => b.UserId == userid)
                 .ToList();
             return x;
         }
@@ -176,7 +176,7 @@ namespace DataService.Services
             var dbUser = GetUser(userid).Id;
             ctx.person_bookmark_list
                 .Add(new Person_Bookmark_list
-                {List_Name = listName, User_Id = dbUser});
+                {ListName = listName, UserId = dbUser});
             ctx.SaveChanges();
 
             return ctx.person_bookmark_list.Find(maxId+1);
@@ -302,7 +302,8 @@ namespace DataService.Services
         public List<Title_Bookmark_List> GetTitleBookmarkLists(int id)
         {
             using var ctx = new ImdbContext();
-            var query = ctx.title_bookmark_list.Where(x => x.Id == id);
+            var query = ctx.title_bookmark_list
+                .Where(x => x.UserId == id);
             return query.ToList();
         }
         
@@ -310,7 +311,7 @@ namespace DataService.Services
         public List<Title_Bookmark> GetTitleBookmarks(int id)
         {
             using var ctx = new ImdbContext();
-            var query = ctx.title_bookmarks.Where(x => x.Id == id);
+            var query = ctx.title_bookmarks.Where(x => x.ListId == id);
             return query.ToList();
         }
         

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <div>
+        <ul data-bind="foreach: bookmarkList">
+            <li>
+                <span data-bind="text: listName"></span>
+                <span data-bind="text: url"></span>
+            </li>
+        </ul>
+    </div>
+
+    
+
+<script data-main="js/userConfig.js" src="js/lib/node_modules/requirejs/require.js"></script>
+</body>
+</html>

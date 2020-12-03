@@ -91,7 +91,7 @@ namespace WebService.Controllers
         [HttpPost("user/{userid}/plists/")] 
         public IActionResult newPersonBookmarkList(PersonBookmarkListDto pblDto)
         {
-            var list = _dataService.NewPersonBookmarkList(pblDto.User_Id, pblDto.List_Name);
+            var list = _dataService.NewPersonBookmarkList(pblDto.UserId, pblDto.ListName);
             return Created("New list: ", list);
         }
         
@@ -171,12 +171,17 @@ namespace WebService.Controllers
             IList<PersonBookmarkListDto> personList = personBookmarkList.Select(x => new PersonBookmarkListDto
             {
                 Id = x.Id,
-                User_Id = x.User_Id,
-                List_Name = x.List_Name,
+                UserId = x.UserId,
+                ListName = x.ListName,
                 Url = "http://localhost:5001/api/plist/"+x.Id
             }).ToList();
+
+            List<object> result = titleList.Cast<object>()
+                .Concat(personList)
+                .ToList();
+            return Ok(result);
+            //return Ok(new {personList, titleList});
             
-            return Ok(new {personList, titleList});
         }
         
         //RATE A MOVIE
@@ -197,7 +202,7 @@ namespace WebService.Controllers
         public IActionResult getRatings(int userid)
         {
             var ratingsList = _dataService.GetRatingFromUsers(userid);
-            return Ok(new {ratingsList});
+            return Ok(ratingsList);
         }
         
         //DELETE USERS RATED MOVIE
