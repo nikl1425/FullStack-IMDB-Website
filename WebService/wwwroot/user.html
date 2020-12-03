@@ -6,11 +6,15 @@
 </head>
 <body>
     <div>
+        <h1>Your Lists:</h1>
+        <div>Showing all of your lists herew: </div>
         <ul data-bind="foreach: bookmarkList">
             <li>
-                <span data-bind="text: listName"></span>
-                <span data-bind="text: url"></span>
+                <a data-bind="attr: {href: url}, text: listName">
+                    <!--<span data-bind="text: listName">x</span>-->
+                </a>
             </li>
+            <!--<br>-->
         </ul>
     </div>
 
