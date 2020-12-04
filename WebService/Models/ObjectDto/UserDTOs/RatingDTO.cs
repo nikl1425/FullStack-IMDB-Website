@@ -6,5 +6,6 @@
         public string title_id;
         public double rating;
         public string url;
+        public string updateUrl;
     }
 }

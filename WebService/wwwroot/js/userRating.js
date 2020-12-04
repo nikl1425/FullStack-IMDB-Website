@@ -2,7 +2,8 @@
 
     let userRatingList = ko.observableArray([]);
     //TODO : incooporate session user smth
-    let url = 'api/user/1/ratings/';
+    let id = 1;
+    let url = 'api/user/'+id+'/ratings/';
 
     fetch(url)
         .then(function (response){

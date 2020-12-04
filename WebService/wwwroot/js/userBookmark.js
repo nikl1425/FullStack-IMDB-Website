@@ -2,7 +2,8 @@
     
     let bookmarkList = ko.observableArray([]);
     //TODO : incooporate session user smth
-    let url = 'api/user/1/lists';   
+    let id = 1;
+    let url = 'api/user/'+id+'/lists';
     
     fetch(url)
         .then(function (response){

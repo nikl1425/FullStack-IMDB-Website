@@ -208,6 +208,7 @@
             <e p="userRatingConfig.js" t="Include" />
           </e>
           <e p="ratings.html" t="Include" />
+          <e p="register.html" t="Include" />
           <e p="YourLists.html" t="Include" />
         </e>
       </e>
