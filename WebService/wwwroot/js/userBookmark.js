@@ -1,6 +1,7 @@
 ﻿define(['ko'], function userBookmarks(ko){
     
     let bookmarkList = ko.observableArray([]);
+    //TODO : incooporate session user smth
     let url = 'api/user/1/lists';   
     
     fetch(url)
