@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Ratings</title>
+</head>
+<body>
+    <h1>Your Ratings</h1>
+    <div>
+        For MOVIE & PERSON lists press <a href="YourLists.html">here</a>
+        <br>
+        <div>Showing all of your ratings here: </div>
+        <ul data-bind="foreach: userRatingList">
+            <li>
+                <a data-bind="attr: {href: url}, text: title_id"></a>
+                <!--<span data-bind="text: title_Id">&ensp;</span>-->
+                <br>
+                Rating: <span data-bind="text: rating_"></span>
+            </li>
+        </ul>
+    </div>
+<script data-main="js/userRatingConfig.js" src="js/lib/node_modules/requirejs/require.js"></script>
+</body>
+</html>

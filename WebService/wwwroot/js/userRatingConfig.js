@@ -5,9 +5,9 @@
     }
 });
 
-require(['ko', 'userBookmark'], 
-    function (ko, userBookmark){
-    ko.applyBindings(userBookmark);
-});
+require(['ko', 'userRating'],
+    function (ko, userRating){
+        ko.applyBindings(userRating);
+    });
 
 

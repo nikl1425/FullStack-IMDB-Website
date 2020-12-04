@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User</title>
+    <title>Your Lists</title>
 </head>
 <body>
+    <h1>Your Lists</h1>
     <div>
-        <h1>Your Lists:</h1>
-        <div>Showing all of your lists here: </div>
+        For RATINGS press <a href="ratings.html">here</a>
+        <br>
+        <div>Showing all of your movie and people lists here: </div>
         <ul data-bind="foreach: bookmarkList">
             <li>
-                <a data-bind="attr: {href: url}, text: listName">
-                </a>
+                <a data-bind="attr: {href: url}, text: listName"></a>
             </li>
         </ul>
     </div>
-
-    
-
 <script data-main="js/userConfig.js" src="js/lib/node_modules/requirejs/require.js"></script>
 </body>
 </html>
