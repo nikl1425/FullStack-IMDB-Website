@@ -74,8 +74,8 @@ namespace PortFolio2.Tests
             var service = new UserDataService();
             var personBookmarkList = service.GetUsersPersonBookmarkLists(1);
             Assert.Equal(7, personBookmarkList.Count);
-            Assert.Equal("My Fav Directors", personBookmarkList.First().List_Name);
-            Assert.Equal("x", personBookmarkList.Last().List_Name);
+            Assert.Equal("My Fav Directors", personBookmarkList.First().ListName);
+            Assert.Equal("x", personBookmarkList.Last().ListName);
         }
         
         [Fact]
@@ -102,8 +102,8 @@ namespace PortFolio2.Tests
         {
             var service = new UserDataService();
             var newbooklist = service.NewPersonBookmarkList(1, "hejsatest");
-            Assert.Equal(1,newbooklist.User_Id);
-            Assert.Equal("hejsatest",newbooklist.List_Name);
+            Assert.Equal(1,newbooklist.UserId);
+            Assert.Equal("hejsatest",newbooklist.ListName);
             }
 
         [Fact]

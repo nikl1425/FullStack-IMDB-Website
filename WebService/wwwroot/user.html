@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <div>
+        <h1>Your Lists:</h1>
+        <div>Showing all of your lists here: </div>
+        <ul data-bind="foreach: bookmarkList">
+            <li>
+                <a data-bind="attr: {href: url}, text: listName">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+
+<script data-main="js/userConfig.js" src="js/lib/node_modules/requirejs/require.js"></script>
+</body>
+</html>
