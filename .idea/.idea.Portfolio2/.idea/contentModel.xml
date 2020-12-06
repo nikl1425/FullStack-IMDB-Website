@@ -143,6 +143,7 @@
             </e>
             <e p="UserDTOs" t="Include">
               <e p="ProfessionDTO.cs" t="Include" />
+              <e p="RatingDTO.cs" t="Include" />
               <e p="TitleBookmarkDTO.cs" t="Include" />
               <e p="TitleBookmarkListDTO.cs" t="Include" />
               <e p="UserDto.cs" t="Include" />
@@ -203,8 +204,12 @@
             <e p="title.js" t="Include" />
             <e p="userBookmark.js" t="Include" />
             <e p="userConfig.js" t="Include" />
+            <e p="userRating.js" t="Include" />
+            <e p="userRatingConfig.js" t="Include" />
           </e>
-          <e p="user.html" t="Include" />
+          <e p="ratings.html" t="Include" />
+          <e p="register.html" t="Include" />
+          <e p="YourLists.html" t="Include" />
         </e>
       </e>
     </e>

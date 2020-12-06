@@ -185,7 +185,7 @@ namespace WebService.Controllers
         }
         
         //RATE A MOVIE
-        [HttpPut("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
+        [HttpPost("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
         public IActionResult rateMovie(int userid, int thisRating, string titleid)
         {
             if (titleid == null)
@@ -202,7 +202,17 @@ namespace WebService.Controllers
         public IActionResult getRatings(int userid)
         {
             var ratingsList = _dataService.GetRatingFromUsers(userid);
-            return Ok(ratingsList);
+            IList<RatingDTO> ratingList = ratingsList.Select(x => new RatingDTO
+            {
+                user_id = x.User_Id,
+                rating = x.Rating_,
+                title_id = x.Title_Id,
+                url = "http://localhost:5001/api/title/"+x.Title_Id,
+                updateUrl = "/api/title/"
+                            +x.Title_Id+"/RateMovie/"
+                            +x.User_Id+"/"
+            }).ToList();
+            return Ok(ratingList);
         }
         
         //DELETE USERS RATED MOVIE
