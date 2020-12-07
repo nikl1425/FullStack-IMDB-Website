@@ -2,15 +2,10 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\3.1.0\ref\netcoreapp3.1\System.Collections.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7494a948_002D1c8f_002D4be7_002Db769_002D659a04a68f74/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="getTitle" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Or&gt;
-    &lt;TestAncestor&gt;
-      &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitle&lt;/TestId&gt;
-    &lt;/TestAncestor&gt;
-    &lt;ProjectFile&gt;AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A/f:UserDataServiceTest.cs&lt;/ProjectFile&gt;
-    &lt;ProjectFile&gt;AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A/f:TitleDataServiceTest.cs&lt;/ProjectFile&gt;
-    &lt;ProjectFile&gt;AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A/f:PersonDataServiceTest.cs&lt;/ProjectFile&gt;
-  &lt;/Or&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7494a948_002D1c8f_002D4be7_002Db769_002D659a04a68f74/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="getTitle" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitle&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	

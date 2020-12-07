@@ -1,27 +1,31 @@
 require.config({
     baseUrl: "js",
     paths: {
-        knockout: "lib/node_modules/knockout/build/output/knockout-latest",
-        text: "lib/node_modules/require-text/index",
+        knockout: "lib/knockout/knockout-latest.debug",
+        text: "lib/require-text/text.min",
+        jquery: "lib/jquery/jquery.min",
+        bootstrap: "../css/lib/twitter-bootstrap/js/bootstrap.bundle.min",
         postman: "services/postman"
+    },
+    shim: {
+        bootstrap: ['jquery']
     }
 });
 
 
+
 require(['knockout', 'text'], (ko) => {
-    ko.components.register('Home', {
-        viewModel: { require: "WebService/wwwroot/js/components/home/home.js" },
-        template: { require: "text!WebService/wwwroot/js/components/home/home.html" }
+    ko.components.register('home', {
+        viewModel: { require: "components/home/home" },
+        template: { require: "text!components/home/home.html" }
+    });
+
+    ko.components.register('movie', {
+        viewModel: { require: "components/movies/movies" },
+        template: { require: "text!components/movies/movies.html" }
     });
 });
 
-require(['knockout', 'text'], (ko) => {
-    ko.components.register('Movie', {
-        viewModel: { require: "WebService/wwwroot/js/components/movies/movies.js" },
-        template: { require: "text!WebService/wwwroot/js/components/movies/movies.html" }
-    });
-});
-
-require(['knockout', 'viewModel'], function(ko, vm) {
+require(['knockout', 'viewModel',  'bootstrap'], function(ko, vm) {
     ko.applyBindings(vm);
 });

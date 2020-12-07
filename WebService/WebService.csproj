@@ -7,9 +7,12 @@
     <ItemGroup>
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Core" Version="2.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0-rc.2.20475.6" />
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
       <PackageReference Include="Node.js" Version="5.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,6 +25,9 @@
 
     <ItemGroup>
       <Compile Remove="Models\ObjectDto\GenreDto.cs" />
+      <Compile Include="wwwroot\Pages\Error.cshtml.cs" />
+      <Compile Include="wwwroot\Pages\Index.cshtml.cs" />
+      <Compile Include="wwwroot\Pages\Privacy.cshtml.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -141,10 +147,172 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\twitter-bootstrap\scss\_type.scss" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\twitter-bootstrap\scss\_utilities.scss" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\twitter-bootstrap\scss\_variables.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\animate.css\animate.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\animate.css\animate.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\animate.css\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-grid.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-grid.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-grid.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-grid.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-reboot.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-reboot.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-reboot.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap-reboot.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\css\bootstrap.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.bundle.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.bundle.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\bootstrap\js\bootstrap.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\contact-us.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\css\dot-icons.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\css\theme.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\dependencies.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\dependencies.cshtml.cs" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fa-brands.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fa-brands.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fa-regular.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fa-regular.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fa-solid.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fa-solid.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fontawesome-all.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fontawesome-all.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fontawesome.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\css\fontawesome.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\fa-brands.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\fa-regular.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\fa-solid.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\fontawesome.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_animated.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_bordered-pulled.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_core.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_fixed-width.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_icons.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_larger.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_list.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_mixins.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_rotated-flipped.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_screen-reader.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_stacked.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\less\_variables.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\fa-brands.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\fa-regular.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\fa-solid.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\fontawesome.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_animated.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_bordered-pulled.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_core.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_fixed-width.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_icons.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_larger.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_list.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_mixins.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_rotated-flipped.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_screen-reader.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_stacked.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\scss\_variables.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-brands-400.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-brands-400.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-brands-400.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-brands-400.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-brands-400.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-regular-400.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-regular-400.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-regular-400.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-regular-400.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-regular-400.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-solid-900.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-solid-900.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-solid-900.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-solid-900.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\fontawesome\webfonts\fa-solid-900.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\footer.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\footer.cshtml.cs" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\footer2.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\head.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\head.cshtml.cs" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\header.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\header.cshtml.cs" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\header2.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\homepage-1.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\images\parts\map-marker.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\images\parts\movie-pattern.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\images\parts\white-square.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\images\svg\logo-part.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\images\svg\tape-pattern.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\index.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\js\jquery-3.3.1.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\js\jquery-3.3.1.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\js\script.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\magnific-popup\jquery.magnific-popup.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\magnific-popup\jquery.magnific-popup.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\magnific-popup\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\magnific-popup\magnific-popup.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\movie-info-sidebar-right.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\movies-list.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\parallax.js\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\parallax.js\package.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\parallax.js\parallax.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\parallax.js\parallax.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\ajax-loader.gif" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\config.rb" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\fonts\slick.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\fonts\slick.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\fonts\slick.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\fonts\slick.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick-theme.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick-theme.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick-theme.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick.less" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\slick\slick.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\jquery.waypoints.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\jquery.waypoints.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\licenses.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\noframework.waypoints.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\noframework.waypoints.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\shortcuts\infinite.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\shortcuts\infinite.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\shortcuts\inview.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\shortcuts\inview.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\shortcuts\sticky.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\shortcuts\sticky.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\waypoints.debug.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\zepto.waypoints.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\waypoints\zepto.waypoints.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\frontend.build\layout.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="wwwroot\build" />
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="wwwroot\frontend.build\dependencies.cshtml" />
+      <UpToDateCheckInput Remove="wwwroot\frontend.build\footer.cshtml" />
+      <UpToDateCheckInput Remove="wwwroot\frontend.build\head.cshtml" />
+      <UpToDateCheckInput Remove="wwwroot\frontend.build\header.cshtml" />
+      <UpToDateCheckInput Remove="wwwroot\frontend.build\index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="wwwroot\Pages\Index.cshtml" />
+      <Content Remove="wwwroot\Pages\Index.cshtml.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="wwwroot\Pages\Index.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </None>
+    </ItemGroup>
 </Project>

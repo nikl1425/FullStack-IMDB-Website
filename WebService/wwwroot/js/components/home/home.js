@@ -1,9 +1,12 @@
-define(['ko'], (ko) => {
+define(['postman'], (postman) => {
+    return function () {
 
- 
-  
-      return {
-          
-      };
-  }
-);
+        let gotoMovie = () => {
+            postman.publish("changeContent", "movie");
+        }
+
+        return {
+            gotoMovie
+        };
+    }
+});

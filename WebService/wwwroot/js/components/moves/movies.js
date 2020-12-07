@@ -1,7 +1,0 @@
-define(['ko'], (ko) => {
-  
-  return {
-      
-  };
-}
-);
