@@ -196,7 +196,6 @@
             <e p="scripts.js" t="Include" />
             <e p="styles.css" t="Include" />
           </e>
-          <e p="contact-us.html" t="Include" />
           <e p="css" t="Include">
             <e p="bootstrap" t="Include">
               <e p="css" t="Include">
@@ -225,6 +224,7 @@
               </e>
             </e>
             <e p="dot-icons.css" t="Include" />
+            <e p="footer.css" t="Include" />
             <e p="lib" t="Include">
               <e p="twitter-bootstrap" t="Include">
                 <e p="css" t="Include">
@@ -351,6 +351,7 @@
                 </e>
               </e>
             </e>
+            <e p="searchbar.css" t="Include" />
             <e p="theme.css" t="Include" />
           </e>
           <e p="fontawesome" t="Include">
@@ -420,6 +421,7 @@
               <e p="fa-solid-900.woff2" t="Include" />
             </e>
           </e>
+          <e p="head.html" t="Include" />
           <e p="images" t="Include">
             <e p="parts" t="Include">
               <e p="map-marker.png" t="Include" />
