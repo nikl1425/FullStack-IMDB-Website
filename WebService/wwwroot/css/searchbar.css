@@ -1,0 +1,72 @@
+
+.searchcontainer{
+    width: 100%;
+    justify-content: center !important;
+    align-items: center !important;
+    display: block;
+}
+#searchbardiv.col-auto.align-items-center{
+    background: rgba(255,138,0,0.7);
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.85), rgba(0,0,0,0.85)) !important;
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.85), rgba(0,0,0,0.85)) !important;
+    background-image: -o-linear-gradient(top, rgba(0,0,0,0.85), rgba(0,0,0,0.85)) !important;
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.85), rgba(0,0,0,0.85)) !important;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.85)) !important;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    display: block;
+}
+
+#searchbartextandtitle.col-auto.align-items-center{
+    height: 500px;
+    justify-content: center !important;
+    align-items: center !important;
+    display: block;
+}
+
+#searchtitle.entity-title{
+    color: white;
+    top: 30%;
+    width: auto;
+    position:relative;
+    margin: 0 auto; 
+    padding: 10px 0;
+    overflow: hidden;
+    text-align:center;
+    align-items: center;
+    vertical-align: center !important;
+    justify-content: space-around;
+    float: none;
+    
+}
+
+#searchbar.form-control{
+    border-radius: 25px;
+    top: 30%;
+    width: 25%;
+    color: #333333;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+    text-align:center;
+    align-items: center;
+    vertical-align: center !important;
+    justify-content: space-around;
+    float: none;
+}
+
+#searchbar.form-control:focus{
+    
+    transition: opacity 3s ease-in-out;
+}
+
+input[type="text"]::-webkit-input-placeholder  {
+    -webkit-transition: opacity 0.3s linear;
+    color: gray;
+}
+
+input[type="text"]:focus::-webkit-input-placeholder  {
+    opacity: 0;
+}
