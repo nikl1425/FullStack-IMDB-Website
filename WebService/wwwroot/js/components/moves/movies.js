@@ -1,0 +1,7 @@
+define(['ko'], (ko) => {
+  
+  return {
+      
+  };
+}
+);
