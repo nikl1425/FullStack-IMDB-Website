@@ -129,5 +129,15 @@ namespace WebService.Controllers
 
             return Ok(akasDto);
         }
+
+        [HttpGet("img/{id}", Name = nameof(GetTitleImg))]
+        public IActionResult GetTitleImg(string id)
+        {
+            var img = _dataService.GetOmdbData(id);
+
+            var omdbDto = _mapper.Map<Omdb_dataDto>(img);
+
+            return Ok(omdbDto);
+        }
     }
 }

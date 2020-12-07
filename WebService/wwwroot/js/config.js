@@ -12,8 +12,6 @@ require.config({
     }
 });
 
-
-
 require(['knockout', 'text'], (ko) => {
     ko.components.register('home', {
         viewModel: { require: "components/home/home" },

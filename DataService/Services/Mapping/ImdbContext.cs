@@ -43,6 +43,8 @@ namespace DataService
         public DbSet<TitleType> type { get; set; }
         public DbSet<Person_Rating> PersonRatings { get; set; }
         public DbSet<Title> title { get; set; }
+        
+        public DbSet<OmdbData> omdb_data { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -262,8 +264,19 @@ namespace DataService
             modelBuilder.Entity<Title_Rating>().Property(x => x.Average_Rating).HasColumnName("average_rating");
             modelBuilder.Entity<Title_Rating>().Property(x => x.Num_Votes).HasColumnName("num_votes");
             
-           
-            
+            // omdb_data
+            modelBuilder.Entity<OmdbData>().ToTable("omdb_data");
+            modelBuilder.Entity<OmdbData>().Property(x => x.Id).HasColumnName("title_id");
+            modelBuilder.Entity<OmdbData>().Property(x => x.Poster).HasColumnName("poster");
+            modelBuilder.Entity<OmdbData>().Property(x => x.Awards).HasColumnName("awards");
+            modelBuilder.Entity<OmdbData>().Property(x => x.Plot).HasColumnName("plot");
+            modelBuilder.Entity<OmdbData>()
+                .HasOne(x => x.Title)
+                .WithOne(x => x.OmdbData)
+                .HasForeignKey<Title>();
+
+
+
             base.OnModelCreating(modelBuilder);
         }
     }

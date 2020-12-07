@@ -40,5 +40,7 @@ namespace DataService.Services
         public List<Title> GetTypeTitles(int id);
 
         public TitleType GetType(int id);
+
+        public OmdbData GetOmdbData(string id);
     }
 }

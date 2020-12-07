@@ -245,5 +245,16 @@ namespace DataService.Services
                 .ToList();
             return query;
         }
+
+        public OmdbData GetOmdbData(string id)
+        {
+         using var ctx = new ImdbContext();
+
+         var query = ctx.omdb_data
+             .Where(x => x.Id == id)
+             .FirstOrDefault();
+
+         return query;
+        }
     }
 }

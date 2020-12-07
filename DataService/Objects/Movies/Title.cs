@@ -32,6 +32,8 @@ namespace DataService.Objects
         
         public TitleRuntime TitleRuntime { get; set; }
         
+        public OmdbData OmdbData { get; set; }
+        
         
     }
 }
