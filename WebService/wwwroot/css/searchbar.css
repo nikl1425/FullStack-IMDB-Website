@@ -38,17 +38,28 @@
     vertical-align: center !important;
     justify-content: space-around;
     float: none;
-    
+}
+
+.ul.navbar-nav{
+    position:relative;
+    float:right;
+}
+
+#navid.navbar-collapse{
+    justify-content: right;
+    float: right;
 }
 
 #searchbar.form-control{
     border-radius: 25px;
     top: 30%;
     width: 25%;
+    height:50px;
     color: #333333;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
+    text-decoration-style: solid;
     padding: 10px 0;
     text-align:center;
     align-items: center;
