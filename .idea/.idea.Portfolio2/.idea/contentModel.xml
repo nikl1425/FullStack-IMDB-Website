@@ -357,6 +357,7 @@
             </e>
             <e p="searchbar.css" t="Include" />
             <e p="theme.css" t="Include" />
+            <e p="userlogin.css" t="Include" />
           </e>
           <e p="fontawesome" t="Include">
             <e p="css" t="Include">
@@ -510,6 +511,7 @@
             <e p="parallax.js" t="Include" />
             <e p="parallax.min.js" t="Include" />
           </e>
+          <e p="sign-in.html" t="Include" />
           <e p="slick" t="Include">
             <e p="ajax-loader.gif" t="Include" />
             <e p="config.rb" t="Include" />
