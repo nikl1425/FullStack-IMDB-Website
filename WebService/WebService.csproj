@@ -25,9 +25,6 @@
 
     <ItemGroup>
       <Compile Remove="Models\ObjectDto\GenreDto.cs" />
-      <Compile Include="wwwroot\Pages\Error.cshtml.cs" />
-      <Compile Include="wwwroot\Pages\Index.cshtml.cs" />
-      <Compile Include="wwwroot\Pages\Privacy.cshtml.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -295,6 +292,7 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\build" />
+      <Folder Include="wwwroot\images" />
     </ItemGroup>
 
     <ItemGroup>
@@ -308,11 +306,5 @@
     <ItemGroup>
       <Content Remove="wwwroot\Pages\Index.cshtml" />
       <Content Remove="wwwroot\Pages\Index.cshtml.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="wwwroot\Pages\Index.cshtml">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </None>
     </ItemGroup>
 </Project>
