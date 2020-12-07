@@ -102,5 +102,15 @@ namespace PortFolio2.Tests
             var typeTitles = service.GetTypeTitles(1);
             Assert.Equal(142, typeTitles.Count);
         }
+
+        [Fact]
+        public void getOmdb()
+        {
+            var service = new TitleDataService();
+            var omdb = service.GetOmdbData("tt10066406");
+            Assert.Equal("https://m.media-amazon.com/images/M/MV5BYjAyMTUwMTYtZWNhYi00OTFlLThlNTAtYTNlMGI4Mjc1MjBhXkEyXkFqcGdeQXVyMjYxMDY3NjA@._V1_SX300.jpg"
+            , omdb.Poster);
+
+        }
     }
 }

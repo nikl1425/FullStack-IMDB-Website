@@ -28,12 +28,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Title til person virker. GetTitle indeholder tilmed en liste over alle person der har medvirket i filmen">
+      <change afterPath="$PROJECT_DIR$/DataService/Objects/Movies/Omdb_data.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/Omdb_dataDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebService/Models/Profile/Omdb_dataProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_27_11_2020,_11_56_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_27_11_2020__11_56__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2020,_16_29_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2020__16_29__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Objects/Movies/Title.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Objects/Movies/Title.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTest/TitleDataServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTest/TitleDataServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +61,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature.knockout" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,10 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" />
-        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/UserDTOs/UserDto.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/Utils/Hashing.cs" />
-        <option value="$PROJECT_DIR$/UnitTest/PersonDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Interface/IPersonDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
@@ -99,16 +102,12 @@
         <option value="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/PersonMapping.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitlePersonDTO.cs" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleDto.cs" />
         <option value="$PROJECT_DIR$/DataService/Objects/Movies/TitleType.cs" />
-        <option value="$PROJECT_DIR$/DataService/Objects/Movies/Title.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TypeDto.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TypeTitlesDto.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/TypeProfile.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/TitleProfile.cs" />
-        <option value="$PROJECT_DIR$/UnitTest/TitleDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/WebService/Controllers/TypeController.cs" />
         <option value="$PROJECT_DIR$/WebService/package.json" />
         <option value="$PROJECT_DIR$/WebService/Gruntfile.js" />
@@ -116,11 +115,9 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/bookmark.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/title.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/index.html" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/TitleBookmarkProfile.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/TitleBookmarkListProfile.cs" />
         <option value="$PROJECT_DIR$/DataService/Objects/Users/Person_Bookmark_list.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" />
         <option value="$PROJECT_DIR$/UnitTest/UserDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/UserDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/PersonDTOs/PersonBookmarkListDto.cs" />
@@ -137,8 +134,18 @@
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/UserDTOs/RatingDTO.cs" />
         <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/ratings.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/index.html" />
+        <option value="$PROJECT_DIR$/DataService/Objects/Movies/omdb_data.cs" />
+        <option value="$PROJECT_DIR$/DataService/Objects/Movies/Omdb_data.cs" />
+        <option value="$PROJECT_DIR$/WebService/Models/Profile/Omdb_dataProfile.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
+        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/Omdb_dataDto.cs" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" />
+        <option value="$PROJECT_DIR$/UnitTest/TitleDataServiceTest.cs" />
+        <option value="$PROJECT_DIR$/DataService/Objects/Movies/Title.cs" />
       </list>
     </option>
   </component>
@@ -256,6 +263,8 @@
       <workItem from="1605559382836" duration="6196000" />
       <workItem from="1607000824748" duration="29253000" />
       <workItem from="1607077381065" duration="24960000" />
+      <workItem from="1607368250807" duration="2018000" />
+      <workItem from="1607370504833" duration="1436000" />
     </task>
     <task id="LOCAL-00001" summary="New Project">
       <created>1604402132484</created>
@@ -636,51 +645,55 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1607120357599">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="206" key="GridCell.Tab.0.bottom" timestamp="1607371880985">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="666" height="202" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606995688024" />
+    <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607371880985" />
     <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607120357599" />
     <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607038575948" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
+    <state width="1204" height="175" key="GridCell.Tab.0.bottom/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.bottom/0.25.1440.801@0.25.1440.801" timestamp="1606991392060" />
     <state width="1750" height="361" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154201" />
     <state width="1238" height="218" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805181" />
-    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1607120357598">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="206" key="GridCell.Tab.0.center" timestamp="1607371880984">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="666" height="202" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1606995688023" />
+    <state width="1398" height="206" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607371880984" />
     <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607120357598" />
     <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607038575948" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
+    <state width="1204" height="175" key="GridCell.Tab.0.center/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.center/0.25.1440.801@0.25.1440.801" timestamp="1606991392059" />
     <state width="1750" height="361" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
     <state width="1238" height="218" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805180" />
-    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1607120357598">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="206" key="GridCell.Tab.0.left" timestamp="1607371880982">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="666" height="202" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1606995688021" />
+    <state width="1398" height="206" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607371880982" />
     <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607120357598" />
     <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607038575948" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508508" />
+    <state width="1204" height="175" key="GridCell.Tab.0.left/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.left/0.25.1440.801@0.25.1440.801" timestamp="1606991392057" />
     <state width="1750" height="361" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154199" />
     <state width="1238" height="218" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805180" />
-    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1607120357599">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="206" key="GridCell.Tab.0.right" timestamp="1607371880984">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="666" height="202" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1606995688023" />
+    <state width="1398" height="206" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607371880984" />
     <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607120357599" />
     <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607038575948" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
+    <state width="1204" height="175" key="GridCell.Tab.0.right/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.right/0.25.1440.801@0.25.1440.801" timestamp="1606991392060" />
     <state width="1750" height="361" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
     <state width="1238" height="218" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805181" />
@@ -814,9 +827,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605206083810" />
-    <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607100729515">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1016" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607369563490">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="1016" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607369563490" />
     <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607100729515" />
     <state x="3275" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607082794299" />
     <state x="1355" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022434402" />
@@ -841,6 +855,10 @@
     </state>
     <state x="637" y="81" width="646" height="888" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605019583040" />
     <state x="595" y="105" width="684" height="878" key="find.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605562555073" />
+    <state x="497" y="343" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1607368320011">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="497" y="343" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1440.900@0.0.1440.900" timestamp="1607368320011" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1607002735621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -853,22 +871,6 @@
     <state x="563" y="253" width="672" height="678" key="search.everywhere.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605559286154" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/UnitTest/TitleDataServiceTest.cs</url>
-          <line>102</line>
-          <properties documentPath="C:\Users\45535\Desktop\RAWDATA\C#\Projects\IMDB\UnitTest\TitleDataServiceTest.cs" initialLine="102" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/UnitTest/TitleDataServiceTest.cs</url>
-          <line>101</line>
-          <properties documentPath="C:\Users\45535\Desktop\RAWDATA\C#\Projects\IMDB\UnitTest\TitleDataServiceTest.cs" initialLine="101" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#PortFolio2.Tests.PersonDataServiceTest" memberName="_personDataService" />
