@@ -256,5 +256,15 @@ namespace DataService.Services
 
          return query;
         }
+
+        public List<Title> GetTopTenTitles()
+        {
+            using var ctx = new ImdbContext();
+
+            var query 
+
+
+            return query;
+        }
     }
 }
