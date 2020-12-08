@@ -16,7 +16,7 @@
         <!-- Magnific Popup -->
         <link href="magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
         <!-- Slick carousel -->
-        <link href="slick/slick.css" rel="stylesheet" type="text/css" />
+        <link href="/js/slick/slick.css" rel="stylesheet" type="text/css" />
         <!-- Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,500,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
@@ -27,12 +27,12 @@
 
 
 </head>
-<body>
-    <header class="header header-horizontal header-view-pannel bg-darken">
-        <div class="col-md-12">
-            <div class="container">
-                <nav class="navbar">
-                    <a class="navbar-brand" href="./">
+    <body>
+        <header class="header header-horizontal header-view-pannel bg-darken">
+            <div class="col-md-12">
+                <div class="container">
+                    <nav class="navbar">
+                        <a class="navbar-brand" href="./">
                             <span class="logo-element">
                                 <span class="logo-tape">
                                     <span class="svg-content svg-fill-theme" data-svg="images/svg/logo-part.svg"></span>
@@ -41,34 +41,34 @@
                                     <span>M</span>oviebase
                                 </span>
                             </span>
-                    </a>
-                    <button class="navbar-toggler" type="button">
-                        <span class="th-dots-active-close th-dots th-bars">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </button>
-                    <div id="test">
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav" data-bind="foreach: menuElements">
-                                <li class="nav-item" data-bind="css: $parent.isActive($data)">
-                                    <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
-                                        <span data-bind="text: $data"></span>
-                                    </a>
-                                </li>
-                            </ul>
+                        </a>
+                        <button class="navbar-toggler" type="button">
+                            <span class="th-dots-active-close th-dots th-bars">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <div id="test">
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav" data-bind="foreach: menuElements">
+                                    <li class="nav-item" data-bind="css: $parent.isActive($data)">
+                                        <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
+                                            <span data-bind="text: $data"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
 
+        <div data-bind="component: {name: currentComponent}"></div>
 
 
-       
         <a class="scroll-top disabled" href="#"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
         <footer class="section-text-white footer footer-links bg-darken">
             <div class="footer-body container">
@@ -148,7 +148,7 @@
             </div>
         </footer>
 
-       
+
         <!-- jQuery library -->
         <script src="js/lib/jquery/jquery.js"></script>
         <!-- Bootstrap -->
@@ -164,6 +164,6 @@
         <script src="./js/script.js"></script>
         <!-- Inits product scripts -->
         <script data-main="js/config.js" src="js/lib/require.js/require.min.js"></script>
-        
+
         <script async defer src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/js/rating.js"></script>
 </html>
