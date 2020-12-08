@@ -14,6 +14,7 @@ namespace WebService.ObjectDto
         public string EndYear { get; set; }
         public string Type { get; set; }
         public string TypeUrl { get; set; }
+        public string poster  {get; set;}
         
         //URL
         public string Url { get; set; }

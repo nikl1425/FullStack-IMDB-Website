@@ -26,6 +26,7 @@
             <e p="Akas_Type.cs" t="Include" />
             <e p="Genre.cs" t="Include" />
             <e p="Omdb_data.cs" t="Include" />
+            <e p="OmdbHolder.cs" t="Include" />
             <e p="Title.cs" t="Include" />
             <e p="Title_Episode.cs" t="Include" />
             <e p="Title_Genre.cs" t="Include" />
@@ -442,6 +443,7 @@
               </e>
               <e p="Movies" t="Include">
                 <e p="movie-info-sidebar-right.html" t="Include" />
+                <e p="movies-list.html" t="Include" />
                 <e p="movies.html" t="Include" />
                 <e p="movies.js" t="Include" />
               </e>
