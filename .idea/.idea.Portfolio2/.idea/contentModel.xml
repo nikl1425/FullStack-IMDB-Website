@@ -429,29 +429,6 @@
               <e p="fa-solid-900.woff2" t="Include" />
             </e>
           </e>
-          <e p="images" t="Include">
-            <e p="parts" t="Include">
-              <e p="map-marker.png" t="Include" />
-              <e p="movie-pattern.png" t="Include" />
-              <e p="white-square.png" t="Include" />
-            </e>
-            <e p="posters" t="Include">
-              <e p="1.jpg" t="Include" />
-              <e p="2.jpg" t="Include" />
-              <e p="3.jpg" t="Include" />
-              <e p="4.jpg" t="Include" />
-              <e p="5.png" t="Include" />
-              <e p="6.jpg" t="Include" />
-              <e p="7.jpg" t="Include" />
-              <e p="8.jpg" t="Include" />
-              <e p="9.jpg" t="Include" />
-            </e>
-            <e p="svg" t="Include">
-              <e p="login.jpg" t="Include" />
-              <e p="logo-part.svg" t="Include" />
-              <e p="tape-pattern.svg" t="Include" />
-            </e>
-          </e>
           <e p="index.html" t="Include" />
           <e p="js" t="Include">
             <e p="components" t="Include">
@@ -489,6 +466,29 @@
               </e>
             </e>
             <e p="config.js" t="Include" />
+            <e p="images" t="Include">
+              <e p="parts" t="Include">
+                <e p="map-marker.png" t="Include" />
+                <e p="movie-pattern.png" t="Include" />
+                <e p="white-square.png" t="Include" />
+              </e>
+              <e p="posters" t="Include">
+                <e p="1.jpg" t="Include" />
+                <e p="2.jpg" t="Include" />
+                <e p="3.jpg" t="Include" />
+                <e p="4.jpg" t="Include" />
+                <e p="5.png" t="Include" />
+                <e p="6.jpg" t="Include" />
+                <e p="7.jpg" t="Include" />
+                <e p="8.jpg" t="Include" />
+                <e p="9.jpg" t="Include" />
+              </e>
+              <e p="svg" t="Include">
+                <e p="login.jpg" t="Include" />
+                <e p="logo-part.svg" t="Include" />
+                <e p="tape-pattern.svg" t="Include" />
+              </e>
+            </e>
             <e p="lib" t="Include">
               <e p="jquery" t="Include">
                 <e p="jquery.js" t="Include" />
@@ -520,6 +520,24 @@
             <e p="Services" t="Include">
               <e p="postman.js" t="Include" />
             </e>
+            <e p="slick" t="Include">
+              <e p="ajax-loader.gif" t="Include" />
+              <e p="config.rb" t="Include" />
+              <e p="fonts" t="Include">
+                <e p="slick.eot" t="Include" />
+                <e p="slick.svg" t="Include" />
+                <e p="slick.ttf" t="Include" />
+                <e p="slick.woff" t="Include" />
+              </e>
+              <e p="slick-theme.css" t="Include" />
+              <e p="slick-theme.less" t="Include" />
+              <e p="slick-theme.scss" t="Include" />
+              <e p="slick.css" t="Include" />
+              <e p="slick.js" t="Include" />
+              <e p="slick.less" t="Include" />
+              <e p="slick.min.js" t="Include" />
+              <e p="slick.scss" t="Include" />
+            </e>
             <e p="viewModel.js" t="Include" />
           </e>
           <e p="magnific-popup" t="Include">
@@ -531,24 +549,6 @@
             <e p="package.json" t="Include" />
             <e p="parallax.js" t="Include" />
             <e p="parallax.min.js" t="Include" />
-          </e>
-          <e p="slick" t="Include">
-            <e p="ajax-loader.gif" t="Include" />
-            <e p="config.rb" t="Include" />
-            <e p="fonts" t="Include">
-              <e p="slick.eot" t="Include" />
-              <e p="slick.svg" t="Include" />
-              <e p="slick.ttf" t="Include" />
-              <e p="slick.woff" t="Include" />
-            </e>
-            <e p="slick-theme.css" t="Include" />
-            <e p="slick-theme.less" t="Include" />
-            <e p="slick-theme.scss" t="Include" />
-            <e p="slick.css" t="Include" />
-            <e p="slick.js" t="Include" />
-            <e p="slick.less" t="Include" />
-            <e p="slick.min.js" t="Include" />
-            <e p="slick.scss" t="Include" />
           </e>
           <e p="waypoints" t="Include">
             <e p="jquery.waypoints.js" t="Include" />
