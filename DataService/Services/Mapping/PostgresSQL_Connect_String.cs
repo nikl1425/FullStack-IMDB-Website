@@ -5,7 +5,7 @@
         private string host = "localhost";
         private string db = "imdb";
         private string UserId = "postgres";
-        private string pwd = "nvp92agn";
+        private string pwd = "Hcn27wzv";
 
         public override string ToString()
         {
