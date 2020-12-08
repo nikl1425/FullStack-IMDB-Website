@@ -24,24 +24,19 @@ require(['knockout', 'text'], (ko) => {
         template: { require: "text!components/movies/movies.html" }
     });
 
-    ko.components.register('persons', {
-        viewModel: { require: "components/persons/person" },
-        template: { require: "text!components/persons/persons.html" }
-    });
-
-    ko.components.register('create user', {
-        viewModel: { require: "components/users/userConfig.js" },
-        template: { require: "text!components/movies/movies.html" }
+    ko.components.register('people', {
+        viewModel: { require: "components/people/people" },
+        template: { require: "text!components/people/people.html" }
     });
 
     ko.components.register('profile', {
-        viewModel: { require: "components/Profile/Profile" },
-        template: { require: "text!components/Profile/Profile.html" }
+        viewModel: { require: "components/profile/profile" },
+        template: { require: "text!components/profile/profile.html" }
     });
 
     ko.components.register('about', {
-        viewModel: { require: "components/About/About" },
-        template: { require: "text!components/About/About.html" }
+        viewModel: { require: "components/about/about" },
+        template: { require: "text!components/about/about.html" }
     });
 });
 
