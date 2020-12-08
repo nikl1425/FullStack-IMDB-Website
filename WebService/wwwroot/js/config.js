@@ -5,7 +5,8 @@ require.config({
         text: "lib/require-text/text.min",
         jquery: "lib/jquery/jquery.min",
         bootstrap: "../css/lib/twitter-bootstrap/js/bootstrap.bundle.min",
-        postman: "services/postman"
+        postman: "services/postman",
+        slick: "slick/slick"
     },
     shim: {
         bootstrap: ['jquery']
