@@ -154,5 +154,20 @@ namespace WebService.Controllers
 
             return Ok(omdbDto);
         }
+
+        [HttpGet("TopPoster", Name = nameof(GetTopPosters))]
+        public IActionResult GetTopPosters()
+        {
+            var posters = _dataService.GetTopTenPoster();
+
+            IList<TopTenPosterDto> posterItems = posters.Select(x => new TopTenPosterDto
+            {
+                Id = x.Id,
+                Awards = x.Awards,
+                Poster = x.Poster
+            }).ToList();
+
+            return Ok(posterItems);
+        }
     }
 }

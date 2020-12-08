@@ -43,5 +43,7 @@ namespace DataService.Services
         public IList<OmdbHolder> GetOmdbDatas();
 
         public OmdbData GetOmdbData(string id);
+
+        public List<TopPoster> GetTopTenPoster();
     }
 }

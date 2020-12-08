@@ -33,6 +33,7 @@
             <e p="Title_Rating.cs" t="Include" />
             <e p="TitleRuntime.cs" t="Include" />
             <e p="TitleType.cs" t="Include" />
+            <e p="TopPoster.cs" t="Include" />
           </e>
           <e p="Persons" t="Include">
             <e p="Person.cs" t="Include" />
@@ -141,6 +142,7 @@
               <e p="TitleGenreDTO.cs" t="Include" />
               <e p="TitleListDto.cs" t="Include" />
               <e p="TitlePersonDTO.cs" t="Include" />
+              <e p="TopTenPosterDto.cs" t="Include" />
               <e p="TypeDto.cs" t="Include" />
               <e p="TypeTitlesDto.cs" t="Include" />
             </e>
@@ -164,6 +166,7 @@
             <e p="TitleEpisodeProfile.cs" t="Include" />
             <e p="TitleGenreProfile.cs" t="Include" />
             <e p="TitleProfile.cs" t="Include" />
+            <e p="TopTenPosterProfile.cs" t="Include" />
             <e p="TypeProfile.cs" t="Include" />
             <e p="UserProfile.cs" t="Include" />
           </e>
@@ -230,6 +233,7 @@
                 <e p="bootstrap.min.js.map" t="Include" />
               </e>
             </e>
+            <e p="CarouselCSS.css" t="Include" />
             <e p="dot-icons.css" t="Include" />
             <e p="footer.css" t="Include" />
             <e p="lib" t="Include">
@@ -447,9 +451,9 @@
                 <e p="movies.html" t="Include" />
                 <e p="movies.js" t="Include" />
               </e>
-              <e p="Persons" t="Include">
-                <e p="person.js" t="Include" />
-                <e p="persons.html" t="Include" />
+              <e p="people" t="Include">
+                <e p="people.html" t="Include" />
+                <e p="people.js" t="Include" />
               </e>
               <e p="Profile" t="Include">
                 <e p="Profile.html" t="Include" />

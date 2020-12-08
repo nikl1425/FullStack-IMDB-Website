@@ -45,6 +45,8 @@ namespace DataService
         public DbSet<Title> title { get; set; }
         
         public DbSet<OmdbData> omdb_data { get; set; }
+        
+        public DbSet<TopPoster> TopPosters { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -274,6 +276,13 @@ namespace DataService
                 .HasOne(x => x.Title)
                 .WithOne(x => x.OmdbData)
                 .HasForeignKey<Title>();
+            
+            //Top10PosterForHome
+            modelBuilder.Entity<TopPoster>().HasNoKey();
+            modelBuilder.Entity<TopPoster>().Property(x => x.Id).HasColumnName("title_id");
+            modelBuilder.Entity<TopPoster>().Property(x => x.Poster).HasColumnName("poster");
+            modelBuilder.Entity<TopPoster>().Property(x => x.Awards).HasColumnName("awards");
+            modelBuilder.Entity<TopPoster>().Property(x => x.Plot).HasColumnName("plot");
 
 
 
