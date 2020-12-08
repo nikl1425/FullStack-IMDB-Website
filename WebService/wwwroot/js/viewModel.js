@@ -1,6 +1,6 @@
 ﻿define(['knockout', 'postman'], (ko, postman) => {
     let currentComponent = ko.observable("home");
-    let menuElements = ["Home", "Movie"];
+    let menuElements = ["Home", "Movie", "Persons", "Create User", "Profile", "About"];
     let changeContent = element => {
         
         currentComponent(element.toLowerCase());
