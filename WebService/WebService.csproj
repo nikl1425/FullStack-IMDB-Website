@@ -350,4 +350,15 @@
       <Content Remove="wwwroot\Pages\Index.cshtml" />
       <Content Remove="wwwroot\Pages\Index.cshtml.cs" />
     </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\js\slick\config.rb" />
+      <None Include="wwwroot\js\slick\fonts\slick.svg" />
+      <None Include="wwwroot\js\slick\slick-theme.less" />
+      <None Include="wwwroot\js\slick\slick-theme.scss" />
+      <None Include="wwwroot\js\slick\slick.js" />
+      <None Include="wwwroot\js\slick\slick.less" />
+      <None Include="wwwroot\js\slick\slick.min.js" />
+      <None Include="wwwroot\js\slick\slick.scss" />
+    </ItemGroup>
 </Project>

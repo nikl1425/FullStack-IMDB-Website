@@ -1,169 +1,178 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Memico - Cinema Bootstrap HTML5 Template</title>
-        <!-- Bootstrap -->
-        <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="css/searchbar.css" rel="stylesheet" type="text/css" />
-        <link href="css/footer.css" rel="stylesheet" type="text/css" />
-        <!-- Animate.css -->
-        <link href="animate.css/animate.css" rel="stylesheet" type="text/css" />
-        <!-- Font Awesome iconic font -->
-        <link href="fontawesome/css/fontawesome-all.css" rel="stylesheet" type="text/css" />
-        <!-- Magnific Popup -->
-        <link href="magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
-        <!-- Slick carousel -->
-        <link href="/js/slick/slick.css" rel="stylesheet" type="text/css" />
-        <!-- Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,500,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Theme styles -->
-        <link href="css/dot-icons.css" rel="stylesheet" type="text/css">
-        <link href="css/theme.css" rel="stylesheet" type="text/css">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Slick carousel -->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
+
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/searchbar.css" rel="stylesheet" type="text/css" />
+    <link href="css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="css/CarouselCSS.css" rel="stylesheet" type="text/css" />
+
+    <!-- Animate.css -->
+    <link href="animate.css/animate.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome iconic font -->
+    <link href="fontawesome/css/fontawesome-all.css" rel="stylesheet" type="text/css" />
+    <!-- Magnific Popup -->
+    <link href="magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <!-- Theme styles -->
+    <link href="css/dot-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/theme.css" rel="stylesheet" type="text/css">
 
 
 
 </head>
-    <body>
-        <header class="header header-horizontal header-view-pannel bg-darken">
-            <div class="col-md-12">
-                <div class="container">
-                    <nav class="navbar">
-                        <a class="navbar-brand" href="./">
-                            <span class="logo-element">
-                                <span class="logo-tape">
-                                    <span class="svg-content svg-fill-theme" data-svg="images/svg/logo-part.svg"></span>
-                                </span>
-                                <span class="logo-text text-uppercase text-white">
-                                    <span>M</span>oviebase
-                                </span>
+<body>
+    <header class="header header-horizontal header-view-pannel bg-darken">
+        <div class="col-md-12">
+            <div class="container">
+                <nav class="navbar">
+                    <a class="navbar-brand" href="./">
+                        <span class="logo-element">
+                            <span class="logo-tape">
+                                <span class="svg-content svg-fill-theme" data-svg="js/images/svg/logo-part.svg"></span>
                             </span>
-                        </a>
-                        <button class="navbar-toggler" type="button">
-                            <span class="th-dots-active-close th-dots th-bars">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                            <span class="logo-text text-uppercase text-white">
+                                <span>M</span>oviebase
                             </span>
-                        </button>
-                        <div id="test">
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav" data-bind="foreach: menuElements">
-                                    <li class="nav-item" data-bind="css: $parent.isActive($data)">
-                                        <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
-                                            <span data-bind="text: $data"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-
-        <div data-bind="component: {name: currentComponent}"></div>
-
-
-        <a class="scroll-top disabled" href="#"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
-        <footer class="section-text-white footer footer-links bg-darken">
-            <div class="footer-body container">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-3">
-                        <a class="footer-logo" href="./">
-                            <span class="logo-element">
-                                <span class="logo-tape">
-                                    <span class="svg-content svg-fill-theme" data-svg="images/svg/logo-part.svg"></span>
-                                </span>
-                                <span class="logo-text text-uppercase">
-                                    <span>M</span>oviebase
-                                </span>
-                            </span>
-                        </a>
-                        <div class="footer-content">
-                            <p class="footer-text">
-                                Roskilde University
-                                <br />Denmark
-                            </p>
-                            <p class="footer-text"></p>
+                        </span>
+                    </a>
+                    <button class="navbar-toggler" type="button">
+                        <span class="th-dots-active-close th-dots th-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                    <div id="test">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav" data-bind="foreach: menuElements">
+                                <li class="nav-item" data-bind="css: $parent.isActive($data)">
+                                    <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
+                                        <span data-bind="text: $data"></span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h5 class="footer-title text-uppercase">Movies</h5>
-                        <ul class="list-unstyled list-wide footer-content">
-                            <li>
-                                <a class="content-link" href="#">All Movies</a>
-                            </li>
-                            <li>
-                                <a class="content-link" href="#">Top 100 movies</a>
-                            </li>
-                            <li>
-                                <a class="content-link" href="#">Movie trailers</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h5 class="footer-title text-uppercase">Information</h5>
-                        <ul class="list-unstyled list-wide footer-content">
-                            <li>
-                                <a class="content-link" href="#">News</a>
-                            </li>
-                            <li>
-                                <a class="content-link" href="#">Contact us</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <h5 class="footer-title text-uppercase">Follow</h5>
-                        <ul class="list-wide footer-content list-inline">
-                            <li class="list-inline-item">
-                                <a class="content-link" href="#"><i class="fab fa-slack-hash"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="content-link" href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="content-link" href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="content-link" href="#"><i class="fab fa-dribbble"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="content-link" href="#"><i class="fab fa-google-plus-g"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="content-link" href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+
+    <div data-bind="component: {name: currentComponent}"></div>
+
+
+
+    <a class="scroll-top disabled" href="#"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+    <footer class="section-text-white footer footer-links bg-darken">
+        <div class="footer-body container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <a class="footer-logo" href="./">
+                        <span class="logo-element">
+                            <span class="logo-tape">
+                                <span class="svg-content svg-fill-theme" data-svg="js/images/svg/logo-part.svg"></span>
+                            </span>
+                            <span class="logo-text text-uppercase">
+                                <span>M</span>oviebase
+                            </span>
+                        </span>
+                    </a>
+                    <div class="footer-content">
+                        <p class="footer-text">
+                            Roskilde University
+                            <br />Denmark
+                        </p>
+                        <p class="footer-text"></p>
                     </div>
                 </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title text-uppercase">Movies</h5>
+                    <ul class="list-unstyled list-wide footer-content">
+                        <li>
+                            <a class="content-link" href="#">All Movies</a>
+                        </li>
+                        <li>
+                            <a class="content-link" href="#">Top 100 movies</a>
+                        </li>
+                        <li>
+                            <a class="content-link" href="#">Movie trailers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title text-uppercase">Information</h5>
+                    <ul class="list-unstyled list-wide footer-content">
+                        <li>
+                            <a class="content-link" href="#">News</a>
+                        </li>
+                        <li>
+                            <a class="content-link" href="#">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-title text-uppercase">Follow</h5>
+                    <ul class="list-wide footer-content list-inline">
+                        <li class="list-inline-item">
+                            <a class="content-link" href="#"><i class="fab fa-slack-hash"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="content-link" href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="content-link" href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="content-link" href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="content-link" href="#"><i class="fab fa-google-plus-g"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="content-link" href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
-            <div class="footer-copy">
-                <div class="container"></div>
-            </div>
-        </footer>
+        </div>
+        <div class="footer-copy">
+            <div class="container"></div>
+        </div>
+    </footer>
 
+</body>
 
-        <!-- jQuery library -->
-        <script src="js/lib/jquery/jquery.js"></script>
-        <!-- Bootstrap -->
-        <script src="css/bootstrap/js/bootstrap.js"></script>
-        <!-- Paralax.js -->
-        <script src="parallax.js/parallax.js"></script>
-        <!-- Waypoints -->
-        <script src="waypoints/jquery.waypoints.min.js"></script>
-        <!-- Slick carousel -->
-        <script src="js/slick/slick.min.js"></script>
-        <!-- Magnific Popup -->
-        <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
-        <script src="./js/script.js"></script>
-        <!-- Inits product scripts -->
-        <script data-main="js/config.js" src="js/lib/require.js/require.min.js"></script>
+<script src="js/CarouselJS.js"></script>
 
-        <script async defer src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/js/rating.js"></script>
+<!-- jQuery library -->
+<script src="js/lib/jquery/jquery.js"></script>
+<!-- Bootstrap -->
+<script src="css/bootstrap/js/bootstrap.js"></script>
+<!-- Paralax.js -->
+<script src="parallax.js/parallax.js"></script>
+<!-- Waypoints -->
+<script src="waypoints/jquery.waypoints.min.js"></script>
+<!-- Slick carousel -->
+<script src="slick/slick.min.js"></script>
+<!-- Magnific Popup -->
+<script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="./js/script.js"></script>
+<!-- Inits product scripts -->
+<script data-main="js/config.js" src="js/lib/require.js/require.min.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ4Qy67ZAILavdLyYV2ZwlShd0VAqzRXA&callback=initMap"></script>
+<script async defer src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/js/rating.js"></script>
 </html>
