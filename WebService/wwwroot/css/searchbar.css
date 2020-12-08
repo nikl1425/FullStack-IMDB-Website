@@ -1,4 +1,15 @@
 
+html, body {
+    height: 100%;
+    background-color: black;    
+}
+
+#test {
+    text-align: center;
+    float: right;
+}
+
+
 .searchcontainer{
     width: 100%;
     justify-content: center !important;
@@ -19,7 +30,7 @@
 }
 
 #searchbartextandtitle.col-auto.align-items-center{
-    height: 500px;
+    height: 300px;
     justify-content: center !important;
     align-items: center !important;
     display: block;
@@ -40,20 +51,14 @@
     float: none;
 }
 
-.ul.navbar-nav{
-    position:relative;
-    float:right;
-}
 
-#navid.navbar-collapse{
-    justify-content: right;
-    float: right;
-}
+
 
 #searchbar.form-control{
     border-radius: 25px;
+    border: 2px solid grey;
     top: 30%;
-    width: 25%;
+    width: 50%;
     height:50px;
     color: #333333;
     position: relative;

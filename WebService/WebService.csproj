@@ -292,7 +292,6 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\build" />
-      <Folder Include="wwwroot\images" />
     </ItemGroup>
 
     <ItemGroup>
