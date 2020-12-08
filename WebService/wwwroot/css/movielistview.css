@@ -1,0 +1,42 @@
+
+html, body {
+    height: 100%;
+    background-color: white !important;
+}
+
+.movie-line-entity{
+    color: black;
+}
+
+
+.info.info-short {
+    color: black !important;
+}
+
+.top-block-content{
+    height: 50px;
+}
+
+.page-breadcrumbs{
+    color: black !important;
+}
+
+.section-title{
+    color:black !important;
+}
+
+#searchforms.col-sm-6.col-lg-3{
+    text-decoration-color: black !important;
+}
+
+.form-control {
+    text-decoration-color: black !important;
+}
+
+.datetimepicker-input.form-control {
+    text-decoration-color: black !important;
+}
+
+#footer.content-link {
+    color:white !important;
+}

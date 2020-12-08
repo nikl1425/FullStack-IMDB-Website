@@ -9,6 +9,7 @@
     <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="css/searchbar.css" rel="stylesheet" type="text/css" />
     <link href="css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="css/movielistview.css" rel="stylesheet" type="text/css" />
     <!-- Animate.css -->
     <link href="animate.css/animate.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome iconic font -->
@@ -21,9 +22,8 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <!-- Theme styles -->
-    <link href="css/dot-icons.css" rel="stylesheet" type="text/css">
-    <link href="css/theme.css" rel="stylesheet" type="text/css">
-
+    <link href="./css/dot-icons.css" rel="stylesheet" type="text/css">
+    <link href="./css/theme.css" rel="stylesheet" type="text/css">
 </head>
 <body class="body">
 
@@ -70,7 +70,7 @@
 
     <section class="after-head d-flex section-text-white position-relative">
         <div class="d-background" data-parallax="scroll"></div>
-        <div class="d-background bg-black-80"></div>
+        <div class="d-background "></div>
         <div class="top-block top-inner container">
             <div class="top-block-content">
                 <h1 class="section-title">Actors</h1>
@@ -88,8 +88,8 @@
                 <div class="grid row">
                     <div class="col-md-10">
                         <form autocomplete="off">
-                            <div class="row form-grid">
-                                <div class="col-sm-6 col-lg-3">
+                            <div id="searchforms" class="row form-grid">
+                                <div id="searchforms" class="col-sm-6 col-lg-3">
                                     <div class="input-view-flat input-group">
                                         <select class="form-control" name="genre">
                                             <option selected="true">genre</option>
@@ -152,7 +152,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/1.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -192,7 +192,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/2.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -232,7 +232,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/3.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -271,7 +271,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/4.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -307,15 +307,11 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur ultrices justo a pellentesque. Praesent venenatis dolor nec tempus lacinia. Donec ac condimentum dolor. Nullam sit amet nisl hendrerit, pharetra nulla convallis, malesuada diam. Donec ornare nisl eu lectus rhoncus, at malesuada metus rutrum. Aliquam a nisl vulputate, sodales ipsum aliquam, tempus purus. Suspendisse convallis, lectus nec vehicula sollicitudin, lorem sapien rhoncus dolor, vel lacinia urna velit ullamcorper nisi. Phasellus pellentesque, magna nec gravida feugiat, est magna suscipit ligula, vel porttitor nunc enim at nibh. Sed varius sit amet leo vitae consequat.
                     </p>
                 </div>
-                <div class="entity-extra">
-                    <div class="text-uppercase entity-extra-title">In archive</div>
-                    <div></div>
-                </div>
             </article>
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/5.png" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -350,15 +346,11 @@
                         Vivamus dolor ex, viverra ut facilisis et, euismod et quam. Aliquam sit amet mattis velit, ullamcorper venenatis magna. Aenean ac maximus magna. Proin pharetra venenatis tortor, ac suscipit est ultrices vitae. Mauris vulputate, nisl in lacinia dignissim, libero justo vehicula arcu, a porttitor quam erat ac dui. Suspendisse potenti. Maecenas sit amet interdum sem. Vestibulum sit amet volutpat mauris, ut gravida velit. Donec ultricies, eros ut finibus volutpat, enim ligula tempus enim, non bibendum libero tellus at velit. Aenean placerat egestas ullamcorper.
                     </p>
                 </div>
-                <div class="entity-extra">
-                    <div class="text-uppercase entity-extra-title">In archive</div>
-                    <div></div>
-                </div>
             </article>
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/6.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -396,7 +388,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/7.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -432,15 +424,11 @@
                         Vivamus dolor ex, viverra ut facilisis et, euismod et quam. Aliquam sit amet mattis velit, ullamcorper venenatis magna. Aenean ac maximus magna. Proin pharetra venenatis tortor, ac suscipit est ultrices vitae. Mauris vulputate, nisl in lacinia dignissim, libero justo vehicula arcu, a porttitor quam erat ac dui. Suspendisse potenti. Maecenas sit amet interdum sem. Vestibulum sit amet volutpat mauris, ut gravida velit. Donec ultricies, eros ut finibus volutpat, enim ligula tempus enim, non bibendum libero tellus at velit. Aenean placerat egestas ullamcorper.
                     </p>
                 </div>
-                <div class="entity-extra">
-                    <div class="text-uppercase entity-extra-title">In archive</div>
-                    <div></div>
-                </div>
             </article>
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/8.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -479,7 +467,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/9.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -519,7 +507,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/1.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -559,7 +547,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/2.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -599,7 +587,7 @@
             <article class="movie-line-entity">
                 <div class="entity-poster" data-role="hover-wrap">
                     <div class="embed-responsive embed-responsive-poster">
-                        <img class="embed-responsive-item" src="http://via.placeholder.com/340x510" alt="" />
+                        <img class="embed-responsive-item" src="images/posters/3.jpg" alt="" />
                     </div>
                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                         <div class="entity-play">
@@ -649,26 +637,26 @@
         </div>
     </section>
     <a class="scroll-top disabled" href="#"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
-    <footer class="section-text-white footer footer-links bg-darken">
+    <footer id="footer" class="section-text-white footer footer-links bg-darken">
         <div class="footer-body container">
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <a class="footer-logo" href="./">
                         <span class="logo-element">
                             <span class="logo-tape">
-                                <span class="svg-content svg-fill-theme" data-svg="./images/svg/logo-part.svg"></span>
+                                <span class="svg-content svg-fill-theme" data-svg="images/svg/logo-part.svg"></span>
                             </span>
                             <span class="logo-text text-uppercase">
-                                <span>M</span>emico
+                                <span>M</span>oviebase
                             </span>
                         </span>
                     </a>
                     <div class="footer-content">
                         <p class="footer-text">
-                            Sidestate NSW 4132,
-                            <br />Australia
+                            Roskilde University
+                            <br />Denmark
                         </p>
-                        <p class="footer-text">Call us:&nbsp;&nbsp;(555) 555-0312</p>
+                        <p class="footer-text"></p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3">
@@ -678,19 +666,7 @@
                             <a class="content-link" href="#">All Movies</a>
                         </li>
                         <li>
-                            <a class="content-link" href="#">Upcoming movies</a>
-                        </li>
-                        <li>
                             <a class="content-link" href="#">Top 100 movies</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">Blockbasters</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">British movies</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">Summer movies collection</a>
                         </li>
                         <li>
                             <a class="content-link" href="#">Movie trailers</a>
@@ -701,25 +677,10 @@
                     <h5 class="footer-title text-uppercase">Information</h5>
                     <ul class="list-unstyled list-wide footer-content">
                         <li>
-                            <a class="content-link" href="#">Schedule</a>
-                        </li>
-                        <li>
                             <a class="content-link" href="#">News</a>
                         </li>
                         <li>
                             <a class="content-link" href="#">Contact us</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">Community</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">Blog</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">Events</a>
-                        </li>
-                        <li>
-                            <a class="content-link" href="#">Help center</a>
                         </li>
                     </ul>
                 </div>
@@ -745,23 +706,12 @@
                             <a class="content-link" href="#"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
-                    <h5 class="footer-title text-uppercase">Subscribe</h5>
-                    <div class="footer-content">
-                        <p class="footer-text">Get latest movie news right away with our subscription</p>
-                        <form class="footer-form" autocomplete="off">
-                            <div class="input-group">
-                                <input class="form-control" name="email" type="email" placeholder="Your email" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-theme" type="submit"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
                 </div>
             </div>
         </div>
         <div class="footer-copy">
-            <div class="container">Copyright 2019 &copy; AmigosThemes. All rights reserved.</div>
+            <div class="container"></div>
         </div>
     </footer>
     <!-- jQuery library -->
