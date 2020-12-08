@@ -1,23 +1,16 @@
-﻿using System;
-
-namespace WebService.ObjectDto
+﻿namespace DataService.Objects
 {
-    /// <summary>
-    /// This DTO contains all information of title.
-    /// </summary>
-    public class TitleListDto
+    public class OmdbHolder
     {
         public string Id { get; set; }
+        public string Poster { get; set; }
+        public string Awards { get; set; }
+        public string Plot { get; set; }
         public string PrimaryTitle { get; set; }
         public string OriginalTitle { get; set; }
         public bool IsAdult { get; set; }
         public string StartYear { get; set; }
         public string EndYear { get; set; }
-        public string Poster { get; set; }
         
-        public String Url { get; set; }
-        
-        
-       
     }
 }

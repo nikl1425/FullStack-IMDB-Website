@@ -67,6 +67,17 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px !important; /* Remove scrollbar space */
+    background: transparent !important; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000 !important;
 }
 
 [tabindex="-1"]:focus {

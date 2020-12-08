@@ -26,9 +26,21 @@ namespace WebService.Controllers
         [HttpGet]
         public IActionResult AllTitles()
         {
-            var titles = _dataService.GetTitles();
+            var titles = _dataService.GetOmdbDatas();
 
-            var items = titles.Select(CreateObjectOfTitle);
+            IList<TitleListDto> items = titles.Select(x => new TitleListDto
+            {
+                Id = x.Id,
+                Url = "http://localhost:5001/api/title/" + x.Id,
+                PrimaryTitle = x.PrimaryTitle,
+                OriginalTitle = x.OriginalTitle,
+                IsAdult = x.IsAdult,
+                StartYear = x.StartYear,
+                EndYear = x.EndYear,
+                Poster = x.Poster
+            }).ToList();
+            
+            
 
             return Ok(items);
         }
@@ -43,6 +55,7 @@ namespace WebService.Controllers
             var titleEpisodeParentName = _dataService.GetTitleEpisodeParentName(id);
             var titlePerson = _dataService.GetTitlePersons(id);
             var titleType = _dataService.GetTitleType(id);
+            var poster = _dataService.GetOmdbData(id);
 
             if (title == null)
             {
@@ -82,6 +95,8 @@ namespace WebService.Controllers
                 Name = x.Name,
                 Url = "http://localhost:5001/api/name/" + x.Id
             }).ToList();
+
+            titleDto.poster = poster.Poster;
             
             
             if (titleEpisode == null)

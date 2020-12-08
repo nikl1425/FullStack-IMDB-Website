@@ -52,12 +52,29 @@ namespace DataService.Services
         }
 
 
-        public IList<Title> GetTitles()
+        public IList<OmdbHolder> GetOmdbDatas()
         {
             using var ctx = new ImdbContext();
-            var query = ctx.title.ToList();
+            var query = ctx.omdb_data
+                .Include(x => x.Title)
+                .Select(x => new OmdbHolder
+                {
+                    Id = x.Id,
+                    Poster = x.Poster,
+                    PrimaryTitle = x.Title.PrimaryTitle,
+                    OriginalTitle = x.Title.OriginalTitle,
+                    IsAdult = x.Title.IsAdult,
+                    StartYear = x.Title.StartYear,
+                    EndYear = x.Title.EndYear
+                })
+                .ToList();
+
             return query;
+
+
         }
+
+        
 
         public IList<Title_Genre> GetTitleGenres(string id)
         {
