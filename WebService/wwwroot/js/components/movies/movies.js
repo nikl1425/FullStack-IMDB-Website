@@ -1,13 +1,16 @@
 define(['knockout'], (ko) => {
   return function () {
+      names = [];
+      let obj = [{}];
 
     fetch('http://example.com/movies.json')
-        .then((response) => {
+        .then(function (response) {
           return response.json();
         })
-        .then((myJson) => {
-          console.log(myJson);
-        });
+        .then(function (data) {
+          names(data)
+        })
+        .then(data => obj = data);
 
     return {
 

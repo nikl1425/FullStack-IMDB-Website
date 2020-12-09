@@ -16,6 +16,7 @@ namespace WebService.Controllers
         private ITitleDataService _dataService;
         private readonly IMapper _mapper;
         private GenreController _genreController;
+        private const int MaxPageSize = 25;
 
         public TitleController(ITitleDataService dataService, IMapper mapper)
         {
@@ -171,7 +172,7 @@ namespace WebService.Controllers
         }
 
         [HttpGet("Movies", Name = nameof(GetAllMovies))]
-        public IActionResult GetAllMovies()
+        public IActionResult GetAllMovies(int page = 0, int pageSize = 10)
         {
             var query = _dataService.GetAllMovies();
             IList<MoviesDto> movies = query.Select(x => new MoviesDto
@@ -188,5 +189,9 @@ namespace WebService.Controllers
 
             return Ok(movies);
         }
+        
+        
+        
+        
     }
 }
