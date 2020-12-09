@@ -169,5 +169,24 @@ namespace WebService.Controllers
 
             return Ok(posterItems);
         }
+
+        [HttpGet("Movies", Name = nameof(GetAllMovies))]
+        public IActionResult GetAllMovies()
+        {
+            var query = _dataService.GetAllMovies();
+            IList<MoviesDto> movies = query.Select(x => new MoviesDto
+            {
+                title_id = x.title_id,
+                poster = x.poster,
+                plot = x.plot,
+                runtime = x.runtime,
+                genre = x.genre,
+                votes = x.votes,
+                rating = x.rating,
+                type = x.type
+            }).ToList();
+
+            return Ok(movies);
+        }
     }
 }

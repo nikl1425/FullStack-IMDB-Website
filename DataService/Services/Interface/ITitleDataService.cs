@@ -45,5 +45,8 @@ namespace DataService.Services
         public OmdbData GetOmdbData(string id);
 
         public List<TopPoster> GetTopTenPoster();
+
+        public List<Movies> GetAllMovies();
     }
+    
 }

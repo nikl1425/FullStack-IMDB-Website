@@ -280,10 +280,19 @@ namespace DataService.Services
         public List<TopPoster> GetTopTenPoster()
         {
             using var ctx = new ImdbContext();
-            
+
             var result = ctx.TopPosters.FromSqlInterpolated($"select * from top10homeposter()");
+                
 
             return result.ToList();
+        }
+
+        public List<Movies> GetAllMovies()
+        {
+            using var ctx = new ImdbContext() ;
+            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").ToList();;
+            
+            return query.ToList();
         }
      
 

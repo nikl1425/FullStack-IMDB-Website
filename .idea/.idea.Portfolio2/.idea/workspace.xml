@@ -21,11 +21,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Lad vær med at rode med logo og movies.html tak&#10;&#10;Logo fikset igen">
-      <change afterPath="$PROJECT_DIR$/DataService/Objects/Movies/TopPoster.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TopTenPosterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebService/Models/Profile/TopTenPosterProfile.cs" afterDir="false" />
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Kan køre POSTGRES FUNCTIONER MED C#">
+      <change afterPath="$PROJECT_DIR$/DataService/Objects/Movies/MovieHolder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataService/Objects/Movies/Movies.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/MoviesDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebService/Models/Profile/MoviesProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_05-11-2020_11_47__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_05-11-2020_11_47__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2020__19_02__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2020__19_02__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2020__16_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2020__16_35__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" afterDir="false" />
@@ -33,7 +37,8 @@
       <change beforePath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestQueryConsole/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestQueryConsole/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/slick/slick.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/slick/slick.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,10 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/bookmarkConfig.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/userConfig.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/ratings.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/userRatingConfig.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/user.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/YourLists.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/userBookmark.js" />
@@ -128,24 +129,28 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/persons/persons.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleListDto.cs" />
         <option value="$PROJECT_DIR$/DataService/Objects/Movies/OmdbHolder.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleDto.cs" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/index.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/slick/slick.js" />
         <option value="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" />
         <option value="$PROJECT_DIR$/DataService/Objects/Movies/TopPoster.cs" />
-        <option value="$PROJECT_DIR$/TestQueryConsole/Program.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
-        <option value="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TopTenPoster.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TopTenPosterDto.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/TopTenPosterProfile.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
         <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" />
+        <option value="$PROJECT_DIR$/WebService/Models/Profile/MoviesProfile.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
+        <option value="$PROJECT_DIR$/TestQueryConsole/Program.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" />
+        <option value="$PROJECT_DIR$/DataService/Objects/Movies/MovieHolder.cs" />
+        <option value="$PROJECT_DIR$/DataService/Objects/Movies/Movies.cs" />
+        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/MoviesDto.cs" />
       </list>
     </option>
   </component>
@@ -268,7 +273,8 @@
       <workItem from="1607077381065" duration="24960000" />
       <workItem from="1607368250807" duration="2018000" />
       <workItem from="1607370504833" duration="1436000" />
-      <workItem from="1607464148266" duration="4102000" />
+      <workItem from="1607464148266" duration="4506000" />
+      <workItem from="1607536442892" duration="7334000" />
     </task>
     <task id="LOCAL-00001" summary="New Project">
       <created>1604402132484</created>
@@ -599,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607455641531</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Kan køre POSTGRES FUNCTIONER MED C#">
+      <created>1607470959023</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1607470959023</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +650,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="akas akas type type akas type" />
     <MESSAGE value="Akas attribute" />
     <MESSAGE value="Akas" />
     <MESSAGE value="Title bookmark and list" />
@@ -662,7 +674,8 @@
     <MESSAGE value="setup config jespers template-item.js" />
     <MESSAGE value="Fixed posters for title object&#10;&#10;Både alle titler har poster og enkel vis" />
     <MESSAGE value="Lad vær med at rode med logo og movies.html tak&#10;&#10;Logo fikset igen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lad vær med at rode med logo og movies.html tak&#10;&#10;Logo fikset igen" />
+    <MESSAGE value="Kan køre POSTGRES FUNCTIONER MED C#" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kan køre POSTGRES FUNCTIONER MED C#" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="156" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604402509785">
@@ -677,7 +690,7 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1379" height="309" key="GridCell.Tab.0.bottom" timestamp="1607470340880">
+    <state width="1352" height="309" key="GridCell.Tab.0.bottom" timestamp="1607549476399">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607371880985" />
@@ -686,12 +699,12 @@
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="998" height="333" key="GridCell.Tab.0.bottom/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1607410674414" />
-    <state width="1379" height="309" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607470340880" />
+    <state width="1352" height="309" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607549476399" />
     <state width="1204" height="175" key="GridCell.Tab.0.bottom/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.bottom/0.25.1440.801@0.25.1440.801" timestamp="1606991392060" />
     <state width="1750" height="361" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154201" />
     <state width="1238" height="218" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805181" />
-    <state width="1379" height="309" key="GridCell.Tab.0.center" timestamp="1607470340879">
+    <state width="1352" height="309" key="GridCell.Tab.0.center" timestamp="1607549476399">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1398" height="206" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607371880984" />
@@ -700,12 +713,12 @@
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="998" height="333" key="GridCell.Tab.0.center/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1607410674413" />
-    <state width="1379" height="309" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607470340879" />
+    <state width="1352" height="309" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607549476399" />
     <state width="1204" height="175" key="GridCell.Tab.0.center/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.center/0.25.1440.801@0.25.1440.801" timestamp="1606991392059" />
     <state width="1750" height="361" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
     <state width="1238" height="218" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805180" />
-    <state width="1379" height="309" key="GridCell.Tab.0.left" timestamp="1607470340879">
+    <state width="1352" height="309" key="GridCell.Tab.0.left" timestamp="1607549476399">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1398" height="206" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607371880982" />
@@ -714,12 +727,12 @@
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="998" height="333" key="GridCell.Tab.0.left/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1607410674413" />
-    <state width="1379" height="309" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607470340879" />
+    <state width="1352" height="309" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607549476399" />
     <state width="1204" height="175" key="GridCell.Tab.0.left/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.left/0.25.1440.801@0.25.1440.801" timestamp="1606991392057" />
     <state width="1750" height="361" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154199" />
     <state width="1238" height="218" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805180" />
-    <state width="1379" height="309" key="GridCell.Tab.0.right" timestamp="1607470340879">
+    <state width="1352" height="309" key="GridCell.Tab.0.right" timestamp="1607549476399">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1398" height="206" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607371880984" />
@@ -728,7 +741,7 @@
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="998" height="333" key="GridCell.Tab.0.right/0.0.3440.1400/3440.0.1920.1040@0.0.3440.1400" timestamp="1607410674414" />
-    <state width="1379" height="309" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607470340879" />
+    <state width="1352" height="309" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607549476399" />
     <state width="1204" height="175" key="GridCell.Tab.0.right/0.25.1440.790@0.25.1440.790" timestamp="1607370459290" />
     <state width="666" height="202" key="GridCell.Tab.0.right/0.25.1440.801@0.25.1440.801" timestamp="1606991392060" />
     <state width="1750" height="361" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
@@ -829,12 +842,12 @@
     <state width="1877" height="375" key="GridCell.Tab.4.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605215956426" />
     <state width="1099" height="516" key="GridCell.Tab.4.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607456425750" />
     <state width="1750" height="361" key="GridCell.Tab.4.right/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154207" />
-    <state x="330" y="115" key="MergeDialog" timestamp="1607454868799">
+    <state x="330" y="115" key="MergeDialog" timestamp="1607470921364">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="184" y="85" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605214954411" />
     <state x="184" y="86" key="MergeDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1604572334304" />
-    <state x="330" y="115" key="MergeDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1607454868799" />
+    <state x="330" y="115" key="MergeDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1607470921364" />
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1605210115908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -852,13 +865,13 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="960" y="345" key="Vcs.Push.Dialog.v2" timestamp="1607455642967">
+    <state x="960" y="345" key="Vcs.Push.Dialog.v2" timestamp="1607470960313">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607092932177" />
     <state x="2456" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607083354946" />
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
-    <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607455642967" />
+    <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607470960313" />
     <state x="402" y="222" key="Vcs.Push.Dialog.v2/0.25.1440.799@0.25.1440.799" timestamp="1606991017975" />
     <state x="402" y="222" key="Vcs.Push.Dialog.v2/0.25.1440.801@0.25.1440.801" timestamp="1606991578157" />
     <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1605563180714" />
@@ -872,7 +885,7 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="417" y="438" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1607439224253" />
-    <state x="2428" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607454847459">
+    <state x="2428" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607536605172">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1016" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607369563490" />
@@ -880,14 +893,14 @@
     <state x="3275" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607082794299" />
     <state x="1355" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022434402" />
     <state x="3275" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016870314" />
-    <state x="2428" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607454847459" />
+    <state x="2428" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607536605172" />
     <state x="1265" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1792.1038@0.25.1792.1038" timestamp="1605550031592" />
     <state x="1807" y="622" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1358@0.25.2560.1358" timestamp="1606823511111" />
     <state x="3598" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1792.25.2560.1358/0.25.1792.1095@1792.25.2560.1358" timestamp="1607376042470" />
-    <state x="1255" y="2" width="968" height="1045" key="dock-window-1" timestamp="1607438554465">
+    <state x="2330" y="0" width="1126" height="1042" key="dock-window-1" timestamp="1607547443842">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1255" y="2" width="968" height="1045" key="dock-window-1/0.0.3440.1400@0.0.3440.1400" timestamp="1607438554465" />
+    <state x="2330" y="0" width="1126" height="1042" key="dock-window-1/0.0.3440.1400@0.0.3440.1400" timestamp="1607547443842" />
     <state x="1263" y="0" width="1018" height="1399" key="dock-window-2" timestamp="1607441427348">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

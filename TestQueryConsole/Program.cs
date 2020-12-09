@@ -20,11 +20,11 @@ namespace TestQueryConsole
         {
             using var ctx = new ImdbContext();
             
-            var result = ctx.TopPosters.FromSqlInterpolated($"select * from top10homeposter()");
+            var result = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()");
 
             foreach (var x in result)
             {
-                Console.WriteLine($"{x.Poster}, {x.Id}");
+                Console.WriteLine($"{x.title_id}, {x.type}");
             }
 
             
