@@ -11,21 +11,18 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             ko.mapping.fromJS(data.movies, {}, self.movies)
         }
 
-        let getData = function () {
-            fetch('http://localhost:5001/api/title')
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    movies(data);
-                    movieList(data.movieList);
-                    pageSizes(data.pageSizes);
-                    prev(data.prev || undefined);
-                    next(data.next || undefined);
-                    console.log(movieList());
-                })
-        };
+        let getData = url => {
+            dataservice.getMovies(url, data => {
+                pageSizes(data.pageSizes);
+                prev(data.prev || undefined);
+                next(data.next || undefined);
+                movieList(data.movieList);
 
+            });
+        }
+
+
+        // INDSÆT GAMMEL FETCH
 
         let showPrev = movie => {
             console.log(prev());
@@ -45,11 +42,15 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             var size = selectedPage()[0];
             getData(dataservice.getMoviesUrlWithPageSize(size));
         });
-        
-        
-        
+
+
         getData();
 
+        let backToTop = function(){
+            $('html,body').animate({ scrollTop: $('#myDivWhereToBeScrolled').offset().top }, 1000);
+        }
+       
+        
 
         return {
             pageSizes,
@@ -59,8 +60,8 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             showPrev,
             enablePrev,
             showNext,
-            enableNext
-
+            enableNext,
+            backToTop
         };
     }
 });

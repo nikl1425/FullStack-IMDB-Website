@@ -9,9 +9,12 @@
             </div>
         </div>
     </div>
+    
 </section>
-
+<a id="topOfPage"></a>
+<a name="top"></a>
 <section class="section-long">   <!-- GENRES CONFIG HERE-->
+    
     <div class="container">
         <div class="section-pannel">
             <div class="grid row">
@@ -108,16 +111,16 @@
             </tbody>
         </table>
 
+       
         <div class="section-bottom"> <!-- PAGING CONFIG HER -->
             <div class="paginator">
-                <a class="paginator-item" href="#"><i class="fas fa-chevron-left"></i></a>
-                <a class="paginator-item" href="#">1</a>
-                <span class="active paginator-item">2</span>
-                <a class="paginator-item" href="#">3</a>
-                <span class="paginator-item">...</span>
-                <a class="paginator-item" href="#">10</a>
-                <a class="paginator-item" href="#"><i class="fas fa-chevron-right"></i></a>
+                <div class="navigation-buttons">
+                    <button type="button" class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" > Prev</button>
+                    <button type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
+                </div>
             </div>
         </div>
+
+      
     </div>
 </section>
