@@ -31,12 +31,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Ratings</title>
-    <script type="text/javascript">
-        function updateRating(){
-            let one = document.getElementById("one").value;
-            alert("Updated rating to: "+ one);
-        }
-    </script>
 </head>
 <body>
     <h1>Your Ratings</h1>
@@ -68,40 +62,7 @@
             </li>
         </ul>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <form class="api_register_form" method="POST" > <!--  name="register" method="POST"  action="http://localhost:5001/api/user/register""-->
-        <input  type="text"      id="surname"    class="fadeIn first"   required name="surname"   placeholder="First Name" value="asx"> <!--pattern="[A-Za-z]"-->
-        <input  type="text"      id="lastname"  class="fadeIn second"  required name="lastname"  placeholder="Last Name"  value="asd"> <!--pattern="[A-Za-z]"-->
-        <input  type="number"    id="age"        class="fadeIn third"   required name="age"      placeholder="Age" min="1" max="99" value="10">
-        <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"     placeholder="Email"      value="asd@asd.dk">
-        <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"     placeholder="Username"   value="asd123">
-        <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"     placeholder="Password">
-        <input type="submit" class="serializeArray" >
-        <!--<script src="register.js"></script> -->
-    </form>
-    
-    <pre></pre>
-    <script type="text/javascript">
-     const serialize_form = form => JSON.stringify(
-         Array.from(new FormData(form).entries())
-             .reduce((m, [ key, value ]) => Object.assign(m, { [key]: value }), {})
-     );
-     $(".api_register_form").submit(function(e){
-         e.preventDefault();
-         const json = serialize_form(this);
-         console.log(json);
-         $.ajax({
-           type: 'POST',
-           url: 'http://localhost:5001/api/user/register',
-           dataType: 'json',
-           data: json,
-           contentType: 'application/json',
-           success: function(data) {
-             alert(data)
-           }
-         });
-     });
-    </script>
-    <!--<script data-main="js/userRatingConfig.js" src="/lib/node_modules/require.js/require.js"></script>-->
+    <script src="userRating.js"></script>
+    <script data-main="js/userRating.js" src="/lib/node_modules/require.js/require.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿define(['ko'], function userRating(ko){
+﻿define(['knockout'], function userRating(ko){
 
     let userRatingList = ko.observableArray([]);
     //TODO : incooporate session user smth

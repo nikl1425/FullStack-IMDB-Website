@@ -9,6 +9,7 @@ using DataService.Services.Utils;
 using Microsoft.AspNetCore.DataProtection.XmlEncryption;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataService.Services
@@ -475,7 +476,7 @@ namespace DataService.Services
 
         }
 
-        //FOR ABOVE METHOD, MADE BCS OF AN ERROR;
+        //FOR BELOW METHOD, MADE BCS OF AN ERROR;
         /*
          * The instance of entity type 'Rating' cannot be tracked because another
          * instance with the key value '{Id: x}' is already being tracked 
@@ -493,8 +494,8 @@ namespace DataService.Services
         public IList<Rating> GetRatingFromUsers(int userid)
         {
             using var ctx = new ImdbContext();
-            var x = ctx.rating.Where(r => r.User_Id == userid);
-            return x.ToList();
+            var getRating = ctx.rating.Where(r => r.User_Id == userid);
+            return getRating.ToList();
         }
         
         //GET SINGLE RATED MOVIE FROM USER (FOR DELETE)

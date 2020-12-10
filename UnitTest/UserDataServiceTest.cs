@@ -63,7 +63,7 @@ namespace PortFolio2.Tests
             var service = new UserDataService();
             var rating = service.GetRatingFromUsers(1);
             Assert.Equal(1, rating.Count);
-            Assert.Equal("tt11972952", rating.First().Title_Id);
+            Assert.Equal("tt11972952", rating. First().Title_Id);
             Assert.Equal(1, rating.Last().Rating_);
         }
         

@@ -15,10 +15,12 @@ namespace WebService.Controllers
     public class UserController : ControllerBase
     {
         private IUserDataService _dataService;
+        private ITitleDataService _titleDataService;
         private readonly IMapper _mapper;
-        public UserController(IUserDataService dataService, IMapper mapper)
+        public UserController(IUserDataService dataService, ITitleDataService titleDataService, IMapper mapper)
         {
             _dataService = dataService;
+            _titleDataService = titleDataService;
             _mapper = mapper;
         }
 
@@ -210,7 +212,11 @@ namespace WebService.Controllers
                 url = "http://localhost:5001/api/title/"+x.Title_Id,
                 updateUrl = "/api/title/"
                             +x.Title_Id+"/RateMovie/"
-                            +x.User_Id+"/"
+                            +x.User_Id+"/",
+                titleName = _titleDataService.GetTitle(x.Title_Id).OriginalTitle,
+                prodYear = _titleDataService.GetTitle(x.Title_Id).StartYear,
+                poster = _titleDataService.GetOmdbData(x.Title_Id).Poster,
+                plot = _titleDataService.GetOmdbData(x.Title_Id).Plot
             }).ToList();
             return Ok(ratingList);
         }
