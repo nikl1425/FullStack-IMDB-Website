@@ -1,150 +1,39 @@
 ﻿<div class="d-background" data-parallax="scroll"></div>
-    <div class="mt-auto container position-relative">
-        <div id="searchbartextandtitle" class="col-auto align-items-center">
-            <h1 id="searchtitle" class="entity-title">Search for movies, actors etc...</h1>
-            <input id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </div>
-        <div class="top-block-head text-uppercase" style="text-align:center;">
-            <h2 class="display-4">
-                Featured
-                <span class="text-theme">Movies</span>
-            </h2>
-        </div>
+<div class="mt-auto container position-relative">
+    <div id="searchbartextandtitle" class="col-auto align-items-center">
+        <h1 id="searchtitle" class="entity-title">Search for movies, actors etc...</h1>
+        <input id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search">
     </div>
+    <div class="top-block-head text-uppercase" style="text-align:center;">
+        <h2 class="display-4">
+            Featured
+            <span class="text-theme">Movies</span>
+        </h2>
+    </div>
+</div>
 
-
-    <section class="cssCarousel">
-        <div data-bind="foreach: poster">
-            <input type="radio" name="carousel-1" id="'&quot;' + databind='text: poster' + '&quot;'" />
-        </div>
-                        <div class="cssCarousel__viewport">
-                            <ul class="cssCarousel--10-items" data-bind="foreach: poster">
-                                <li>
-                                        <!-- HOVER OVER BILLEDER -->
-                                        <label for="'&quot;' + databind='text: poster' + '&quot;'">
-                                            <img id="imghover" data-bind="attr:{src: poster}" alt="" />
-                                        </label>
-                                        <div class="cssCarousel--showOnFocus">
-                                            <p>Rating + link</p>
-                                            <a href="#"></a>
-                                        </div>
-                                </li>
-                            </ul>
-                        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-        <section class="cssCarousel">
-            <input type="radio" name="carousel-1" id="item-1" />
-            <input type="radio" name="carousel-1" id="item-2" />
-            <input type="radio" name="carousel-1" id="item-3" />
-            <input type="radio" name="carousel-1" id="item-4" />
-            <input type="radio" name="carousel-1" id="item-5" />
-            <input type="radio" name="carousel-1" id="item-6" />
-            <input type="radio" name="carousel-1" id="item-7" />
-            <input type="radio" name="carousel-1" id="item-8" />
-            <input type="radio" name="carousel-1" id="item-9" />
-            <input type="radio" name="carousel-1" id="item-10"/>
-
-            <div class="cssCarousel__viewport">
-                <ul class="cssCarousel--10-items">
-                    <li>
-                        <label for="item-1">
-                            <img id="imghover" src="/js/images/posters/1.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-2">
-                            <img src="/js/images/posters/2.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-3">
-                            <img src="/js/images/posters/3.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-4">
-                            <img src="/js/images/posters/6.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-5">
-                            <img src="/js/images/posters/5.png" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-6">
-                            <img src="/js/images/posters/6.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-7">
-                            <img src="/js/images/posters/8.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-8">
-                            <img src="/js/images/posters/1.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-9">
-                            <img src="/js/images/posters/2.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="item-10">
-                            <img src="/js/images/posters/3.jpg" />
-                        </label>
-                        <div class="cssCarousel--showOnFocus">
-                            <p>Rating + link</p>
-                            <a href="#"></a>
-                        </div>
-                    </li>
-                </ul>
-            </div> <!-- /cssCarousel__viewport -->
-        </section> <!-- /cssCarousel -->
+<section class="cssCarousel">
+    <input type="radio" name="carousel-1" id="item-0" />
+    <input type="radio" name="carousel-1" id="item-1" />
+    <input type="radio" name="carousel-1" id="item-2" />
+    <input type="radio" name="carousel-1" id="item-3" />
+    <input type="radio" name="carousel-1" id="item-4" />
+    <input type="radio" name="carousel-1" id="item-5" />
+    <input type="radio" name="carousel-1" id="item-6" />
+    <input type="radio" name="carousel-1" id="item-7" />
+    <input type="radio" name="carousel-1" id="item-8" />
+    <input type="radio" name="carousel-1" id="item-9"/>
+    <div class="cssCarousel__viewport">
+        <ul class="cssCarousel--10-items" data-bind="foreach: poster">
+            <li>
+                <label data-bind="attr: { for : 'item-' + $index() }">
+                    <img id="imghover" data-bind="attr:{src: poster}"/>
+                </label>
+                <div class="cssCarousel--showOnFocus">
+                    <p>Rating + link</p>
+                    <a href="#"></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

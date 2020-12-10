@@ -2,7 +2,6 @@
 define(['knockout'], (ko) => {
     return function () {
         let poster = ko.observableArray([]);
-
         self.getPosters = function () {
             ko.mapping.fromJS(data.poster, {}, self.poster)
         }
@@ -13,7 +12,6 @@ define(['knockout'], (ko) => {
             })
             .then(function (data) {
                 poster(data);
-                console.log(poster())
             })
         return {
             poster
