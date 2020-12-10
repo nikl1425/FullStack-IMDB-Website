@@ -11,6 +11,45 @@
             </h2>
         </div>
 
+
+    <section class="cssCarousel">
+        <input type="radio" name="carousel-1" id="item-1" />
+        <input type="radio" name="carousel-1" id="item-2" />
+        <input type="radio" name="carousel-1" id="item-3" />
+        <input type="radio" name="carousel-1" id="item-4" />
+        <input type="radio" name="carousel-1" id="item-5" />
+        <input type="radio" name="carousel-1" id="item-6" />
+        <input type="radio" name="carousel-1" id="item-7" />
+        <input type="radio" name="carousel-1" id="item-8" />
+        <input type="radio" name="carousel-1" id="item-9" />
+        <input type="radio" name="carousel-1" id="item-10" />
+
+
+                        <!-- HVER ARTICLE I TABLE HER CONFIG-->
+                        <div class="cssCarousel__viewport">
+                            <ul class="cssCarousel--10-items" data-bind="foreach: poster">
+                                <li>
+                                        <!-- HOVER OVER BILLEDER -->
+                                        <label for="item-3">
+                                            <img id="imghover" data-bind="attr:{src: poster}" alt="" />
+                                        </label>
+                                        <div class="cssCarousel--showOnFocus">
+                                            <p>Rating + link</p>
+                                            <a href="#"></a>
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+    </section> <!-- /cssCarousel -->
+
+
+
+
+
+
+
+
+
         <section class="cssCarousel">
             <input type="radio" name="carousel-1" id="item-1" />
             <input type="radio" name="carousel-1" id="item-2" />
