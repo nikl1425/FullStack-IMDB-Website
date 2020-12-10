@@ -1,74 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>REGISTER</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/userlogin.css" rel="stylesheet" type="text/css" />
-    <link href="css/searchbar.css" rel="stylesheet" type="text/css" />
-    <link href="css/footer.css" rel="stylesheet" type="text/css" />
-    <!-- Animate.css -->
-    <link href="animate.css/animate.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome iconic font -->
-    <link href="fontawesome/css/fontawesome-all.css" rel="stylesheet" type="text/css" />
-    <!-- Magnific Popup -->
-    <link href="magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
-    <!-- Slick carousel -->
-    <link href="slick/slick.css" rel="stylesheet" type="text/css" />
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,500,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-    <!-- Theme styles -->
-    <link href="css/dot-icons.css" rel="stylesheet" type="text/css">
-    <link href="css/theme.css" rel="stylesheet" type="text/css">
-    
-</head>
-<body>
+﻿<!-- TODO: FIX CSS -->
+<link href="css/userlogin.css" rel="stylesheet" type="text/css" />
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
         <h1>Create account</h1>
         <!-- Create user Form -->
-        <!-- Transform POST to JSON -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <form class="api_register_form" method="POST"> <!--  name="register" method="POST"  action="http://localhost:5001/api/user/register""-->
-            <input  type="text"      id="surname"    class="fadeIn first"   required name="surname"   placeholder="First Name" value="Surname"> <!--pattern="[A-Za-z]"-->
-            <input  type="text"      id="lastname"  class="fadeIn second"  required name="lastname"  placeholder="Last Name"  value="Lastname"> <!--pattern="[A-Za-z]"-->
-            <input  type="number"    id="age"        class="fadeIn third"   required name="age"      placeholder="Age" min="1" max="99" value="10">
-            <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"     placeholder="Email"      value="htmlTest1@test.com">
-            <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"     placeholder="Username"   value="htmltester1">
-            <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"     placeholder="Password" value="htmltester1">
-            <button type="submit" class="serializeArray" >Register!</button>
-            <script src="register.js"></script>
+        <form class="api_register_form" method="POST">
+            <input  type="text"      id="surname"    class="fadeIn first"   required name="surname"   placeholder="First Name"  value="Surname" > 
+            <input  type="text"      id="lastname"   class="fadeIn second"  required name="lastname"  placeholder="Last Name"   value="Lastname" >
+            <input  type="number"    id="age"        class="fadeIn third"   required name="age"       placeholder="Age"         value="10" min="1" max="99" >
+            <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"    placeholder="Email"       value="htmlTest1@test.com" >
+            <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"  placeholder="Username"    value="htmltester1" >
+            <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"  placeholder="Password"    value="htmltester1" >
+            <input type="submit"  class="serializeArray">
         </form>
-
     </div>
 </div>
-<pre></pre>
-<script type="text/javascript">
-    const serialize_form = form => JSON.stringify(
-        Array.from(new FormData(form).entries())
-            .reduce((m, [ key, value ]) => Object.assign(m, { [key]: value }), {})
-    );
-    $(".api_register_form").submit(function(e){
-        e.preventDefault();
-        const json = serialize_form(this);
-        console.log(json);
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:5001/api/user/register',
-            dataType: 'json',
-            data: json,
-            contentType: 'application/json',
-            success: function(data) {
-                alert(data)
-            }
-        });
-    });
-</script>
-
-</body>
-</html>
