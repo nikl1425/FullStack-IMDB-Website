@@ -10,27 +10,18 @@
                 <span class="text-theme">Movies</span>
             </h2>
         </div>
+    </div>
 
 
     <section class="cssCarousel">
-        <input type="radio" name="carousel-1" id="item-1" />
-        <input type="radio" name="carousel-1" id="item-2" />
-        <input type="radio" name="carousel-1" id="item-3" />
-        <input type="radio" name="carousel-1" id="item-4" />
-        <input type="radio" name="carousel-1" id="item-5" />
-        <input type="radio" name="carousel-1" id="item-6" />
-        <input type="radio" name="carousel-1" id="item-7" />
-        <input type="radio" name="carousel-1" id="item-8" />
-        <input type="radio" name="carousel-1" id="item-9" />
-        <input type="radio" name="carousel-1" id="item-10" />
-
-
-                        <!-- HVER ARTICLE I TABLE HER CONFIG-->
+        <div data-bind="foreach: poster">
+            <input type="radio" name="carousel-1" id="'&quot;' + databind='text: poster' + '&quot;'" />
+        </div>
                         <div class="cssCarousel__viewport">
                             <ul class="cssCarousel--10-items" data-bind="foreach: poster">
                                 <li>
                                         <!-- HOVER OVER BILLEDER -->
-                                        <label for="item-3">
+                                        <label for="'&quot;' + databind='text: poster' + '&quot;'">
                                             <img id="imghover" data-bind="attr:{src: poster}" alt="" />
                                         </label>
                                         <div class="cssCarousel--showOnFocus">
@@ -40,7 +31,7 @@
                                 </li>
                             </ul>
                         </div>
-    </section> <!-- /cssCarousel -->
+    </section>
 
 
 
