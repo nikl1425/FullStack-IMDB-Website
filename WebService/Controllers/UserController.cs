@@ -37,7 +37,7 @@ namespace WebService.Controllers
         }
         
         //CREATE NEW USER
-        [HttpPost("user")]
+        [HttpPost("user/register")]
         public IActionResult createUser(UserDto userDto)
         {
             //string surname, string lastname, int age, string email

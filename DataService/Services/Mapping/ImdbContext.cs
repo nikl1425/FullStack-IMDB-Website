@@ -81,6 +81,9 @@ namespace DataService
             modelBuilder.Entity<User>().Property(x => x.Last_Name).HasColumnName("last_name");
             modelBuilder.Entity<User>().Property(x => x.Age).HasColumnName("age");
             modelBuilder.Entity<User>().Property(x => x.Email).HasColumnName("email");
+            modelBuilder.Entity<User>().Property(x => x.Username).HasColumnName("username");
+            modelBuilder.Entity<User>().Property(x => x.Password).HasColumnName("password");
+            modelBuilder.Entity<User>().Property(x => x.Salt).HasColumnName("salt");
             
             //Title_bookmark
             modelBuilder.Entity<Title_Bookmark>().ToTable("title_bookmarks");

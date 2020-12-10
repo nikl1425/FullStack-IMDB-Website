@@ -28,6 +28,11 @@ require(['knockout', 'text'], (ko) => {
         viewModel: { require: "components/people/people" },
         template: { require: "text!components/people/people.html" }
     });
+    
+    ko.components.register('register', {
+        viewModel: { require: "components/users/userConfig" },
+        template: { require: "text!components/users/register.html" }
+    });
 
     ko.components.register('profile', {
         viewModel: { require: "components/profile/profile" },

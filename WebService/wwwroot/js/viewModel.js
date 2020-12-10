@@ -2,7 +2,7 @@
     
     let currentComponent = ko.observable("home");
     let bodyComponent = ko.observable("home");
-    let menuElements = ["Home", "Movie", "People", "Profile", "About"];
+    let menuElements = ["Home", "Movie", "People", "Profile", "Register", "About"];
     let changeContent = element => {
         
         currentComponent(element.toLowerCase());

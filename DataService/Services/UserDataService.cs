@@ -57,19 +57,48 @@ namespace DataService.Services
         }
         
         //CREATE NEW USER
-        public User CreateUser(string username, string password, string surname, string lastname, int age, string email)
+        public bool CreateUser(string username, string password, string surname, string lastname, int age, string email)
         {
             Hashing.HashSalt hashSalt = hashing.PasswordHash(16, password);
             
             using var ctx = new ImdbContext();
             var maxId = ctx.users.Max(x => x.Id);
+            var usernameQuery = ctx.users.Where(x => x.Username == username).ToList();
+            if (usernameQuery.Count > 0) return false;
+            var emailQuery = ctx.users.Where(x => x.Email == email).ToList();
+            if (emailQuery.Count > 0) return false;
             
-            /*if (!Regex.IsMatch(username, @"^[a-zA-Z]+$") || !Regex.IsMatch(surname, @"^[a-zA-Z]+$") || !Regex.IsMatch(lastname, @"^[a-zA-Z]+$") || !IsValidEmail(email) ||
-                age == 0) return null;*/ // TODO: Add username & password check 
+            // TODO: Add username & password check 
+            if(!Regex.IsMatch(surname, @"^[a-zA-Z]+$"))
+            {
+                Console.WriteLine(surname + "is not correct");
+                return false;
+            }
+            if(!Regex.IsMatch(lastname, @"^[a-zA-Z]+$"))
+            {
+                Console.WriteLine(lastname + "is not correct");
+                return false;
+            }
+            if(!IsValidEmail(email))
+            {
+                Console.WriteLine(email + "is not correct");
+                return false;
+            }
+            if(age == 0)
+            {
+                Console.WriteLine(age + " is 0");
+                return false; 
+            }
+            if(password == null)
+            {
+                Console.WriteLine(password + "is null");
+                return false;
+            } 
             ctx.users.Add(new User
-                {Id = maxId + 1, Username = username, Password = hashSalt.Hash, Salt = hashSalt.Salt, Age = age, Surname = surname, Last_Name = lastname, Email = email});
+                {Id = maxId+1, Username = username, Password = hashSalt.Hash, Salt = hashSalt.Salt, Age = age, Surname = surname, Last_Name = lastname, Email = email});
             ctx.SaveChanges();
-            return ctx.users.Find(maxId + 1);
+            return true;
+            //return ctx.users.Find(maxId + 1);
         }
 
         //CHANGE PASSWORD
@@ -482,11 +511,12 @@ namespace DataService.Services
         /////////////////////////////////////////////////////////////////////
 
         //GET LIST OF THE USERS SEARCH HISTORY
-        public IList<Search_History> GetSearchHistories(int userid)
+        public IList<Search_History> GetSearchHistories(int userid, string id)
         {
             using var ctx = new ImdbContext();
             var x = ctx.search_history.Where(s => s.User_Id == userid);
             return x.ToList();
+            
         }
         /////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////

@@ -82,27 +82,11 @@
     
     <pre></pre>
     <script type="text/javascript">
-     /*$(".serializeArray").on("click", function(){
-         let serializedForm = $(".api_register_form").serializeArray();
-         console.log("serialized form: ", serializedForm);
-         console.log(JSON.stringify(serializedForm))
-         $("pre").html(JSON.stringify(serializedForm, null, 2));
-     })*/
      const serialize_form = form => JSON.stringify(
          Array.from(new FormData(form).entries())
              .reduce((m, [ key, value ]) => Object.assign(m, { [key]: value }), {})
      );
      $(".api_register_form").submit(function(e){
-         /*e.preventDefault();
-         $.ajax({
-             type: "POST",
-             url: "http://localhost:5001/api/user/register",
-             data: {data: $("form").serializeArray()},
-             success: function (response){
-                 $("#result").json(response);
-                 console.log(response);
-             }
-         })*/
          e.preventDefault();
          const json = serialize_form(this);
          console.log(json);
@@ -118,6 +102,6 @@
          });
      });
     </script>
-    <script data-main="js/userRatingConfig.js" src="/lib/node_modules/require.js/require.js"></script>
+    <!--<script data-main="js/userRatingConfig.js" src="/lib/node_modules/require.js/require.js"></script>-->
 </body>
 </html>

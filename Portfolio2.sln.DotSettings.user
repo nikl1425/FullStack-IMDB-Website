@@ -6,6 +6,10 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getTitle&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.TitleDataServiceTest.getOmdb&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.CreateUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.GetUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.ChangePassword&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AAE32AE7-0D07-4A03-9BB6-EA7BF733CD6A::.NETCoreApp,Version=v3.1::PortFolio2.Tests.UserDataServiceTest.UpdateUserCorrect&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
