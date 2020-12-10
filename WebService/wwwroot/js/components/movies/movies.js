@@ -1,18 +1,29 @@
 define(['knockout'], (ko) => {
   return function () {
-      names = [];
-      let obj = [{}];
+      let movies = ko.observableArray([]);
+      
+      self.getMovies = function (){
+          ko.mapping.fromJS(data.movies,{}, self.movies)
+      }
 
-    fetch('http://example.com/movies.json')
+    fetch('http://localhost:5001/api/title/movies')
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          names(data)
+          movies(data);
+          console.log(movies())
         })
-        .then(data => obj = data);
+       
+        
+    
+    
+    
+    
+
 
     return {
+          movies
 
     };
   }

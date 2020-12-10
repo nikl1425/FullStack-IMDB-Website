@@ -172,19 +172,23 @@ namespace WebService.Controllers
         }
 
         [HttpGet("Movies", Name = nameof(GetAllMovies))]
-        public IActionResult GetAllMovies(int page = 0, int pageSize = 10)
+        public IActionResult GetAllMovies()
         {
-            var query = _dataService.GetAllMovies();
+            
+            var query = _dataService.GetAllMovies().GetRange(0, 200);
+            
             IList<MoviesDto> movies = query.Select(x => new MoviesDto
             {
                 title_id = x.title_id,
+                title_name = x.title_name,
                 poster = x.poster,
                 plot = x.plot,
                 runtime = x.runtime,
-                genre = x.genre,
+                genre = _dataService.GetTitleGenres(x.title_id).Select(x => x.Genre.Name).ToList(),
                 votes = x.votes,
                 rating = x.rating,
-                type = x.type
+                type = x.type,
+                Url = "http://localhost:5001/api/title/" + x.title_id
             }).ToList();
 
             return Ok(movies);

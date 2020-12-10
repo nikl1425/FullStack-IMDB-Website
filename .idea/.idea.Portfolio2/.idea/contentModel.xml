@@ -25,7 +25,6 @@
             <e p="Akas_Attribute.cs" t="Include" />
             <e p="Akas_Type.cs" t="Include" />
             <e p="Genre.cs" t="Include" />
-            <e p="MovieHolder.cs" t="Include" />
             <e p="Movies.cs" t="Include" />
             <e p="Omdb_data.cs" t="Include" />
             <e p="OmdbHolder.cs" t="Include" />

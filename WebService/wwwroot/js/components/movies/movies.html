@@ -46,13 +46,13 @@
                 <thead>
                 <tr><th>First name</th></tr>
                 </thead>
-                <tbody data-bind="foreach: people">  <!-- FOR HVER FETCHED -->
-                <tr>
-                    <td data-bind="text: firstName">
+                <tbody >  <!-- FOR HVER FETCHED -->
+                <tr >
+                    <td data-bind="foreach: movies">
                         <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                             <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
                                 <div class="embed-responsive embed-responsive-poster">
-                                    <img class="embed-responsive-item" src="" alt="" /> <!-- BILLEDE SRC HER -->
+                                    <img class="embed-responsive-item" data-bind="attr:{src: poster}" alt="" /> <!-- BILLEDE SRC HER -->
                                 </div>
                                 <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                                     <div class="entity-play">  <!-- NEDENSTÅENDE ER LOGO -->
@@ -65,28 +65,29 @@
                             </div>
                             <div class="entity-content">
                                 <h4 class="entity-title">
-                                    <a class="content-link" href="movie-info-sidebar-right.html">Blick</a>
+                                    <a class="content-link" href="movie-info-sidebar-right.html"><span data-bind="text: title_name"></span></a>
                                 </h4>
-                                <div class="entity-category"> <!-- Indsæt film GENRE HER-->
-                                    <a class="content-link" href="movies-blocks.html">comedy</a>,
-                                    <a class="content-link" href="movies-blocks.html">detective</a>
+                                <div data-bind="foreach: genre" >
+                                <div class="entity-category"> 
+                                    <a class="content-link" href="movies-blocks.html" ><span data-bind="text: $data"></span></a>,
+                                </div>
                                 </div>
                                 <div class="entity-info">
                                     <div class="info-lines"> <!--  RATING -->
                                         <div class="info info-short">
                                             <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
-                                            <span class="info-text">8,7</span>
+                                            <span class="info-text"><span data-bind="text: rating"></span></span>
                                             <span class="info-rest">/10</span>
                                         </div>
                                         <div class="info info-short"> <!-- RUNTIME -->
                                             <span class="text-theme info-icon"><i class="fas fa-clock"></i></span>
-                                            <span class="info-text">130</span>
-                                            <span class="info-rest">&nbsp;min</span>
+                                            <span class="info-text"><span data-bind="text: runtime"></span></span>
+                                            <span class="info-rest">&nbsp;<span >min</span></span>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-short entity-text"> <!-- PLOT-->
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur ultrices justo a pellentesque. Praesent venenatis dolor nec tempus lacinia. Donec ac condimentum dolor. Nullam sit amet nisl hendrerit, pharetra nulla convallis, malesuada diam. Donec ornare nisl eu lectus rhoncus, at malesuada metus rutrum. Aliquam a nisl vulputate, sodales ipsum aliquam, tempus purus. Suspendisse convallis, lectus nec vehicula sollicitudin, lorem sapien rhoncus dolor, vel lacinia urna velit ullamcorper nisi. Phasellus pellentesque, magna nec gravida feugiat, est magna suscipit ligula, vel porttitor nunc enim at nibh. Sed varius sit amet leo vitae consequat.
+                                <p class="text-short entity-text"> 
+                                    <span data-bind="text: plot"></span>
                                 </p>
                             </div>
                         </article>

@@ -77,7 +77,7 @@ namespace DataService.Services
 
         
 
-        public IList<Title_Genre> GetTitleGenres(string id)
+        public IList<Title_Genre> GetTitleGenres (string id)
         {
             using var ctx = new ImdbContext();
             var query = ctx.title_genre
@@ -294,6 +294,8 @@ namespace DataService.Services
             
             return query.ToList();
         }
+        
+        
      
 
     }

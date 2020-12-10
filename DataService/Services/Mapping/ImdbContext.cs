@@ -287,9 +287,9 @@ namespace DataService
             //Movies for moviepage
             modelBuilder.Entity<Movies>().HasNoKey();
             modelBuilder.Entity<Movies>().Property(x => x.title_id).HasColumnName("title_id");
+            modelBuilder.Entity<Movies>().Property(x => x.title_name).HasColumnName("title_name");
             modelBuilder.Entity<Movies>().Property(x => x.poster).HasColumnName("poster");
             modelBuilder.Entity<Movies>().Property(x => x.plot).HasColumnName("plot");
-            modelBuilder.Entity<Movies>().Property(x => x.genre).HasColumnName("genre");
             modelBuilder.Entity<Movies>().Property(x => x.votes).HasColumnName("votes");
             modelBuilder.Entity<Movies>().Property(x => x.rating).HasColumnName("rating");
             modelBuilder.Entity<Movies>().Property(x => x.type).HasColumnName("type");
