@@ -14,5 +14,6 @@ namespace DataService.Services
         List<Person_Profession> GetPersonsByProfession (string profession);
         Person_Profession GetPersonProfession(int id);
         Profession GetProfession(int id);
+        IList<Person_Profession> GetPersonProfessions(string id);
     }
 }

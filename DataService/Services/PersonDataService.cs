@@ -100,5 +100,23 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             return ctx.Professions.Find(id);
         }
+        
+        public IList<Person_Profession> GetPersonProfessions (string id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.PersonProfessions
+                .Include(x => x.Profession)
+                .Where(x => x.PersonId == id)
+                .ToList();
+            return query;
+        }
+        
+        public List<Movies> GetAllProfessions()
+        {
+            using var ctx = new ImdbContext() ;
+            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").ToList();;
+            
+            return query.ToList();
+        }
     }
 }

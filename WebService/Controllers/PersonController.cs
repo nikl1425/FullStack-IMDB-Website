@@ -82,14 +82,18 @@ namespace WebService.Controllers
         [HttpGet("name/")]
         public IActionResult GetPersons()
         {
-            var person = _dataService.GetPersons().GetRange(0, 500);
-
+            //brug .GetRange(0, 500) til at limit
+            var person = _dataService.GetPersons().GetRange(0, 20);
+            
+            
             IList<PersonDTO> newPersonDTO = person.Select(x => new PersonDTO
             {
+                
                 Id = x.Id,
                 Name = x.Name,
                 BirthYear = x.BirthYear,
                 DeathYear = x.DeathYear,
+                Professions = _dataService.GetPersonProfessions(x.Id).Select(x => x.Profession.ProfessionName).ToList(),
                 Url = "http://localhost:5001/api/name/" + x.Id
             }).ToList();
             
