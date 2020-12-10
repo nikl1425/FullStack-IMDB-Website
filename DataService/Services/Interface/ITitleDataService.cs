@@ -18,7 +18,7 @@ namespace DataService.Services
         List<Title_Genre> GetGenreTitles(int id);
         
 
-        IList<Title_Genre> GetTitleGenres(string id);
+       public IList<Title_Genre> GetTitleGenres(string id);
 
         public List<Akas> GetTitleAkas(string id);
 
@@ -43,5 +43,10 @@ namespace DataService.Services
         public IList<OmdbHolder> GetOmdbDatas();
 
         public OmdbData GetOmdbData(string id);
+
+        public List<TopPoster> GetTopTenPoster();
+
+        public List<Movies> GetAllMovies();
     }
+    
 }

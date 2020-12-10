@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DataService.Objects;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using Type = System.Type;
 
 namespace DataService.Services
@@ -76,7 +77,7 @@ namespace DataService.Services
 
         
 
-        public IList<Title_Genre> GetTitleGenres(string id)
+        public IList<Title_Genre> GetTitleGenres (string id)
         {
             using var ctx = new ImdbContext();
             var query = ctx.title_genre
@@ -272,7 +273,30 @@ namespace DataService.Services
              .FirstOrDefault();
 
          return query;
+         
+         
+        }
+
+        public List<TopPoster> GetTopTenPoster()
+        {
+            using var ctx = new ImdbContext();
+
+            var result = ctx.TopPosters.FromSqlInterpolated($"select * from top10homeposter()");
+                
+
+            return result.ToList();
+        }
+
+        public List<Movies> GetAllMovies()
+        {
+            using var ctx = new ImdbContext() ;
+            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").ToList();;
+            
+            return query.ToList();
         }
         
+        
+     
+
     }
 }

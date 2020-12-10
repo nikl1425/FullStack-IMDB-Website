@@ -1,16 +1,14 @@
 
-html, body {
-    height: 100%;
-    background-color: white !important;
-}
-
 .movie-line-entity{
-    color: black;
+    color: white;
 }
 
+a.content-link{
+    color: white!important;
+}
 
 .info.info-short {
-    color: black !important;
+    color: white !important;
 }
 
 .top-block-content{
@@ -18,25 +16,34 @@ html, body {
 }
 
 .page-breadcrumbs{
-    color: black !important;
+    color: white !important;
 }
 
 .section-title{
-    color:black !important;
+    color:white !important;
 }
 
 #searchforms.col-sm-6.col-lg-3{
-    text-decoration-color: black !important;
+    text-decoration-color: white !important;
 }
 
 .form-control {
-    text-decoration-color: black !important;
+    text-decoration-color: white !important;
 }
 
 .datetimepicker-input.form-control {
-    text-decoration-color: black !important;
+    text-decoration-color: white !important;
 }
 
 #footer.content-link {
     color:white !important;
+}
+
+.row {
+    margin-left: -1px;
+}
+
+.section-pannel{
+   padding: 0 !important;
+   color: white;
 }

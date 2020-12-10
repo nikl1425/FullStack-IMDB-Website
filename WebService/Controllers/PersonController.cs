@@ -102,6 +102,5 @@ namespace WebService.Controllers
             var personProfessions = _dataService.GetProfessionByPersonId(id);
             return Ok(personProfessions);
         }
-
     }
 }

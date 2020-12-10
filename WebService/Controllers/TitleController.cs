@@ -16,6 +16,7 @@ namespace WebService.Controllers
         private ITitleDataService _dataService;
         private readonly IMapper _mapper;
         private GenreController _genreController;
+        private const int MaxPageSize = 25;
 
         public TitleController(ITitleDataService dataService, IMapper mapper)
         {
@@ -154,5 +155,47 @@ namespace WebService.Controllers
 
             return Ok(omdbDto);
         }
+
+        [HttpGet("TopPoster", Name = nameof(GetTopPosters))]
+        public IActionResult GetTopPosters()
+        {
+            var posters = _dataService.GetTopTenPoster();
+
+            IList<TopTenPosterDto> posterItems = posters.Select(x => new TopTenPosterDto
+            {
+                Id = x.Id,
+                Awards = x.Awards,
+                Poster = x.Poster
+            }).ToList();
+
+            return Ok(posterItems);
+        }
+
+        [HttpGet("Movies", Name = nameof(GetAllMovies))]
+        public IActionResult GetAllMovies()
+        {
+            
+            var query = _dataService.GetAllMovies().GetRange(0, 200);
+            
+            IList<MoviesDto> movies = query.Select(x => new MoviesDto
+            {
+                title_id = x.title_id,
+                title_name = x.title_name,
+                poster = x.poster,
+                plot = x.plot,
+                runtime = x.runtime,
+                genre = _dataService.GetTitleGenres(x.title_id).Select(x => x.Genre.Name).ToList(),
+                votes = x.votes,
+                rating = x.rating,
+                type = x.type,
+                Url = "http://localhost:5001/api/title/" + x.title_id
+            }).ToList();
+
+            return Ok(movies);
+        }
+        
+        
+        
+        
     }
 }

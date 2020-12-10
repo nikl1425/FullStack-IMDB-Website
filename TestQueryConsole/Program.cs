@@ -8,6 +8,7 @@ using DataService.Services.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.VisualBasic.CompilerServices;
+using Npgsql;
 
 namespace TestQueryConsole
 {
@@ -18,72 +19,29 @@ namespace TestQueryConsole
         static void Main(string[] args)
         {
             using var ctx = new ImdbContext();
+            
+            var result = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()");
 
-
-            PersonDataService personDataService = new PersonDataService();
-
-            //Console.WriteLine(personDataService.GetPersonKnownTitles("nm0000001"));
-
-            IQueryable<Person> GetPersonBySubstring(string substring)
+            foreach (var x in result)
             {
-                var ctx = new ImdbContext();
-                var query = ctx.Person.Where(x => x.Name.Contains(substring));
-                return query;
+                Console.WriteLine($"{x.title_id}, {x.type}");
             }
 
-            //GetPersonBySubstring("red ast")
+            
+        }
 
+        private static void Top10Poster()
+        {
+            PostgresSQL_Connect_String connectionString = new PostgresSQL_Connect_String();
+            var connection = new NpgsqlConnection(connectionString.ToString());
+            connection.Open();
+            var command = new NpgsqlCommand("select * from Top10HomePoster();", connection);
+            var reader = command.ExecuteReader();
 
-            List<Person_Profession> GetProfessionByPersonId(string id)
+            while (reader.Read())
             {
-                var query = ctx.PersonProfessions
-                    .Include(c => c.person)
-                    .Include(v => v.Profession)
-                    .Where(p => p.person.Id == id)
-                    .ToList();
-
-                ctx.SaveChanges();
-
-                return query.ToList();
+                Console.WriteLine($"{reader.GetString(0)}{reader.GetString(1)}{reader.GetString(2)}");
             }
-
-
-
-            List<Person_Profession> GetPersonsByProfession (string profession)
-            {
-                var ctx = new ImdbContext();
-                var personList = ctx.PersonProfessions
-                    .Include(x => x.person)
-                    .Include(c => c.Profession)
-                    .Where(personProfession => personProfession.Profession.ProfessionName == profession);
-                return personList.ToList();
-            }
-
-            IList<OmdbHolder> GetOmdbDatas()
-            {
-                using var ctx = new ImdbContext();
-                var query = ctx.omdb_data
-                    .Include(x => x.Title)
-                    .Select(x => new OmdbHolder
-                    {
-                        Id = x.Id,
-                        Poster = x.Poster,
-                        PrimaryTitle = x.Title.PrimaryTitle
-                    })
-                    .ToList();
-
-                return query;
-            }
-
-
-            Console.WriteLine(GetPersonsByProfession(GetOmdbDatas().ToString()));
-
-
-
-
-
-
-
         }
     }
 }
