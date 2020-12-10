@@ -15,13 +15,6 @@ define(['knockout'], (ko) => {
           console.log(movies())
         })
        
-        
-    
-    
-    
-    
-
-
     return {
           movies
 
