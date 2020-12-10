@@ -1,10 +1,52 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>REGISTER</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/userlogin.css" rel="stylesheet" type="text/css" />
+    <link href="css/searchbar.css" rel="stylesheet" type="text/css" />
+    <link href="css/footer.css" rel="stylesheet" type="text/css" />
+    <!-- Animate.css -->
+    <link href="animate.css/animate.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome iconic font -->
+    <link href="fontawesome/css/fontawesome-all.css" rel="stylesheet" type="text/css" />
+    <!-- Magnific Popup -->
+    <link href="magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <!-- Slick carousel -->
+    <link href="slick/slick.css" rel="stylesheet" type="text/css" />
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <!-- Theme styles -->
+    <link href="css/dot-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/theme.css" rel="stylesheet" type="text/css">
+    <!-- Transform POST to JSON -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
 </head>
 <body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h1>Create account</h1>
+        <!-- Create user Form -->
+        <form id="api_register_form" method="POST" > <!--  name="register" method="POST"  action="http://localhost:5001/api/user/register""-->
+            <input  type="text"      id='"surname"'    class="fadeIn first"   required name='"surname"'   placeholder="First Name" value="asx"> <!--pattern="[A-Za-z]"-->
+            <input  type="text"      id="lastname"  class="fadeIn second"  required name="lastname" placeholder="Last Name"  value="asd"> <!--pattern="[A-Za-z]"-->
+            <input  type="number"    id="age"        class="fadeIn third"   required name="age"       placeholder="Age" min="1" max="99" value="10">
+            <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"     placeholder="Email"      value="asd@asd.dk">
+            <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"     placeholder="Username"   value="asd123">
+            <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"     placeholder="Password"   value="aad123">
+            <input type="submit"    id="submitBtn"   class="fadeIn seventh" value="submit" >
+            <!--<script src="register.js"></script> -->
+        </form>
+
+    </div>
+</div>
 
 </body>
 </html>
