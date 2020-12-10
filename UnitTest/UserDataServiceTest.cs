@@ -25,20 +25,20 @@ namespace PortFolio2.Tests
         {
             var service = new UserDataService();
             var newUser = service.CreateUser(
-                "userTest", 
+                "userTest4", 
                 "pw", 
                 "TestName", 
                 "Testlast", 
                 20, 
-                "t@t.com");
-            Assert.Equal("t@t.com", newUser.Email);
+                "test4@t.com");
+            Assert.True(newUser);
         }
 
         [Fact]
         public void ChangePassword()
         {
             var service = new UserDataService();
-            var chpw = service.ChangePassword("userTest", "pw", "pwnew");
+            var chpw = service.ChangePassword("userTest", "pwnew", "pwnewx");
             Assert.True(chpw);
         }
 

@@ -7,7 +7,7 @@ namespace DataService.Services
     public interface IUserDataService
     {
         User GetUser(int id);
-        User CreateUser(string username, string password, string surname, string lastname, int age, string email);
+        bool CreateUser(string username, string password, string surname, string lastname, int age, string email);
         bool UpdateUser(int id, string username, string password, string surname, string lastname, int age, string email);
         public bool ChangePassword(string username, string oldpassword, string newpassword);
         bool DeleteUser(int id);
@@ -17,7 +17,6 @@ namespace DataService.Services
         Title_Bookmark NewTitleBookmark(string titleid, int listid);
         IList<Rating> GetRatingFromUsers(int userid);
         List<Title_Bookmark> GetTitleBookmarks(int id);
-        IList<Search_History> GetSearchHistories(int userid);
         List<Person_Bookmark_list> GetUsersPersonBookmarkLists(int userid);
         List<Person_Bookmark_list> GetPersonBookmarkList(int id);
         List<Title_Bookmark_List> GetTitleBookmarkLists(int id);
