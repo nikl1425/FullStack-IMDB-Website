@@ -26,6 +26,11 @@ namespace DataService.Services
             var query = ctx.Person.Where(x => x.Name.Contains(substring));
             return query;
         }
+
+        public IQueryable<Profession> GetProfessionBySubstring(string substring)
+        {
+            return query
+        }
         
         public List<Person> GetPersons()
         {
@@ -111,10 +116,10 @@ namespace DataService.Services
             return query;
         }
         
-        public List<Movies> GetAllProfessions()
+        public List<PersonWithProfession> GetAllProfessions()
         {
             using var ctx = new ImdbContext() ;
-            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").ToList();;
+            var query = ctx.PersonWithProfessions.FromSqlInterpolated($"select * from professionsforpeoplepage()").ToList();;
             
             return query.ToList();
         }

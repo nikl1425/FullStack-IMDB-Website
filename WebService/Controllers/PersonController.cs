@@ -78,7 +78,7 @@ namespace WebService.Controllers
             return Ok(newPersonDTO);
 
         }
-        
+        /* OLD
         [HttpGet("name/")]
         public IActionResult GetPersons()
         {
@@ -95,6 +95,28 @@ namespace WebService.Controllers
                 DeathYear = x.DeathYear,
                 Professions = _dataService.GetPersonProfessions(x.Id).Select(x => x.Profession.ProfessionName).ToList(),
                 Url = "http://localhost:5001/api/name/" + x.Id
+            }).ToList();
+            
+            return Ok(newPersonDTO);
+        }
+        */
+        
+        [HttpGet("name/")]
+        public IActionResult GetPersonsFast()
+        {
+            //brug .GetRange(0, 500) til at limit
+            var person = _dataService.GetAllProfessions().GetRange(0, 20);
+            
+            
+            IList<PersonDTO> newPersonDTO = person.Select(x => new PersonDTO
+            {
+                
+                Id = x.person_id,
+                Name = x.primary_name,
+                BirthYear = x.birth_year,
+                DeathYear = x.death_year,
+                Professions = _dataService.GetPersonProfessions(x.person_id).Select(x => x.Profession.ProfessionName).ToList(),
+                Url = "http://localhost:5001/api/name/" + x.person_id
             }).ToList();
             
             return Ok(newPersonDTO);

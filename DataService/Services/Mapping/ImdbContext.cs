@@ -48,6 +48,8 @@ namespace DataService
         
         public DbSet<TopPoster> TopPosters { get; set; }
         public DbSet<Movies> Movies { get; set; }
+        
+        public DbSet<PersonWithProfession> PersonWithProfessions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //genre
@@ -296,6 +298,14 @@ namespace DataService
             modelBuilder.Entity<Movies>().Property(x => x.votes).HasColumnName("votes");
             modelBuilder.Entity<Movies>().Property(x => x.rating).HasColumnName("rating");
             modelBuilder.Entity<Movies>().Property(x => x.type).HasColumnName("type");
+            
+            //Movies for personwithprofession
+            modelBuilder.Entity<PersonWithProfession>().HasNoKey();
+            modelBuilder.Entity<PersonWithProfession>().Property(x => x.person_id).HasColumnName("person_id");
+            modelBuilder.Entity<PersonWithProfession>().Property(x => x.primary_name).HasColumnName("primary_name");
+            modelBuilder.Entity<PersonWithProfession>().Property(x => x.birth_year).HasColumnName("birth_year");
+            modelBuilder.Entity<PersonWithProfession>().Property(x => x.death_year).HasColumnName("death_year");
+
             
             
 
