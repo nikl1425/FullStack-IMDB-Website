@@ -29,7 +29,9 @@ namespace DataService.Services
 
         public IQueryable<Profession> GetProfessionBySubstring(string substring)
         {
-            return query
+            var ctx = new ImdbContext();
+            var query = ctx.Professions.Where(x => x.ProfessionName.Contains(substring));
+            return query;
         }
         
         public List<Person> GetPersons()
