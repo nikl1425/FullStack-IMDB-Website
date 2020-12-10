@@ -43,13 +43,15 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             getData(dataservice.getMoviesUrlWithPageSize(size));
         });
 
+        document.getElementById("scrolltotop").addEventListener("click", function() {
+            console.log("Clicked!");
+            $('html,body').animate({ scrollTop: $('#scrolltothisdiv').offset().top }, 1000);
+        });
+        
+
 
         getData();
 
-        let backToTop = function(){
-            $('html,body').animate({ scrollTop: $('#myDivWhereToBeScrolled').offset().top }, 1000);
-        }
-       
         
 
         return {
@@ -61,7 +63,8 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             enablePrev,
             showNext,
             enableNext,
-            backToTop
+            scrolltotop
+            
         };
     }
 });

@@ -128,5 +128,16 @@ namespace WebService.Controllers
             var personProfessions = _dataService.GetProfessionByPersonId(id);
             return Ok(personProfessions);
         }
+        
+        
+        [HttpGet("search/{id}")]
+        public IActionResult Search(string id)
+        {
+            var personSearch = _dataService.GetPersonBySubstring(id);
+            var professionSearch = _dataService.GetProfessionBySubstring(id);
+            var genreSearch = _titleDataService.GetGenreBySubstring(id);
+            var titleSearch = _titleDataService.GetTitleBySubstring(id);
+            return Ok(new {personSearch, professionSearch, genreSearch, titleSearch});
+        }
     }
 }

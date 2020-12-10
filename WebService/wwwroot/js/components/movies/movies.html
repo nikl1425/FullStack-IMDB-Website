@@ -22,6 +22,7 @@
                     <form autocomplete="off">
                         <div class="row form-grid">
                             <div class="col-sm-6 col-lg-3">
+                                <div id="scrolltothisdiv"></div>
                                 <div class="input-view-flat input-group">
                                     <select class="form-control" name="genre">
                                         <option selected="true">genre</option>
@@ -55,6 +56,7 @@
             </thead>
             <tbody>  <!-- FOR HVER FETCHED -->
             <tr>
+
                 <td data-bind="foreach: movieList">
                     <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
@@ -115,8 +117,8 @@
         <div class="section-bottom"> <!-- PAGING CONFIG HER -->
             <div class="paginator">
                 <div class="navigation-buttons">
-                    <button type="button" class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" > Prev</button>
-                    <button type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
+                    <button  type="button" class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" > Prev</button>
+                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
                 </div>
             </div>
         </div>

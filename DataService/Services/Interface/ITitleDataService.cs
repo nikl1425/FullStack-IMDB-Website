@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DataService.Objects;
 
 namespace DataService.Services
@@ -49,5 +50,7 @@ namespace DataService.Services
         public List<Movies> GetAllMovies(int page, int pageSize);
 
         public int GetNumberOfMovies();
+        IQueryable<Genre> GetGenreBySubstring(string substring);
+        IQueryable<Title> GetTitleBySubstring(string substring);
     }
 }

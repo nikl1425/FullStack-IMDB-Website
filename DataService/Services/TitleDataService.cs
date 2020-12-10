@@ -306,6 +306,21 @@ namespace DataService.Services
             return query;
         }
         
+        public IQueryable<Title> GetTitleBySubstring(string substring)
+        {
+            var ctx = new ImdbContext();
+            var query = ctx.title.Where(x => x.PrimaryTitle.Contains(substring) || x.OriginalTitle.Contains(substring));
+            return query;
+        }
+        
+        public IQueryable<Genre> GetGenreBySubstring(string substring)
+        {
+            var ctx = new ImdbContext();
+            var query = ctx.genre.Where(x => x.Name.Contains(substring));
+            return query;
+        }
+        
+        
      
 
     }

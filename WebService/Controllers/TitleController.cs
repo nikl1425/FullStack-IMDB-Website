@@ -24,7 +24,7 @@ namespace WebService.Controllers
             _mapper = mapper;
         }
         [HttpGet(Name = nameof(GetAllMovies))]
-        public IActionResult GetAllMovies(int page = 0, int pageSize = 1000)
+        public IActionResult GetAllMovies(int page = 0, int pageSize = 20)
         {
             var movieList = _dataService.GetAllMovies(page, pageSize).Select(CreateDto);
             var numberOfMovies = _dataService.GetNumberOfMovies();

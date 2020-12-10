@@ -86,3 +86,61 @@ input[type="text"]::-webkit-input-placeholder  {
 input[type="text"]:focus::-webkit-input-placeholder  {
     opacity: 0;
 }
+
+
+:root {
+    --background-black: #2f3640;
+    --background-red: red;
+
+    --search-box-padding: 10px;
+    --search-box-size: 40px;
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    height: var(--search-box-size);
+    width: var(--search-box-size);
+    background-color: var(--background-black);
+    border-radius: 50%;
+    padding: var(--search-box-padding);
+    cursor: pointer;
+}
+
+.search-box > .fa-search {
+    padding: var(--search-box-padding);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    color: var(--background-red);
+}
+
+.search-box:hover > .fa-search {
+    background: white;
+}
+
+.search-txt {
+    position: absolute;
+    top: var(--search-box-padding);
+    left: calc(var(--search-box-size) + var(--search-box-padding));
+    border: none;
+    outline: none;
+    padding: 0;
+    height: var(--search-box-size);
+    width: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background-color: var(--background-black);
+    color: white;
+    font-size: 16px;
+    transition: 0.4s width, 0.4s padding;
+}
+
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 0.75rem;
+}

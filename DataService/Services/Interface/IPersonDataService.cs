@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DataService.Objects;
 
 namespace DataService.Services
@@ -16,5 +17,7 @@ namespace DataService.Services
         Profession GetProfession(int id);
         IList<Person_Profession> GetPersonProfessions(string id);
         List<PersonWithProfession> GetAllProfessions();
+        IQueryable<Profession> GetProfessionBySubstring(string substring);
+        IQueryable<Person> GetPersonBySubstring(string substring);
     }
 }
