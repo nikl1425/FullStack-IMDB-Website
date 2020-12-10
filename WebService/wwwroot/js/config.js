@@ -6,7 +6,8 @@ require.config({
         jquery: "lib/jquery/jquery.min",
         bootstrap: "../css/lib/twitter-bootstrap/js/bootstrap.bundle.min",
         postman: "services/postman",
-        slick: "slick/slick"
+        slick: "slick/slick",
+        dataservice: "components/DataService/DataService"
     },
     shim: {
         bootstrap: ['jquery']
@@ -28,7 +29,7 @@ require(['knockout', 'text'], (ko) => {
         viewModel: { require: "components/people/people" },
         template: { require: "text!components/people/people.html" }
     });
-    
+
     ko.components.register('register', {
         viewModel: { require: "components/users/userConfig" },
         template: { require: "text!components/users/register.html" }

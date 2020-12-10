@@ -46,7 +46,8 @@ namespace DataService.Services
 
         public List<TopPoster> GetTopTenPoster();
 
-        public List<Movies> GetAllMovies();
+        public List<Movies> GetAllMovies(int page, int pageSize);
+
+        public int GetNumberOfMovies();
     }
-    
 }

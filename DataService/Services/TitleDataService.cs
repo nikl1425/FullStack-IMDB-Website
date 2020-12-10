@@ -287,14 +287,24 @@ namespace DataService.Services
             return result.ToList();
         }
 
-        public List<Movies> GetAllMovies()
+        public List<Movies> GetAllMovies(int page, int pageSize)
         {
             using var ctx = new ImdbContext() ;
-            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").ToList();;
+            var query = ctx.Movies
+                .FromSqlInterpolated($"select * from titlesformoviepage()")
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();;
             
             return query.ToList();
         }
-        
+
+        public int GetNumberOfMovies()
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").Count();
+            return query;
+        }
         
      
 

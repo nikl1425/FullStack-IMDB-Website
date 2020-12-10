@@ -22,12 +22,14 @@ namespace TestQueryConsole
             
             var result = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()");
 
-            foreach (var x in result)
-            {
-                Console.WriteLine($"{x.title_id}, {x.type}");
-            }
-
             
+
+
+                var numberofMovies = (int) ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").Count();
+            
+            Console.WriteLine(numberofMovies.ToString());
+
+
         }
 
         private static void Top10Poster()

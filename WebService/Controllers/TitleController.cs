@@ -23,7 +23,57 @@ namespace WebService.Controllers
             _dataService = dataService;
             _mapper = mapper;
         }
+        [HttpGet(Name = nameof(GetAllMovies))]
+        public IActionResult GetAllMovies(int page = 0, int pageSize = 1000)
+        {
+            var movieList = _dataService.GetAllMovies(page, pageSize).Select(CreateDto);
+            var numberOfMovies = _dataService.GetNumberOfMovies();
 
+            var pages = (int) Math.Ceiling((double) numberOfMovies / pageSize);
+
+            var prev = (string) null;
+
+            if (page > 0)
+            {
+                prev = Url.Link(nameof(GetAllMovies), new {page = page - 1, pageSize});
+            }
+
+            var next = (string) null;
+
+            if (page < pages - 1)
+            {
+                next = Url.Link(nameof(GetAllMovies), new {page = page + 1, pageSize});
+            }
+
+
+            IList<MoviesDto> movies = movieList.Select(x => new MoviesDto
+            {
+                title_id = x.title_id,
+                title_name = x.title_name,
+                poster = x.poster,
+                plot = x.plot,
+                runtime = x.runtime,
+                genre = _dataService.GetTitleGenres(x.title_id).Select(x => x.Genre.Name).ToList(),
+                votes = x.votes,
+                rating = x.rating,
+                type = x.type,
+                Url = "http://localhost:5001/api/title/" + x.title_id
+            }).ToList();
+
+            var result = new
+            {
+                pageSizes = new int[] {5, 10, 15, 20},
+                count = numberOfMovies,
+                pages,
+                prev,
+                next,
+                movieList
+            };
+
+            return Ok(result);
+        }
+
+/*
         [HttpGet]
         public IActionResult AllTitles()
         {
@@ -45,7 +95,7 @@ namespace WebService.Controllers
 
             return Ok(items);
         }
-
+*/
         [HttpGet("{id}", Name = nameof(GetTitle))]
         public IActionResult GetTitle(string id)
         {
@@ -88,7 +138,6 @@ namespace WebService.Controllers
                 Url = "http://localhost:5001/api/title/akas/" + x.Id
             }).ToList();
 
-            
 
             IList<TitlePersonDTO> TitlePersons = titlePerson.Select(x => new TitlePersonDTO
             {
@@ -98,8 +147,8 @@ namespace WebService.Controllers
             }).ToList();
 
             titleDto.poster = poster.Poster;
-            
-            
+
+
             if (titleEpisode == null)
             {
                 return Ok(new
@@ -112,10 +161,10 @@ namespace WebService.Controllers
             {
                 Id = x.TitleId,
                 TitleName = x.Title.PrimaryTitle,
-                
+
                 Url = "http://localhost:5001/api/title/" + x.TitleId
             }).ToList();
-            
+
 
             foreach (var episode in TitleEpisodes)
             {
@@ -170,32 +219,13 @@ namespace WebService.Controllers
 
             return Ok(posterItems);
         }
+        
 
-        [HttpGet("Movies", Name = nameof(GetAllMovies))]
-        public IActionResult GetAllMovies()
+        MoviesDto CreateDto(Movies movie)
         {
-            
-            var query = _dataService.GetAllMovies().GetRange(0, 200);
-            
-            IList<MoviesDto> movies = query.Select(x => new MoviesDto
-            {
-                title_id = x.title_id,
-                title_name = x.title_name,
-                poster = x.poster,
-                plot = x.plot,
-                runtime = x.runtime,
-                genre = _dataService.GetTitleGenres(x.title_id).Select(x => x.Genre.Name).ToList(),
-                votes = x.votes,
-                rating = x.rating,
-                type = x.type,
-                Url = "http://localhost:5001/api/title/" + x.title_id
-            }).ToList();
-
-            return Ok(movies);
+            var dto = _mapper.Map<MoviesDto>(movie);
+            dto.Url = "http://localhost:5001/api/title/" + movie.title_id;
+            return dto;
         }
-        
-        
-        
-        
     }
 }
