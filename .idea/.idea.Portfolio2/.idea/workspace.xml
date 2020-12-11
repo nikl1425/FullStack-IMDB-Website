@@ -21,14 +21,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Tilføjet dataservice og movie delvist færig paging">
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Title til person virker. GetTitle indeholder tilmed en liste over alle person der har medvirket i filmen">
+      <change afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/DataService/DataService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_05-11-2020_11_47__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_05-11-2020_11_47__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2020__19_02__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2020__19_02__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2020__16_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2020__16_35__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Interface/ITitleDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestQueryConsole/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestQueryConsole/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/DataService/DataService.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/DataService/DataService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +59,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/PersonDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/31/7aeb5dd7/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/PersonDataService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/PersonDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/package-lock.json" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/TitleDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/194/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/DataService/Objects/Movies/Akas.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/ProfessionDTO.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/PersonKnownTitleDTO.cs" />
         <option value="$PROJECT_DIR$/DataService/Objects/Users/User.cs" />
@@ -78,11 +82,13 @@
         <option value="$PROJECT_DIR$/DataService/Services/Utils/Hashing.cs" />
         <option value="$PROJECT_DIR$/UnitTest/PersonDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Interface/IPersonDataService.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
         <option value="$PROJECT_DIR$/TestQueryConsole/Program.cs" />
         <option value="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/PersonMapping.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitlePersonDTO.cs" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleDto.cs" />
         <option value="$PROJECT_DIR$/DataService/Objects/Movies/TitleType.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" />
@@ -109,12 +115,9 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/index.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
-        <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/DataService/DataService.js" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
       </list>
     </option>
   </component>
@@ -499,21 +502,7 @@
       <option name="project" value="LOCAL" />
       <updated>1607607146572</updated>
     </task>
-    <task id="LOCAL-00039" summary="Tilføjet dataservice og movie delvist færig paging">
-      <created>1607631676259</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1607631676259</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Tilføjet dataservice og movie delvist færig paging">
-      <created>1607637160283</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1607637160283</updated>
-    </task>
-    <option name="localTasksCounter" value="41" />
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,6 +529,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Hej jesper" />
     <MESSAGE value="hej jesper" />
     <MESSAGE value="Flere config at DataService.csproj" />
     <MESSAGE value="Added genre to context + installed logger package for logging actions" />
@@ -564,8 +554,7 @@
     <MESSAGE value="Title til person virker. GetTitle indeholder tilmed en liste over alle person der har medvirket i filmen" />
     <MESSAGE value="Rating nu implementeret" />
     <MESSAGE value="user stuff" />
-    <MESSAGE value="Tilføjet dataservice og movie delvist færig paging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet dataservice og movie delvist færig paging" />
+    <option name="LAST_COMMIT_MESSAGE" value="user stuff" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="156" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604402509785">
@@ -580,45 +569,45 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1877" height="216" key="GridCell.Tab.0.bottom" timestamp="1607644154095">
+    <state width="1877" height="216" key="GridCell.Tab.0.bottom" timestamp="1607630441381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607614082628" />
-    <state width="1877" height="216" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607644154095" />
+    <state width="1877" height="216" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607630441381" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
     <state width="1750" height="361" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154201" />
     <state width="1238" height="218" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805181" />
-    <state width="1877" height="216" key="GridCell.Tab.0.center" timestamp="1607644154095">
+    <state width="1877" height="216" key="GridCell.Tab.0.center" timestamp="1607630441381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607614082627" />
-    <state width="1877" height="216" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607644154095" />
+    <state width="1877" height="216" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607630441381" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
     <state width="1750" height="361" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
     <state width="1238" height="218" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805180" />
-    <state width="1877" height="216" key="GridCell.Tab.0.left" timestamp="1607644154095">
+    <state width="1877" height="216" key="GridCell.Tab.0.left" timestamp="1607630441381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607614082627" />
-    <state width="1877" height="216" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607644154095" />
+    <state width="1877" height="216" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607630441381" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508508" />
     <state width="1750" height="361" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154199" />
     <state width="1238" height="218" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1606826805180" />
-    <state width="1877" height="216" key="GridCell.Tab.0.right" timestamp="1607644154095">
+    <state width="1877" height="216" key="GridCell.Tab.0.right" timestamp="1607630441381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607614082627" />
-    <state width="1877" height="216" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607644154095" />
+    <state width="1877" height="216" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607630441381" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
@@ -755,12 +744,11 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="536" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607637210260">
+    <state x="536" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607607151750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606403703516" />
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607607151750" />
-    <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607637210260" />
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
     <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1606172405592" />
     <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1605563180714" />
@@ -769,12 +757,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605206083810" />
-    <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607638803905">
+    <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607607109234">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605473081601" />
     <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607607109234" />
-    <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607638803905" />
     <state x="1355" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022434402" />
     <state x="3275" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016870314" />
     <state x="2428" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1604999572823" />
@@ -798,11 +785,10 @@
     <state x="638" y="80" width="733" height="880" key="find.popup/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607613377791" />
     <state x="637" y="81" width="646" height="888" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605019583040" />
     <state x="595" y="105" width="684" height="878" key="find.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605562555073" />
-    <state x="971" y="410" width="720" height="680" key="search.everywhere.popup" timestamp="1607637031358">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1081" y="308" width="1290" height="915" key="search.everywhere.popup" timestamp="1606175734237">
+      <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="603" y="228" width="720" height="680" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605207517738" />
-    <state x="971" y="410" width="720" height="680" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607637031358" />
     <state x="1081" y="308" width="1290" height="915" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1606175734237" />
     <state x="563" y="253" width="672" height="678" key="search.everywhere.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605559286154" />
   </component>

@@ -9,7 +9,7 @@ namespace DataService.Objects
         public string Password { get; set; }
         public string Salt { get; set; }
         public string Surname { get; set; }
-        public string Last_Name { get; set; }
+        public string Lastname { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
 

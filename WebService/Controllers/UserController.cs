@@ -34,8 +34,8 @@ namespace WebService.Controllers
             {
                 return NotFound();
             }
-            //return Ok(user);
-            return Ok(new {user, usersLists});
+            return Ok(user);
+            //return Ok(new {user, usersLists});
         }
         
         //CREATE NEW USER
@@ -48,7 +48,7 @@ namespace WebService.Controllers
         }
         
         //UPDATE PASSWORD
-        [HttpPut("user/changepassword/{id}")]
+        [HttpPost("user/{id}/changepassword")]
         public IActionResult changeUserPassword(int id, UserDto userDto)
         {
             if (id <= 0)
@@ -59,13 +59,13 @@ namespace WebService.Controllers
 
             if (updateUser)
             {
-                return Ok(updateUser);
+                return Ok(true);
             }
             return NotFound();
         }
 
         //UPDATE USER
-        [HttpPut("user/{id}")]
+        [HttpPost("user/{id}/update")]
         public IActionResult updateUser(int id, UserDto userDto)
         {
             if (id <= 0)
@@ -73,12 +73,12 @@ namespace WebService.Controllers
                 return NotFound();
             }
             // If all is getting updated:
-            var updateUser = _dataService.UpdateUser(id, userDto.Username, userDto.Password, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
+            var updateUser = _dataService.UpdateUser(id, userDto.Username, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
             return Ok(updateUser);
         }
         
         //DELETE USER
-        [HttpDelete("user/{id}")]
+        [HttpDelete("user/{id}/delete")]
         public IActionResult deleteUser(int id)
         {
             var delete = _dataService.DeleteUser(id);

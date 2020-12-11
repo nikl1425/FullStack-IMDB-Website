@@ -28,21 +28,77 @@
     .dropdown:hover .dropbtn {background-color: darkorange;}
 </style>
 <body>
-                        <!--  USERS INFORMATION  -->
-    <div class="container" data-bind="user">
-        <h1>Your information</h1>
+<!--  USERS INFORMATION  -->
+    <div class="container">
+        <h1>Welcome to your page!</h1>
         <br>
-        <form       class="yourinfo_form"        method="POST">
-            <input  type="text"      id="surname"    required name="surname"   placeholder="First Name"  data-bind="value: surname" >
-            <input  type="text"      id="lastname"   required name="lastname"  placeholder="Last Name"   data-bind="value: lastname"  >
-            <input  type="number"    id="age"        required name="age"       placeholder="Age"         data-bind="value: age"  min="1" max="99" >
-            <input  type="email"     id="email"      required  name="email"    placeholder="Email"       data-bind="value: email" >
-            <input  type="text"      id="username"   required name="username"  placeholder="Username"    data-bind="value: username" >
-            <input  type="password"  id="password"   required name="password"  placeholder="Password"    data-bind="value: password" >
-            <input  type="submit"                    class="serializeArray">
+        <form class="updateProfile" method="post" data-bind="with: user">
+            <label for="surname"> First name: </label>
+            <input type="text" id="surname" required name="surname" data-bind="value: surname"><br>
+            <label for="lastname">Last name: </label>
+            <input type="text" id="lastname" required name="lastname" data-bind="value: lastname"><br>
+            <label for="age">Age: </label>
+            <input type="number" id="age" required name="age" min="1" max="99" data-bind="value: age"><br>
+            <label for="email">Email: </label>
+            <input type="email" id="email" required name="email" data-bind="value: email"><br><br>
+            <input type="submit" value="Save changes">
         </form>
+        <br>
+        <!--    UPDATE PASSWORD    -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateBtn">Update Password</button>
+        <div class="modal fade" id="updateBtn" tabindex="-1" role="dialog" aria-labelledby="updateBtnLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateBtnLabel">UPDATE PASSWORD</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Please enter your username, old password and a new password:
+                        <form class="updatePWForm" method="post">
+                            <label for="username"> Username: </label>
+                            <input type="text" id="username" required name="username"><br>
+                            <label for="oldpassword"> Old password: </label>
+                            <input type="password" id="oldpassword" required name="oldpassword"><br>
+                            <label for="newpassword">New password: </label>
+                            <input type="password" id="newpassword" required name="newpassword"><br>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                                <button type="submit" class="btn btn-primary" id="confirmNewPassword">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--    DELETE ACCOUNT     -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteBtn">Delete Account</button>
+        <div class="modal" id="deleteBtn" tabindex="-1" role="dialog" aria-labelledby="deleteBtnLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteBtnLabel">DELETE ACCOUNT</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        WARNING: ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                        <button type="button" class="btn btn-primary" id="confirmDelete">Yes, delete my account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-                        <!-- SEE YOUR RATINGS -->
+<!-- SEE YOUR RATINGS -->
     <div class="container">
         <h1>Showing all of your ratings here: </h1>
         <br>
