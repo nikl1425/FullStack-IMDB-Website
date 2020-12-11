@@ -38,7 +38,7 @@ namespace PortFolio2.Tests
         public void ChangePassword()
         {
             var service = new UserDataService();
-            var chpw = service.ChangePassword("userTest", "pwnew", "pwnewx");
+            var chpw = service.ChangePassword("pwtest", "pwtest2", "pwtest");
             Assert.True(chpw);
         }
 
@@ -46,14 +46,14 @@ namespace PortFolio2.Tests
         public void UpdateUserCorrect()
         {
             var service = new UserDataService();
-            var update = service.UpdateUser(10,"userTest", "pwnew", "Testname", "lastname", 10, "tt@tt.com");
+            var update = service.UpdateUser(10,"userTest", "pwnew", "Testname", 10,  "tt@tt.com");
             Assert.True(update);
         }
         [Fact]
         public void UpdateUserFalse()
         {
             var service = new UserDataService();
-            var updateFalse = service.UpdateUser(10,"userTestUpdate", "falsepw", "Testname", "lastname", 10, "tt@com");
+            var updateFalse = service.UpdateUser(10,"userTestUpdate", "falsepw", "Testname", 10,  "tt@com");
             Assert.False(updateFalse);
         }
         

@@ -96,7 +96,7 @@ namespace DataService.Services
                 return false;
             } 
             ctx.users.Add(new User
-                {Id = maxId+1, Username = username, Password = hashSalt.Hash, Salt = hashSalt.Salt, Age = age, Surname = surname, Last_Name = lastname, Email = email});
+                {Id = maxId+1, Username = username, Password = hashSalt.Hash, Salt = hashSalt.Salt, Age = age, Surname = surname, Lastname = lastname, Email = email});
             ctx.SaveChanges();
             return true;
             //return ctx.users.Find(maxId + 1);
@@ -108,13 +108,8 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
             if(_userValidation.VerifyPassword(oldpassword, getUser.Password, getUser.Salt))
-            /*
-            if (_userValidation.VerifyPassword(oldpassword, ctx.users.Find(id).Password, ctx.users.Find(id).Salt)
-                && ctx.users.Find(id).Username == username)*/
             {
                 Hashing.HashSalt hashSalt = hashing.PasswordHash(16, newpassword);
-                //ctx.users.Update(ctx.users.Find(id)).Entity.Password = hashSalt.Hash;
-                //ctx.users.Update(ctx.users.Find(id)).Entity.Salt = hashSalt.Salt;
                 ctx.users.Update(getUser).Entity.Password = hashSalt.Hash;
                 ctx.users.Update(getUser).Entity.Salt = hashSalt.Salt;
                 ctx.SaveChanges();
@@ -123,14 +118,14 @@ namespace DataService.Services
         }
         
         //UPDATE USER PROFILE
-        public bool UpdateUser(int id, string username, string password, string surname, string lastname, int age, string email)
+        public bool UpdateUser(int id, string username, string surname, string lastname, int age, string email)
         {
             using var ctx = new ImdbContext();
             var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
-            if (id <= 0) return false;
+            if (getUser == null) return false;
             //PASSWORD
-            if (_userValidation.VerifyPassword(password, ctx.users.Find(id).Password, ctx.users.Find(id).Salt))
-            {
+            //if (_userValidation.VerifyPassword(password, ctx.users.Find(id).Password, ctx.users.Find(id).Salt))
+            //{
                 //USERNAME
                 if (username != null && Regex.IsMatch(username, @"^[a-zA-Z]+$"))
                 {
@@ -146,7 +141,7 @@ namespace DataService.Services
                 //LASTNAME
                 if (lastname != null && Regex.IsMatch(lastname, @"^[a-zA-Z]+$"))
                 {
-                    ctx.users.Update(ctx.users.Find(id)).Entity.Last_Name = lastname;
+                    ctx.users.Update(ctx.users.Find(id)).Entity.Lastname = lastname;
                 }
 
                 //AGE
@@ -163,7 +158,7 @@ namespace DataService.Services
 
                 ctx.SaveChanges();
                 return true;
-            }
+            //}
 
             return false;
             
