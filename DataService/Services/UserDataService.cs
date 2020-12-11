@@ -107,14 +107,15 @@ namespace DataService.Services
         {
             using var ctx = new ImdbContext();
             var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
-            if(_userValidation.VerifyPassword(oldpassword, getUser.Password, getUser.Salt))
-            {
-                Hashing.HashSalt hashSalt = hashing.PasswordHash(16, newpassword);
-                ctx.users.Update(getUser).Entity.Password = hashSalt.Hash;
-                ctx.users.Update(getUser).Entity.Salt = hashSalt.Salt;
-                ctx.SaveChanges();
-            } else { return false; }
+            if (getUser.Equals(null)) return false;
+            if (!_userValidation.VerifyPassword(oldpassword, getUser.Password, getUser.Salt)) return false;
+
+            Hashing.HashSalt hashSalt = hashing.PasswordHash(16, newpassword);
+            ctx.users.Update(getUser).Entity.Password = hashSalt.Hash;
+            ctx.users.Update(getUser).Entity.Salt = hashSalt.Salt;
+            ctx.SaveChanges();
             return true;
+
         }
         
         //UPDATE USER PROFILE

@@ -95,8 +95,9 @@
                 contentType: 'application/json',
                 success: function (data) {
                     if(data) {
-                        alert("Your password has been updated!")
-                        location.replace("http://localhost:5001")
+                        alert("Your password has been updated!");
+                        $('#updateBtn').modal('hide');
+                        $('.modal-backdrop').remove();
                     } else {
                         alert("Either email is in use or smth went wrong!")
                     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
@@ -49,19 +50,14 @@ namespace WebService.Controllers
         
         //UPDATE PASSWORD
         [HttpPost("user/{id}/changepassword")]
-        public IActionResult changeUserPassword(int id, UserDto userDto)
+        public IActionResult changeUserPassword(UserDto userDto)
         {
-            if (id <= 0)
+            /*if (id <= 0)
             {
                 return NotFound();
-            }
+            }*/ 
             var updateUser = _dataService.ChangePassword(userDto.Username, userDto.Password, userDto.NewPassword);
-
-            if (updateUser)
-            {
-                return Ok(true);
-            }
-            return NotFound();
+            return Ok(updateUser);
         }
 
         //UPDATE USER
@@ -72,7 +68,6 @@ namespace WebService.Controllers
             {
                 return NotFound();
             }
-            // If all is getting updated:
             var updateUser = _dataService.UpdateUser(id, userDto.Username, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
             return Ok(updateUser);
         }

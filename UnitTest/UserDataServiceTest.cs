@@ -38,7 +38,7 @@ namespace PortFolio2.Tests
         public void ChangePassword()
         {
             var service = new UserDataService();
-            var chpw = service.ChangePassword("pwtest", "pwtest2", "pwtest");
+            var chpw = service.ChangePassword("pw", "pw", "pw1");
             Assert.True(chpw);
         }
 
