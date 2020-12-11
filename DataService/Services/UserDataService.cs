@@ -352,7 +352,7 @@ namespace DataService.Services
         public bool deleteTitleBookmarkList(int listid)
         {
             using var ctx = new ImdbContext();
-            var dbList = GetTitleBookmarkLists(listid).FirstOrDefault();
+            var dbList = ctx.title_bookmark_list.FirstOrDefault(x => x.Id == listid);
             if (dbList == null)
             {
                 return false;

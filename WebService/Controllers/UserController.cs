@@ -159,17 +159,17 @@ namespace WebService.Controllers
             
             IList<TitleBookmarkListDTO> titleList = titleBookmarkList.Select(x => new TitleBookmarkListDTO
             {
-                Type = "titleList",
-                Id = x.Id,
+                Type = "tlist",
+                Id = "t"+x.Id,
                 UserId = x.UserId,
                 ListName = x.ListName,
-                Url = "http://localhost:5001/api/tlist/"+x.Id 
+                Url = "http://localhost:5001/api/tlist/"+x.Id
             }).ToList();
             
             IList<PersonBookmarkListDto> personList = personBookmarkList.Select(x => new PersonBookmarkListDto
             {
-                Type = "personList",
-                Id = x.Id,
+                Type = "plist",
+                Id = "p"+x.Id,
                 UserId = x.UserId,
                 ListName = x.ListName,
                 Url = "http://localhost:5001/api/plist/"+x.Id

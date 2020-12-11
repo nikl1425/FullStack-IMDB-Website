@@ -1,16 +1,17 @@
 ﻿define(['knockout'], (ko) => {
     return function () {
+        self = this;
         let userRatingList = ko.observableArray([]);
         let bookmarkList = ko.observableArray([]);
         let user = ko.observableArray([]);
         //TODO : incooporate session user smth
-        let id = 10;
+        let userId = 10;
         let testId = 28;
         //let url = 'api/user/'+id+'/ratings/';
-        let urlRating = 'http://localhost:5001/api/user/'+id+'/ratings';
-        let urlLists = 'http://localhost:5001/api/user/'+id+'/lists';
-        let urlUser = 'http://localhost:5001/api/user/'+id;
-        let urlUpdate = 'http://localhost:5001/api/user/'+id+'/update'
+        let urlRating = 'http://localhost:5001/api/user/'+userId+'/ratings';
+        let urlLists = 'http://localhost:5001/api/user/'+userId+'/lists';
+        let urlUser = 'http://localhost:5001/api/user/'+userId;
+        let urlUpdate = 'http://localhost:5001/api/user/'+userId+'/update'
         let urlUpdatePW = 'http://localhost:5001/api/user/'+testId+'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
 
@@ -23,18 +24,12 @@
                 userRatingList(data);
                 console.log(data);
             })
-            .then(function (setRating){
-                alert("test")
-                $.ajax({
-                    type: "POST",
-                    url: setRating.updateUrl+'/'
-                });
-            })
             .catch(function (error) {
                 console.log("Error: " + error)
             });
-
+        
         /*  FETCH USER'S BOOKMARK LISTS  */
+        function getList() {
         fetch(urlLists)
             .then(function (response){
                 return response.json();
@@ -42,10 +37,50 @@
             .then(function (data){
                 bookmarkList(data);
                 console.log(data);
+                $(".deleteBookmarkList").on('click', function() {
+                    let value = $(this).val();
+                    if(value.indexOf('t')>-1){
+                        let trimVal = value.substring(1);
+                        $.ajax({
+                            type: 'DELETE',
+                            url: 'http://localhost:5001/api/tlist/'+trimVal+'/delete',
+                            success: function (result) {
+                                if(result) {
+                                    //alert("Your list has been deleted!")                                    
+                                    getList();
+                                    $('#deleteList').modal('hide');
+                                    $('.modal-backdrop').remove();
+                                } else {
+                                    alert("Something went wrong!")
+                                }
+                            }
+                        })   
+                    }
+                    if(value.indexOf('p')>-1){
+                        let trimVal = value.substring(1);
+                        $.ajax({
+                            type: 'DELETE',
+                            url: 'http://localhost:5001/api/plist/'+trimVal+'/delete',
+                            success: function (result) {
+                                if(result) {
+                                    //alert("Your list has been deleted!")                                    
+                                    getList();
+                                    $('#deleteList').modal('hide');
+                                    $('.modal-backdrop').remove();
+                                } else {
+                                    alert("Something went wrong!")
+                                }
+                            }
+                        })
+                    }
+                        
+                });
             })
             .catch(function(error){
                 console.log("Error: "+error)
             });
+        }
+        getList();
         
         /*  FETCH USER INFO  */
         fetch(urlUser)
@@ -144,13 +179,13 @@
                 }
             });
         });
-        
+                
         /*  DELETE BOOKMARKS LIST   */
-        $("#deleteBookmarkList").on('click', function() {
-            console.log(bookmarkList.Id);
+        /*$("#deleteBookmarkList").on('click', function() {
+            alert("test");
             $.ajax({
                 type: 'DELETE',
-                url: 'http://localhost:5001/api/tlist/17/delete',
+                url: 'http://localhost:5001/api/tlist/'+bookmarkList.id+'/delete',
                 success: function (result) {
                     if(result) {
                         alert("Your list has been deleted!")
@@ -159,8 +194,7 @@
                     }
                 }
             });
-            
-        });
+        });*/
 
         return {
             userRatingList,
