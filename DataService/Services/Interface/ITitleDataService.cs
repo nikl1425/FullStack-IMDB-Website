@@ -52,5 +52,9 @@ namespace DataService.Services
         public int GetNumberOfMovies();
         IQueryable<Genre> GetGenreBySubstring(string substring);
         IQueryable<Title> GetTitleBySubstring(string substring);
+
+        public List<Movies> GetAllMoviesWithType(string typeName, int page, int pageSize);
+
+        public int GetNumberOfMoviesWithType(string typeName);
     }
 }

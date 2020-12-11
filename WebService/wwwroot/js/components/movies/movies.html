@@ -9,24 +9,26 @@
             </div>
         </div>
     </div>
-    
+
 </section>
 <a id="topOfPage"></a>
-<a name="top"></a>
+<a id="top"></a>
 <section class="section-long">   <!-- GENRES CONFIG HERE-->
-   
     <div class="container">
         <div class="section-pannel">
             <div class="grid row">
                 <div class="col-md-10">
-                    <form autocomplete="off" >
-                        <div class="row form-grid" >
-                            <div class="col-sm-6 col-lg-3" >
+                    <form autocomplete="off">
+                        <div class="row form-grid">
+                            <div class="col-sm-6 col-lg-3">
                                 <div id="scrolltothisdiv"></div>
-                                <div class="input-view-flat input-group" >
-                                    <select class="form-control" name="genre"  data-bind="foreach: genres">
-                                        <option selected="true" data-bind="text: name"></option>
-                                        
+                                <div class="input-view-flat input-group">
+                                    <select class="form-control" data-bind=
+                                            "options: types,
+                                             optionsText: 'name',
+                                             value: selectedType,
+                                             click: ChangeMovies
+                                          ">
                                     </select>
                                 </div>
                             </div>
@@ -46,14 +48,13 @@
                 </div>
             </div>
         </div>
-
+        
+       
         <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
         <table>
-           
             <tbody>  <!-- FOR HVER FETCHED -->
             <tr>
-
-                <td data-bind="foreach: movieList">
+               <td data-bind="foreach: movieList">
                     <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
                             <div class="embed-responsive embed-responsive-poster">
@@ -79,12 +80,12 @@
                                 <a class="content-link" href="movie-info-sidebar-right.html"><span
                                         data-bind="text: title_name"></span></a>
                             </h4>
-                            <div data-bind="foreach: genre">
+                            
                                 <div class="entity-category">
                                     <a class="content-link" href="movies-blocks.html"><span
-                                            data-bind="text: $data"></span></a>,
+                                            data-bind="text: type"></span></a>,
                                 </div>
-                            </div>
+                           
                             <div class="entity-info">
                                 <div class="info-lines"> <!--  RATING -->
                                     <div class="info info-short">
@@ -108,8 +109,6 @@
             </tr>
             </tbody>
         </table>
-
-       
         <div class="section-bottom"> <!-- PAGING CONFIG HER -->
             <div class="paginator">
                 <div class="navigation-buttons">
@@ -118,7 +117,5 @@
                 </div>
             </div>
         </div>
-
-      
     </div>
 </section>

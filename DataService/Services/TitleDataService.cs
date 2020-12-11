@@ -321,6 +321,26 @@ namespace DataService.Services
         }
         
         
+        public List<Movies> GetAllMoviesWithType(string typeName, int page, int pageSize)
+        {
+            using var ctx = new ImdbContext() ;
+            var query = ctx.Movies
+                .FromSqlInterpolated($"select * from titlesformovieType({typeName})")
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();
+            
+            return query.ToList();
+        }
+        
+        public int GetNumberOfMoviesWithType(string typeName)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformovieType({typeName})").Count();
+            return query;
+        }
+        
+        
      
 
     }

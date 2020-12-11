@@ -72,6 +72,60 @@ namespace WebService.Controllers
 
             return Ok(result);
         }
+        
+        
+        [HttpGet("type/{typeName}", Name = nameof(GetAllMoviesType))]
+        public IActionResult GetAllMoviesType(string typeName,int page = 0, int pageSize = 20)
+        {
+            var movieList = _dataService.GetAllMoviesWithType(typeName,page, pageSize).Select(CreateDto);
+            var numberOfMovies = _dataService.GetNumberOfMoviesWithType(typeName);
+
+            var pages = (int) Math.Ceiling((double) numberOfMovies / pageSize);
+
+            var prev = (string) null;
+
+            if (page > 0)
+            {
+                prev = Url.Link(nameof(GetAllMoviesType), new {page = page - 1, pageSize});
+            }
+
+            var next = (string) null;
+
+            if (page < pages - 1)
+            {
+                next = Url.Link(nameof(GetAllMoviesType), new {page = page + 1, pageSize});
+            }
+
+
+            IList<MoviesDto> movies = movieList.Select(x => new MoviesDto
+            {
+                title_id = x.title_id,
+                title_name = x.title_name,
+                poster = x.poster,
+                plot = x.plot,
+                runtime = x.runtime,
+                genre = _dataService.GetTitleGenres(x.title_id).Select(x => x.Genre.Name).ToList(),
+                votes = x.votes,
+                rating = x.rating,
+                type = x.type,
+                Url = "http://localhost:5001/api/title/" + x.title_id
+            }).ToList();
+
+            var result = new
+            {
+                pageSizes = new int[] {5, 10, 15, 20},
+                count = numberOfMovies,
+                pages,
+                prev,
+                next,
+                movieList
+            };
+
+            return Ok(result);
+        }
+        
+        
+        
 
 /*
         [HttpGet]

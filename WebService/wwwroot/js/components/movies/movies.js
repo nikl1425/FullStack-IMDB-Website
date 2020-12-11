@@ -7,6 +7,33 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
         let prev = ko.observableArray();
         let next = ko.observableArray();
         let selectedPage = ko.observableArray([10]);
+        self.selectedType = ko.observable();
+        let objGenre = ko.observable();
+        let movieGenres = ko.observable();
+        let types = ko.observableArray([]);
+       
+
+        self.selectedType.subscribe(() => {
+            objGenre = selectedType().name;
+            console.log(objGenre)
+            });
+        
+        let ChangeMovies = () => {
+            change = function () {
+                fetch('http://localhost:5001/api/title/type/'+objGenre)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        movieList(data.movieList)
+                        console.log(movieList)
+                    })
+            };
+            change();
+        }
+
+       
+        
 
         self.getMovies = function () {
             ko.mapping.fromJS(data.movies, {}, self.movies)
@@ -18,9 +45,10 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
                 prev(data.prev || undefined);
                 next(data.next || undefined);
                 movieList(data.movieList);
+                movieGenres(movieList.genre)
             });
         }
-
+        
         let getGenres = function () {
             fetch('http://localhost:5001/api/genre')
                 .then(function (response) {
@@ -28,8 +56,19 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
                 })
                 .then(function (data) {
                     genres(data);
-                   
                     console.log(genres());
+                })
+        };
+
+        let getTypes = function () {
+            fetch('http://localhost:5001/api/type')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    types(data);
+                    console.log(types());
+                  
                 })
         };
 
@@ -55,20 +94,27 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             getMovies(dataservice.getMoviesUrlWithPageSize(size));
         });
 
-        document.getElementById("scrolltotop").addEventListener("click", function() {
+
+        document.getElementById("scrolltotop").addEventListener("click", function () {
             console.log("Clicked!");
-            $('html,body').animate({ scrollTop: $('#scrolltothisdiv').offset().top }, 1000);
+            $('html,body').animate({scrollTop: $('#scrolltothisdiv').offset().top}, 1000);
         });
 
-        document.getElementById("prevscrolltotop").addEventListener("click", function() {
+        document.getElementById("prevscrolltotop").addEventListener("click", function () {
             console.log("Clicked!");
-            $('html,body').animate({ scrollTop: $('#scrolltothisdiv').offset().top }, 1000);
+            $('html,body').animate({scrollTop: $('#scrolltothisdiv').offset().top}, 1000);
         });
 
         getMovies();
         getGenres();
-        
-        
+        getTypes();
+
+        self.optionsAfterRender = function (option, view) {
+            if (view.defaultView) {
+                option.className = 'defaultViewHighlight';
+            }
+        };
+
 
         return {
             pageSizes,
@@ -79,8 +125,14 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             enablePrev,
             showNext,
             enableNext,
-            genres
+            genres,
+            optionsAfterRender,
+            selectedType,
+            types,
+            ChangeMovies
             
+            
+
         };
     }
 });
