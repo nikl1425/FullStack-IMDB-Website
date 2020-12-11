@@ -1,4 +1,4 @@
-define(['knockout', 'dataservice'], (ko, dataservice) => {
+define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
     return function () {
         let movies = ko.observableArray([]);
         let movieList = ko.observableArray([])
@@ -17,6 +17,7 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             objGenre = selectedType().name;
             console.log(objGenre)
             });
+        window.movieValue = "";
         
         let ChangeMovies = () => {
             change = function () {
@@ -27,6 +28,11 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
                     .then(function (data) {
                         movieList(data.movieList)
                         console.log(movieList)
+                        $('.gotomovie').focus(function(){
+                            console.log("Has focus")
+                            window.movieValue = $(this).val();
+                            goToMoviePage()
+                        })
                     })
             };
             change();
@@ -46,7 +52,15 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
                 next(data.next || undefined);
                 movieList(data.movieList);
                 movieGenres(movieList.genre)
+
+                $('.gotomovie').focus(function(){
+                    console.log("Has focus")
+                    window.movieValue = $(this).val();
+                    goToMoviePage()
+                })
             });
+
+            
         }
         
         let getGenres = function () {
@@ -114,6 +128,23 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
                 option.className = 'defaultViewHighlight';
             }
         };
+        
+        function goToMoviePage(){
+            postman.publish("changeContent", "moviePage");
+        }
+
+        let movieData = ko.observableArray([])
+        const url = 'http://localhost:5001/api/title/';
+
+        fetch(url + window.value)
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                movieData(data)
+                console.log(movieData())
+            }).catch((err) => {
+        })
 
 
         return {
@@ -129,7 +160,8 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             optionsAfterRender,
             selectedType,
             types,
-            ChangeMovies
+            ChangeMovies,
+            postman
             
             
 
