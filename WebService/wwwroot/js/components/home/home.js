@@ -35,8 +35,9 @@ let titleData = ko.observableArray([])
 let professionData = ko.observableArray([])
 
         
-$(document).on("keydown", "input", function(e){
+$(document).on("keyup", "input", function(e){
     const inputVal = $(this).val();
+    let inputValLength = $(this).val().length;
     const url = 'http://localhost:5001/api/search/';
         fetch(url + inputVal)
             .then((response) => {
@@ -44,22 +45,37 @@ $(document).on("keydown", "input", function(e){
             })
             .then((data) => {
                 personData(data.newSearchPersonDTO)
-                console.log(personData())
+                //console.log(personData())
                 if (data.newSearchGenreDTO.isNull){
-                    
                 }else{
                     genreData(data.newSearchGenreDTO)
                 }
-                console.log(genreData())
+                //console.log(genreData())
                 titleData(data.newSearchTitleDTO)
-                console.log(titleData())
+                //console.log(titleData())
                 professionData(data.newSearchProfessionDTO)
-                console.log(professionData())
+                //console.log(professionData())
+                console.log(inputValLength);
             }).catch((err) => {
         })
+    
+    if (inputValLength <= 1) {
+        $('.dropdown-content').hide();
+    }
+    else {
+        $('.dropdown-content').show();
+        }
 
 
-    if (e.keyCode === 13){
+    $(document).ready(function() {
+        $('#searchbar').blur(function() {
+            $('.dropdown-content').hide();
+        })
+    });
+
+    console.log(inputValLength);
+
+        if (e.keyCode === 13){
         //console.log("Enter");
     }
 });

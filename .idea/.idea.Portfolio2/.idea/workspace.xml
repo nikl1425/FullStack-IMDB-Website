@@ -28,10 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Fixed movie page, added dropdown menu to search, fixed scroll on click on prev button.">
-      <change afterPath="$PROJECT_DIR$/WebService/wwwroot/css/dropdown.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/css/searchbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/css/searchbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" afterDir="false" />
@@ -88,7 +87,6 @@
         <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
         <option value="$PROJECT_DIR$/TestQueryConsole/Program.cs" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/PersonMapping.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitlePersonDTO.cs" />
         <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
@@ -118,13 +116,14 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/DataService/DataService.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/css/searchbar.css" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/css/dropdown.css" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/index.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/css/searchbar.css" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" />
       </list>
     </option>
   </component>
@@ -242,7 +241,7 @@
       <workItem from="1605169129230" duration="2740000" />
       <workItem from="1605457657053" duration="10623000" />
       <workItem from="1605559382836" duration="6196000" />
-      <workItem from="1607686308527" duration="3581000" />
+      <workItem from="1607686308527" duration="13072000" />
     </task>
     <task id="LOCAL-00001" summary="New Project">
       <created>1604402132484</created>
@@ -524,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607687982410</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fixed movie page, added dropdown menu to search, fixed scroll on click on prev button.">
+      <created>1607690171843</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1607690171843</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +609,7 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1259" height="249" key="GridCell.Tab.0.bottom" timestamp="1607690045945">
+    <state width="1259" height="249" key="GridCell.Tab.0.bottom" timestamp="1607700034968">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -613,8 +619,8 @@
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
     <state width="1750" height="361" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154201" />
-    <state width="1259" height="249" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1607690045945" />
-    <state width="1259" height="249" key="GridCell.Tab.0.center" timestamp="1607690045945">
+    <state width="1259" height="249" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1607700034968" />
+    <state width="1259" height="249" key="GridCell.Tab.0.center" timestamp="1607700034968">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -624,8 +630,8 @@
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
     <state width="1750" height="361" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
-    <state width="1259" height="249" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1607690045945" />
-    <state width="1259" height="249" key="GridCell.Tab.0.left" timestamp="1607690045944">
+    <state width="1259" height="249" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1607700034968" />
+    <state width="1259" height="249" key="GridCell.Tab.0.left" timestamp="1607700034967">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -635,8 +641,8 @@
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508508" />
     <state width="1750" height="361" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154199" />
-    <state width="1259" height="249" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1607690045944" />
-    <state width="1259" height="249" key="GridCell.Tab.0.right" timestamp="1607690045945">
+    <state width="1259" height="249" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1607700034967" />
+    <state width="1259" height="249" key="GridCell.Tab.0.right" timestamp="1607700034968">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -646,7 +652,7 @@
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
     <state width="1750" height="361" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
-    <state width="1259" height="249" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1607690045945" />
+    <state width="1259" height="249" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1607700034968" />
     <state width="1259" height="484" key="GridCell.Tab.1.bottom" timestamp="1607688117123">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
@@ -794,7 +800,7 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="715" y="359" key="Vcs.Push.Dialog.v2" timestamp="1607688018907">
+    <state x="715" y="359" key="Vcs.Push.Dialog.v2" timestamp="1607690174232">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606403703516" />
@@ -802,7 +808,7 @@
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
     <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1606172405592" />
     <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1605563180714" />
-    <state x="715" y="359" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607688018907" />
+    <state x="715" y="359" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607690174232" />
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605206083810">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -835,13 +841,13 @@
     <state x="638" y="80" width="733" height="880" key="find.popup/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607613377791" />
     <state x="637" y="81" width="646" height="888" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605019583040" />
     <state x="595" y="105" width="684" height="878" key="find.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605562555073" />
-    <state x="804" y="324" width="960" height="888" key="search.everywhere.popup" timestamp="1607689818927">
+    <state x="804" y="324" width="960" height="888" key="search.everywhere.popup" timestamp="1607697890003">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state x="603" y="228" width="720" height="680" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605207517738" />
     <state x="1081" y="308" width="1290" height="915" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1606175734237" />
     <state x="563" y="253" width="672" height="678" key="search.everywhere.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605559286154" />
-    <state x="804" y="324" width="960" height="888" key="search.everywhere.popup/0.25.2560.1358@0.25.2560.1358" timestamp="1607689818927" />
+    <state x="804" y="324" width="960" height="888" key="search.everywhere.popup/0.25.2560.1358@0.25.2560.1358" timestamp="1607697890003" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

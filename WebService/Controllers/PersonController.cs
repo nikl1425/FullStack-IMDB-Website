@@ -161,6 +161,7 @@ namespace WebService.Controllers
                 Url = "http://localhost:5001/api/profession/" + x.Id
             }).ToList();
             
+
             IList<TitleDto> newSearchTitleDTO = titleSearch.Select(x => new TitleDto
             {
                 Id = x.Id,
@@ -169,6 +170,7 @@ namespace WebService.Controllers
                 StartYear = x.StartYear,
                 EndYear = x.EndYear,
                 IsAdult = x.IsAdult,
+                poster = _titleDataService.GetOmdbData(x.Id).Poster ?? _titleDataService.GetOmdbData("tt11000576").Poster,
                 Url = "http://localhost:5001/api/title/" + x.Id
             }).ToList();
             

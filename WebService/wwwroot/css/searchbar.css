@@ -6,6 +6,7 @@ html, body {
 
 #test {
     text-align: center;
+    justify-content: center;
     float: right;
 }
 
@@ -54,24 +55,7 @@ html, body {
 
 
 
-#searchbar.form-control{
-    border-radius: 25px;
-    border: 2px solid grey;
-    top: 30%;
-    width: 70%;
-    height:50px;
-    color: #333333;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-    text-decoration-style: solid;
-    padding: 10px 0;
-    text-align:center;
-    align-items: center;
-    vertical-align: center !important;
-    justify-content: space-around;
-    float: none;
-}
+
 
 #searchbar.form-control:focus{
     
