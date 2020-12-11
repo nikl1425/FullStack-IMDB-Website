@@ -26,7 +26,8 @@ define(['postman'], (postman) => {
     }
 });
 */
- 
+
+       
 
 let personData = ko.observableArray([])
 let genreData = ko.observableArray([])
@@ -56,7 +57,8 @@ $(document).on("keydown", "input", function(e){
                 console.log(professionData())
             }).catch((err) => {
         })
-    
+
+
     if (e.keyCode === 13){
         //console.log("Enter");
     }
