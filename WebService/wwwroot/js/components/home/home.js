@@ -30,8 +30,9 @@ let personData = ko.observableArray([])
 let genreData = ko.observableArray([])
 let titleData = ko.observableArray([])
 let professionData = ko.observableArray([])
+
         
-$(document).on("keypress", "input", function(e){
+$(document).on("keydown", "input", function(e){
     const inputVal = $(this).val();
     const url = 'http://localhost:5001/api/search/';
         fetch(url + inputVal)
@@ -39,15 +40,27 @@ $(document).on("keypress", "input", function(e){
                 return response.json()
             })
             .then((data) => {
-                personData(data.personSearch)
-                genreData(data.genreSearch)
-                titleData(data.titleSearch)
-                professionData(data.professionSearch)
+                personData(data.newSearchPersonDTO)
+                console.log(personData())
+                if (data.newSearchGenreDTO.isNull){
+                    
+                }else{
+                    genreData(data.newSearchGenreDTO)
+                }
+                console.log(genreData())
+                titleData(data.newSearchTitleDTO)
+                console.log(titleData())
+                professionData(data.newSearchProfessionDTO)
+                console.log(professionData())
             }).catch((err) => {
         })
-
     
+    if (e.keyCode === 13){
+        //console.log("Enter");
+    }
 });
+
+
 
         return {
             poster,

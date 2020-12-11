@@ -3,18 +3,20 @@
     <div id="searchbartextandtitle" class="col-auto align-items-center">
         <h1 id="searchtitle" class="entity-title">Search for movies, actors etc...</h1>
         <input id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" value=""/>
-        <ul id="ulid" data-bind="foreach: personData">
-            <li data-bind="text: name"></li>
+        <div id="cleardiv" style="position: absolute">
+        <ul data-bind="foreach: personData">
+            <a data-bind="attr: { href: url}"><li data-bind="text: name"></li></a>
         </ul>
-        <ul id="ulid" data-bind="foreach: titleData">
-            <li data-bind="text: primaryTitle"></li>
+        <ul data-bind="foreach: titleData">
+            <a data-bind="attr: { href: url}"><li data-bind="text: primaryTitle"></li></a>
         </ul>
-        <ul id="ulid"  data-bind="foreach: genreData">
-            <li data-bind="text: name"></li>
+        <ul data-bind="foreach: genreData">
+            <a data-bind="attr: { href: url}"><li data-bind="text: name"></li></a>
         </ul>
-        <ul id="ulid" data-bind="foreach: professionData">
-            <li data-bind="text: professionName"></li>
+        <ul data-bind="foreach: professionData">
+            <a data-bind="attr: { href: url}"><li data-bind="text: professionName"></li></a>
         </ul>
+        </div>
     </div>
     <div class="top-block-head text-uppercase" style="text-align:center;">
         <h2 class="display-4">

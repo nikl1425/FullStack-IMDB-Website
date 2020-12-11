@@ -137,7 +137,78 @@ namespace WebService.Controllers
             var professionSearch = _dataService.GetProfessionBySubstring(id).Take(1);
             var genreSearch = _titleDataService.GetGenreBySubstring(id).Take(3);
             var titleSearch = _titleDataService.GetTitleBySubstring(id).Take(5);
-            return Ok(new {personSearch, professionSearch, genreSearch, titleSearch});
+
+            IList<PersonDTO> newSearchPersonDTO = personSearch.Select(x => new PersonDTO
+            {
+                Id = x.Id,
+                Name = x.Name,
+                BirthYear = x.BirthYear,
+                DeathYear = x.DeathYear,
+                Url = "http://localhost:5001/api/name/" + x.Id
+            }).ToList();
+            
+            IList<GenreDto> newSearchGenreDTO = genreSearch.Select(x => new GenreDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Url = "http://localhost:5001/api/genre/" + x.Id
+            }).ToList();
+            
+            IList<ProfessionDTO> newSearchProfessionDTO = professionSearch.Select(x => new ProfessionDTO
+            {
+                Id = x.Id,
+                ProfessionName = x.ProfessionName,
+                Url = "http://localhost:5001/api/profession/" + x.Id
+            }).ToList();
+            
+            IList<TitleDto> newSearchTitleDTO = titleSearch.Select(x => new TitleDto
+            {
+                Id = x.Id,
+                OriginalTitle = x.OriginalTitle,
+                PrimaryTitle = x.PrimaryTitle,
+                StartYear = x.StartYear,
+                EndYear = x.EndYear,
+                IsAdult = x.IsAdult,
+                Url = "http://localhost:5001/api/title/" + x.Id
+            }).ToList();
+            
+            return Ok(new {newSearchPersonDTO, newSearchGenreDTO, newSearchProfessionDTO, newSearchTitleDTO});
         }
     }
 }
+
+
+/* TEST
+            IList<PersonDTO> newSearchPersonDTO = personSearch.Select(x => new PersonDTO
+            {
+                Id = x.Id,
+                Name = x.Name,
+                BirthYear = x.BirthYear,
+                DeathYear = x.DeathYear,
+                Url = "http://localhost:5001/api/name/" + x.Id
+            }).ToList();
+            
+            IList<GenreDto> newSearchGenreDTO = genreSearch.Select(x => new GenreDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Url = "http://localhost:5001/api/genre/" + x.Id
+            }).ToList();
+            
+            IList<ProfessionDTO> newSearchProfessionDTO = professionSearch.Select(x => new ProfessionDTO
+            {
+                Id = x.Id,
+                ProfessionName = x.ProfessionName,
+                Url = "http://localhost:5001/api/genre/" + x.Id
+            }).ToList();
+            
+            IList<TitleDto> newSearchTitleDTO = titleSearch.Select(x => new TitleDto
+            {
+                Id = x.Id,
+                OriginalTitle = x.OriginalTitle,
+                PrimaryTitle = x.PrimaryTitle,
+                StartYear = x.StartYear,
+                EndYear = x.EndYear,
+                IsAdult = x.IsAdult
+            }).ToList();
+            */
