@@ -184,7 +184,7 @@ namespace WebService.Controllers
         }
         
         //RATE A MOVIE
-        [HttpGet("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
+        [HttpPost("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
         public IActionResult rateMovie(int userid, int thisRating, string titleid)
         {
             if (titleid == null)

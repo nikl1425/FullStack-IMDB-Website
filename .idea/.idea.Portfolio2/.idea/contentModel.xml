@@ -469,6 +469,7 @@
                 <e p="Profile.js" t="Include" />
               </e>
               <e p="Users" t="Include">
+                <e p="listpage.html" t="Include" />
                 <e p="ratings.html" t="Include" />
                 <e p="register.html" t="Include" />
                 <e p="register.js" t="Include" />

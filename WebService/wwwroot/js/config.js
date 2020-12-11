@@ -54,6 +54,11 @@ require(['knockout', 'text'], (ko) => {
         viewModel: { require: "components/movies/movies" },
         template: { require: "text!components/movies/moviepage.html" }
     });
+
+    ko.components.register('listpage', {
+        viewModel: { require: "components/users/userConfig" },
+        template: { require: "text!components/users/listpage.html" }
+    });
 });
 
 require(['knockout', 'viewModel',  'bootstrap'], function(ko, vm) {

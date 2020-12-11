@@ -1,0 +1,14 @@
+﻿<div class="container">
+    <!--<div data-bind="with: bookmarkList">
+        <h1 data-bind="listName"></h1>
+        Created by: <span data-bind="text: username"></span>
+    </div> -->
+    <ul data-bind="foreach: bookmarksList">
+        <li>
+            <a data-bind="attr: {href: url}, text: listName"></a>
+        </li>
+    </ul>
+    
+    
+    
+</div>

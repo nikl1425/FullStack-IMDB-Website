@@ -1,4 +1,4 @@
-﻿define(['knockout'], (ko) => {
+﻿define(['knockout', 'postman'], (ko, postman) => {
     return function () {
         self = this;
         let userRatingList = ko.observableArray([]);
@@ -14,20 +14,40 @@
         let urlUpdate = 'http://localhost:5001/api/user/'+userId+'/update'
         let urlUpdatePW = 'http://localhost:5001/api/user/'+testId+'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
+        let baseUrl = 'http://localhost:5001/api/'
 
         /*  FETCH RATING FROM USER  */
+        function getRating(){
         fetch(urlRating)
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
                 userRatingList(data);
-                console.log(data);
+                console.log("rating: "+data);
+                $(".updateRating").on('click', function(){
+                    let titleid = $(this).val();
+                    let rating = $(this).text();
+                    $.ajax({
+                       type: 'POST',
+                       url: baseUrl+'title/'+titleid+'/RateMovie/'+userId+'/'+rating,
+                       success: function (result) {
+                           if(result) {
+                               //alert("Your list has been deleted!")
+                               getRating();
+                           } else {
+                               alert("Something went wrong!")
+                           }
+                       }
+                   })
+                    
+                });
             })
             .catch(function (error) {
                 console.log("Error: " + error)
             });
-        
+        }
+        getRating();
         /*  FETCH USER'S BOOKMARK LISTS  */
         function getList() {
         fetch(urlLists)
@@ -179,27 +199,16 @@
                 }
             });
         });
-                
-        /*  DELETE BOOKMARKS LIST   */
-        /*$("#deleteBookmarkList").on('click', function() {
-            alert("test");
-            $.ajax({
-                type: 'DELETE',
-                url: 'http://localhost:5001/api/tlist/'+bookmarkList.id+'/delete',
-                success: function (result) {
-                    if(result) {
-                        alert("Your list has been deleted!")
-                    } else {
-                        alert("Something went wrong!")
-                    }
-                }
-            });
-        });*/
+
+        let goToList = () => {
+            postman.publish("changeContent", "listpage");
+        }
 
         return {
             userRatingList,
             bookmarkList,
-            user
+            user,
+            goToList
         };
     }
     
