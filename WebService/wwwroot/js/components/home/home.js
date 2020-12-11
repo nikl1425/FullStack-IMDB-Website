@@ -13,36 +13,6 @@ define(['knockout'], (ko) => {
             .then(function (data) {
                 poster(data);
             })
-        return {
-            poster
-        };
-    }
-});
-
-function search(searchVariable){
-        var url = 'http://localhost:5001/api/search/';
-
-    fetch(url + searchVariable) // Call the fetch function passing the url of the API as a parameter
-        .then((response) => {
-            return response.json()
-        })
-        .then((data) => {
-            console.log(data);
-        }).catch((err) => {
-        alert("Error!");
-    })
-}
-
-
-$(document).on("keypress", "input", function(e){
-    if(e.which == 13){
-        var inputVal = $(this).val();
-        alert("You've searched: " + inputVal);
-        search(inputVal);
-    }
-});
-
-
 
 define(['postman'], (postman) => {
     return function () {
@@ -55,3 +25,44 @@ define(['postman'], (postman) => {
         };
     }
 });
+
+let personData = ko.observableArray([])
+let genreData = ko.observableArray([])
+let titleData = ko.observableArray([])
+let professionData = ko.observableArray([])
+        
+$(document).on("keypress", "input", function(e){
+    const inputVal = $(this).val();
+    const url = 'http://localhost:5001/api/search/';
+        fetch(url + inputVal)
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                personData(data.personSearch)
+                genreData(data.genreSearch)
+                titleData(data.titleSearch)
+                professionData(data.professionSearch)
+            }).catch((err) => {
+        })
+
+    
+});
+
+        return {
+            poster,
+            personData,
+            genreData,
+            titleData,
+            professionData
+        };
+    }
+});
+
+
+
+
+
+
+
+

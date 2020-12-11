@@ -133,10 +133,10 @@ namespace WebService.Controllers
         [HttpGet("search/{id}")]
         public IActionResult Search(string id)
         {
-            var personSearch = _dataService.GetPersonBySubstring(id);
-            var professionSearch = _dataService.GetProfessionBySubstring(id);
-            var genreSearch = _titleDataService.GetGenreBySubstring(id);
-            var titleSearch = _titleDataService.GetTitleBySubstring(id);
+            var personSearch = _dataService.GetPersonBySubstring(id).Take(5);
+            var professionSearch = _dataService.GetProfessionBySubstring(id).Take(1);
+            var genreSearch = _titleDataService.GetGenreBySubstring(id).Take(3);
+            var titleSearch = _titleDataService.GetTitleBySubstring(id).Take(5);
             return Ok(new {personSearch, professionSearch, genreSearch, titleSearch});
         }
     }

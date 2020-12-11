@@ -87,6 +87,10 @@ input[type="text"]:focus::-webkit-input-placeholder  {
     opacity: 0;
 }
 
+#ulid.li{
+    list-style: none;
+}
+
 
 :root {
     --background-black: #2f3640;
