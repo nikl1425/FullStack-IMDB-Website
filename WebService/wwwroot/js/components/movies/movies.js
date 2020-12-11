@@ -60,6 +60,11 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             $('html,body').animate({ scrollTop: $('#scrolltothisdiv').offset().top }, 1000);
         });
 
+        document.getElementById("prevscrolltotop").addEventListener("click", function() {
+            console.log("Clicked!");
+            $('html,body').animate({ scrollTop: $('#scrolltothisdiv').offset().top }, 1000);
+        });
+
         getMovies();
         getGenres();
         
@@ -74,7 +79,6 @@ define(['knockout', 'dataservice'], (ko, dataservice) => {
             enablePrev,
             showNext,
             enableNext,
-            scrolltotop,
             genres
             
         };

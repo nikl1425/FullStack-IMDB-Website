@@ -13,7 +13,7 @@ define(['knockout'], (ko) => {
             .then(function (data) {
                 poster(data);
             })
-
+/*
 define(['postman'], (postman) => {
     return function () {
 
@@ -25,6 +25,8 @@ define(['postman'], (postman) => {
         };
     }
 });
+*/
+ 
 
 let personData = ko.observableArray([])
 let genreData = ko.observableArray([])

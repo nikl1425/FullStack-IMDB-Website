@@ -2,20 +2,30 @@
 <div class="mt-auto container position-relative">
     <div id="searchbartextandtitle" class="col-auto align-items-center">
         <h1 id="searchtitle" class="entity-title">Search for movies, actors etc...</h1>
-        <input id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" value=""/>
+        <input list="results" id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" value=""/>
         <div id="cleardiv" style="position: absolute">
-        <ul data-bind="foreach: personData">
-            <a data-bind="attr: { href: url}"><li data-bind="text: name"></li></a>
-        </ul>
-        <ul data-bind="foreach: titleData">
-            <a data-bind="attr: { href: url}"><li data-bind="text: primaryTitle"></li></a>
-        </ul>
-        <ul data-bind="foreach: genreData">
-            <a data-bind="attr: { href: url}"><li data-bind="text: name"></li></a>
-        </ul>
-        <ul data-bind="foreach: professionData">
-            <a data-bind="attr: { href: url}"><li data-bind="text: professionName"></li></a>
-        </ul>
+        <datalist id="results">
+                <div data-bind="foreach: personData">
+                    <option>
+                <a data-bind="attr: { href: url}"><li data-bind="text: name"></li></a>
+                    </option>
+                </div>
+                <div data-bind="foreach: titleData">
+                    <option>
+                    <a data-bind="attr: { href: url}"><li data-bind="text: primaryTitle"></li></a>
+                    </option>
+                </div>
+                <div data-bind="foreach: genreData">
+                    <option>
+                    <a data-bind="attr: { href: url}"><li data-bind="text: name"></li></a>
+                    </option>
+                </div>
+                <div data-bind="foreach: professionData">
+                    <option>
+                    <a data-bind="attr: { href: url}"><li data-bind="text: professionName"></li></a>
+                    </option>
+                </div>
+        </datalist>
         </div>
     </div>
     <div class="top-block-head text-uppercase" style="text-align:center;">
