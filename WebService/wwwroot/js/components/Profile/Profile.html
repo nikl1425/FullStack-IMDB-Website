@@ -75,7 +75,6 @@
         </div>
         <br>
         <br>
-        <br>
         <!--    DELETE ACCOUNT     -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteBtn">Delete Account</button>
         <div class="modal" id="deleteBtn" tabindex="-1" role="dialog" aria-labelledby="deleteBtnLabel" aria-hidden="true">
@@ -98,6 +97,7 @@
             </div>
         </div>
     </div>
+<br>
 <!-- SEE YOUR RATINGS -->
     <div class="container">
         <h1>Showing all of your ratings here: </h1>
@@ -120,6 +120,9 @@
                         <a data-bind="attr: {href: updateUrl+8}, text: 8"></a>
                         <a data-bind="attr: {href: updateUrl+9}, text: 9"></a>
                         <a data-bind="attr: {href: updateUrl+10}, text: 10"></a>
+                        <input type="button" value="Update" data-bind="click: $root.setRating"/>
+                        <!-- https://docs.microsoft.com/en-us/aspnet/web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5 -->
+                        <!-- <input type="button" value="Update" data-bind="click: $root.update"/> -->
                     </div>
                 </div>
             </dt>

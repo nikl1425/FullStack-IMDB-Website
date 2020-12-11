@@ -23,6 +23,13 @@
                 userRatingList(data);
                 console.log(data);
             })
+            .then(function (setRating){
+                alert("test")
+                $.ajax({
+                    type: "POST",
+                    url: setRating.updateUrl+'/'
+                });
+            })
             .catch(function (error) {
                 console.log("Error: " + error)
             });
@@ -105,6 +112,23 @@
             });
         });
 
+        /*  UPDATE RATING  */
+        $("#updateRating").click(function(e) {
+            alert("test");
+            e.preventDefault();
+            $.ajax({
+                type: 'GET',
+                url: $(this).attr("href"),
+                success: function (result) {
+                    if(result) {
+                        alert("You have updated the rating!")
+                    } else {
+                        alert("Something went wrong!")
+                    }
+                }
+            });
+        });
+
         /*  DELETE PROFILE  */
         $("#confirmDelete").on('click', function() {      
             $.ajax({
@@ -119,6 +143,23 @@
                     }
                 }
             });
+        });
+        
+        /*  DELETE BOOKMARKS LIST   */
+        $("#deleteBookmarkList").on('click', function() {
+            console.log(bookmarkList.Id);
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:5001/api/tlist/17/delete',
+                success: function (result) {
+                    if(result) {
+                        alert("Your list has been deleted!")
+                    } else {
+                        alert("Something went wrong!")
+                    }
+                }
+            });
+            
         });
 
         return {

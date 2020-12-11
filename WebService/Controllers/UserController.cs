@@ -102,7 +102,7 @@ namespace WebService.Controllers
         }
         
         //DELETE USERS BOOKMARK LIST
-        [HttpDelete("plist/{listid}")] 
+        [HttpDelete("plist/{listid}/delete")] 
         public IActionResult deletePersonBookmarkList(int listid)
         {
             var delete = _dataService.deletePersonBookmarkList(listid);
@@ -135,7 +135,7 @@ namespace WebService.Controllers
         }
         
         //DELETE USERS TITLE BOOKMARK LIST
-        [HttpDelete("tlist/{listid}")] 
+        [HttpDelete("tlist/{listid}/delete")] 
         public IActionResult deleteTitleBookmarkList(int listid)
         {
             var delete = _dataService.deleteTitleBookmarkList(listid);
@@ -159,14 +159,16 @@ namespace WebService.Controllers
             
             IList<TitleBookmarkListDTO> titleList = titleBookmarkList.Select(x => new TitleBookmarkListDTO
             {
+                Type = "titleList",
                 Id = x.Id,
                 UserId = x.UserId,
                 ListName = x.ListName,
-                Url = "http://localhost:5001/api/tlist/"+x.Id
+                Url = "http://localhost:5001/api/tlist/"+x.Id 
             }).ToList();
             
             IList<PersonBookmarkListDto> personList = personBookmarkList.Select(x => new PersonBookmarkListDto
             {
+                Type = "personList",
                 Id = x.Id,
                 UserId = x.UserId,
                 ListName = x.ListName,
@@ -182,7 +184,7 @@ namespace WebService.Controllers
         }
         
         //RATE A MOVIE
-        [HttpPost("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
+        [HttpGet("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
         public IActionResult rateMovie(int userid, int thisRating, string titleid)
         {
             if (titleid == null)
