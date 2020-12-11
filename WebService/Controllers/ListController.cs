@@ -29,7 +29,7 @@ namespace WebService.Controllers
                 
             IList<PersonBookmarkListDto> plistDto = pbookmarklist.Select(x => new PersonBookmarkListDto
             {
-                Id = x.Id,
+                Id = "p"+x.Id,
                 UserId = x.UserId,
                 ListName = x.ListName,
                 Url = "http://localhost:5001/api/user/"+x.UserId //URL to user
@@ -54,7 +54,7 @@ namespace WebService.Controllers
                 
             IList<TitleBookmarkListDTO> tlistDto = tbookmarklist.Select(x => new TitleBookmarkListDTO
             {
-                Id = x.Id,
+                Id = "t"+x.Id,
                 UserId = x.UserId,
                 ListName = x.ListName,
                 Url = "http://localhost:5001/api/user/"+x.UserId //URL to user

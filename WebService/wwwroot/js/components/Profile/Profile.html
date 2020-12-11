@@ -44,6 +44,7 @@
             <input type="submit" value="Save changes">
         </form>
         <br>
+        
         <!--    UPDATE PASSWORD    -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateBtn">Update Password</button>
         <div class="modal fade" id="updateBtn" tabindex="-1" role="dialog" aria-labelledby="updateBtnLabel" aria-hidden="true">
@@ -120,7 +121,6 @@
                         <a data-bind="attr: {href: updateUrl+8}, text: 8"></a>
                         <a data-bind="attr: {href: updateUrl+9}, text: 9"></a>
                         <a data-bind="attr: {href: updateUrl+10}, text: 10"></a>
-                        <input type="button" value="Update" data-bind="click: $root.setRating"/>
                         <!-- https://docs.microsoft.com/en-us/aspnet/web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5 -->
                         <!-- <input type="button" value="Update" data-bind="click: $root.update"/> -->
                     </div>
@@ -140,8 +140,33 @@
         <br>
         <ul data-bind="foreach: bookmarkList">
             <li>
-                <a data-bind="attr: {href: url}, text: listName"></a>
+                        <a data-bind="attr: {href: url}, text: listName"></a>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <span data-bind="value: type" id="type"></span>
+                        <button type="button" data-toggle="modal" data-target="#deleteList"> : </button>
+                        <div class="modal" id="deleteList" tabindex="-1" role="dialog" aria-labelledby="deleteListLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteListLabel">EDIT LIST</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ARE YOU SURE YOU WANT TO DELETE THIS LIST?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                                        <button type="button" class="deleteBookmarkList" data-bind="value: id">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!--<span type="button" class="deleteBookmarkList" data-bind="value: id" style="cursor: pointer">:</span>-->
             </li>
         </ul>
+        
     </div>
+
 </body>
