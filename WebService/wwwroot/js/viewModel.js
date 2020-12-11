@@ -4,6 +4,7 @@
     let bodyComponent = ko.observable("home");
     let menuElements = ["Home", "Movie", "People", "Profile", "Register", "About"];
     let subElements = ["Peoplepage"];
+    let movieElement = ["Moviepage"];
     
     let changeContent = element => {
         currentComponent(element.toLowerCase());
@@ -33,6 +34,7 @@
         bodyActive,
         changeContent,
         isActive,
+        movieElement
 
     };
 });
