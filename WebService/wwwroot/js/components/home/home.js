@@ -1,5 +1,5 @@
 
-define(['knockout'], (ko) => {
+define(['knockout', 'postman'], (ko, postman) => {
     return function () {
         let poster = ko.observableArray([]);
         self.getPosters = function () {
@@ -27,12 +27,17 @@ define(['postman'], (postman) => {
 });
 */
 
+        let gotoContact = () => {
+            postman.publish("changeContent", "peoplePage");
+        }
        
 
 let personData = ko.observableArray([])
 let genreData = ko.observableArray([])
 let titleData = ko.observableArray([])
 let professionData = ko.observableArray([])
+        
+        
 
         
 $(document).on("keyup", "input", function(e){
@@ -67,10 +72,13 @@ $(document).on("keyup", "input", function(e){
         }
 
 
-    $(document).ready(function() {
-        $('#searchbar').blur(function() {
-            $('.dropdown-content').hide();
-        })
+
+    $(document).ready(function(){
+        $('#searchbar').focus(function(){
+            console.log("Has focus")
+        }).focusout(function(){
+            //$('.dropdown-content').hide();
+        });
     });
 
     console.log(inputValLength);
@@ -87,7 +95,8 @@ $(document).on("keyup", "input", function(e){
             personData,
             genreData,
             titleData,
-            professionData
+            professionData,
+            gotoContact
         };
     }
 });

@@ -3,8 +3,9 @@
     let currentComponent = ko.observable("home");
     let bodyComponent = ko.observable("home");
     let menuElements = ["Home", "Movie", "People", "Profile", "Register", "About"];
+    let subElements = ["Peoplepage"];
+    
     let changeContent = element => {
-
         currentComponent(element.toLowerCase());
         bodyComponent = currentComponent;
     }
@@ -21,7 +22,11 @@
     postman.subscribe("changeContent", component => {
         changeContent(component);
     });
+
+
+    
     return {
+        subElements,
         currentComponent,
         bodyComponent,
         menuElements,
