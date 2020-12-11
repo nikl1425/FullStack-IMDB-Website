@@ -11,6 +11,7 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         let objGenre = ko.observable();
         let movieGenres = ko.observable();
         let types = ko.observableArray([]);
+        let title_id = ko.observableArray();
        
 
         self.selectedType.subscribe(() => {
@@ -26,6 +27,9 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                         return response.json();
                     })
                     .then(function (data) {
+                        pageSizes(data.pageSizes);
+                        prev(data.prev || undefined);
+                        next(data.next || undefined);
                         movieList(data.movieList)
                         console.log(movieList)
                         $('.gotomovie').focus(function(){
@@ -161,10 +165,9 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             selectedType,
             types,
             ChangeMovies,
-            postman
+            postman,
             
             
-
         };
     }
 });
