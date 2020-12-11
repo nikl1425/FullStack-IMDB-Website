@@ -14,19 +14,19 @@
 <a id="topOfPage"></a>
 <a name="top"></a>
 <section class="section-long">   <!-- GENRES CONFIG HERE-->
-    
+   
     <div class="container">
         <div class="section-pannel">
             <div class="grid row">
                 <div class="col-md-10">
-                    <form autocomplete="off">
-                        <div class="row form-grid">
-                            <div class="col-sm-6 col-lg-3">
+                    <form autocomplete="off" >
+                        <div class="row form-grid" >
+                            <div class="col-sm-6 col-lg-3" >
                                 <div id="scrolltothisdiv"></div>
-                                <div class="input-view-flat input-group">
-                                    <select class="form-control" name="genre">
-                                        <option selected="true">genre</option>
-                                        <option>action</option>
+                                <div class="input-view-flat input-group" >
+                                    <select class="form-control" name="genre"  data-bind="foreach: genres">
+                                        <option selected="true" data-bind="text: name"></option>
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -49,11 +49,7 @@
 
         <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
         <table>
-            <thead>
-            <tr>
-                <th>First name</th>
-            </tr>
-            </thead>
+           
             <tbody>  <!-- FOR HVER FETCHED -->
             <tr>
 

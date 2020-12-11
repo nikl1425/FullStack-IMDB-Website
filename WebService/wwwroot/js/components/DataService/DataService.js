@@ -1,5 +1,6 @@
 ﻿define([], () => {
     const movieApiUrl = "api/title";
+    const genreApiUrl = "api/genre";
     
 
     let getJson = (url, callback) => {
@@ -12,6 +13,13 @@
         }
         getJson(url, callback);
     };
+    
+    let getGenres = (url, callback) => {
+        if(url === undefined) {
+            url = genreApiUrl;
+        }
+        getJson(url, callback)
+    };
 
     let getMoviesUrlWithPageSize = size => movieApiUrl + "?pageSize=" + size;
 
@@ -19,6 +27,7 @@
     return {
         getMovies,
         getMovie: getJson,
-        getMoviesUrlWithPageSize
+        getMoviesUrlWithPageSize,
+        getGenres
     };
 });

@@ -225,6 +225,7 @@ namespace WebService.Controllers
         {
             var dto = _mapper.Map<MoviesDto>(movie);
             dto.Url = "http://localhost:5001/api/title/" + movie.title_id;
+            dto.genre = _dataService.GetTitleGenres(movie.title_id).Select(x => x.Genre.Name).ToList();
             return dto;
         }
     }

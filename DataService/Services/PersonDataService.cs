@@ -26,14 +26,13 @@ namespace DataService.Services
             var query = ctx.Person.Where(x => x.Name.Contains(substring));
             return query;
         }
-
         public IQueryable<Profession> GetProfessionBySubstring(string substring)
         {
             var ctx = new ImdbContext();
             var query = ctx.Professions.Where(x => x.ProfessionName.Contains(substring));
             return query;
         }
-        
+       
         public List<Person> GetPersons()
         {
             using var ctx = new ImdbContext();
