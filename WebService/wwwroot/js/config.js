@@ -51,7 +51,7 @@ require(['knockout', 'text'], (ko) => {
     });
     
     ko.components.register('moviepage', {
-        viewModel: { require: "components/movies/movies" },
+        viewModel: { require: "components/movies/moviepage" },
         template: { require: "text!components/movies/moviepage.html" }
     });
 

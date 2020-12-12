@@ -11,15 +11,17 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         let objGenre = ko.observable();
         let movieGenres = ko.observable();
         let types = ko.observableArray([]);
-        let title_id = ko.observableArray();
        
 
         self.selectedType.subscribe(() => {
             objGenre = selectedType().name;
             console.log(objGenre)
             });
-        window.movieValue = "";
         
+        window.movieValue = "";
+        function goToMoviePage(){
+            postman.publish("changeContent", "moviePage");
+        }
         let ChangeMovies = () => {
             change = function () {
                 fetch('http://localhost:5001/api/title/type/'+objGenre)
@@ -32,16 +34,19 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                         next(data.next || undefined);
                         movieList(data.movieList)
                         console.log(movieList)
-                        $('.gotomovie').focus(function(){
-                            console.log("Has focus")
-                            window.movieValue = $(this).val();
-                            goToMoviePage()
-                        })
+                    }).then(function () {
+                    $('.gotomovie').focus(function(){
+                        console.log("Has focus")
+                        window.movieValue = $(this).val();
+                        goToMoviePage()
                     })
+                    console.log(window.value)
+                })
             };
             change();
         }
 
+        
        
         
 
@@ -56,13 +61,15 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 next(data.next || undefined);
                 movieList(data.movieList);
                 movieGenres(movieList.genre)
-
                 $('.gotomovie').focus(function(){
                     console.log("Has focus")
-                    window.movieValue = $(this).val();
+                    window.movieValue = $(this).val();;
                     goToMoviePage()
                 })
-            });
+                
+
+              
+            })
 
             
         }
@@ -133,23 +140,8 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             }
         };
         
-        function goToMoviePage(){
-            postman.publish("changeContent", "moviePage");
-        }
-
-        let movieData = ko.observableArray([])
-        const url = 'http://localhost:5001/api/title/';
-
-        fetch(url + window.value)
-            .then((response) => {
-                return response.json()
-            })
-            .then((data) => {
-                movieData(data)
-                console.log(movieData())
-            }).catch((err) => {
-        })
-
+        
+        
 
         return {
             pageSizes,
@@ -168,6 +160,8 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             postman,
             
             
+            
+
         };
     }
 });

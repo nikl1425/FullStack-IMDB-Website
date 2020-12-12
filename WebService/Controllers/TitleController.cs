@@ -23,6 +23,7 @@ namespace WebService.Controllers
             _dataService = dataService;
             _mapper = mapper;
         }
+
         [HttpGet(Name = nameof(GetAllMovies))]
         public IActionResult GetAllMovies(int page = 0, int pageSize = 20)
         {
@@ -72,12 +73,12 @@ namespace WebService.Controllers
 
             return Ok(result);
         }
-        
-        
+
+
         [HttpGet("type/{typeName}", Name = nameof(GetAllMoviesType))]
-        public IActionResult GetAllMoviesType(string typeName,int page = 0, int pageSize = 20)
+        public IActionResult GetAllMoviesType(string typeName, int page = 0, int pageSize = 20)
         {
-            var movieList = _dataService.GetAllMoviesWithType(typeName,page, pageSize).Select(CreateDto);
+            var movieList = _dataService.GetAllMoviesWithType(typeName, page, pageSize).Select(CreateDto);
             var numberOfMovies = _dataService.GetNumberOfMoviesWithType(typeName);
 
             var pages = (int) Math.Ceiling((double) numberOfMovies / pageSize);
@@ -123,9 +124,7 @@ namespace WebService.Controllers
 
             return Ok(result);
         }
-        
-        
-        
+
 
 /*
         [HttpGet]
@@ -161,6 +160,9 @@ namespace WebService.Controllers
             var titlePerson = _dataService.GetTitlePersons(id);
             var titleType = _dataService.GetTitleType(id);
             var poster = _dataService.GetOmdbData(id);
+            var titleRating = _dataService.GetTitleRating(id);
+            var titleRuntime = _dataService.GetTitleRuntime(id);
+            var titlePlot = _dataService.GetOmdbData(id);
 
             if (title == null)
             {
@@ -177,7 +179,10 @@ namespace WebService.Controllers
             }
 
             titleDto.Type = titleType.Type.TypeName;
+            titleDto.runtime = titleRuntime.Runtime;
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
+            titleDto.Rating = titleRating.Average_Rating;
+            titleDto.plot = titlePlot.Plot;
 
             IList<TitleGenreDTO> TitleGenres = titleGenre.Select(x => new TitleGenreDTO
             {
@@ -273,7 +278,7 @@ namespace WebService.Controllers
 
             return Ok(posterItems);
         }
-        
+
 
         MoviesDto CreateDto(Movies movie)
         {

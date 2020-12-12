@@ -16,16 +16,17 @@ namespace WebService.ObjectDto
         public string TypeUrl { get; set; }
         public string poster  {get; set;}
         
+        public int runtime { get; set; }
+        
         //URL
         public string Url { get; set; }
         
+        public string plot { get; set; }
+        
         
         // Mangler
-        public Title_Rating TitleRating;
+        public double Rating { get; set; }
         
-        public IList<Title_Bookmark> TitleBookmarks { get; set; }
-        public IList<Person_Bookmark> PersonBookmarks { get; set; }
-        public IList<Person_known_title> PersonKnownTitles { get; set; }
-        public TitleRuntime TitleRuntime { get; set; }
+      
     }
 }

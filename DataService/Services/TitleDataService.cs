@@ -339,6 +339,21 @@ namespace DataService.Services
             var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformovieType({typeName})").Count();
             return query;
         }
+
+        public Title_Rating GetTitleRating(string id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.title_rating.Where(x => x.Title_Id == id).FirstOrDefault();
+            return query;
+
+        }
+
+        public TitleRuntime GetTitleRuntime(string id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.TitleRuntime.Where(x => x.Id == id).FirstOrDefault();
+            return query;
+        }
         
         
      

@@ -56,5 +56,9 @@ namespace DataService.Services
         public List<Movies> GetAllMoviesWithType(string typeName, int page, int pageSize);
 
         public int GetNumberOfMoviesWithType(string typeName);
+
+        public Title_Rating GetTitleRating(string id);
+
+        public TitleRuntime GetTitleRuntime(string id);
     }
 }

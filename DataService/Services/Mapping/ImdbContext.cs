@@ -48,6 +48,7 @@ namespace DataService
         
         public DbSet<TopPoster> TopPosters { get; set; }
         public DbSet<Movies> Movies { get; set; }
+        public DbSet<TitleRuntime> TitleRuntime { get; set; }
         
         public DbSet<PersonWithProfession> PersonWithProfessions { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
