@@ -1,19 +1,29 @@
 ﻿<!-- TODO: FIX CSS -->
 <link href="css/userlogin.css" rel="stylesheet" type="text/css" />
-
-<div class="wrapper fadeInDown">
-    <div id="formContent">
-        <!-- Tabs Titles -->
-        <h1>Create account</h1>
-        <!-- Create user Form -->
-        <form       class="api_register_form"        method="POST">
-            <input  type="text"      id="surname"    class="fadeIn first"   required name="surname"   placeholder="First Name"  value="Surname" > 
-            <input  type="text"      id="last_name"   class="fadeIn second"  required name="lastname"  placeholder="Last Name"   value="Lastname" >
-            <input  type="number"    id="age"        class="fadeIn third"   required name="age"       placeholder="Age"         value="10" min="1" max="99" >
-            <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"    placeholder="Email"       value="htmlTest1@test.com" >
-            <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"  placeholder="Username"    value="htmltester1" >
-            <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"  placeholder="Password"    value="htmltester1" >
-            <input  type="submit"                    class="serializeArray">
-        </form>
+<body>
+    <div class="mainbox">
+        <br>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+                <h2>Create account</h2>
+                <!-- Create user Form -->
+                <form       class="api_register_form"        method="POST">
+                    <input  type="text"      id="surname"    class="fadeIn first"   required name="surname"   placeholder="First Name"   > 
+                    <input  type="text"      id="last_name"  class="fadeIn second"  required name="lastname"  placeholder="Last Name"   >
+                    <input  type="number"    id="age"        class="fadeIn third"   required name="age"       placeholder="Age"  min="1" max="99" >
+                    <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"    placeholder="Email"        >
+                    <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"  placeholder="Username"     >
+                    <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"  placeholder="Password"     >
+                    <input  type="submit"                    class="fadeIn sixth">
+                </form>
+                <div id="formFooter">
+                    <a class="underlineHover" href="#" id="gotologinpage">Already a user? Login here</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br>
     </div>
-</div>
+
+</body>

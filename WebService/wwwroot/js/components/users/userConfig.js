@@ -4,6 +4,22 @@
         let goToProfilePage = () => {
             postman.publish("changeContent", "profile");
         }
+        let goToRegisterPage = () => {
+            postman.publish("changeContent", "register");
+        }
+        let goToLoginPage = () => {
+            postman.publish("changeContent", "login");
+        }
+        $("#gotoregisterpage").on('click', function(){
+            goToRegisterPage();
+        })
+        $("#gotoforgotpw").on('click',function (){
+            alert("TBA - contact the admin")
+        })
+        $("#gotologinpage").on('click', function(){
+            goToLoginPage();
+        })
+        
 
 
         const serialize_form = form => JSON.stringify(
@@ -42,7 +58,7 @@
             console.log(json);
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:5001/api/login',
+                url: 'http://localhost:5001/api/user/login',
                 dataType: 'json',
                 data: json,
                 contentType: 'application/json',

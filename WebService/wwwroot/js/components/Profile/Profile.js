@@ -40,12 +40,17 @@
                            }
                        }
                    })
-                    
                 });
+                $(".gotomoviepage").on('click', function(){
+                    goToMoviePage();
+                })
             })
             .catch(function (error) {
                 console.log("Error: " + error)
             });
+        }
+        function goToMoviePage(){
+            postman.publish("changeContent", "moviePage");
         }
         getRating();
         let goToList = () => {
