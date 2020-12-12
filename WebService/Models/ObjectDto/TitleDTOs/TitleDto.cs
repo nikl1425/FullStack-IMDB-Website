@@ -28,6 +28,9 @@ namespace WebService.ObjectDto
         public List<string> personJob { get; set; }
         public List<string> personCharacter { get; set; }
         
+        public List<string> languages { get; set; }
+        public List<string> regions { get; set; }
+        
         
         // Mangler
         public double Rating { get; set; }

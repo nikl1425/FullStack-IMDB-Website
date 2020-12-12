@@ -185,6 +185,9 @@ namespace WebService.Controllers
             titleDto.Rating = titleRating.Average_Rating;
             titleDto.plot = titlePlot.Plot;
             titleDto.personCharacter = personsInMovie.Select(x =>x.Name + " as " + x.Category + " in the role of " + x.Character).ToList();
+            titleDto.languages = titleAkas.Select(x => x.Language).ToList();
+            titleDto.regions = titleAkas.Select(x => x.Region).ToList();
+            
 
             IList<TitleGenreDTO> TitleGenres = titleGenre.Select(x => new TitleGenreDTO
             {
