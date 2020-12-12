@@ -60,5 +60,7 @@ namespace DataService.Services
         public Title_Rating GetTitleRating(string id);
 
         public TitleRuntime GetTitleRuntime(string id);
+
+        List<TitlePersonsInMovie> GetPersonsInMovie(string id);
     }
 }

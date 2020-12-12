@@ -354,6 +354,13 @@ namespace DataService.Services
             var query = ctx.TitleRuntime.Where(x => x.Id == id).FirstOrDefault();
             return query;
         }
+
+        public List<TitlePersonsInMovie>  GetPersonsInMovie(string id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.TitlePersonsInMovies.FromSqlInterpolated($"select * from personsformovie({id})").ToList();
+            return query;
+        }
         
         
      
