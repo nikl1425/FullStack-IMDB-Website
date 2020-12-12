@@ -2,7 +2,7 @@
 
     let currentComponent = ko.observable("home");
     let bodyComponent = ko.observable("home");
-    let menuElements = ["Home", "Movie", "People", "Profile", "Register", "About"];
+    let menuElements = ["Home", "Movie", "People", "Login","Profile", "Register", "About"];
     let subElements = ["Peoplepage"];
     let movieElement = ["Moviepage"];
     let listcreateElement = ["Createlist"];

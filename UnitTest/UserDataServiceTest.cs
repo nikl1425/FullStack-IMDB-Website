@@ -12,6 +12,13 @@ namespace PortFolio2.Tests
     public class UserDataServiceTest
     {
         [Fact]
+        public void Loginx()
+        {
+            var service = new UserDataService();
+            var login = service.Login("user3", "user3");
+            Assert.True(login);
+        }
+        [Fact]
         public void GetUser()
         {
             var service = new UserDataService();

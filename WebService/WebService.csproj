@@ -349,5 +349,6 @@
     <ItemGroup>
       <Content Remove="wwwroot\Pages\Index.cshtml" />
       <Content Remove="wwwroot\Pages\Index.cshtml.cs" />
+      <Content Remove="wwwroot\sign-up.html" />
     </ItemGroup>
 </Project>
