@@ -10,6 +10,10 @@ namespace WebService.ObjectDto
         public string TitleId { get; set; }
         
         public string TitleName { get; set; }
+        
+        public string Poster { get; set; }
+        
+        public string ProductionYear { get; set; }
 
         public string Url { get; set; }
     }

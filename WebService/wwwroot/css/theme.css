@@ -46,6 +46,13 @@ body {
   font-size: 0.875rem;
   line-height: 1.75;
 }
+
+.wrapper{
+  min-height: 100%; 
+  height: auto !important; 
+  height: 100%; 
+  margin: 0 auto -30px;
+}
 /*------------------------------------------------------------------
     [2. Layout]
 */

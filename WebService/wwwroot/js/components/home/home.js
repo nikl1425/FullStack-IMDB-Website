@@ -26,8 +26,6 @@ define(['postman'], (postman) => {
     }
 });
 */
-        
-       
 
 let personData = ko.observableArray([])
 let genreData = ko.observableArray([])
@@ -35,35 +33,14 @@ let titleData = ko.observableArray([])
 let professionData = ko.observableArray([])
 let personObj = ko.observable();      
 
-        let goToEntity = () => {
-            change = function () {
-                fetch('http://localhost:5001/api/name/' + personObj)
-                    .then(function (response) {
-                        return response.json();
-                    })
-                    .then(function (data) {
-                        console.log(movieList)
-                    })
-            };
-            change();
-        }
-
-        var links=document.getElementsByTagName('a'), hrefs = [];
-        
-        for (var i = 0; i<links.length; i++)
-        {
-            hrefs.push(links[i].href);
-        }
-        
-        console.log(links);
         
         function goToPersonPage(){
             postman.publish("changeContent", "peoplePage");
         }
         
 window.value = "";
-
-        $(document).on("keyup", "input", function(e){
+        
+$(document).on("keyup", "input", function(e){
     const inputVal = $(this).val();
     let inputValLength = $(this).val().length;
     const url = 'http://localhost:5001/api/search/';

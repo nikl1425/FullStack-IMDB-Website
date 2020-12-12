@@ -53,7 +53,10 @@ namespace WebService.Controllers
             {
                 Id = x.Id,
                 TitleId = x.TitleId,
+                ProductionYear = _titleDataService.GetTitle(x.TitleId).StartYear ?? "Unknown production year",
+                Poster = _titleDataService.GetOmdbData(x.TitleId).Poster ?? _titleDataService.GetOmdbData("tt11000576").Poster,
                 TitleName = _titleDataService.GetTitle(x.TitleId).OriginalTitle.ToString(),
+                
                 Url = "http://localhost:5001/api/title/" + x.TitleId
             }).ToList();
 
