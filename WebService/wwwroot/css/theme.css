@@ -47,12 +47,7 @@ body {
   line-height: 1.75;
 }
 
-.wrapper{
-  min-height: 100%; 
-  height: auto !important; 
-  height: 100%; 
-  margin: 0 auto -30px;
-}
+
 /*------------------------------------------------------------------
     [2. Layout]
 */
@@ -1778,6 +1773,8 @@ textarea.form-control {
 */
 .footer {
   padding: 4rem 0 0;
+  bottom: 0;
+  
 }
 .footer-logo {
   height: 1em;
