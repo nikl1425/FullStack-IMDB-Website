@@ -1,4 +1,5 @@
 ﻿
+</section>
 <div class="container">
     <div class="sidebar-container">
         <div class="content">
@@ -6,8 +7,11 @@
                 <div class="section-line">
                     <div class="movie-info-entity">
                         <div class="entity-poster" data-role="hover-wrap" >
-                            <div class="embed-responsive embed-responsive-poster" data-bind="foreach: titleDto">
-                                <img class="embed-responsive-item" data-bind="attr: { href: poster }" alt="" />
+                            <div class="embed-responsive embed-responsive-poster" >
+                                <div data-bind="with: titleData">
+                                    <img class="embed-responsive-item" data-bind="attr: {src: poster}" alt="" />
+                                </div>
+                                
                             </div>
                             <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                                 <div class="entity-play">
@@ -18,7 +22,7 @@
                             </div>
                         </div>
                         <div class="entity-content">
-                            <h2 class="entity-title"></h2>
+                            <h2 class="entity-title" data-bind="with: titleData"><span data-bind="text: primaryTitle"></span></h2>
                             <div class="entity-category">
                                 <a class="content-link" href="movies-blocks.html">comedy</a>,
                                 <a class="content-link" href="movies-blocks.html">detective</a>
