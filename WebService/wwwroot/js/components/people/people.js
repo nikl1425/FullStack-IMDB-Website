@@ -1,40 +1,30 @@
-define(['knockout', 'postman'], (ko, postman) => {
+define(['knockout'], (ko) => {
     return function () {
-    console.log(window.value)
-    window.personToMoviePage = "";
+        let people = ko.observableArray([]);
 
-            var personData = ko.observableArray([])
-            var professionData = ko.observableArray([])
-            var knownForTitlesData = ko.observableArray([])
-            const url = 'http://localhost:5001/api/name/';
-        
-    function goToMoviePage(){
-            postman.publish("changeContent", "moviePage");
-        }
-       
-            fetch(url + window.value)
-                .then((response) => {
-                    return response.json()
-                })
-                .then((data) => {
-                    personData(data.personDtos)
-                    professionData(data.professionDtos)
-                    knownForTitlesData(data.personKnownTitleDtos)
-                    
-                }).catch((err) => {
+
+        fetch('http://localhost:5001/api/name')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                people(data);
+                console.log(people())
             })
 
-        $(document).on('click', '.fromPeopleToMovie', function() {
-            console.log("Has focus")
-            window.personToMoviePage = $(this).val();
-            goToMoviePage()
+        document.getElementById("scrolltotop").addEventListener("click", function () {
+            console.log("Clicked!");
+            $('html,body').animate({scrollTop: $('#scrolltothisdiv').offset().top}, 1000);
         });
-    
+
+        document.getElementById("prevscrolltotop").addEventListener("click", function () {
+            console.log("Clicked!");
+            $('html,body').animate({scrollTop: $('#scrolltothisdiv').offset().top}, 1000);
+        });
+
         return {
-            personData,
-            professionData,
-            knownForTitlesData,
-            postman
+            people
+
         };
     }
 });

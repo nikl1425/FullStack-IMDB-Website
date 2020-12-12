@@ -163,6 +163,7 @@ namespace WebService.Controllers
             var titleRating = _dataService.GetTitleRating(id);
             var titleRuntime = _dataService.GetTitleRuntime(id);
             var titlePlot = _dataService.GetOmdbData(id);
+            var personsInMovie = _dataService.GetPersonsInMovie(id);
 
             if (title == null)
             {
@@ -183,6 +184,10 @@ namespace WebService.Controllers
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
             titleDto.Rating = titleRating.Average_Rating;
             titleDto.plot = titlePlot.Plot;
+            titleDto.personJob = personsInMovie.Select(x => x.Name + "(" + x.Category + ")").ToList();
+            titleDto.languages = titleAkas.Select(x => x.Language).ToList();
+            titleDto.regions = titleAkas.Select(x => x.Region).ToList();
+            
 
             IList<TitleGenreDTO> TitleGenres = titleGenre.Select(x => new TitleGenreDTO
             {

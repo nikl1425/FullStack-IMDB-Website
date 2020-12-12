@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DataService.Objects;
 
 namespace WebService.ObjectDto
@@ -22,6 +23,13 @@ namespace WebService.ObjectDto
         public string Url { get; set; }
         
         public string plot { get; set; }
+        
+        public List<string> personInMovie { get; set; }
+        public List<string> personJob { get; set; }
+        public List<string> personCharacter { get; set; }
+        
+        public List<string> languages { get; set; }
+        public List<string> regions { get; set; }
         
         
         // Mangler

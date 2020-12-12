@@ -82,24 +82,16 @@
         <input id="searchbar" class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" value=""/>
             <div id="cleardiv">
             <div class="dropdown-content info-text">
-                <div data-bind="foreach: personData">
-                        <a class="gotopage" href="#" data-bind="value: id"><img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt="HTML5 Icon" width="90" height="120" style="display:inline;">
-                            <p data-bind="text: name" style="display:inline;"></p></a>
-                </div>
                 <div class="titlewrap" data-bind="foreach: titleData">
                     <div>
                         <a data-bind="attr: { href: url}"><img class="embed-responsive-item" data-bind="attr:{src: poster}" alt="HTML5 Icon" width="90" height="120" style="display:inline;">
                             <p data-bind="text: primaryTitle" style="display:inline;"></p></a>
-                        
+
                     </div>
                 </div>
-                <div data-bind="foreach: genreData">
-                        <a data-bind="attr: { href: url}"><img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt="HTML5 Icon" width="90" height="120" style="display:inline;">
+                <div data-bind="foreach: personData">
+                        <a class="gotopage" href="#" data-bind="value: id"><img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt="HTML5 Icon" width="90" height="120" style="display:inline;">
                             <p data-bind="text: name" style="display:inline;"></p></a>
-                </div>
-                <div data-bind="foreach: professionData">
-                        <a data-bind="attr: { href: url}"><img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt="HTML5 Icon" width="90" height="120" style="display:inline;">
-                            <p data-bind="text: professionName" style="display:inline;"></p></a>
                 </div>
             </div>
             </div>
@@ -134,7 +126,7 @@
                     <img id="imghover" data-bind="attr:{src: poster}"/>
                 </label>
                     <div class="section cssCarousel--showOnFocus">
-                        <p>Link her?</p>
+                        <p class="text-theme">Link her?</p>
                     </div>
             </li>
         </ul>

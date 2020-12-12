@@ -50,7 +50,6 @@ namespace DataService.Services
         public List<Movies> GetAllMovies(int page, int pageSize);
 
         public int GetNumberOfMovies();
-        IQueryable<Genre> GetGenreBySubstring(string substring);
         IQueryable<Title> GetTitleBySubstring(string substring);
 
         public List<Movies> GetAllMoviesWithType(string typeName, int page, int pageSize);
@@ -60,5 +59,7 @@ namespace DataService.Services
         public Title_Rating GetTitleRating(string id);
 
         public TitleRuntime GetTitleRuntime(string id);
+
+        List<TitlePersonsInMovie> GetPersonsInMovie(string id);
     }
 }

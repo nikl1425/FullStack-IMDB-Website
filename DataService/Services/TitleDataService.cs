@@ -309,18 +309,10 @@ namespace DataService.Services
         public IQueryable<Title> GetTitleBySubstring(string substring)
         {
             var ctx = new ImdbContext();
-            var query = ctx.title.Where(x => x.PrimaryTitle.Contains(substring) || x.OriginalTitle.Contains(substring));
+            var query = ctx.title.Where(x => x.PrimaryTitle.ToLower().Contains(substring.ToLower()) || x.OriginalTitle.ToLower().Contains(substring.ToLower()));
             return query;
         }
-        
-        public IQueryable<Genre> GetGenreBySubstring(string substring)
-        {
-            var ctx = new ImdbContext();
-            var query = ctx.genre.Where(x => x.Name.Contains(substring));
-            return query;
-        }
-        
-        
+
         public List<Movies> GetAllMoviesWithType(string typeName, int page, int pageSize)
         {
             using var ctx = new ImdbContext() ;
@@ -352,6 +344,13 @@ namespace DataService.Services
         {
             using var ctx = new ImdbContext();
             var query = ctx.TitleRuntime.Where(x => x.Id == id).FirstOrDefault();
+            return query;
+        }
+
+        public List<TitlePersonsInMovie>  GetPersonsInMovie(string id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.TitlePersonsInMovies.FromSqlInterpolated($"select * from personsformovie({id})").ToList();
             return query;
         }
         

@@ -51,6 +51,7 @@ namespace DataService
         public DbSet<TitleRuntime> TitleRuntime { get; set; }
         
         public DbSet<PersonWithProfession> PersonWithProfessions { get; set; }
+        public DbSet<TitlePersonsInMovie> TitlePersonsInMovies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //genre
@@ -306,6 +307,12 @@ namespace DataService
             modelBuilder.Entity<PersonWithProfession>().Property(x => x.primary_name).HasColumnName("primary_name");
             modelBuilder.Entity<PersonWithProfession>().Property(x => x.birth_year).HasColumnName("birth_year");
             modelBuilder.Entity<PersonWithProfession>().Property(x => x.death_year).HasColumnName("death_year");
+            
+            //Persons for movies
+            modelBuilder.Entity<TitlePersonsInMovie>().HasNoKey();
+            modelBuilder.Entity<TitlePersonsInMovie>().Property(x => x.Name).HasColumnName("name");
+            modelBuilder.Entity<TitlePersonsInMovie>().Property(x => x.Category).HasColumnName("category");
+            modelBuilder.Entity<TitlePersonsInMovie>().Property(x => x.Character).HasColumnName("moviecharacter");
 
             
             
