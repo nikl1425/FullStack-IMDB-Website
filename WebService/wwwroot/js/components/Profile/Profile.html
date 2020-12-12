@@ -142,40 +142,43 @@
     <div class="container">
         <h1>Showing all of your lists here: </h1>
         <br>
+        
         <a type=button href="#" class="btn btn-primary" id="gotonewlist" >CREATE A NEW LIST</a>
+        
         <ul data-bind="foreach: bookmarkList">
             <li>
-                        <!--<a data-bind="attr: {href: url}, text: listName"></a>-->
-                        <a class="gotolist" href="#" data-bind="value: id, text: listName"></a>
-                        &nbsp; &nbsp; &nbsp; &nbsp;
-                        <span data-bind="value: type" id="type"></span>
-                        <button type="button" data-toggle="modal" data-target="#deleteList"> : </button>
-                        <div class="modal" id="deleteList" tabindex="-1" role="dialog" aria-labelledby="deleteListLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="deleteListLabel">EDIT LIST</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ARE YOU SURE YOU WANT TO DELETE THIS LIST?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
-                                        <button type="button" class="deleteBookmarkList" data-bind="value: id">Yes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!--<span type="button" class="deleteBookmarkList" data-bind="value: id" style="cursor: pointer">:</span>-->
+                <!--<a data-bind="attr: {href: url}, text: listName"></a>-->
+                <a class="gotolist" href="#" data-bind="value: id, text: listName"></a>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <button type="button" class="deleteBookmarkList" data-bind="value: id">Delete List</button>
+                
             </li>
         </ul>
         <br>
         <br>
     </div>
 <!--
+<button type="button" data-toggle="modal" data-target="#deleteList"> : </button>
+                <div class="modal" id="deleteList" tabindex="-1" role="dialog" aria-labelledby="deleteListLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteListLabel">EDIT LIST</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ARE YOU SURE YOU WANT TO DELETE THIS LIST?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                                <button type="button" class="deleteBookmarkList" data-bind="value: id">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span type="button" class="deleteBookmarkList" data-bind="value: id" style="cursor: pointer">:</span>
 <style>
 body{
         background: -webkit-linear-gradient(left, #3931af, #00c6ff);

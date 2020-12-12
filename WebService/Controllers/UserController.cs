@@ -24,6 +24,14 @@ namespace WebService.Controllers
             _titleDataService = titleDataService;
             _mapper = mapper;
         }
+        
+        //LOGIN
+        [HttpPost("/user/login")]
+        public IActionResult Login(UserDto userDto)
+        {
+            var user = _dataService.Login(userDto.Username, userDto.Password);
+            return Ok(user);
+        }
 
         //GET USER PROFILE 
         [HttpGet ("user/{id}", Name = nameof(getUser))]

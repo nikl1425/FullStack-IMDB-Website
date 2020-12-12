@@ -47,6 +47,7 @@
                 console.log("Error: " + error)
             });
         }
+        getRating();
         let goToList = () => {
             postman.publish("changeContent", "listpage");
         }
@@ -60,7 +61,7 @@
             goToNewList()
         })
         
-        getRating();
+        
         /*  FETCH USER'S BOOKMARK LISTS  */
         function getList() {
         fetch(urlLists)
@@ -71,40 +72,46 @@
                 bookmarkList(data);
                 console.log(data);
                 $(".deleteBookmarkList").on('click', function() {
-                    let value = $(this).val();
-                    if(value.indexOf('t')>-1){
-                        let trimVal = value.substring(1);
-                        $.ajax({
-                            type: 'DELETE',
-                            url: 'http://localhost:5001/api/tlist/'+trimVal+'/delete',
-                            success: function (result) {
-                                if(result) {
-                                    //alert("Your list has been deleted!")                                    
-                                    getList();
-                                    $('#deleteList').modal('hide');
-                                    $('.modal-backdrop').remove();
-                                } else {
-                                    alert("Something went wrong!")
+                    if(confirm("Are you sure you want to delete?")){
+                        let value = $(this).val();
+                        console.log("VALUE: "+value);
+                        console.log("TRIM: "+value.substring(1))
+                        if(value.indexOf('t')>-1){
+                            let trimValTitle = value.substring(1);
+                            $.ajax({
+                                type: 'DELETE',
+                                url: 'http://localhost:5001/api/tlist/'+trimValTitle+'/delete',
+                                success: function (result) {
+                                    if(result) {
+                                        //alert("Your list has been deleted!")                                    
+                                        getList();
+                                        $('#deleteList').modal('hide');
+                                        $('.modal-backdrop').remove();
+                                    } else {
+                                        alert("Something went wrong!")
+                                    }
                                 }
-                            }
-                        })   
-                    }
-                    if(value.indexOf('p')>-1){
-                        let trimVal = value.substring(1);
-                        $.ajax({
-                            type: 'DELETE',
-                            url: 'http://localhost:5001/api/plist/'+trimVal+'/delete',
-                            success: function (result) {
-                                if(result) {
-                                    //alert("Your list has been deleted!")                                    
-                                    getList();
-                                    $('#deleteList').modal('hide');
-                                    $('.modal-backdrop').remove();
-                                } else {
-                                    alert("Something went wrong!")
+                            })
+                        }
+                        //value.indexOf('p')>-1
+                        else{
+                            let trimVal = value.substring(1);
+                            $.ajax({
+                                type: 'DELETE',
+                                url: 'http://localhost:5001/api/plist/'+trimVal+'/delete',
+                                success: function (result) {
+                                    if(result) {
+                                        //alert("Your list has been deleted!")                                    
+                                        getList();
+                                        $('#deleteList').modal('hide');
+                                        $('.modal-backdrop').remove();
+                                    } else {
+                                        alert("Something went wrong!")
+                                    }
                                 }
-                            }
-                        })
+                            })
+                        }
+                    } else {
                     }
                 });
                 $('.gotolist').focus(function(){
@@ -117,7 +124,6 @@
                 console.log("Error: "+error)
             });
         }
-        
         getList();
         
         /*  FETCH USER INFO  */

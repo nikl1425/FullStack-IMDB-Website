@@ -38,26 +38,26 @@ let personObj = ko.observable();
             postman.publish("changeContent", "peoplePage");
         }
         
-window.value = "";
+    window.value = "";
         
 $(document).on("keyup", "input", function(e){
-    const inputVal = $(this).val();
-    let inputValLength = $(this).val().length;
-    const url = 'http://localhost:5001/api/search/';
-        fetch(url + inputVal)
-            .then((response) => {
-                return response.json()
-            })
-            .then((data) => {
-                personData(data.newSearchPersonDTO)
-                if (data.newSearchGenreDTO.isNull){
-                }else{
-                    genreData(data.newSearchGenreDTO)
-                }
-                titleData(data.newSearchTitleDTO)
-                professionData(data.newSearchProfessionDTO)
-                console.log(inputValLength);
-                $('.gotopage').focus(function(){
+            const inputVal = $(this).val();
+            let inputValLength = $(this).val().length;
+            const url = 'http://localhost:5001/api/search/';
+            fetch(url + inputVal)
+                .then((response) => {
+                    return response.json()
+                })
+                .then((data) => {
+                    personData(data.newSearchPersonDTO)
+                    if (data.newSearchGenreDTO.isNull)
+                    {}else{
+                        genreData(data.newSearchGenreDTO)
+                    }
+                    titleData(data.newSearchTitleDTO)
+                    professionData(data.newSearchProfessionDTO)
+                    console.log(inputValLength);
+                    $('.gotopage').focus(function(){
                     console.log("Has focus")
                     window.value = $(this).val();
                     goToPersonPage()

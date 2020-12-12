@@ -30,6 +30,11 @@ require(['knockout', 'text'], (ko) => {
         template: { require: "text!components/people/people.html" }
     });
 
+    ko.components.register('login', {
+        viewModel: { require: "components/users/userConfig" },
+        template: { require: "text!components/users/login.html" }
+    });
+    
     ko.components.register('register', {
         viewModel: { require: "components/users/userConfig" },
         template: { require: "text!components/users/register.html" }
@@ -56,12 +61,12 @@ require(['knockout', 'text'], (ko) => {
     });
 
     ko.components.register('listpage', {
-        viewModel: { require: "components/users/userConfig" },
+        viewModel: { require: "components/profile/profile" },
         template: { require: "text!components/users/listpage.html" }
     });
 
     ko.components.register('createlist', {
-        viewModel: { require: "components/users/userConfig" },
+        viewModel: { require: "components/profile/profile" },
         template: { require: "text!components/users/createlist.html" }
     });
 });
