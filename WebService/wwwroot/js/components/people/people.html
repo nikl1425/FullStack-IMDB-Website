@@ -14,69 +14,25 @@
 
 <section class="section-long">   <!-- GENRES CONFIG HERE-->
     <div class="container">
-        <div class="section-pannel">
-            <div class="grid row">
-                <div class="col-md-10">
-                    <form autocomplete="off">
-                        <div class="row form-grid">
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="input-view-flat input-group">
-                                    <select class="form-control" name="genre">
-                                        <option selected="true">Profession</option>
-                                        <option>Soundtrack</option>
-                                        <option>Actor</option>
-                                        <option>Instructor</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">  <!-- START YEAR AND END YEAR HERE -->
-                                <div class="input-view-flat date input-group" data-toggle="datetimepicker" data-target="#release-year-field">
-                                    <input class="datetimepicker-input form-control" id="release-year-field" name="releaseYear" type="text" placeholder="Birth year" data-target="#release-year-field" data-date-format="Y" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
+        
+        <div id="scrolltothisdiv"></div>
         <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
+        
         <table>
             <tbody >  <!-- FOR HVER FETCHED -->
             <tr>
                 <td data-bind="foreach: people">
-                    <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
-                            <div class="embed-responsive embed-responsive-poster">
+                            <div class="embed-responsive embed-responsive-poster" style="float:left;">
                                 <img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt=""/> <!-- BILLEDE SRC HER -->
-                            </div>
-                            <div class="d-over bg-theme-lighted collapse animated faster"
-                                 data-show-class="fadeIn show" data-hide-class="fadeOut show">
-                                <div class="entity-play">  <!-- NEDENSTÅENDE ER LOGO -->
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                         class="bi bi-box-arrow-up-right" fill="currentColor"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                                        <path fill-rule="evenodd"
-                                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                                    </svg>
-                                </div>
                             </div>
                         </div>
                         <div class="entity-content">
                             <h4 class="entity-title">
-                                <a class="content-link" href="movie-info-sidebar-right.html"><span data-bind="text: name"></span></a>
+                                <a class="content-link" style="float: right;"><span data-bind="text: name"></span></a>
                             </h4>
-                            <div data-bind="foreach: professions" >
-                                <div class="entity-category">
-                                    <a class="content-link" href="movies-blocks.html" ><span data-bind="text: $data"></span></a>,
-                                </div>
-                            </div>
-                            <div class="entity-info">
+
+                            <div class="entity-info" style="display: inline-block">
                                 <div class="info-lines"> <!--  RATING -->
                                     <div class="info info-short">
                                         <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
@@ -91,9 +47,8 @@
                                 </div>
                             </div>
                         </div>
-                    </article>
-                </td>
-            </tr>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
@@ -101,8 +56,8 @@
         <div class="section-bottom"> <!-- PAGING CONFIG HER -->
             <div class="paginator">
                 <div class="navigation-buttons">
-                    <button id="prevscrolltotop" onclick="scrolltotop" type="button"  class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" href="#"> Prev</button>
-                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
+                    <button id="prevscrolltotop" onclick="scrolltotop" type="button"  class="btn btn-inverse btn-warning" href="#"> Prev</button>
+                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" href="#">Next</button>
                 </div>
             </div>
         </div>

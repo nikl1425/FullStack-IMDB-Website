@@ -136,10 +136,8 @@ namespace WebService.Controllers
         [HttpGet("search/{id}")]
         public IActionResult Search(string id)
         {
-            var personSearch = _dataService.GetPersonBySubstring(id).Take(5);
-            var professionSearch = _dataService.GetProfessionBySubstring(id).Take(1);
-            var genreSearch = _titleDataService.GetGenreBySubstring(id).Take(3);
-            var titleSearch = _titleDataService.GetTitleBySubstring(id).Take(5);
+            var personSearch = _dataService.GetPersonBySubstring(id).Take(10);
+            var titleSearch = _titleDataService.GetTitleBySubstring(id).Take(10);
 
             IList<PersonDTO> newSearchPersonDTO = personSearch.Select(x => new PersonDTO
             {
@@ -150,19 +148,6 @@ namespace WebService.Controllers
                 Url = "http://localhost:5001/api/name/" + x.Id
             }).ToList();
             
-            IList<GenreDto> newSearchGenreDTO = genreSearch.Select(x => new GenreDto
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Url = "http://localhost:5001/api/genre/" + x.Id
-            }).ToList();
-            
-            IList<ProfessionDTO> newSearchProfessionDTO = professionSearch.Select(x => new ProfessionDTO
-            {
-                Id = x.Id,
-                ProfessionName = x.ProfessionName,
-                Url = "http://localhost:5001/api/profession/" + x.Id
-            }).ToList();
             
 
             IList<TitleDto> newSearchTitleDTO = titleSearch.Select(x => new TitleDto
@@ -177,7 +162,7 @@ namespace WebService.Controllers
                 Url = "http://localhost:5001/api/title/" + x.Id
             }).ToList();
             
-            return Ok(new {newSearchPersonDTO, newSearchGenreDTO, newSearchProfessionDTO, newSearchTitleDTO});
+            return Ok(new {newSearchPersonDTO, newSearchTitleDTO});
         }
     }
 }

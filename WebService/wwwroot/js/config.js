@@ -51,7 +51,7 @@ require(['knockout', 'text'], (ko) => {
     });
 
     ko.components.register('peoplepage', {
-        viewModel: { require: "components/people/people" },
+        viewModel: { require: "components/people/peoplepage" },
         template: { require: "text!components/people/peoplepage.html" }
     });
     

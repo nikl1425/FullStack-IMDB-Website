@@ -184,7 +184,7 @@ namespace WebService.Controllers
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
             titleDto.Rating = titleRating.Average_Rating;
             titleDto.plot = titlePlot.Plot;
-            titleDto.personCharacter = personsInMovie.Select(x =>x.Name + " as " + x.Category + " in the role of " + x.Character).ToList();
+            titleDto.personJob = personsInMovie.Select(x => x.Name + "(" + x.Category + ")").ToList();
             titleDto.languages = titleAkas.Select(x => x.Language).ToList();
             titleDto.regions = titleAkas.Select(x => x.Region).ToList();
             
