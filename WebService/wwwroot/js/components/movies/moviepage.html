@@ -6,12 +6,12 @@
             <section class="section-long">
                 <div class="section-line">
                     <div class="movie-info-entity">
-                        <div class="entity-poster" data-role="hover-wrap" >
+                        <div class="entity-poster" data-role="hover-wrap" data-bind="with: titleData">
                             <div class="embed-responsive embed-responsive-poster" >
-                                <div data-bind="with: titleData">
-                                    <img class="embed-responsive-item" data-bind="attr: {src: poster}" alt="" />
-                                </div>
                                 
+                                    <img class="embed-responsive-item" data-bind="attr: {src: poster}" alt="" />
+                                
+                                hallo
                             </div>
                             <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                                 <div class="entity-play">
