@@ -85,7 +85,7 @@ namespace WebService.Controllers
         }
         
         //NEW PERSON BOOKMARK LIST
-        [HttpPost("user/{userid}/plists/")] 
+        [HttpPost("user/{userid}/plists/create")] 
         public IActionResult newPersonBookmarkList(PersonBookmarkListDto pblDto)
         {
             var list = _dataService.NewPersonBookmarkList(pblDto.UserId, pblDto.ListName);
@@ -118,7 +118,7 @@ namespace WebService.Controllers
         }
         
         //NEW TITLE BOOKMARK LIST
-        [HttpPost("user/{userid}/tlists/")] 
+        [HttpPost("user/{userid}/tlists/create")] 
         public IActionResult newTitleBookmarkList(TitleBookmarkListDTO tblDto)
         {
             var list = _dataService.NewTitleBookmarkList(tblDto.UserId, tblDto.ListName);

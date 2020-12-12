@@ -5,14 +5,14 @@
         let bookmarkList = ko.observableArray([]);
         let user = ko.observableArray([]);
         //TODO : incooporate session user smth
-        let userId = 10;
-        let testId = 28;
+        let userId = 1;
+        let testId = 2;
         //let url = 'api/user/'+id+'/ratings/';
         let urlRating = 'http://localhost:5001/api/user/'+userId+'/ratings';
         let urlLists = 'http://localhost:5001/api/user/'+userId+'/lists';
         let urlUser = 'http://localhost:5001/api/user/'+userId;
         let urlUpdate = 'http://localhost:5001/api/user/'+userId+'/update'
-        let urlUpdatePW = 'http://localhost:5001/api/user/'+testId+'/changepassword'
+        let urlUpdatePW = 'http://localhost:5001/api/user/'+userId+'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
         let baseUrl = 'http://localhost:5001/api/'
 
@@ -47,6 +47,19 @@
                 console.log("Error: " + error)
             });
         }
+        let goToList = () => {
+            postman.publish("changeContent", "listpage");
+        }
+        let goToNewList = () => {
+            postman.publish("changeContent", "createlist");
+        }
+        
+        $('#gotonewlist').on('click', function(){
+            console.log("Has focus")
+            window.value = $(this).val();
+            goToNewList()
+        })
+        
         getRating();
         /*  FETCH USER'S BOOKMARK LISTS  */
         function getList() {
@@ -93,13 +106,18 @@
                             }
                         })
                     }
-                        
                 });
+                $('.gotolist').focus(function(){
+                    console.log("Has focus")
+                    window.value = $(this).val();
+                    goToList()
+                })
             })
             .catch(function(error){
                 console.log("Error: "+error)
             });
         }
+        
         getList();
         
         /*  FETCH USER INFO  */
@@ -200,15 +218,10 @@
             });
         });
 
-        let goToList = () => {
-            postman.publish("changeContent", "listpage");
-        }
-
         return {
             userRatingList,
             bookmarkList,
-            user,
-            goToList
+            user
         };
     }
     

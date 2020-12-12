@@ -59,6 +59,11 @@ require(['knockout', 'text'], (ko) => {
         viewModel: { require: "components/users/userConfig" },
         template: { require: "text!components/users/listpage.html" }
     });
+
+    ko.components.register('createlist', {
+        viewModel: { require: "components/users/userConfig" },
+        template: { require: "text!components/users/createlist.html" }
+    });
 });
 
 require(['knockout', 'viewModel',  'bootstrap'], function(ko, vm) {

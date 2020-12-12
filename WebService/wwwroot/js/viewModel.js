@@ -5,6 +5,8 @@
     let menuElements = ["Home", "Movie", "People", "Profile", "Register", "About"];
     let subElements = ["Peoplepage"];
     let movieElement = ["Moviepage"];
+    let listcreateElement = ["Createlist"];
+    let listElement = ["Listpage"];
     
     let changeContent = element => {
         currentComponent(element.toLowerCase());
@@ -34,7 +36,9 @@
         bodyActive,
         changeContent,
         isActive,
-        movieElement
+        movieElement,
+        listcreateElement,
+        listElement
 
     };
 });

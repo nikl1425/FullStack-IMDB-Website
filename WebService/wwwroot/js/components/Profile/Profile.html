@@ -142,11 +142,11 @@
     <div class="container">
         <h1>Showing all of your lists here: </h1>
         <br>
-        <a href="#" class="btn btn-primary" data-bind="click: goToList">Contact</a>
+        <a type=button href="#" class="btn btn-primary" id="gotonewlist" >CREATE A NEW LIST</a>
         <ul data-bind="foreach: bookmarkList">
             <li>
                         <!--<a data-bind="attr: {href: url}, text: listName"></a>-->
-                <a data-bind="click: goToList, text: listName"></a>
+                        <a class="gotolist" href="#" data-bind="value: id, text: listName"></a>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                         <span data-bind="value: type" id="type"></span>
                         <button type="button" data-toggle="modal" data-target="#deleteList"> : </button>
