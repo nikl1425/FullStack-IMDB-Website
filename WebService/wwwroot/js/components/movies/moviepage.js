@@ -3,7 +3,7 @@
         //console.log(window.movieValue)
         console.log(window.personToMoviePage)
 
-        let titleData = ko.observableArray([])
+        let titleData = ko.observableArray([{}])
         const url = 'http://localhost:5001/api/title/';
 
         fetch(url + window.movieValue)
@@ -11,10 +11,12 @@
                 return response.json()
             })
             .then((data) => {
-                titleData(data.titleDto)
+                titleData(data)
                 console.log(titleData())
             }).catch((err) => {
         })
+        
+       
 
         
         
