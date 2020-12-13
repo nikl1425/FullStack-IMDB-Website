@@ -37,6 +37,9 @@ let titleData = ko.observableArray([])
         function goToPersonPage(){
             postman.publish("changeContent", "peoplePage");
         }
+        function goToMoviePage(){
+            postman.publish("changeContent", "moviePage");
+        }
         
 window.value = "";
         
@@ -56,6 +59,11 @@ $(document).on("keyup", "input", function(e){
                     console.log("Has focus")
                     window.value = $(this).val();
                     goToPersonPage()
+                })
+                $('.goToMoviePage').focus(function(){
+                    window.movieValue = $(this).val();
+                    //console.log(movieValue)
+                    goToMoviePage()
                 })
                 
             }).catch((err) => {
