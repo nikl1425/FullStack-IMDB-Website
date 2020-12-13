@@ -25,8 +25,8 @@ define(['knockout', 'postman'], (ko, postman) => {
             })
 
         $(document).on('click', '.fromPeopleToMovie', function() {
-            console.log("Has focus")
-            window.personToMoviePage = $(this).val();
+            window.movieValue = $(this).val();
+            console.log(movieValue)
             goToMoviePage()
         });
     
