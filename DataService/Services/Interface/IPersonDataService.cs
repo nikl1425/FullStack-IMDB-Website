@@ -7,6 +7,7 @@ namespace DataService.Services
     public interface IPersonDataService
     {
         List<Person> GetPerson(string id);
+        public Person GetPersonSingle(string id);
         public List<Person> GetPersons();
         Person_known_title GetPersonKnownTitle(string person_id, string title_id);
         Person GetProfessionByPersonId(string id);

@@ -7,7 +7,7 @@ namespace DataService.Objects
         public int Id { get; set; }
         public string TitleId { get; set; }
         public int ListId { get; set; }
-        
+        public Title_Bookmark_List TitleBookmarkList { get; set; }
         public Title Title { get; set; }
         
         //public Title_Bookmark_List TitleBookmarkList { get; set; }

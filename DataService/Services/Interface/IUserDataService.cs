@@ -20,7 +20,8 @@ namespace DataService.Services
         List<Title_Bookmark> GetTitleBookmarks(int id);
         List<Person_Bookmark_list> GetUsersPersonBookmarkLists(int userid);
         List<Person_Bookmark_list> GetPersonBookmarkList(int id);
-        List<Title_Bookmark_List> GetTitleBookmarkLists(int id);
+        List<Title_Bookmark_List> GetTitleBookmarkList(int id);
+        List<Title_Bookmark_List> GetUsersTitleBookmarkLists(int userid);
         IList<Person_Bookmark> GetPersonBookmarks(int listid);
         bool deletePersonBookmarkList(int listid);
         bool deleteTitleBookmarkList(int listid);
