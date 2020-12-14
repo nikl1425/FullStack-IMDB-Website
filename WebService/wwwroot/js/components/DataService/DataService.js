@@ -2,6 +2,7 @@
     const movieApiUrl = "api/title";
     const genreApiUrl = "api/genre";
     const typeApiUrl = "api/type";
+    const personApiUrl = "api/name"
     
 
     let getJson = (url, callback) => {
@@ -11,6 +12,13 @@
     let getMovies = (url, callback) => {
         if (url === undefined) {
             url = movieApiUrl;
+        }
+        getJson(url, callback);
+    };
+    
+    let getPersons = (url, callback) => {
+        if (url === undefined) {
+            url = personApiUrl;
         }
         getJson(url, callback);
     };
@@ -34,6 +42,7 @@
     
 
     let getMoviesUrlWithPageSize = size => movieApiUrl + "?pageSize=" + size;
+    let getPersonsUrlWithPageSize = size => personApiUrlApiUrl + "?pageSize=" + size;
 
 
     return {
@@ -41,7 +50,10 @@
         getMovie: getJson,
         getMoviesUrlWithPageSize,
         getGenres,
-        getTypeNames
+        getTypeNames,
+        getPersons,
+        getPerson: getJson,
+        getPersonsUrlWithPageSize
         
     };
 });

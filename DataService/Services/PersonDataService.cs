@@ -112,12 +112,23 @@ namespace DataService.Services
             return query;
         }
         
-        public List<PersonWithProfession> GetAllProfessions()
+        public List<PersonWithProfession> GetAllProfessions(int page, int pageSize)
         {
             using var ctx = new ImdbContext() ;
-            var query = ctx.PersonWithProfessions.FromSqlInterpolated($"select * from professionsforpeoplepage()").ToList();;
+            var query = ctx.PersonWithProfessions.FromSqlInterpolated($"select * from professionsforpeoplepage()")
+                .Skip(page*pageSize)
+                .Take(pageSize)
+                .ToList();;
             
             return query.ToList();
+        }
+
+        public int GetNumberOfPersons()
+        {
+            var ctx = new ImdbContext();
+            var query = ctx.PersonWithProfessions.FromSqlInterpolated($"select * from professionsforpeoplepage()")
+                .Count();
+            return query;
         }
     }
 }

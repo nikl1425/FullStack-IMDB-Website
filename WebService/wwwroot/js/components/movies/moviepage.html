@@ -41,23 +41,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <ul class="entity-list" data-bind="with: titleData">
-                                <li>
-                                    <span class="entity-list-title">Release: 
+                            <ul class="entity-list">
+                                <li><div data-bind="foreach: titleData">
+                                    <span class="entity-list-title" style="display: inline-block">Release: 
                                      <a class="content-link" data-bind="text: startYear"></a>
-                                    </span>
+                                    </span></div>
                                 </li>
                                 <li>
-                                    <span class="entity-list-title" style="display:block;">Starring:</span>
-                                    <a class="goToPersonPage" href="#" data-bind="value: id"><p class="content-link" data-bind="text: personJob"></p></a>,
+                                    <span class="entity-list-title">Starring:</span>
+                                    <div data-bind="foreach: titlePersonData"><a class="goToPeoplePage" href="#" data-bind="value: id"> <p data-bind="text: name" style="display: inline-block; color: white;"></p></a>, </div>
                                 </li>
                                 <li>
                                     <span class="entity-list-title">Country:</span>
-                                    <a class="content-link" href="#">USA</a>,
-                                    <a class="content-link" href="#">India</a>
+                                    <a class="content-link" href="#"></a>,
+                                    <a class="content-link" href="#"></a>
                                 </li>
                                 <li>
-                                    <span class="entity-list-title">Language:</span>english
+                                    <span class="entity-list-title">Language:</span>
+                                    <a class="content-link" href="#"></a>
                                 </li>
                             </ul>
                         </div>
@@ -66,8 +67,37 @@
                     <div class="section-head">
                         <h2 class="section-title text-uppercase" style="padding-top: 1.5rem";>Synopsis</h2>
                     </div>
-                    <div class="section-description" data-bind="foreach: titleData">
-                        <p class="lead" data-bind="text: plot" style="color:white;"></p>
+                    <div class="section-description">
+                        <div data-bind="foreach: titleData"><p class="lead" data-bind="text: plot" style="color:white;"></p></div>
+                    </div>
+                    <div class="section-line">
+                        <div class="section-head">
+                            <h2 class="section-title text-uppercase">Similar Titles</h2>
+                        </div>
+                        <div class="grid row" data-bind="foreach: similarTitles">
+                            <div class="col-sm-6 col-xl-4">
+                                <div class="gallery-card-entity">
+                                    <div class="entity-preview" data-role="hover-wrap">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <img class="embed-responsive-item" data-bind="attr:{src: poster}" alt="" />
+                                        </div>
+                                        <div class="d-over bg-black-40 collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
+                                            <div class="entity-view-popup">
+                                                <a class="content-link action-icon-bordered rounded-circle" data-bind="attr:{href: poster}" data-magnific-popup="image">
+                                                    <span class="icon-content"><i class="fas fa-search"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="entity-content">
+                                        <a class="goFromMovieToMovie" href="#" data-bind="value: id">
+                                            <h4 class="entity-title" data-bind="text: titleName" style="color: white;"></h4>
+                                            <p class="entity-subtext" data-bind="text: parentTitleName" style="color: white;"></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="section-bottom">
                         <div class="row">

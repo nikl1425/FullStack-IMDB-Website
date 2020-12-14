@@ -1,4 +1,4 @@
-/*! Memico - Cinema Bootstrap HTML5 Template v.0.1.0 - 2019-03-14 */
+
 /*------------------------------------------------------------------
 [Table of contents]
 1. Body
@@ -28,25 +28,59 @@
 25. Comments
 26. Status
 
-[Typography]
-Font families: Open Sans, Oswald
-    Oswald - used for headings, main elements
-    Open Sans - for generic textes
-Text default color: #666666
-Theme colors: #FF8A00
-    #FF8A00 - main theme color, used for buttons and main elements
-
 ------------------------------------------------------------------*/
 /*------------------------------------------------------------------
     [1. Body]
 */
 body {
   font-family: 'Open Sans';
-  color: #666;
   font-size: 0.875rem;
   line-height: 1.75;
+  color:white;
 }
 
+.mainbox {
+  margin: auto;
+  height: 600px;
+  width: 600px;
+  position: relative;
+}
+
+.err {
+  color: #ffffff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 11rem;
+  position: absolute;
+  left: 20%;
+  top: 8%;
+}
+
+.far {
+  position: absolute;
+  font-size: 8.5rem;
+  left: 42%;
+  top: 15%;
+  color: #ffffff;
+}
+
+.err2 {
+  color: #ffffff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 11rem;
+  position: absolute;
+  left: 68%;
+  top: 8%;
+}
+
+.msg {
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.6rem;
+  position: absolute;
+  left: 16%;
+  top: 45%;
+  width: 75%;
+}
 
 /*------------------------------------------------------------------
     [2. Layout]
@@ -193,6 +227,33 @@ body {
   margin-bottom: 0.625rem;
   padding-right: 0.625rem;
   padding-left: 0.625rem;
+}
+
+#page-container {
+  position: relative !important;
+  min-height: 100vh !important;
+}
+
+#content-wrap {
+  padding-bottom: 16rem !important;    /* Footer height */
+}
+
+.footer-body.container{
+  bg-darken();
+}
+
+#footer {
+  color: #fff !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  padding: 4rem 0 0;
+  /* Footer height */
+}
+
+.footer {
+ 
+
 }
 /*------------------------------------------------------------------
     [3. Typography]
@@ -1771,11 +1832,7 @@ textarea.form-control {
 /*------------------------------------------------------------------
     [11. Footer]
 */
-.footer {
-  padding: 4rem 0 0;
-  bottom: 0;
-  
-}
+
 .footer-logo {
   height: 1em;
   line-height: 1;

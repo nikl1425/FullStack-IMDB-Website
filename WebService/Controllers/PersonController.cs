@@ -104,16 +104,14 @@ namespace WebService.Controllers
         }
         */
         
-        [HttpGet("name/")]
-        public IActionResult GetPersonsFast()
+        [HttpGet("name/", Name = nameof(GetPersonsFast))]
+        public IActionResult GetPersonsFast(int page = 0, int pageSize =  20)
         {
+
+            var numberOfPersons = _dataService.GetNumberOfPersons();
             //brug .GetRange(0, 500) til at limit
-            var person = _dataService.GetAllProfessions().GetRange(0, 20);
-            
-            
-            IList<PersonDTO> newPersonDTO = person.Select(x => new PersonDTO
+            var personList = _dataService.GetAllProfessions(page, pageSize).Select(x => new PersonDTO
             {
-                
                 Id = x.person_id,
                 Name = x.primary_name,
                 BirthYear = x.birth_year,
@@ -122,7 +120,35 @@ namespace WebService.Controllers
                 Url = "http://localhost:5001/api/name/" + x.person_id
             }).ToList();
             
-            return Ok(newPersonDTO);
+            var pages = (int) Math.Ceiling((double) numberOfPersons / pageSize);
+
+            var prev = (string) null;
+
+            if (page > 0)
+            {
+                prev = Url.Link(nameof(GetPersonsFast), new {page = page - 1, pageSize});
+            }
+
+            var next = (string) null;
+
+            if (page < pages - 1)
+            {
+                next = Url.Link(nameof(GetPersonsFast), new {page = page + 1, pageSize});
+            }
+                
+     
+            var result = new
+            {
+                pageSizes = new int[] {5, 10, 15, 20},
+                count = numberOfPersons,
+                pages,
+                prev,
+                next,
+                personList
+            };
+
+            return Ok(result);
+            
         }
 
         [HttpGet("name/{id}/profession")]
@@ -163,6 +189,15 @@ namespace WebService.Controllers
             }).ToList();
             
             return Ok(new {newSearchPersonDTO, newSearchTitleDTO});
+        }
+        
+        PersonDTO CreateDto(Person person)
+        {
+            var dto = _mapper.Map<PersonDTO>(person);
+            dto.Url = "http://localhost:5001/api/name/" + person.Id;
+            dto.Professions = _dataService.GetPersonProfessions(person.Id).Select(x => x.Profession.ProfessionName)
+                .ToList();
+            return dto;
         }
     }
 }

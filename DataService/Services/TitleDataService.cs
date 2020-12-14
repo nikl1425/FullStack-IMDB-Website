@@ -282,7 +282,6 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
 
             var result = ctx.TopPosters.FromSqlInterpolated($"select * from top10homeposter()");
-                
 
             return result.ToList();
         }
