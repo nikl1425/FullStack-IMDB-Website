@@ -31,8 +31,12 @@ let personData = ko.observableArray([])
 //let genreData = ko.observableArray([])
 let titleData = ko.observableArray([])
 //let professionData = ko.observableArray([])
- 
-
+        $(document).on('click', '.goToMoviePageFromPoster', function() {
+            window.movieValue = $(this).val();
+            console.log(movieValue)
+            goToMoviePage()
+        });
+        
         
         function goToPersonPage(){
             postman.publish("changeContent", "peoplePage");

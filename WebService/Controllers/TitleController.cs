@@ -281,6 +281,7 @@ namespace WebService.Controllers
             IList<TopTenPosterDto> posterItems = posters.Select(x => new TopTenPosterDto
             {
                 Id = x.Id,
+                Title = _dataService.GetTitle(x.Id).PrimaryTitle,
                 Awards = x.Awards,
                 Poster = x.Poster
             }).ToList();
