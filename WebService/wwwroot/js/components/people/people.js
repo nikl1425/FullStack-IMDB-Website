@@ -1,4 +1,4 @@
-define(['knockout'], (ko) => {
+define(['knockout', 'postman'], (ko, postman) => {
     return function () {
         let people = ko.observableArray([]);
 
@@ -12,6 +12,16 @@ define(['knockout'], (ko) => {
                 console.log(people())
             })
 
+        function goToPersonPage(){
+            postman.publish("changeContent", "peoplePage");
+        }
+
+        $(document).on('click', '.fromPersonListToPage', function() {
+            window.value = $(this).val();
+            console.log(window.value)
+            goToPersonPage()
+        });
+        
         document.getElementById("scrolltotop").addEventListener("click", function () {
             console.log("Clicked!");
             $('html,body').animate({scrollTop: $('#scrolltothisdiv').offset().top}, 1000);
@@ -23,7 +33,8 @@ define(['knockout'], (ko) => {
         });
 
         return {
-            people
+            people,
+            postman
 
         };
     }

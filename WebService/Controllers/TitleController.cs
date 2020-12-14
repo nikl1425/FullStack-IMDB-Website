@@ -184,9 +184,10 @@ namespace WebService.Controllers
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
             titleDto.Rating = titleRating.Average_Rating;
             titleDto.plot = titlePlot.Plot;
-            titleDto.personJob = personsInMovie.Select(x => x.Name + "(" + x.Category + ")").ToList();
             titleDto.languages = titleAkas.Select(x => x.Language).ToList();
             titleDto.regions = titleAkas.Select(x => x.Region).ToList();
+            
+            
             
 
             IList<TitleGenreDTO> TitleGenres = titleGenre.Select(x => new TitleGenreDTO
@@ -225,7 +226,7 @@ namespace WebService.Controllers
             {
                 Id = x.TitleId,
                 TitleName = x.Title.PrimaryTitle,
-
+                Poster = _dataService.GetOmdbData(x.TitleId).Poster ?? _dataService.GetOmdbData("tt11000576").Poster,
                 Url = "http://localhost:5001/api/title/" + x.TitleId
             }).ToList();
 
@@ -235,8 +236,11 @@ namespace WebService.Controllers
                 episode.ParentTitleName = titleEpisodeParentName;
             }
 
+            Random rnd = new Random();
+            var limitedEpisodes = TitleEpisodes.OrderBy(x => rnd.Next()).Take(6);
 
-            return Ok(new {titleDto, TitleGenres, TitleAkases, TitleEpisodes, TitlePersons});
+
+            return Ok(new {titleDto, TitleGenres, TitleAkases, limitedEpisodes, TitlePersons});
         }
 
         private TitleListDto CreateObjectOfTitle(Title title)

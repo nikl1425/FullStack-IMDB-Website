@@ -30,11 +30,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Fixed redirect to moviepage when using the front page search option">
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Fixed binding from personal people page to moviepage">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/people/peoplepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/people/peoplepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataService/Objects/Users/Person_Bookmark_list.cs" />
-        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/PersonBookmarkDto.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Controllers/ListController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/UserDTOs/UserDto.cs" />
@@ -78,7 +81,6 @@
         <option value="$PROJECT_DIR$/UnitTest/PersonDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Interface/IPersonDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
-        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
         <option value="$PROJECT_DIR$/TestQueryConsole/Program.cs" />
         <option value="$PROJECT_DIR$/WebService/Controllers/PersonController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/Profile/PersonMapping.cs" />
@@ -113,12 +115,15 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/css/searchbar.css" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/peoplepage.js" />
+        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.js" />
       </list>
     </option>
   </component>
@@ -237,7 +242,7 @@
       <workItem from="1605457657053" duration="10623000" />
       <workItem from="1605559382836" duration="6196000" />
       <workItem from="1607686308527" duration="1365000" />
-      <workItem from="1607872902350" duration="2101000" />
+      <workItem from="1607872902350" duration="9680000" />
     </task>
     <task id="LOCAL-00001" summary="New Project">
       <created>1604402132484</created>
@@ -526,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607874844512</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Fixed binding from personal people page to moviepage">
+      <created>1607879211342</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1607879211342</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +565,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added genre to context + installed logger package for logging actions" />
     <MESSAGE value="created TitleDataService.cs and TitleDataServiceTest.cs" />
     <MESSAGE value="Users added" />
     <MESSAGE value="Title Class" />
@@ -578,7 +589,8 @@
     <MESSAGE value="Movie virker ikke" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="Fixed redirect to moviepage when using the front page search option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed redirect to moviepage when using the front page search option" />
+    <MESSAGE value="Fixed binding from personal people page to moviepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed binding from personal people page to moviepage" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="156" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604402509785">
@@ -593,7 +605,7 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="875" height="178" key="GridCell.Tab.0.bottom" timestamp="1607878983093">
+    <state width="875" height="178" key="GridCell.Tab.0.bottom" timestamp="1607942655666">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -602,9 +614,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
-    <state width="875" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1607878983093" />
+    <state width="875" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1607942655666" />
     <state width="1259" height="249" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1607745950050" />
-    <state width="875" height="178" key="GridCell.Tab.0.center" timestamp="1607878983092">
+    <state width="875" height="178" key="GridCell.Tab.0.center" timestamp="1607942655665">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -613,9 +625,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
-    <state width="875" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1607878983092" />
+    <state width="875" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1607942655665" />
     <state width="1259" height="249" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1607745950049" />
-    <state width="875" height="178" key="GridCell.Tab.0.left" timestamp="1607878983092">
+    <state width="875" height="178" key="GridCell.Tab.0.left" timestamp="1607942655665">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -624,9 +636,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1257" height="314" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508508" />
-    <state width="875" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1607878983092" />
+    <state width="875" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1607942655665" />
     <state width="1259" height="249" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1607745950049" />
-    <state width="875" height="178" key="GridCell.Tab.0.right" timestamp="1607878983093">
+    <state width="875" height="178" key="GridCell.Tab.0.right" timestamp="1607942655666">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -635,7 +647,7 @@
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1257" height="314" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1606178508509" />
-    <state width="875" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1607878983093" />
+    <state width="875" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1607942655666" />
     <state width="1259" height="249" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1607745950050" />
     <state width="1259" height="484" key="GridCell.Tab.1.bottom" timestamp="1607658295443">
       <screen x="0" y="25" width="2560" height="1358" />
@@ -780,20 +792,20 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1607872913774">
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1607879215180">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606403703516" />
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607607151750" />
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
     <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1606172405592" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607872913774" />
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607879215180" />
     <state x="715" y="359" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607745936576" />
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605206083810">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605206083810" />
-    <state x="1265" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607872908947">
+    <state x="1265" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607936294934">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="1355" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605473081601" />
@@ -801,7 +813,7 @@
     <state x="1355" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022434402" />
     <state x="3275" y="461" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016870314" />
     <state x="2428" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1604999572823" />
-    <state x="1265" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607872908947" />
+    <state x="1265" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607936294934" />
     <state x="1807" y="622" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607657925743" />
     <state x="0" y="0" width="912" height="1058" key="dock-window-1" timestamp="1606174600996">
       <screen x="0" y="0" width="3440" height="1400" />
