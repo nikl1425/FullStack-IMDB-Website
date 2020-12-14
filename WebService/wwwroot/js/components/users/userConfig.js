@@ -47,7 +47,7 @@
                 }
             });
         });
-
+        
         const serialize_form_login = form => JSON.stringify(
             Array.from(new FormData(form).entries())
                 .reduce((m,[key,value]) => Object.assign(m,{[key]: value}),{})
@@ -55,7 +55,7 @@
         $(".api_login_form").submit(function (e) {
             e.preventDefault();
             const json = serialize_form_login(this);
-            console.log(json);
+            console.log($(this).val());
             $.ajax({
                 type: 'POST',
                 url: 'http://localhost:5001/api/user/login',
@@ -64,11 +64,11 @@
                 contentType: 'application/json',
                 success: function (data) {
                     if(data) {
-                        alert("Your account has been created!")
+                        alert("You are now logged in!")
                         goToProfilePage();
                         //location.replace("http://localhost:5001")
                     } else {
-                        alert("Either username is taken or email is in use!")
+                        alert("Username or password is incorrect!")
                     }
                 }
             });

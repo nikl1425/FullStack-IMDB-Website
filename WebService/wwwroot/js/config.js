@@ -61,12 +61,12 @@ require(['knockout', 'text'], (ko) => {
     });
 
     ko.components.register('listpage', {
-        viewModel: { require: "components/profile/profile" },
+        viewModel: { require: "components/users/userBookmark" },
         template: { require: "text!components/users/listpage.html" }
     });
 
     ko.components.register('createlist', {
-        viewModel: { require: "components/profile/profile" },
+        viewModel: { require: "components/users/userBookmark" },
         template: { require: "text!components/users/createlist.html" }
     });
 });

@@ -26,9 +26,10 @@ namespace WebService.Controllers
         }
         
         //LOGIN
-        [HttpPost("/user/login")]
-        public IActionResult Login(UserDto userDto)
+        [HttpPost("user/login")]
+        public IActionResult Login(UserDto userDto /*string username, string password*/)
         {
+            //var user = _dataService.Login(username, password);
             var user = _dataService.Login(userDto.Username, userDto.Password);
             return Ok(user);
         }
