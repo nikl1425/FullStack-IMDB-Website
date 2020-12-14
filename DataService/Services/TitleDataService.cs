@@ -140,6 +140,7 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             var query = ctx.akas
                 .Where(x => x.TitleId == id)
+                .Take(20)
                 .ToList();
 
             return query;

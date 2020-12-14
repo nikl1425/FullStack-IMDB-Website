@@ -19,6 +19,12 @@ namespace DataService.Services
             var query = ctx.Person.Where(person => person.Id == id);
             return query.ToList();
         }
+        public Person GetPersonSingle(string id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.Person.FirstOrDefault(person => person.Id == id);
+            return query;
+        }
 
         public IQueryable<Person> GetPersonBySubstring(string substring)
         {

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataService.Objects
 {
@@ -7,5 +9,6 @@ namespace DataService.Objects
         public int Id { get; set; }
         public int UserId { get; set; }
         public string ListName { get; set; }
+        [Required] public IList<Title_Bookmark> TitleBookmarks { get; set; }
     }
 }
