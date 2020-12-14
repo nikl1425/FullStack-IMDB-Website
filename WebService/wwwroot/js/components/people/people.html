@@ -21,7 +21,7 @@
         <table>
             <tbody >  <!-- FOR HVER FETCHED -->
             <tr>
-                <td data-bind="foreach: people">
+                <td data-bind="foreach: peopleList">
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
                             <div class="embed-responsive embed-responsive-poster" style="float:left;">
                                 <img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt=""/> <!-- BILLEDE SRC HER -->
@@ -56,8 +56,8 @@
         <div class="section-bottom"> <!-- PAGING CONFIG HER -->
             <div class="paginator">
                 <div class="navigation-buttons">
-                    <button id="prevscrolltotop" onclick="scrolltotop" type="button"  class="btn btn-inverse btn-warning" href="#"> Prev</button>
-                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" href="#">Next</button>
+                    <button id="prevscrolltotop" onclick="scrolltotop" type="button"  class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" href="#"> Prev</button>
+                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
                 </div>
             </div>
         </div>

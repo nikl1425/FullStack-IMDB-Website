@@ -63,7 +63,7 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 movieGenres(movieList.genre)
                 $('.gotomovie').focus(function(){
                     console.log("Has focus")
-                    window.movieValue = $(this).val();;
+                    window.movieValue = $(this).val();
                     goToMoviePage()
                 })
                 
@@ -139,6 +139,8 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 option.className = 'defaultViewHighlight';
             }
         };
+
+      
         
         
         
