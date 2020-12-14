@@ -178,7 +178,7 @@ namespace WebService.Controllers
             {
                 return NotFound();
             }
- 
+
             titleDto.Type = titleType.Type.TypeName;
             if (titleRuntime == null)
             {
@@ -188,7 +188,7 @@ namespace WebService.Controllers
             {
                 titleDto.runtime = titleRuntime.Runtime;
             }
-            
+
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
             titleDto.Rating = titleRating.Average_Rating;
             if (titlePlot == null)
@@ -199,13 +199,11 @@ namespace WebService.Controllers
             {
                 titleDto.plot = titlePlot.Plot;
             }
-           
-            titleDto.languages = titleAkas.Select(x => x.Language).Where(x => x.Length >=1).ToList();
-            
+
+
             titleDto.regions = titleAkas.Select(x => x.Region).ToList();
-            
-            
-            
+            titleDto.languages = titleAkas.Select(x => x.Language).Where(x => x.Length >= 1).ToList();
+
 
             IList<TitleGenreDTO> TitleGenres = titleGenre.Select(x => new TitleGenreDTO
             {
@@ -236,8 +234,6 @@ namespace WebService.Controllers
             {
                 titleDto.poster = poster.Poster;
             }
-
-            
 
 
             if (titleEpisode == null)
