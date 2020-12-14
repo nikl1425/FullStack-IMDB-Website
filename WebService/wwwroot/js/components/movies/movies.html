@@ -49,50 +49,44 @@
                 </div>
             </div>
         </div>
-        
-       
+
+
         <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
         <table>
             <tbody>  <!-- FOR HVER FETCHED -->
             <tr>
-               <td data-bind="foreach: movieList">
+                <td data-bind="foreach: movieList">
                     <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
-                           
                             <div class="embed-responsive embed-responsive-poster">
-                                
-                                    <img class="embed-responsive-item" data-bind="attr:{src: poster}" alt=""/>
-                               
-                                <!-- BILLEDE SRC HER -->
+                                <img class="embed-responsive-item" data-bind="attr:{src: poster}" alt=""/>
                             </div>
                             <a class="gotomovie" href="movies-blocks.html" data-bind="value: title_id">
-                            <div class="d-over bg-theme-lighted collapse animated faster"
-                                 data-show-class="fadeIn show" data-hide-class="fadeOut show">
-                                <div class="entity-play">  <!-- NEDENSTÅENDE ER LOGO -->
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                         class="bi bi-box-arrow-up-right" fill="currentColor"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                      
-                                        <path fill-rule="evenodd"
-                                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                                        <path fill-rule="evenodd"
-                                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                                    </svg>
+                                <div class="d-over bg-theme-lighted collapse animated faster"
+                                     data-show-class="fadeIn show" data-hide-class="fadeOut show">
+                                    <div class="entity-play">  <!-- NEDENSTÅENDE ER LOGO -->
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                             class="bi bi-box-arrow-up-right" fill="currentColor"
+                                             xmlns="http://www.w3.org/2000/svg">
+
+                                            <path fill-rule="evenodd"
+                                                  d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
                             </a>
                         </div>
                         <div class="entity-content">
                             <h4 class="entity-title">
                                 <a class="gotomovie" href="#" data-bind="value: title_id"><span
                                         data-bind="text: title_name"></span></a>
-                            </h4> 
-                            
-                                <div class="entity-category">
-                                    <a class="gotomovie" href="movies-blocks.html" data-bind="value: 'title_id'"><span
-                                            data-bind="text: type"></span></a>,
-                                </div>
-                           
+                            </h4>
+                            <div class="entity-category">
+                                <a class="gotomovie" href="movies-blocks.html" data-bind="value: 'title_id'"><span
+                                        data-bind="text: type"></span></a>,
+                            </div>
                             <div class="entity-info">
                                 <div class="info-lines"> <!--  RATING -->
                                     <div class="info info-short">
@@ -119,8 +113,12 @@
         <div class="section-bottom"> <!-- PAGING CONFIG HER -->
             <div class="paginator">
                 <div class="navigation-buttons">
-                    <button id="prevscrolltotop" onclick="scrolltotop" type="button"  class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" href="#"> Prev</button>
-                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
+                    <button id="prevscrolltotop" onclick="scrolltotop" type="button" class="btn btn-inverse btn-warning"
+                            data-bind="click: showPrev, enable: enablePrev" href="#"> Prev
+                    </button>
+                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded"
+                            data-bind="click: showNext, enable: enableNext" href="#">Next
+                    </button>
                 </div>
             </div>
         </div>

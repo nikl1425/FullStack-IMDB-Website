@@ -1,66 +1,72 @@
-﻿
-<section class="after-head d-flex section-text-white position-relative">
+﻿<section class="after-head d-flex section-text-white position-relative">
     <div class="top-block top-inner container">
         <div class="top-block-content">
             <h1 class="section-title">People</h1>
             <div class="page-breadcrumbs">
-                <a class="content-link" href="./">Home</a>
+                <a class="content-link" href="#">Home</a>
                 <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
-                <span>People</span>
+                <span>Movies</span>
             </div>
         </div>
     </div>
-</section>
 
+</section>
+<a id="#"></a>
+<a id="top"></a>
 <section class="section-long">   <!-- GENRES CONFIG HERE-->
     <div class="container">
-        
-        <div id="scrolltothisdiv"></div>
-        <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
-        
-        <table>
-            <tbody >  <!-- FOR HVER FETCHED -->
-            <tr>
-                <td data-bind="foreach: peopleList">
-                        <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
-                            <div class="embed-responsive embed-responsive-poster" style="float:left;">
-                                <img class="embed-responsive-item" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg" alt=""/> <!-- BILLEDE SRC HER -->
-                            </div>
-                        </div>
-                        <div class="entity-content">
-                            <h4 class="entity-title">
-                                <a class="fromPersonListToPage" href="#" data-bind="value: id"> <p class="content-link" style="float: right;"><span data-bind="text: name"></span></p></a>
-                            </h4>
+        <div class="section-pannel">
+            <div class="bd-example">
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>NAME</th>
+                        <th>BIRTHYEAR</th>
+                        <th>DEATHYEAR</th>
+                        <th>PROFFESSION</th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: peopleList">
+                    <tr class="table-active">
+                        <th scope="row"></th>
+                        <td>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="orange"
+                                 class="bi bi-person" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            </svg>
+                        </td>
+                        <td>
+                            <a class="fromPersonListToPage" href="#" data-bind="value: id">
+                                <p data-bind="text: name"></p>
+                            </a>
+                        </td>
+                        <td data-bind="text: birthYear"></td>
+                        <td data-bind="text: deathYear"></td>
+                        <td data-bind="foreach: professions"><p data-bind="text: $data"> - </p></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                            <div class="entity-info" style="display: inline-block">
-                                <div class="info-lines"> <!--  RATING -->
-                                    <div class="info info-short">
-                                        <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
-                                        <span class="info-text"><span data-bind="text: birthYear"></span></span>
-                                        <span class="info-rest"></span>
-                                    </div>
-                                    <div class="info info-short"> <!-- RUNTIME -->
-                                        <span class="text-theme info-icon"><i class="fas fa-clock"></i></span>
-                                        <span class="info-text"><span data-bind="text: deathYear"></span></span>
-                                        <span class="info-rest">&nbsp;<span ></span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
-        
-        <div class="section-bottom"> <!-- PAGING CONFIG HER -->
-            <div class="paginator">
-                <div class="navigation-buttons">
-                    <button id="prevscrolltotop" onclick="scrolltotop" type="button"  class="btn btn-inverse btn-warning" data-bind="click: showPrev, enable: enablePrev" href="#"> Prev</button>
-                    <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded" data-bind="click: showNext, enable: enableNext" href="#">Next</button>
+            <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
+
+            <div class="section-bottom"> <!-- PAGING CONFIG HER -->
+                <div class="paginator">
+                    <div class="navigation-buttons">
+                        <button id="prevscrolltotop" onclick="scrolltotop" type="button"
+                                class="btn btn-inverse btn-warning"
+                                data-bind="click: showPrev, enable: enablePrev" href="#"> Prev
+                        </button>
+                        <button id="scrolltotop" onclick="scrolltotop" type="button" class="btn btn-warning btn-rounded"
+                                data-bind="click: showNext, enable: enableNext" href="#">Next
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        
     </div>
 </section>
