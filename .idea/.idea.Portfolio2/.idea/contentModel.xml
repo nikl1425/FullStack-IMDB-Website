@@ -32,6 +32,7 @@
             <e p="Title_Episode.cs" t="Include" />
             <e p="Title_Genre.cs" t="Include" />
             <e p="Title_Rating.cs" t="Include" />
+            <e p="TitlePersonsInMovie.cs" t="Include" />
             <e p="TitleRuntime.cs" t="Include" />
             <e p="TitleType.cs" t="Include" />
             <e p="TopPoster.cs" t="Include" />
@@ -461,6 +462,7 @@
                 <e p="people.html" t="Include" />
                 <e p="people.js" t="Include" />
                 <e p="peoplepage.html" t="Include" />
+                <e p="peoplepage.js" t="Include" />
               </e>
               <e p="Profile" t="Include">
                 <e p="Profile.html" t="Include" />
@@ -470,9 +472,7 @@
                 <e p="createlist.html" t="Include" />
                 <e p="listpage.html" t="Include" />
                 <e p="login.html" t="Include" />
-                <e p="ratings.html" t="Include" />
                 <e p="register.html" t="Include" />
-                <e p="register.js" t="Include" />
                 <e p="sign-in.html" t="Include" />
                 <e p="userBookmark.js" t="Include" />
                 <e p="userConfig.js" t="Include" />
