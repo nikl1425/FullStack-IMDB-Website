@@ -31,8 +31,7 @@
 </style>
 <link href="css/userlogin.css" rel="stylesheet" type="text/css" />
 <!--  USERS INFORMATION  TODO: USE BOOTSTRAP FORMS!-->
-    <div class="mainbox">
-        <div class="container">
+        <div>
         <h1>Welcome to your page!</h1>
         <br>
         <div id="formContent">
@@ -108,12 +107,12 @@
     <br>
     <br>
 <!-- SEE YOUR RATINGS -->
-    <div class="container">
+    <div >
         <h1>Showing all of your ratings here: </h1>
         <br>
         <dl data-bind="foreach: userRatingList">
             <dt>
-                <a href="#" class="gotomoviepage" data-bind="text: titleName"></a>
+                <a href="#" class="gotomoviepage" data-bind="value: title_id, text: titleName">x</a>
                 <!--<a data-bind="attr: {href: url}, text: titleName"></a>-->
                 (<span data-bind="text: prodYear"></span>) &nbsp; | &nbsp;
                 <!-- HOVER TO SET NEW RATING -->
@@ -130,8 +129,6 @@
                         <a class="updateRating" data-bind="value: title_id, text: 8"></a>
                         <a class="updateRating" data-bind="value: title_id, text: 9"></a>
                         <a class="updateRating" data-bind="value: title_id, text: 10"></a>
-                        <!-- https://docs.microsoft.com/en-us/aspnet/web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5 -->
-                        <!-- <input type="button" value="Update" data-bind="click: $root.update"/>attr: {href: updateUrl+10},  -->
                     </div>
                 </div>
             </dt>
@@ -144,7 +141,7 @@
     </div>
     
     <!-- SEE YOUR BOOKMARK LISTS -->
-    <div class="container">
+    <div >
         <h1>Showing all of your lists here: </h1>
         <br>
         
@@ -161,7 +158,6 @@
         </ul>
         <br>
         <br>
-    </div>
     </div>
 <!--
 <button type="button" data-toggle="modal" data-target="#deleteList"> : </button>

@@ -15,7 +15,7 @@
         let urlUpdatePW = 'http://localhost:5001/api/user/'+userId+'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
         let baseUrl = 'http://localhost:5001/api/'
-
+        window.movieValue = "";
         /*  FETCH RATING FROM USER  */
         function getRating(){
         fetch(urlRating)
@@ -42,6 +42,8 @@
                    })
                 });
                 $(".gotomoviepage").on('click', function(){
+                    window.movieValue = $(this).val();
+                    console.log($(this).val());
                     goToMoviePage();
                 })
             })

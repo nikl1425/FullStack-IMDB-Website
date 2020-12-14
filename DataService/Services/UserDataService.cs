@@ -32,10 +32,11 @@ namespace DataService.Services
         {
             using var ctx = new ImdbContext();
             var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
-            if (getUser != null && !_userValidation.VerifyPassword(password, getUser.Password, getUser.Salt))
+            if (getUser == null)
                 return false;
-            ctx.users.Update(getUser).Entity.Username = username;
-            return true;
+            if(_userValidation.VerifyPassword(password, getUser.Password, getUser.Salt))
+                return true;
+            return false;
         }
         
         //GET USER PROFILE
