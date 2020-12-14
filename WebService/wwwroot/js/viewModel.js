@@ -23,6 +23,8 @@
     }
 
 
+
+
     postman.subscribe("changeContent", component => {
         changeContent(component);
     });

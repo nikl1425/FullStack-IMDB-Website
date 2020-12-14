@@ -4,6 +4,7 @@ using System.Linq;
 using DataService;
 using DataService.Objects;
 using DataService.Services;
+using DataService.Services.Token;
 using DataService.Services.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
@@ -18,32 +19,10 @@ namespace TestQueryConsole
 
         static void Main(string[] args)
         {
-            using var ctx = new ImdbContext();
             
-            var result = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()");
-
+         
             
-
-
-                var numberofMovies = (int) ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").Count();
-            
-            Console.WriteLine(numberofMovies.ToString());
-
-
         }
-
-        private static void Top10Poster()
-        {
-            PostgresSQL_Connect_String connectionString = new PostgresSQL_Connect_String();
-            var connection = new NpgsqlConnection(connectionString.ToString());
-            connection.Open();
-            var command = new NpgsqlCommand("select * from Top10HomePoster();", connection);
-            var reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Console.WriteLine($"{reader.GetString(0)}{reader.GetString(1)}{reader.GetString(2)}");
-            }
-        }
+        
     }
 }

@@ -31,14 +31,13 @@ namespace DataService.Services
         public bool Login(string username, string password)
         {
             using var ctx = new ImdbContext();
+            
             var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
-            if (getUser == null)
-                return false;
-            if(_userValidation.VerifyPassword(password, getUser.Password, getUser.Salt))
-                return true;
-            return false;
+            return getUser != null && username == getUser.Username &&
+                   _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt);
         }
         
+
         //GET USER PROFILE
         public User GetUser(int id)
         {

@@ -1,37 +1,117 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using AutoMapper;
 using DataService;
 using DataService.Objects;
 using DataService.Services;
+using DataService.Services.Token;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using WebService.ObjectDto;
+using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
 namespace WebService.Controllers
 {
-    [ApiController]
+    
+    
+    
     [Route("api/")]
+    [ApiController]
     public class UserController : ControllerBase
     {
+        private static string tokenUrl = "";
         private IUserDataService _dataService;
         private ITitleDataService _titleDataService;
         private readonly IMapper _mapper;
-        public UserController(IUserDataService dataService, ITitleDataService titleDataService, IMapper mapper)
+        private IConfiguration _config;
+        public UserController(IUserDataService dataService, ITitleDataService titleDataService, IMapper mapper, IConfiguration config)
         {
+            _config = config;
             _dataService = dataService;
             _titleDataService = titleDataService;
             _mapper = mapper;
         }
         
         //LOGIN
-        [HttpPost("user/login")]
-        public IActionResult Login(UserDto userDto /*string username, string password*/)
+        [HttpPost("user/login/")]
+        public IActionResult Login(UserDto userDto)
         {
-            //var user = _dataService.Login(username, password);
+            /*var user = _dataService.Login(userDto.Username, userDto.Password);
+            
+            if (!user) return BadRequest("User not authorized");
+            tokenUrl = "http://localhost:5001/api/user/approved/";
+            // Pass variables to create a new TokenGenerator object
+            var token = new TokenGenerator(userDto.Username, userDto.Password, tokenUrl);
+            // Display token string
+            Console.WriteLine(token.AuthString);
+            return Ok(new{user, token.AuthString});*/
             var user = _dataService.Login(userDto.Username, userDto.Password);
-            return Ok(user);
+            IActionResult response = Unauthorized();
+
+            if (user)
+            {
+                var tokenStr = GenerateJSONWebToken(userDto);
+                response = Ok(new {tokenStr});
+            }
+            else
+            {
+                return BadRequest("User not authorized");
+            }
+
+            return response;
+        }
+        
+        [Authorize]
+        [HttpPost("post")]
+        public string Post()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            Console.WriteLine(claim.Count);
+            var username = claim[0].Value;
+            Console.WriteLine(username);
+            return "Welcome to " + username;
+        }
+        
+        [Authorize]
+        [HttpGet("GetValue")]
+        public ActionResult<IEnumerable<string>> Get()
+        {
+            return new string[] {"Value1", "Value2", "Value3"};
+        }
+
+        private string GenerateJSONWebToken(UserDto userDto)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, userDto.Username),
+                new Claim(JwtRegisteredClaimNames.Email, userDto.Password),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            };
+            var token = new JwtSecurityToken(
+                issuer: null,
+                audience: null,
+                claims,
+                expires: DateTime.Now.AddMinutes(120),
+                signingCredentials: credentials);
+            var encodetoken = new JwtSecurityTokenHandler().WriteToken(token);
+            return encodetoken;
+        }
+        
+
+        [HttpGet("user/approved/")]
+        public IActionResult Validate()
+        {
+            return Ok();
         }
 
         //GET USER PROFILE 
@@ -56,7 +136,7 @@ namespace WebService.Controllers
             var user = _dataService.CreateUser(userDto.Username, userDto.Password, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
             return Created(" ", user);
         }
-        
+
         //UPDATE PASSWORD
         [HttpPost("user/{id}/changepassword")]
         public IActionResult changeUserPassword(UserDto userDto)
