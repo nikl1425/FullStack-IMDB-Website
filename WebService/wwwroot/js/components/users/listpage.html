@@ -1,14 +1,28 @@
-﻿<div class="container">
-    <!--<div data-bind="with: bookmarkList">
-        <h1 data-bind="listName"></h1>
-        Created by: <span data-bind="text: username"></span>
-    </div> -->
-    <ul data-bind="foreach: bookmarksList">
-        <li>
-            <a data-bind="attr: {href: url}, text: listName"></a>
-        </li>
-    </ul>
+﻿<div>
+    <div data-bind="foreach: tListData">
+        <h1 data-bind="text: listName"></h1>
+        created by: <span data-bind="text: username"></span>
+        <br>
+    </div>
     
+    <dl data-bind="foreach: tBookmarks">
+        <dt>
+            <a href="#" class="gotomoviepage" data-bind="value: titleId, text: titleName"></a>
+            (<span data-bind="text: prodYear"></span>)
+        </dt>
+        <img width="67px" height="98px" data-bind="attr:{src: poster}">
+        <div data-bind="text: plot"></div>
+        <br>
+    </dl>
+
+    <dl data-bind="foreach: pBookmarks">
+        <dt>
+            <a href="#" class="goToPeoplePage" data-bind="value: person_Id, text: personName"></a>
+        </dt>
+        <br>
+    </dl>
     
-    
+    <br>
+    <br>
 </div>
+    

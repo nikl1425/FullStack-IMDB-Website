@@ -337,11 +337,20 @@ namespace DataService.Services
         }
         
         //GET TITLE BOOKMARK LISTS
-        public List<Title_Bookmark_List> GetTitleBookmarkLists(int id)
+        public List<Title_Bookmark_List> GetUsersTitleBookmarkLists(int userid)
         {
             using var ctx = new ImdbContext();
             var query = ctx.title_bookmark_list
-                .Where(x => x.UserId == id);
+                .Where(x => x.UserId == userid);
+            return query.ToList();
+        }
+        
+        //GET TITLE BOOKMARK LISTS
+        public List<Title_Bookmark_List> GetTitleBookmarkList(int id)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.title_bookmark_list
+                .Where(x => x.Id == id);
             return query.ToList();
         }
         

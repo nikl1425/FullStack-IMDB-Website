@@ -164,7 +164,7 @@ namespace WebService.Controllers
         public IActionResult getPersonBookmarkLists(int id)
         {
             var personBookmarkList = _dataService.GetUsersPersonBookmarkLists(id);
-            var titleBookmarkList = _dataService.GetTitleBookmarkLists(id);
+            var titleBookmarkList = _dataService.GetUsersTitleBookmarkLists(id);
             
             IList<TitleBookmarkListDTO> titleList = titleBookmarkList.Select(x => new TitleBookmarkListDTO
             {
@@ -221,7 +221,7 @@ namespace WebService.Controllers
                             +x.User_Id+"/",
                 titleName = _titleDataService.GetTitle(x.Title_Id).OriginalTitle,
                 prodYear = _titleDataService.GetTitle(x.Title_Id).StartYear,
-                poster = _titleDataService.GetOmdbData(x.Title_Id).Poster,
+                poster = _titleDataService.GetOmdbData(x.Title_Id).Poster ?? _titleDataService.GetOmdbData("tt11000576").Poster,
                 plot = _titleDataService.GetOmdbData(x.Title_Id).Plot
             }).ToList();
             return Ok(ratingList);

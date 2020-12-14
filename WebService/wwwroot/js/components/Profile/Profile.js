@@ -4,6 +4,8 @@
         let userRatingList = ko.observableArray([]);
         let bookmarkList = ko.observableArray([]);
         let user = ko.observableArray([]);
+        window.listValue = "";
+        
         //TODO : incooporate session user smth
         let userId = 1;
         let testId = 2;
@@ -15,7 +17,7 @@
         let urlUpdatePW = 'http://localhost:5001/api/user/'+userId+'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
         let baseUrl = 'http://localhost:5001/api/'
-        window.movieValue = "";
+        
         /*  FETCH RATING FROM USER  */
         function getRating(){
         fetch(urlRating)
@@ -122,8 +124,8 @@
                     }
                 });
                 $('.gotolist').focus(function(){
-                    console.log("Has focus")
-                    window.value = $(this).val();
+                    console.log("Has focus " + $(this).val())
+                    window.listValue = $(this).val();
                     goToList()
                 })
             })
