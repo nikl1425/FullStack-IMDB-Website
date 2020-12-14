@@ -6,6 +6,7 @@
         let titleGenreData = ko.observableArray([])
         let titlePersonData = ko.observableArray([])
         let similarTitles = ko.observableArray([])
+        let alternativeTitle = ko.observableArray([]);
         const url = 'http://localhost:5001/api/title/';
 
         function gotoPeoplePage(){
@@ -23,6 +24,7 @@
                 titleGenreData(data.titleGenres)
                 titlePersonData(data.titlePersons)
                 similarTitles(data.limitedEpisodes)
+                alternativeTitle(data.titleAkases)
                 console.log(titleData())
                 console.log(url + window.movieValue)
             }).catch((err) => {
@@ -58,7 +60,8 @@
             titleGenreData,
             titlePersonData,
             similarTitles,
-            postman
+            postman,
+            alternativeTitle
         };
     }
 });

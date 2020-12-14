@@ -90,8 +90,6 @@ define(['knockout', 'postman', 'dataservice'], (ko, postman, dataService) => {
                 enablePrev,
                 showNext,
                 pageSizes
-
-
             };
 
         }

@@ -178,13 +178,30 @@ namespace WebService.Controllers
             {
                 return NotFound();
             }
-
+ 
             titleDto.Type = titleType.Type.TypeName;
-            titleDto.runtime = titleRuntime.Runtime;
+            if (titleRuntime == null)
+            {
+                titleDto.runtime = 0;
+            }
+            else
+            {
+                titleDto.runtime = titleRuntime.Runtime;
+            }
+            
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
             titleDto.Rating = titleRating.Average_Rating;
-            titleDto.plot = titlePlot.Plot;
-            titleDto.languages = titleAkas.Select(x => x.Language).ToList();
+            if (titlePlot == null)
+            {
+                titleDto.plot = "";
+            }
+            else
+            {
+                titleDto.plot = titlePlot.Plot;
+            }
+           
+            titleDto.languages = titleAkas.Select(x => x.Language).Where(x => x.Length >=1).ToList();
+            
             titleDto.regions = titleAkas.Select(x => x.Region).ToList();
             
             
@@ -211,7 +228,16 @@ namespace WebService.Controllers
                 Url = "http://localhost:5001/api/name/" + x.Id
             }).ToList();
 
-            titleDto.poster = poster.Poster;
+            if (poster == null)
+            {
+                titleDto.poster = "https://i.imgur.com/Z2MYNbj.png/large_movie_poster.png";
+            }
+            else
+            {
+                titleDto.poster = poster.Poster;
+            }
+
+            
 
 
             if (titleEpisode == null)

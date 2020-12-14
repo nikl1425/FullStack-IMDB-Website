@@ -22,14 +22,15 @@
                             </div>
                         </div>
                         <div class="entity-content">
-                            <div data-bind="foreach: titleData"> <h2 class="text-theme" data-bind="text: primaryTitle"></h2></div>
-                            
+                            <div data-bind="foreach: titleData"><h2 class="text-theme"
+                                                                    data-bind="text: primaryTitle"></h2></div>
+
                             <div class="entity-category" data-bind="foreach: titleGenreData">
                                 <a class="content-link" data-bind="text: name"></a>,
                             </div>
                             <div class="entity-info">
                                 <div class="info-lines" data-bind="foreach: titleData">
-                                    <div class="info info-short" >
+                                    <div class="info info-short">
                                         <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
                                         <span class="info-text" data-bind="text: rating"></span>
                                         <span class="info-rest">/10</span>
@@ -39,36 +40,54 @@
                                         <span class="info-text" data-bind="text: runtime"></span>
                                         <span class="info-rest">&nbsp;min</span>
                                     </div>
+                                    <div class="info info-short">
+                                        <span class="text-theme info-icon"><i class="fas fa-dot-circle"></i></span>
+                                        <span class="info-text">Adult movie: </span>
+                                        <span class="info-text" data-bind=", ifnot: isAdult">no</span>
+                                        <span class="info-text" data-bind=", if: isAdult">yes</span>
+                                    </div>
                                 </div>
                             </div>
                             <ul class="entity-list">
-                                <li><div data-bind="foreach: titleData">
+                                <li>
+                                    <div data-bind="foreach: titleData">
                                     <span class="entity-list-title" style="display: inline-block">Release: 
                                      <a class="content-link" data-bind="text: startYear"></a>
                                     </span></div>
                                 </li>
                                 <li>
                                     <span class="entity-list-title">Starring:</span>
-                                    <div data-bind="foreach: titlePersonData"><a class="goToPeoplePage" href="#" data-bind="value: id"> <p data-bind="text: name" style="display: inline-block; color: white;"></p></a>, </div>
+                                    <div data-bind="foreach: titlePersonData"><a class="goToPeoplePage" href="#"
+                                                                                 data-bind="value: id"><p
+                                            data-bind="text: name" style="display: inline-block; color: white;"></p></a>,
+                                    </div>
                                 </li>
                                 <li>
-                                    <span class="entity-list-title">Country:</span>
-                                    <a class="content-link" href="#"></a>,
-                                    <a class="content-link" href="#"></a>
+                                    <div data-bind="foreach: titleData">
+                                    <div data-bind="with: regions">
+                                    <span class="entity-list-title" >Country: </span>
+                                        <p data-bind="text: $data" style="display: inline-block; color: white"></p>
+                                    </div>
+                                    </div>
                                 </li>
                                 <li>
-                                    <span class="entity-list-title">Language:</span>
-                                    <a class="content-link" href="#"></a>
+                                    <div data-bind="foreach: titleData">
+                                        <div data-bind="with: languages">
+                                            <span class="entity-list-title" >Language: </span>
+                                            <p data-bind="text: $data" style="display: inline-block; color: white"></p>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="section-head">
-                        <h2 class="section-title text-uppercase" style="padding-top: 1.5rem";>Synopsis</h2>
+                        <h2 class="section-title text-uppercase" style="padding-top: 1.5rem" ;>Synopsis</h2>
                     </div>
                     <div class="section-description">
-                        <div data-bind="foreach: titleData"><p class="lead" data-bind="text: plot" style="color:white;"></p></div>
+                        <div data-bind="foreach: titleData"><p class="lead" data-bind="text: plot"
+                                                               style="color:white;"></p></div>
                     </div>
                     <div class="section-line">
                         <div class="section-head">
@@ -79,11 +98,13 @@
                                 <div class="gallery-card-entity">
                                     <div class="entity-preview" data-role="hover-wrap">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <img class="embed-responsive-item" data-bind="attr:{src: poster}" alt="" />
+                                            <img class="embed-responsive-item" data-bind="attr:{src: poster}" alt=""/>
                                         </div>
-                                        <div class="d-over bg-black-40 collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
+                                        <div class="d-over bg-black-40 collapse animated faster"
+                                             data-show-class="fadeIn show" data-hide-class="fadeOut show">
                                             <div class="entity-view-popup">
-                                                <a class="content-link action-icon-bordered rounded-circle" data-bind="attr:{href: poster}" data-magnific-popup="image">
+                                                <a class="content-link action-icon-bordered rounded-circle"
+                                                   data-bind="attr:{href: poster}" data-magnific-popup="image">
                                                     <span class="icon-content"><i class="fas fa-search"></i></span>
                                                 </a>
                                             </div>
@@ -91,12 +112,34 @@
                                     </div>
                                     <div class="entity-content">
                                         <a class="goFromMovieToMovie" href="#" data-bind="value: id">
-                                            <h4 class="entity-title" data-bind="text: titleName" style="color: white;"></h4>
-                                            <p class="entity-subtext" data-bind="text: parentTitleName" style="color: white;"></p>
+                                            <h4 class="entity-title" data-bind="text: titleName"
+                                                style="color: white;"></h4>
+                                            <p class="entity-subtext" data-bind="text: parentTitleName"
+                                               style="color: white;"></p>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="section-line">
+                        <div class="section-head">
+                            <h2 class="section-title text-uppercase">ALTERNATIVE TITLES</h2>
+                            <table class="table table-sm table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Title</th>
+                                </tr>
+                                </thead>
+                                <tbody data-bind="foreach: alternativeTitle">
+                                <tr >
+                                    <td data-bind="text: region"></td>
+                                    <td data-bind="text: name"></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="section-bottom">
@@ -115,26 +158,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="sidebar section-long order-lg-last">
-            <section class="section-sidebar">
-                <div class="section-head">
-                    <h2 class="section-title text-uppercase">Actors</h2>
-                </div>
-                <div class="movie-short-line-entity">
-                    <a class="entity-preview" href="movie-info-sidebar-right.html">
-                            <span class="embed-responsive embed-responsive-16by9">
-                                <img class="embed-responsive-item" src="http://via.placeholder.com/1920x1080" alt="" />
-                            </span>
-                    </a>
-                    <div class="entity-content">
-                        <h4 class="entity-title">
-                            <a class="content-link" href="movie-info-sidebar-right.html"></a>
-                        </h4>
-                        <p class="entity-subtext"></p>
                     </div>
                 </div>
             </section>
