@@ -58,9 +58,7 @@ $(document).on("keyup", "input", function(e){
             .then((data) => {
                 personData(data.newSearchPersonDTO)
                 titleData(data.newSearchTitleDTO)
-                console.log(inputValLength);
                 $('.gotopage').focus(function(){
-                    console.log("Has focus")
                     window.value = $(this).val();
                     goToPersonPage()
                 })

@@ -7,6 +7,8 @@
     <projectFile>WebApplication/WebApplication.csproj</projectFile>
     <projectFile>WebApplication1/WebApplication1.csproj</projectFile>
     <projectFile>WebApplication2/WebApplication2.csproj</projectFile>
+    <projectFile>WebApiTokenAuthentication/WebApiTokenAuthentication.csproj</projectFile>
+    <projectFile>TokenBasedAuthentication/TokenBasedAuthentication.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -30,12 +32,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="people page done">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Token generator - validation doesn't work yet.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/UserDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/UserDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTest/UserDataServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTest/UserDataServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,21 +73,32 @@
     <option name="projectConfigVersion" value="2" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" root0="SKIP_INSPECTION" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A925EDF-E558-4632-978E-98FD8509CDF4/fc/f7b7a6c3/ExceptionAggregator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E0C5AEB2-B57F-4828-AEB3-AA666C713A78/5d/d5c09774/AuthorizationServerProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/31/7aeb5dd7/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebService/wwwroot/css/theme.css" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/59/5b106b0e/XunitTestInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/696AF915-BE7A-430B-8FE4-1E77B2E16538/c4/5fcf5f5c/AuthorizationServerProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/31/7aeb5dd7/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/e6/4e9f7a77/XunitTestRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/696AF915-BE7A-430B-8FE4-1E77B2E16538/61/483becf8/IAuthorize.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/30/4ccbedb9/TestRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebService/wwwroot/css/theme.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/7b/a15d2076/XunitTestCaseRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/b4/f3f2d74c/TestCaseRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataService/Services/Utils/Hashing.cs" />
         <option value="$PROJECT_DIR$/UnitTest/PersonDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Interface/IPersonDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
@@ -117,18 +137,19 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/css/userlogin.css" />
         <option value="$PROJECT_DIR$/DataService/Services/UserDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userBookmark.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/peopleTwo.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.html" />
+        <option value="$PROJECT_DIR$/WebService/Authentication/JwtConfig.cs" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" />
         <option value="$PROJECT_DIR$/WebService/Startup.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
       </list>
     </option>
   </component>
@@ -621,8 +642,8 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1321" height="254" key="GridCell.Tab.0.bottom" timestamp="1607991433323">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1750" height="178" key="GridCell.Tab.0.bottom" timestamp="1607997275904">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607973319430" />
@@ -630,11 +651,11 @@
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607735445055" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
-    <state width="1321" height="254" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607991433323" />
-    <state width="1750" height="361" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154201" />
+    <state width="1321" height="254" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
+    <state width="1750" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275904" />
     <state width="1259" height="249" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755043" />
-    <state width="1321" height="254" key="GridCell.Tab.0.center" timestamp="1607991433323">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1750" height="178" key="GridCell.Tab.0.center" timestamp="1607997275903">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="304" key="GridCell.Tab.0.center/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607973319430" />
@@ -642,11 +663,11 @@
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607735445055" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
-    <state width="1321" height="254" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607991433323" />
-    <state width="1750" height="361" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
+    <state width="1321" height="254" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
+    <state width="1750" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275903" />
     <state width="1259" height="249" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755042" />
-    <state width="1321" height="254" key="GridCell.Tab.0.left" timestamp="1607991433323">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1750" height="178" key="GridCell.Tab.0.left" timestamp="1607997275902">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="304" key="GridCell.Tab.0.left/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607973319430" />
@@ -654,11 +675,11 @@
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607735445055" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
-    <state width="1321" height="254" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607991433323" />
-    <state width="1750" height="361" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154199" />
+    <state width="1321" height="254" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752610" />
+    <state width="1750" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275902" />
     <state width="1259" height="249" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755042" />
-    <state width="1321" height="254" key="GridCell.Tab.0.right" timestamp="1607991433323">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state width="1750" height="178" key="GridCell.Tab.0.right" timestamp="1607997275903">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
     <state width="1877" height="304" key="GridCell.Tab.0.right/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607973319430" />
@@ -666,8 +687,8 @@
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607735445055" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
-    <state width="1321" height="254" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607991433323" />
-    <state width="1750" height="361" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1605565154200" />
+    <state width="1321" height="254" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
+    <state width="1750" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275903" />
     <state width="1259" height="249" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755043" />
     <state width="1259" height="484" key="GridCell.Tab.1.bottom" timestamp="1607658295443">
       <screen x="0" y="25" width="2560" height="1358" />
@@ -813,14 +834,14 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="960" y="345" key="Vcs.Push.Dialog.v2" timestamp="1607985743989">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1607988372265">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606403703516" />
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607958876278" />
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
     <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607985743989" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1605563180714" />
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607988372265" />
     <state x="715" y="359" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607657941281" />
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605206083810">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -856,12 +877,12 @@
     <state x="638" y="80" width="733" height="880" key="find.popup/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607613377791" />
     <state x="637" y="81" width="646" height="888" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605019583040" />
     <state x="595" y="105" width="684" height="878" key="find.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605562555073" />
-    <state x="1081" y="308" width="1290" height="915" key="search.everywhere.popup" timestamp="1606175734237">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="563" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1607994988569">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="603" y="228" width="720" height="680" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605207517738" />
     <state x="1081" y="308" width="1290" height="915" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1606175734237" />
-    <state x="563" y="253" width="672" height="678" key="search.everywhere.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1605559286154" />
+    <state x="563" y="253" width="672" height="678" key="search.everywhere.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1607994988569" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

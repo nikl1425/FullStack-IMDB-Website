@@ -6,7 +6,7 @@ namespace DataService.Services
 {
     public interface IUserDataService
     {
-        bool Login(string username, string password);
+        bool Login(string username, string password, string email);
         User GetUser(int id);
         bool CreateUser(string username, string password, string surname, string lastname, int age, string email);
         bool UpdateUser(int id, string username, string surname, string lastname, int age, string email);

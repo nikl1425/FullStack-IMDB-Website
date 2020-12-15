@@ -17,10 +17,18 @@
         let urlUpdatePW = 'http://localhost:5001/api/user/'+userId+'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
         let baseUrl = 'http://localhost:5001/api/'
+
+        const myHeaders = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + window.tokenString
+        });
         
         /*  FETCH RATING FROM USER  */
         function getRating(){
-        fetch(urlRating)
+            fetch(urlRating, {
+                method: 'GET',
+                headers: myHeaders
+            })
             .then(function (response) {
                 return response.json();
             })
@@ -73,7 +81,10 @@
         
         /*  FETCH USER'S BOOKMARK LISTS  */
         function getList() {
-        fetch(urlLists)
+        fetch(urlLists, {
+            method: 'GET',
+            headers: myHeaders
+           })
             .then(function (response){
                 return response.json();
             })
@@ -135,18 +146,25 @@
         }
         getList();
         
-        /*  FETCH USER INFO  */
-        fetch(urlUser)
-            .then(function (response){
-                return response.json();
-            })
-            .then(function (data){
-                user(data);
-                console.log(data);
-            })
-            .catch(function(error){
-                console.log("Error: "+error)
-            });
+       
+        function getUserInfo() {
+            fetch(urlUser, {
+                method: 'GET',
+                headers: myHeaders
+                })
+                .then(response => {
+                    return response.json()
+                }).then(function (data) {
+                   user(data)
+                    console.log(user(data));
+                 }).catch(error => {
+                    console.error(error);
+                });
+            }
+            
+            getUserInfo()
+        
+        
 
         /*  UPDATE PROFILE  */
         const serialize_form = form => JSON.stringify(
@@ -236,7 +254,7 @@
         return {
             userRatingList,
             bookmarkList,
-            user
+            user,
         };
     }
     

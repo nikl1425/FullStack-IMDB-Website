@@ -28,12 +28,12 @@ namespace DataService.Services
         //
         
         //LOGIN
-        public bool Login(string username, string password)
+        public bool Login(string username, string password, string email)
         {
             using var ctx = new ImdbContext();
             
             var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
-            return getUser != null && username == getUser.Username &&
+            return getUser != null && username == getUser.Username && email == getUser.Email && 
                    _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt);
         }
         

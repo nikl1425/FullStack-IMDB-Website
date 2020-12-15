@@ -42,12 +42,12 @@ namespace WebService.Controllers
         [HttpPost("user/login/")]
         public IActionResult Login(UserDto userDto)
         {
-            var user = _dataService.Login(userDto.Username, userDto.Password);
+            var user = _dataService.Login(userDto.Username, userDto.Password, userDto.Email);
             IActionResult response = Unauthorized();
             if (user)
             {
                 var tokenStr = GenerateJSONWebToken(userDto);
-                response = Ok(new {welcome = "Logged in as: " + userDto.Username, tokenStr});
+                response = Ok(new {username = userDto.Username, email = userDto.Email, tokenStr});
             }
             else
             {
@@ -82,7 +82,7 @@ namespace WebService.Controllers
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userDto.Username),
-                new Claim(JwtRegisteredClaimNames.Email, userDto.Password),
+                new Claim(JwtRegisteredClaimNames.Email, userDto.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
             
@@ -120,7 +120,6 @@ namespace WebService.Controllers
         }
         
         //CREATE NEW USER
-        [Authorize]
         [HttpPost("user/register")]
         public IActionResult createUser(UserDto userDto)
         {
