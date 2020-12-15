@@ -37,8 +37,8 @@ namespace WebService
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey =
@@ -63,28 +63,23 @@ namespace WebService
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-           
-            
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            app.UseRequestLogging();
+            
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseFileServer();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-        
         }
     }
 }

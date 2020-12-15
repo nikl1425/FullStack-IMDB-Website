@@ -107,7 +107,7 @@
       <e p="WebService" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
-        <e p="AuthToken.asmx" t="Include" />
+        <e p="Authentication" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="GenreController.cs" t="Include" />

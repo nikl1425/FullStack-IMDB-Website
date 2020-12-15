@@ -26,7 +26,6 @@ namespace WebService.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private static string tokenUrl = "";
         private IUserDataService _dataService;
         private ITitleDataService _titleDataService;
         private readonly IMapper _mapper;
@@ -43,28 +42,17 @@ namespace WebService.Controllers
         [HttpPost("user/login/")]
         public IActionResult Login(UserDto userDto)
         {
-            /*var user = _dataService.Login(userDto.Username, userDto.Password);
-            
-            if (!user) return BadRequest("User not authorized");
-            tokenUrl = "http://localhost:5001/api/user/approved/";
-            // Pass variables to create a new TokenGenerator object
-            var token = new TokenGenerator(userDto.Username, userDto.Password, tokenUrl);
-            // Display token string
-            Console.WriteLine(token.AuthString);
-            return Ok(new{user, token.AuthString});*/
             var user = _dataService.Login(userDto.Username, userDto.Password);
             IActionResult response = Unauthorized();
-
             if (user)
             {
                 var tokenStr = GenerateJSONWebToken(userDto);
-                response = Ok(new {tokenStr});
+                response = Ok(new {welcome = "Logged in as: " + userDto.Username, tokenStr});
             }
             else
             {
                 return BadRequest("User not authorized");
             }
-
             return response;
         }
         
@@ -97,17 +85,19 @@ namespace WebService.Controllers
                 new Claim(JwtRegisteredClaimNames.Email, userDto.Password),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
+            
             var token = new JwtSecurityToken(
-                issuer: null,
-                audience: null,
+                issuer: "Issuer",
+                audience: "Issuer",
                 claims,
                 expires: DateTime.Now.AddMinutes(120),
                 signingCredentials: credentials);
+            
             var encodetoken = new JwtSecurityTokenHandler().WriteToken(token);
             return encodetoken;
         }
         
-
+        [Authorize]
         [HttpGet("user/approved/")]
         public IActionResult Validate()
         {
@@ -115,6 +105,7 @@ namespace WebService.Controllers
         }
 
         //GET USER PROFILE 
+        [Authorize]
         [HttpGet ("user/{id}", Name = nameof(getUser))]
         public IActionResult getUser(int id)
         {
@@ -129,6 +120,7 @@ namespace WebService.Controllers
         }
         
         //CREATE NEW USER
+        [Authorize]
         [HttpPost("user/register")]
         public IActionResult createUser(UserDto userDto)
         {
@@ -138,6 +130,7 @@ namespace WebService.Controllers
         }
 
         //UPDATE PASSWORD
+        [Authorize]
         [HttpPost("user/{id}/changepassword")]
         public IActionResult changeUserPassword(UserDto userDto)
         {
@@ -150,6 +143,7 @@ namespace WebService.Controllers
         }
 
         //UPDATE USER
+        [Authorize]
         [HttpPost("user/{id}/update")]
         public IActionResult updateUser(int id, UserDto userDto)
         {
@@ -162,6 +156,7 @@ namespace WebService.Controllers
         }
         
         //DELETE USER
+        [Authorize]
         [HttpDelete("user/{id}/delete")]
         public IActionResult deleteUser(int id)
         {
@@ -174,6 +169,7 @@ namespace WebService.Controllers
         }
         
         //NEW PERSON BOOKMARK LIST
+        [Authorize]
         [HttpPost("user/{userid}/plists/create")] 
         public IActionResult newPersonBookmarkList(PersonBookmarkListDto pblDto)
         {
@@ -182,6 +178,7 @@ namespace WebService.Controllers
         }
         
         //ADD PERSON BOOKMARK TO LIST
+        [Authorize]
         [HttpPost("user/{userid}/plist/bookmark")] 
         //[HttpPost("name/{personid}/bookmark/")] 
         public IActionResult newPersonBookmark(PersonBookmarkDto pbDto)
@@ -191,6 +188,7 @@ namespace WebService.Controllers
         }
         
         //DELETE USERS BOOKMARK LIST
+        [Authorize]
         [HttpDelete("plist/{listid}/delete")] 
         public IActionResult deletePersonBookmarkList(int listid)
         {
@@ -199,6 +197,7 @@ namespace WebService.Controllers
         }
         
         //DELETE PERSON BOOKMARK FROM LIST
+        [Authorize]
         [HttpDelete("plist/{listid}/{bookmarkid}")]
         public IActionResult deletePersonBookmark(int bookmarkid)
         {
@@ -207,6 +206,7 @@ namespace WebService.Controllers
         }
         
         //NEW TITLE BOOKMARK LIST
+        [Authorize]
         [HttpPost("user/{userid}/tlists/create")] 
         public IActionResult newTitleBookmarkList(TitleBookmarkListDTO tblDto)
         {
@@ -215,6 +215,7 @@ namespace WebService.Controllers
         }
         
         //ADD TITLE BOOKMARK TO LIST
+        [Authorize]
         [HttpPost("user/{userid}/tlist/bookmark")]
         //[HttpPost("title/{titleid}/bookmark/")]
         public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto)
@@ -224,6 +225,7 @@ namespace WebService.Controllers
         }
         
         //DELETE USERS TITLE BOOKMARK LIST
+        [Authorize]
         [HttpDelete("tlist/{listid}/delete")] 
         public IActionResult deleteTitleBookmarkList(int listid)
         {
@@ -232,6 +234,7 @@ namespace WebService.Controllers
         }
         
         //DELETE TITLE BOOKMARK FROM LIST
+        [Authorize]
         [HttpDelete("tlist/{listid}/{bookmarkid}")]
         public IActionResult deleteTitleBookmark(int bookmarkid)
         {
@@ -240,6 +243,7 @@ namespace WebService.Controllers
         }
 
         //GET A USERS BOOKMARK LISTS
+        [Authorize]
         [HttpGet("user/{id}/lists")]
         public IActionResult getPersonBookmarkLists(int id)
         {
@@ -273,6 +277,7 @@ namespace WebService.Controllers
         }
         
         //RATE A MOVIE
+        [Authorize]
         [HttpPost("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
         public IActionResult rateMovie(int userid, int thisRating, string titleid)
         {
@@ -286,6 +291,7 @@ namespace WebService.Controllers
         }
         
         //GET USERS RATED MOVIES
+        [Authorize]
         [HttpGet("user/{userid}/ratings/")]
         public IActionResult getRatings(int userid)
         {
@@ -308,6 +314,7 @@ namespace WebService.Controllers
         }
         
         //DELETE USERS RATED MOVIE
+        [Authorize]
         [HttpDelete("title/{titleid}/RateMovie/{userid}/Delete/")]
         public IActionResult deleteRating(int userid, string titleid)
         {

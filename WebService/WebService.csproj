@@ -346,6 +346,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Authentication" />
       <Folder Include="wwwroot\build" />
     </ItemGroup>
 
