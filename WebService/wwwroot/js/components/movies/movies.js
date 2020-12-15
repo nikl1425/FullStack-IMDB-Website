@@ -159,7 +159,6 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             showNext,
             enableNext,
             genres,
-            
             selectedType,
             types,
             ChangeMovies,
