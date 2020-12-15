@@ -40,7 +40,7 @@
                 success: function (data) {
                     if(data) {
                         alert("Account created!")
-                        goToProfilePage();
+                        goToLoginPage()
                         //location.replace("http://localhost:5001")
                     } else {
                         alert("Either username is taken or email is in use!")
