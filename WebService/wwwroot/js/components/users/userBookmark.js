@@ -39,42 +39,45 @@
         }
         getUserInfo()
         
-        if(window.listValue.indexOf('t')>-1) {
-            let listId = window.listValue.substring(1);
-            console.log("listid: "+listId);
-            console.log(tlistUrl+listId);
-            fetch(tlistUrl + listId, {
-                method: 'GET',
-                headers: myHeaders
-              })
-                .then((response) => {
-                    return response.json()
+        function getListData(){
+            if(window.listValue.indexOf('t')>-1) {
+                let listId = window.listValue.substring(1);
+                console.log("listid: "+listId);
+                console.log(tlistUrl+listId);
+                fetch(tlistUrl + listId, {
+                    method: 'GET',
+                    headers: myHeaders
+                  })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then((data) => {
+                        tListData(data.titleList)
+                        tBookmarks(data.tbookmarkDtos)
+                        //console.log("TLISTDATA: "+data.titleList)
+                        //console.log("TBOOKMARKS: "+data.tbookmarkDtos)
+                    }).catch((err) => {
                 })
-                .then((data) => {
-                    tListData(data.titleList)
-                    tBookmarks(data.tbookmarkDtos)
-                    //console.log("TLISTDATA: "+data.titleList)
-                    //console.log("TBOOKMARKS: "+data.tbookmarkDtos)
-                }).catch((err) => {
-            })
-        }
-        if(window.listValue.indexOf('p')>-1) {
-            let listId = window.listValue.substring(1);
-            console.log("listid: "+listId);
-            console.log(plistUrl+listId);
-            fetch(plistUrl + listId, {
-                method: 'GET',
-                headers: myHeaders
-            })
-                .then((response) => {
-                    return response.json()
+            }
+            if(window.listValue.indexOf('p')>-1) {
+                let listId = window.listValue.substring(1);
+                console.log("listid: "+listId);
+                console.log(plistUrl+listId);
+                fetch(plistUrl + listId, {
+                    method: 'GET',
+                    headers: myHeaders
                 })
-                .then((data) => {
-                    pListData(data.plistDto)
-                    pBookmarks(data.pbookmarkDtos)
-                }).catch((err) => {
-            })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then((data) => {
+                        pListData(data.plistDto)
+                        pBookmarks(data.pbookmarkDtos)
+                    }).catch((err) => {
+                })
+            }
         }
+        getListData()
 
         function gotoPeoplePage(){
             postman.publish("changeContent", "peoplePage");
@@ -155,21 +158,46 @@
             }
         });
         
-        $(".deleteBookmark").on('click', function(){
-            let bookmarkId = $(this).val();
-            $.ajax({
-                type: 'DELETE',
-                url: 'http://localhost:5001/api/tlist/'+window.value+'/'+bookmarkId,
-                headers: {Authorization: 'Bearer '+window.tokenString},
-                success: function (result) {
-                    if(result) {
-                        alert("Bookmark has been removed")
-                        getUserInfo()                        
-                    } else {
-                        alert("Something went wrong!")
+        // DELETE BOOKMARK FROM LIST
+        $(document).on('click', '.deleteBookmark', function(){
+            if(window.listValue.indexOf('t')>-1) {
+                let bookmarkId = $(this).val();
+                console.log("bookmarkID: " + bookmarkId);
+                console.log("window val: " + window.listValue);
+                console.log("URL: " + 'http://localhost:5001/api/tlist/' + listValue + '/' + bookmarkId)
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://localhost:5001/api/tlist/' + window.listValue + '/' + bookmarkId,
+                    headers: {Authorization: 'Bearer ' + window.tokenString},
+                    success: function (result) {
+                        if (result) {
+                            alert("Bookmark has been removed")
+                            getListData()
+                        } else {
+                            alert("Something went wrong!")
+                        }
                     }
-                }
-            })
+                })
+            }
+            if(window.listValue.indexOf('p')>-1) {
+                let bookmarkId = $(this).val();
+                console.log("bookmarkID: " + bookmarkId);
+                console.log("window val: " + window.listValue);
+                console.log("URL: " + 'http://localhost:5001/api/plist/' + listValue + '/' + bookmarkId)
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://localhost:5001/api/plist/' + window.listValue + '/' + bookmarkId,
+                    headers: {Authorization: 'Bearer ' + window.tokenString},
+                    success: function (result) {
+                        if (result) {
+                            alert("Bookmark has been removed")
+                            getListData()
+                        } else {
+                            alert("Something went wrong!")
+                        }
+                    }
+                })
+            }
         });
         
 
