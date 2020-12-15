@@ -139,10 +139,14 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 option.className = 'defaultViewHighlight';
             }
         };
+        
+        function goToHome(){
+            postman.publish("changeContent", "home");
+        }
 
-      
-        
-        
+        $(document).on('click', '.content-link', function() {
+            goToHome()
+        });
         
 
         return {

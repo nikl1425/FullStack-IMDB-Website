@@ -16,6 +16,15 @@ define(['knockout', 'postman', 'dataservice'], (ko, postman, dataService) => {
                             console.log(people())
                         })
             */
+
+            function goToHome(){
+                postman.publish("changeContent", "home");
+            }
+
+            $(document).on('click', '.content-link', function() {
+                goToHome()
+            });
+            
             function goToPersonPage() {
                 postman.publish("changeContent", "peoplePage");
             }

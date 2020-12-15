@@ -598,22 +598,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed profile error" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1258" height="218" key="GridCell.Tab.0.bottom" timestamp="1608059579088">
+    <state width="1258" height="218" key="GridCell.Tab.0.bottom" timestamp="1608060103876">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
-    <state width="1258" height="218" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1608059579088" />
-    <state width="1258" height="218" key="GridCell.Tab.0.center" timestamp="1608059579087">
+    <state width="1258" height="218" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1608060103876" />
+    <state width="1258" height="218" key="GridCell.Tab.0.center" timestamp="1608060103875">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
-    <state width="1258" height="218" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1608059579087" />
-    <state width="1258" height="218" key="GridCell.Tab.0.left" timestamp="1608059579087">
+    <state width="1258" height="218" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1608060103875" />
+    <state width="1258" height="218" key="GridCell.Tab.0.left" timestamp="1608060103875">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
-    <state width="1258" height="218" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1608059579087" />
-    <state width="1258" height="218" key="GridCell.Tab.0.right" timestamp="1608059579087">
+    <state width="1258" height="218" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1608060103875" />
+    <state width="1258" height="218" key="GridCell.Tab.0.right" timestamp="1608060103876">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
-    <state width="1258" height="218" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1608059579087" />
+    <state width="1258" height="218" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1608060103876" />
+    <state x="880" y="440" key="Vcs.Push.Dialog.v2" timestamp="1608060149079">
+      <screen x="0" y="25" width="2560" height="1358" />
+    </state>
+    <state x="880" y="440" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1608060149079" />
+    <state x="1086" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608060133605">
+      <screen x="0" y="25" width="2560" height="1358" />
+    </state>
+    <state x="1086" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1358@0.25.2560.1358" timestamp="1608060133605" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
