@@ -27,8 +27,7 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             return ctx.genre.ToList();
         }
-
-
+        
         public IList<Title_Search> TitleSearches(string titleid)
         {
             using var ctx = new ImdbContext();
@@ -98,7 +97,6 @@ namespace DataService.Services
                 .ThenInclude(o => o.Genre)
                 .AsSingleQuery()
                 .FirstOrDefault(o => o.Id == id);
-
             return query;
         }
 

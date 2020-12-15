@@ -7,6 +7,7 @@ using System.Text;
 using AutoMapper;
 using DataService.Services;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,8 +38,8 @@ namespace WebService
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = false,
-                        ValidateAudience = false,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey =
@@ -63,23 +64,28 @@ namespace WebService
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseRequestLogging();
+           
             
-            app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.UseFileServer();
-
-            app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
-            });
+                if (env.IsDevelopment())
+                {
+                    app.UseDeveloperExceptionPage();
+                }
+
+                app.UseRequestLogging();
+            
+                app.UseRouting();
+                app.UseAuthentication();
+                app.UseAuthorization();
+
+                app.UseFileServer();
+
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            }
+        
         }
     }
 }
