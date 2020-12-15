@@ -161,13 +161,14 @@
         // DELETE BOOKMARK FROM LIST
         $(document).on('click', '.deleteBookmark', function(){
             if(window.listValue.indexOf('t')>-1) {
+                let listId = window.listValue.substring(1);
                 let bookmarkId = $(this).val();
                 console.log("bookmarkID: " + bookmarkId);
                 console.log("window val: " + window.listValue);
-                console.log("URL: " + 'http://localhost:5001/api/tlist/' + listValue + '/' + bookmarkId)
+                console.log("URL: " + 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId)
                 $.ajax({
                     type: 'DELETE',
-                    url: 'http://localhost:5001/api/tlist/' + window.listValue + '/' + bookmarkId,
+                    url: 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId,
                     headers: {Authorization: 'Bearer ' + window.tokenString},
                     success: function (result) {
                         if (result) {
@@ -180,13 +181,14 @@
                 })
             }
             if(window.listValue.indexOf('p')>-1) {
+                let listId = window.listValue.substring(1);
                 let bookmarkId = $(this).val();
                 console.log("bookmarkID: " + bookmarkId);
                 console.log("window val: " + window.listValue);
-                console.log("URL: " + 'http://localhost:5001/api/plist/' + listValue + '/' + bookmarkId)
+                console.log("URL: " + 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId)
                 $.ajax({
                     type: 'DELETE',
-                    url: 'http://localhost:5001/api/plist/' + window.listValue + '/' + bookmarkId,
+                    url: 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId,
                     headers: {Authorization: 'Bearer ' + window.tokenString},
                     success: function (result) {
                         if (result) {
