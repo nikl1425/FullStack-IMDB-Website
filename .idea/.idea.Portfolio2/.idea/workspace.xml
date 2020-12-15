@@ -34,7 +34,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="changed poster size">
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/listpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/listpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +63,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/30/4ccbedb9/TestRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A925EDF-E558-4632-978E-98FD8509CDF4/fc/f7b7a6c3/ExceptionAggregator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E0C5AEB2-B57F-4828-AEB3-AA666C713A78/5d/d5c09774/AuthorizationServerProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/css/theme.css" root0="SKIP_INSPECTION" />
@@ -75,10 +74,8 @@
     <setting file="file://$PROJECT_DIR$/WebService/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/59/5b106b0e/XunitTestInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/696AF915-BE7A-430B-8FE4-1E77B2E16538/c4/5fcf5f5c/AuthorizationServerProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/jesper/Documents/Skole/RAWDATA/Computer_Science_Project/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/31/7aeb5dd7/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/e6/4e9f7a77/XunitTestRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/696AF915-BE7A-430B-8FE4-1E77B2E16538/61/483becf8/IAuthorize.cs" root0="SKIP_HIGHLIGHTING" />
@@ -217,13 +214,7 @@
       <workItem from="1608049500368" duration="756000" />
       <workItem from="1608058008747" duration="1056000" />
       <workItem from="1608064928772" duration="2184000" />
-    </task>
-    <task id="LOCAL-00003" summary="Portfolio 2">
-      <created>1604402402882</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1604402402882</updated>
+      <workItem from="1608072239731" duration="313000" />
     </task>
     <task id="LOCAL-00004" summary="Hej jesper">
       <created>1604405604835</created>
@@ -561,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608072153600</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="changed poster size">
+      <created>1608072290841</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1608072290842</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,14 +624,14 @@
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
     <state width="1258" height="218" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1608072214323" />
-    <state x="896" y="418" key="RollbackChangesDialog" timestamp="1608072206396">
+    <state x="896" y="418" key="RollbackChangesDialog" timestamp="1608072264525">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
-    <state x="896" y="418" key="RollbackChangesDialog/0.25.2560.1358@0.25.2560.1358" timestamp="1608072206396" />
-    <state x="880" y="440" key="Vcs.Push.Dialog.v2" timestamp="1608072156951">
+    <state x="896" y="418" key="RollbackChangesDialog/0.25.2560.1358@0.25.2560.1358" timestamp="1608072264525" />
+    <state x="880" y="440" key="Vcs.Push.Dialog.v2" timestamp="1608072295432">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
-    <state x="880" y="440" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1608072156951" />
+    <state x="880" y="440" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1608072295432" />
     <state x="1086" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608072176402">
       <screen x="0" y="25" width="2560" height="1358" />
     </state>
