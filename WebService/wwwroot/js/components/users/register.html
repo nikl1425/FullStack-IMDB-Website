@@ -1,43 +1,132 @@
-﻿
-<div class="container">
-    <div class="sidebar-container">
-        <div class="content">
-            <section class="section-long">
-                <div class="section-line">
-                    
-                    <div>
-                        <br>
-                        <div class="">
-                            <div id="formContent">
-                                <!-- Tabs Titles -->
-                                <h2 style="color: black">Create account</h2>
-                                <!-- Create user Form -->
-                                <form       class="api_register_form"        method="POST">
-                                    <input  type="text"      id="surname"    class="fadeIn first"   required name="surname"   placeholder="First Name"   >
-                                    <input  type="text"      id="last_name"  class="fadeIn second"  required name="lastname"  placeholder="Last Name"   >
-                                    <input  type="number"    id="age"        class="fadeIn third"   required name="age"       placeholder="Age"  min="1" max="99" >
-                                    <input  type="email"     id="email"      class="fadeIn fourth"  required  name="email"    placeholder="Email"        >
-                                    <input  type="text"      id="username"   class="fadeIn fifth"   required name="username"  placeholder="Username"     >
-                                    <input  type="password"  id="password"   class="fadeIn sixth"   required name="password"  placeholder="Password"     >
-                                    <input  type="submit"                    class="fadeIn sixth">
-                                </form>
-                                <div id="formFooter">
-                                    <a class="underlineHover" href="#" id="gotologinpage">Already a user? Login here</a>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                    
-                    
-                    
-                    
-                </div>
-            </section>
+﻿<style>
+    .loginContainer{
+        border-radius: 5px;
+        padding: 20px;
+        justify-content: center !important;
+        text-align:center !important;
+    }
+
+    .api_login_form{
+        border-radius: 5px;
+        padding: 20px;
+        justify-content: center !important;
+        text-align:center !important;
+        display: grid;
+    }
+    
+    .firstnameBox{
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+    
+    .lastnameBox{
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+    
+    .ageBox{
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .usernameBox {
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+    .emailBox{
+        outline: none;
+        padding: 12px 20px;
+        text-align:center;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+    .passwordBox {
+        outline: none;
+        padding: 12px 20px;
+        text-align:center;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    #loginButton{
+        top: 25px;
+        position:relative;
+        width:50%;
+        right:25% !important;
+        left: 25% !important;
+    }
+
+    #formFooter{
+        top: 25px;
+        position:relative;
+    }
+
+
+</style>
+<div class="loginContainer">
+    <form class="api_login_form" method="POST" style="padding: 35px">
+        <label for="surname" class="entity-title" style="font-size: 28px; color:white;">First name</label>
+        <input class="firstnameBox" type="text" id="surname" required name="surname" placeholder="...">
+
+        <label for="last_name" class="entity-title" style="font-size: 28px; color:white;">Last name</label>
+        <input class="lastnameBox" type="text" id="last_name" required name="lastname" placeholder="...">
+        
+        <label for="username" class="entity-title" style="font-size: 28px; color:white;">Username</label>
+        <input class="usernameBox" type="text" id="username" required name="username" placeholder="...">
+
+        <label for="age" class="entity-title" style="font-size: 28px; color:white;">Age</label>
+        <input class="ageBox" type="number" id="age" required name="age" placeholder="Age"  min="1" max="99">
+        
+        <label for="email" class="entity-title" style="font-size: 28px; color:white;">Email</label>
+        <input class="emailBox" type="email" id="email" required name="email" placeholder="...">
+        
+        <label for="password" class="entity-title" style="font-size: 28px; color:white;">Password</label>
+        <input class="passwordBox" type="password" id="password" required name="password" placeholder="...">
+        
+        <button id="loginButton" type="submit" value="Log In" class="btn btn-warning btn-rounded entity-title" style="font-size: 24px">Register</button>
+        <div id="formFooter">
+            <a class="underlineHover" href="#" id="gotologinpage">Already a user? Login here</a>
+            <br>
         </div>
-    </div>
+    </form>
 </div>
+
+
+
 
 
 

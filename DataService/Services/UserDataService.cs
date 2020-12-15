@@ -32,8 +32,8 @@ namespace DataService.Services
         {
             using var ctx = new ImdbContext();
             
-            var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
-            return getUser != null && username == getUser.Username && email == getUser.Email && 
+            var getUser = ctx.users.FirstOrDefault(x => x.Username.ToLower() == username.ToLower());
+            return getUser != null && username.ToLower() == getUser.Username.ToLower() && email == getUser.Email && 
                    _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt);
         }
         

@@ -42,7 +42,7 @@ namespace WebService.Controllers
         [HttpPost("user/login/")]
         public IActionResult Login(UserDto userDto)
         {
-            var user = _dataService.Login(userDto.Username, userDto.Password, userDto.Email);
+            var user = _dataService.Login(userDto.Username.ToLower(), userDto.Password, userDto.Email.ToLower());
             
             IActionResult response = Unauthorized();
             if (user)

@@ -39,7 +39,7 @@
                 contentType: 'application/json',
                 success: function (data) {
                     if(data) {
-                        alert("Your account has been created!")
+                        alert("Account created!")
                         goToProfilePage();
                         //location.replace("http://localhost:5001")
                     } else {
@@ -65,7 +65,7 @@
                 contentType: 'application/json',
                 success: function (data) {
                     if(data) {
-                        alert("You are now logged in!")
+                        alert("Welcome!")
                         console.log(data.tokenStr)
                         console.log(data.id)
                         window.userIdString = data.id;
