@@ -231,24 +231,6 @@
             
             getUserInfo()
         
-        /*  UPDATE RATING  */
-        $("#updateRating").click(function(e) {
-            alert("test");
-            e.preventDefault();
-            $.ajax({
-                type: 'GET',
-                url: $(this).attr("href"),
-                headers: {Authorization: 'Bearer '+window.tokenString},
-                success: function (result) {
-                    if(result) {
-                        alert("You have updated the rating!")
-                    } else {
-                        alert("Something went wrong!")
-                    }
-                }
-            });
-        });
-
 
         $('#changeContentToLogin').click(function(){
             goToLogin()

@@ -69,21 +69,40 @@
         getList();
 
    
-
-        fetch(url + window.movieValue)
-            .then((response) => {
-                return response.json()
+        function getMovieData(){
+            fetch(url + window.movieValue)
+                .then((response) => {
+                    return response.json()
+                })
+                .then((data) => {
+                    titleData(data.titleDto)
+                    titleGenreData(data.titleGenres)
+                    titlePersonData(data.titlePersons)
+                    similarTitles(data.limitedEpisodes)
+                    alternativeTitle(data.titleAkases)
+                    $(".updateRating").on('click', function(){
+                        let titleid = window.movieValue;//$(this).val();
+                        let rating = $(this).text();
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://localhost:5001/api/title/'+titleid+'/RateMovie/'+window.userIdString+'/'+rating,
+                            headers: {Authorization: 'Bearer '+window.tokenString},
+                            success: function (result) {
+                                if(result) {
+                                    alert("You have rated this movie"+rating+"!")
+                                    getMovieData();
+                                } else {
+                                    alert("Something went wrong!")
+                                }
+                            }
+                        })
+                    });
+                    console.log(titleData())
+                    console.log(url + window.movieValue)
+                }).catch((err) => {
             })
-            .then((data) => {
-                titleData(data.titleDto)
-                titleGenreData(data.titleGenres)
-                titlePersonData(data.titlePersons)
-                similarTitles(data.limitedEpisodes)
-                alternativeTitle(data.titleAkases)
-                console.log(titleData())
-                console.log(url + window.movieValue)
-            }).catch((err) => {
-        })
+        }
+        getMovieData();
         
         $(document).on('click', '.goToPeoplePage', function() {
             window.value = $(this).val();
