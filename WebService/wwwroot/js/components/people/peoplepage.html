@@ -37,6 +37,13 @@
                                                 <span class="info-text" data-bind="text: deathYear"></span>
                                             </div>
                                         </div>
+                                        <div class="dropdown">
+                                            <button class="btn btn-warning btn-rounded dropbtn">Add to list</button>
+                                            <div class="dropdown-content" data-bind="foreach: bookmarkList">
+                                                <a href="#" class="addToBookmark info-text" data-bind="value: id, text: listName"></a>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

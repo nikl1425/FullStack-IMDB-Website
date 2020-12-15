@@ -55,15 +55,15 @@
                         contentType: 'application/json',
                         success: function (result) {
                             if(result) {
-                                alert("Your list has been added!")
+                                alert("The movie has been added!")
                             } else {
-                                alert("Cannot add to title list")
+                                alert("Cannot add to person list")
                             }
                         }
                     })
             }
             else {
-                alert("Cannot add to title list")
+                alert("Cannot add to person list")
             }
         })
 

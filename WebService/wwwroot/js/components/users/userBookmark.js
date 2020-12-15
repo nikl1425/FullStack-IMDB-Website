@@ -10,11 +10,11 @@
         let pBookmarks = ko.observableArray([])
         
         let userid = 6;
-        let urlUser = 'http://localhost:5001/api/user/'+userid;
+        let urlUser = 'http://localhost:5001/api/user/'+window.userIdString;
         const tlistUrl = 'http://localhost:5001/api/tlist/';
         const plistUrl = 'http://localhost:5001/api/plist/';
-        let newTListUrl = 'http://localhost:5001/api/user/'+userid+'/tlist/create'
-        let newPListUrl = 'http://localhost:5001/api/user/'+userid+'/plist/create'
+        let newTListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/tlist/create'
+        let newPListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/plist/create'
 
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
