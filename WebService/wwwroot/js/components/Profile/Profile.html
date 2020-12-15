@@ -5,38 +5,50 @@
         padding: 5px;
         border: none;
     }
+
     .dropdown {
         position: relative;
         display: inline-block;
     }
+
     .dropdown-content {
         display: none;
         position: absolute;
         background-color: #f1f1f1;
         min-width: 50px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
+
     .dropdown-content a {
         color: black;
         padding: 10px 10px;
         text-decoration: none;
         display: block;
     }
-    
-    
-    .dropdown-content a:hover {background-color: #ddd;}
-    .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: darkorange;}
+
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: darkorange;
+    }
 </style>
-<link href="css/userlogin.css" rel="stylesheet" type="text/css" />
+<link href="css/userlogin.css" rel="stylesheet" type="text/css"/>
 <!--  USERS INFORMATION  TODO: USE BOOTSTRAP FORMS!-->
 
 
 <div class="container">
     <div class="sidebar-container">
         <div class="content">
-            <section class="section-long">
+
+            <section class="section-long" data-bind="visible: loggedIn().length >= 1">
                 <div class="section-line">
                     <div class="movie-info-entity">
                         <div class="entity-poster" data-role="hover-wrap">
@@ -48,26 +60,36 @@
                         </div>
                         <div class="entity-content">
                             <div data-bind="with: user"><h2 class="text-theme" data-bind="text: username"></h2></div>
-                            <div class="entity-category" data-bind="with: user">
-                                <a class="content-link" data-bind="text: email"></a>
-                            </div>
+                            <br>
                             <div class="entity-info">
                                 <div class="info-lines" data-bind="with: user">
                                     <div class="info info-short">
-                                        <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
+                                        <span class="text-theme info-icon"><i>FIRSTNAME</i></span>
+                                        <span class="info-text" data-bind="text: surname"></span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="info-lines" data-bind="with: user">
+                                    <div class="info info-short">
+                                        <span class="text-theme info-icon"><i>LASTNAME</i></span>
+                                        <span class="info-text" data-bind="text: lastname"></span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="info-lines" data-bind="with: user">
+                                    <div class="info info-short">
+                                        <span class="text-theme info-icon"><i>AGE:</i></span>
                                         <span class="info-text" data-bind="text: age"></span>
                                     </div>
                                 </div>
+                                <br>
+                                <div class="info-lines" data-bind="with: user">
+                                    <div class="info info-short">
+                                        <span class="text-theme info-icon"><i>EMAIL:</i></span>
+                                        <span class="info-text" data-bind="text: email"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <ul class="entity-list">
-                                <li>
-                                    <div data-bind="with: user">
-                                    <span class="entity-list-title" style="display: inline-block">Name: 
-                                     <a class="content-link" data-bind="text: surname"></a>
-                                    </span>
-                                        <span class="entity-list-title" style="display: inline-block"><a class="content-link" data-bind="text: lastname"></a></span></div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -86,9 +108,9 @@
                         </div>
                         <div class="entity-content">
                             <div><h2 class="text-theme">YOU ARE NOT LOGGED IN!</h2></div>
-                            <button class="btn btn-warning">Login</button>
+                            <button class="btn btn-warning" data-bind="click: changeContentToLogin">Login</button>
+                        </div>
                     </div>
-                </div>
                 </div>
             </section>
         </div>
@@ -96,133 +118,134 @@
 </div>
 
 
-
-
 <a class="scroll-top disabled" href="#"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
-        <br>
-        <div id="formContent">
-            <form class="updateProfile" method="post" data-bind="with: user">
-                <label for="surname"> First name: </label>
-                <input type="text" id="surname" required name="surname" data-bind="value: surname"><br>
-                <label for="lastname">Last name: </label>
-                <input type="text" id="lastname" required name="lastname" data-bind="value: lastname"><br>
-                <label for="age">Age: </label>
-                <input type="number" id="age" required name="age" min="1" max="99" data-bind="value: age"><br>
-                <label for="email">Email: </label>
-                <input type="email" id="email" required name="email" data-bind="value: email"><br><br>
-                <input type="submit" value="Save changes">
-            </form>
-        
-            <br>
-            
-            <!--    UPDATE PASSWORD    -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateBtn">Update Password</button>
-            <div class="modal fade" id="updateBtn" tabindex="-1" role="dialog" aria-labelledby="updateBtnLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="updateBtnLabel">UPDATE PASSWORD</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Please enter your username, old password and a new password:
-                            <form class="updatePWForm" method="post">
-                                <label for="username"> Username: </label>
-                                <input type="text" id="username" required name="username"><br>
-                                <label for="password"> Old password: </label>
-                                <input type="password" id="password" required name="password"><br>
-                                <label for="newpassword">New password: </label>
-                                <input type="password" id="newpassword" required name="newpassword"><br>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
-                                    <button type="submit" class="btn btn-primary" id="confirmNewPassword">Update Password</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+<br>
+<div id="formContent">
+    <form class="updateProfile" method="post" data-bind="with: user">
+        <label for="surname"> First name: </label>
+        <input type="text" id="surname" required name="surname" data-bind="value: surname"><br>
+        <label for="lastname">Last name: </label>
+        <input type="text" id="lastname" required name="lastname" data-bind="value: lastname"><br>
+        <label for="age">Age: </label>
+        <input type="number" id="age" required name="age" min="1" max="99" data-bind="value: age"><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" required name="email" data-bind="value: email"><br><br>
+        <input type="submit" value="Save changes">
+    </form>
+
+    <br>
+
+    <!--    UPDATE PASSWORD    -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateBtn">Update Password</button>
+    <div class="modal fade" id="updateBtn" tabindex="-1" role="dialog" aria-labelledby="updateBtnLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateBtnLabel">UPDATE PASSWORD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <br>
-            <br>
-            
-            <!--    DELETE ACCOUNT     -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteBtn">Delete Account</button>
-            <div class="modal" id="deleteBtn" tabindex="-1" role="dialog" aria-labelledby="deleteBtnLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="deleteBtnLabel">DELETE ACCOUNT</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            WARNING: ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?
-                        </div>
+                <div class="modal-body">
+                    Please enter your username, old password and a new password:
+                    <form class="updatePWForm" method="post">
+                        <label for="username"> Username: </label>
+                        <input type="text" id="username" required name="username"><br>
+                        <label for="password"> Old password: </label>
+                        <input type="password" id="password" required name="password"><br>
+                        <label for="newpassword">New password: </label>
+                        <input type="password" id="newpassword" required name="newpassword"><br>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
-                            <button type="button" class="btn btn-primary" id="confirmDelete">Yes, delete my account</button>
+                            <button type="submit" class="btn btn-primary" id="confirmNewPassword">Update Password
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     <br>
     <br>
-<!-- SEE YOUR RATINGS -->
-    <div >
-        <h1>Showing all of your ratings here: </h1>
-        <br>
-        <dl data-bind="foreach: userRatingList">
-            <dt>
-                <a href="#" class="gotomoviepage" data-bind="value: title_id, text: titleName">x</a>
-                <!--<a data-bind="attr: {href: url}, text: titleName"></a>-->
-                (<span data-bind="text: prodYear"></span>) &nbsp; | &nbsp;
-                <!-- HOVER TO SET NEW RATING -->
-                <div class="dropdown">
-                    Your rating: <button class="dropbtn" data-bind="text: rating" ></button>
-                    <div class="dropdown-content">
-                        <a class="updateRating" data-bind="value: title_id, text: 1"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 2"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 3"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 4"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 5"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 6"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 7"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 8"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 9"></a>
-                        <a class="updateRating" data-bind="value: title_id, text: 10"></a>
-                    </div>
+
+    <!--    DELETE ACCOUNT     -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteBtn">Delete Account</button>
+    <div class="modal" id="deleteBtn" tabindex="-1" role="dialog" aria-labelledby="deleteBtnLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteBtnLabel">DELETE ACCOUNT</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </dt>
-            <img width="140px" height="210px" data-bind="attr:{src: poster}">
-            <div data-bind="text: plot"></div>
-            <br>
-        </dl>
-        <br>
-        <br>
+                <div class="modal-body">
+                    WARNING: ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                    <button type="button" class="btn btn-primary" id="confirmDelete">Yes, delete my account</button>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <!-- SEE YOUR BOOKMARK LISTS -->
-    <div >
-        <h1>Showing all of your lists here: </h1>
+</div>
+</div>
+<br>
+<br>
+<!-- SEE YOUR RATINGS -->
+<div>
+    <h1>Showing all of your ratings here: </h1>
+    <br>
+    <dl data-bind="foreach: userRatingList">
+        <dt>
+            <a href="#" class="gotomoviepage" data-bind="value: title_id, text: titleName">x</a>
+            <!--<a data-bind="attr: {href: url}, text: titleName"></a>-->
+            (<span data-bind="text: prodYear"></span>) &nbsp; | &nbsp;
+            <!-- HOVER TO SET NEW RATING -->
+            <div class="dropdown">
+                Your rating:
+                <button class="dropbtn" data-bind="text: rating"></button>
+                <div class="dropdown-content">
+                    <a class="updateRating" data-bind="value: title_id, text: 1"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 2"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 3"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 4"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 5"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 6"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 7"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 8"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 9"></a>
+                    <a class="updateRating" data-bind="value: title_id, text: 10"></a>
+                </div>
+            </div>
+        </dt>
+        <img width="140px" height="210px" data-bind="attr:{src: poster}">
+        <div data-bind="text: plot"></div>
         <br>
-        
-        <a type=button href="#" class="btn btn-primary" id="gotonewlist" >CREATE A NEW LIST</a>
-        
-        <ul data-bind="foreach: bookmarkList">
-            <li>
-                <!--<a data-bind="attr: {href: url}, text: listName"></a>-->
-                <a class="gotolist" href="#" data-bind="value: id, text: listName"></a>
-                &nbsp; &nbsp; &nbsp; &nbsp;
-                <button type="button" class="deleteBookmarkList" data-bind="value: id">Delete List</button>
-                
-            </li>
-        </ul>
-        <br>
-        <br>
-    </div>
-    </div>
+    </dl>
+    <br>
+    <br>
+</div>
+
+<!-- SEE YOUR BOOKMARK LISTS -->
+<div>
+    <h1>Showing all of your lists here: </h1>
+    <br>
+
+    <a type=button href="#" class="btn btn-primary" id="gotonewlist">CREATE A NEW LIST</a>
+
+    <ul data-bind="foreach: bookmarkList">
+        <li>
+            <!--<a data-bind="attr: {href: url}, text: listName"></a>-->
+            <a class="gotolist" href="#" data-bind="value: id, text: listName"></a>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <button type="button" class="deleteBookmarkList" data-bind="value: id">Delete List</button>
+
+        </li>
+    </ul>
+    <br>
+    <br>
+</div>
+</div>

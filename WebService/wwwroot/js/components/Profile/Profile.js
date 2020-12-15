@@ -18,6 +18,7 @@
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
         let baseUrl = 'http://localhost:5001/api/';
         let loggedIn = ko.observableArray([]);
+        
 
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
@@ -266,12 +267,28 @@
                 }
             });
         });
+        
+        
+        
+        let changeContentToLogin = () => {
+                goToLogin();
+        }
+        
+        
+        function goToLogin(){
+            postman.publish("changeContent", "Login");
+        }
+
+
+       
 
         return {
             userRatingList,
             bookmarkList,
             user,
-            loggedIn
+            loggedIn,
+            changeContentToLogin
+            
         };
     }
     
