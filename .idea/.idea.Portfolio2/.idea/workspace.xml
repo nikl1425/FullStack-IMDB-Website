@@ -32,19 +32,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Token generator - validation doesn't work yet.">
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Token-Based authentication added to javascript fetches. Security requirements are met.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataService/Services/UserDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/UserDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTest/UserDataServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTest/UserDataServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/UnitTest/PersonDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/Interface/IPersonDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
@@ -144,12 +135,13 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/people.html" />
         <option value="$PROJECT_DIR$/WebService/Authentication/JwtConfig.cs" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" />
         <option value="$PROJECT_DIR$/WebService/Startup.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/UserDTOs/UserDto.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" />
       </list>
     </option>
   </component>
@@ -575,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607985742452</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Token-Based authentication added to javascript fetches. Security requirements are met.">
+      <created>1607997409817</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1607997409817</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +601,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Users added" />
     <MESSAGE value="Title Class" />
     <MESSAGE value="akas" />
     <MESSAGE value="akas akas type type akas type" />
@@ -627,7 +625,8 @@
     <MESSAGE value="-css på user stuff" />
     <MESSAGE value="Remove body i user pages" />
     <MESSAGE value="people page done" />
-    <option name="LAST_COMMIT_MESSAGE" value="people page done" />
+    <MESSAGE value="Token-Based authentication added to javascript fetches. Security requirements are met." />
+    <option name="LAST_COMMIT_MESSAGE" value="Token-Based authentication added to javascript fetches. Security requirements are met." />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="156" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604402509785">
@@ -642,7 +641,7 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1750" height="178" key="GridCell.Tab.0.bottom" timestamp="1607997275904">
+    <state width="1750" height="178" key="GridCell.Tab.0.bottom" timestamp="1607999256329">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -652,9 +651,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1321" height="254" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
-    <state width="1750" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275904" />
+    <state width="1750" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1607999256329" />
     <state width="1259" height="249" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755043" />
-    <state width="1750" height="178" key="GridCell.Tab.0.center" timestamp="1607997275903">
+    <state width="1750" height="178" key="GridCell.Tab.0.center" timestamp="1607999256328">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -664,9 +663,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1321" height="254" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
-    <state width="1750" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275903" />
+    <state width="1750" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1607999256328" />
     <state width="1259" height="249" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755042" />
-    <state width="1750" height="178" key="GridCell.Tab.0.left" timestamp="1607997275902">
+    <state width="1750" height="178" key="GridCell.Tab.0.left" timestamp="1607999256327">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -676,9 +675,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1321" height="254" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752610" />
-    <state width="1750" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275902" />
+    <state width="1750" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1607999256327" />
     <state width="1259" height="249" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755042" />
-    <state width="1750" height="178" key="GridCell.Tab.0.right" timestamp="1607997275903">
+    <state width="1750" height="178" key="GridCell.Tab.0.right" timestamp="1607999256328">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -688,7 +687,7 @@
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1321" height="254" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
-    <state width="1750" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1607997275903" />
+    <state width="1750" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1607999256328" />
     <state width="1259" height="249" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755043" />
     <state width="1259" height="484" key="GridCell.Tab.1.bottom" timestamp="1607658295443">
       <screen x="0" y="25" width="2560" height="1358" />
@@ -834,14 +833,14 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1607988372265">
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1607997413476">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606403703516" />
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607958876278" />
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
     <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607985743989" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607988372265" />
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1607997413476" />
     <state x="715" y="359" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607657941281" />
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605206083810">
       <screen x="0" y="0" width="1920" height="1040" />

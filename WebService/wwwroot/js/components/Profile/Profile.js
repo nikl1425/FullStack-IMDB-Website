@@ -8,6 +8,7 @@
         
         //TODO : incooporate session user smth
         let userId = 1;
+        
         let testId = 2;
         //let url = 'api/user/'+id+'/ratings/';
         let urlRating = 'http://localhost:5001/api/user/'+userId+'/ratings';
@@ -22,7 +23,9 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + window.tokenString
         });
-        
+        window.testidvariable = urlUser;
+        console.log(window.testidvariable)
+        console.log(window.tokenString)
         /*  FETCH RATING FROM USER  */
         function getRating(){
             fetch(urlRating, {
