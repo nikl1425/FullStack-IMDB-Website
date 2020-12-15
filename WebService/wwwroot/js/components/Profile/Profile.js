@@ -191,12 +191,22 @@
             goToUpdate()
         })
         
+
+        $('#logOutButton').click(function(){
+            window.tokenString = "";
+            window.userIdString = "";
+            goToHome()
+            alert("Successfully logged out")
+        })
+        
         
         let changeContentToLogin = () => {
                 goToLogin();
                 console.log("Test")
         }
-        
+        function goToHome(){
+            postman.publish("changeContent", "home");
+        }
         
         function goToLogin(){
             postman.publish("changeContent", "Login");
