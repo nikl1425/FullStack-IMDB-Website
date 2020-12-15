@@ -8,8 +8,8 @@ namespace DataService.Services
     {
         bool Login(string username, string password, string email);
         User GetUser(int id);
-        bool CreateUser(string username, string password, string surname, string lastname, int age, string email);
-        bool UpdateUser(int id, string username, string surname, string lastname, int age, string email);
+        bool CreateUser(string username, string password, string surname, string lastname, int? age, string email);
+        bool UpdateUser(int id, string username, string surname, string lastname, int? age, string email);
         public bool ChangePassword(string username, string oldpassword, string newpassword);
         bool DeleteUser(int id);
         int GetUserIDByUsername(string username);

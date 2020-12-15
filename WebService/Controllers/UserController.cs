@@ -157,7 +157,7 @@ namespace WebService.Controllers
             IList<Claim> claim = identity.Claims.ToList();
             var tokenUserName = claim[0].Value;
             Console.WriteLine(claim.Count);
-
+            
             if (queryUserName == tokenUserName)
             {
                 var updateUser = _dataService.UpdateUser(id, userDto.Username, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
