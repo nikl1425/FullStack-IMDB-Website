@@ -17,7 +17,7 @@
         let urlUpdatePW = 'http://localhost:5001/api/user/'+ window.userIdString +'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+ window.userIdString +'/delete'
         let baseUrl = 'http://localhost:5001/api/'
-
+        
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + window.tokenString

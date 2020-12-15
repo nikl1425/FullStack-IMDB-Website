@@ -68,13 +68,6 @@ namespace WebService.Controllers
             Console.WriteLine(username);
             return "Welcome to " + username;
         }
-        
-        [Authorize]
-        [HttpGet("GetValue")]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] {"Value1", "Value2", "Value3"};
-        }
 
         private string GenerateJSONWebToken(UserDto userDto)
         {
@@ -97,27 +90,26 @@ namespace WebService.Controllers
             var encodetoken = new JwtSecurityTokenHandler().WriteToken(token);
             return encodetoken;
         }
-        
-        [Authorize]
-        [HttpGet("user/approved/")]
-        public IActionResult Validate()
-        {
-            return Ok();
-        }
 
         //GET USER PROFILE 
         [Authorize]
         [HttpGet ("user/{id}", Name = nameof(getUser))]
         public IActionResult getUser(int id)
         {
+            var queryUserName = _dataService.GetUser(id).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
             var user = _dataService.GetUser(id);
             var usersLists = getPersonBookmarkLists(id);
-            if (user == null)
+            
+            if (queryUserName == tokenUserName)
             {
-                return NotFound();
+                return Ok(user);
             }
-            return Ok(user);
-            //return Ok(new {user, usersLists});
+            return BadRequest("User not authorized");
+                //return Ok(new {user, usersLists});
         }
         
         //CREATE NEW USER
@@ -132,14 +124,21 @@ namespace WebService.Controllers
         //UPDATE PASSWORD
         [Authorize]
         [HttpPost("user/{id}/changepassword")]
-        public IActionResult changeUserPassword(UserDto userDto)
+        public IActionResult changeUserPassword(UserDto userDto, int id)
         {
-            /*if (id <= 0)
+            var queryUserName = _dataService.GetUser(id).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
             {
-                return NotFound();
-            }*/ 
-            var updateUser = _dataService.ChangePassword(userDto.Username, userDto.Password, userDto.NewPassword);
-            return Ok(updateUser);
+                var updateUser = _dataService.ChangePassword(userDto.Username, userDto.Password, userDto.NewPassword);
+                return Ok(updateUser);
+            }
+            return BadRequest("User not authorized");
+
         }
 
         //UPDATE USER
@@ -147,12 +146,23 @@ namespace WebService.Controllers
         [HttpPost("user/{id}/update")]
         public IActionResult updateUser(int id, UserDto userDto)
         {
+            var queryUserName = _dataService.GetUser(id).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var updateUser = _dataService.UpdateUser(id, userDto.Username, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
+                return Ok(updateUser);
+            }
             if (id <= 0)
             {
                 return NotFound();
             }
-            var updateUser = _dataService.UpdateUser(id, userDto.Username, userDto.Surname, userDto.LastName, userDto.Age, userDto.Email);
-            return Ok(updateUser);
+
+            return BadRequest("User not authorized");
         }
         
         //DELETE USER
@@ -160,33 +170,75 @@ namespace WebService.Controllers
         [HttpDelete("user/{id}/delete")]
         public IActionResult deleteUser(int id)
         {
-            var delete = _dataService.DeleteUser(id);
+            var queryUserName = _dataService.GetUser(id).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var delete = _dataService.DeleteUser(id);
+                return Ok(delete);
+            }
+
+            
             if (id <= 0)
             {
                 return NotFound();
             }
-            return Ok(delete);
+
+            return BadRequest("User not authorized");
+
         }
         
         //NEW PERSON BOOKMARK LIST
         [Authorize]
         [HttpPost("user/{userid}/plist/create")] 
-        public IActionResult newPersonBookmarkList(PersonBookmarkListDto pblDto)
+        public IActionResult newPersonBookmarkList(PersonBookmarkListDto pblDto, int userid)
         {
-            var list = _dataService.NewPersonBookmarkList(pblDto.UserId, pblDto.ListName);
-            return Created("New list: ", list);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var list = _dataService.NewPersonBookmarkList(pblDto.UserId, pblDto.ListName);
+                return Created("New list: ", list);
+            }
+
+            return BadRequest("User not authorized");
         }
         
         //ADD PERSON BOOKMARK TO LIST
         [Authorize]
         [HttpPost("user/{userid}/plist/bookmark")] 
         //[HttpPost("name/{personid}/bookmark/")] 
-        public IActionResult newPersonBookmark(PersonBookmarkDto pbDto)
+        public IActionResult newPersonBookmark(PersonBookmarkDto pbDto, int userid)
         {
-            var newBookmark = _dataService.NewPersonBookmark(pbDto.Person_Id, pbDto.List_Id);
-            return Created("",newBookmark);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var newBookmark = _dataService.NewPersonBookmark(pbDto.Person_Id, pbDto.List_Id);
+                return Created("",newBookmark);
+            }
+
+            return BadRequest("User not authorized");
         }
         
+        
+        
+        
+        
+        
+        //NEDENSTÅENDE MANGLER TOKEN VALID
         //DELETE USERS BOOKMARK LIST
         [Authorize]
         [HttpDelete("plist/{listid}/delete")] 
@@ -242,75 +294,115 @@ namespace WebService.Controllers
             return Ok(delete);
         }
 
+        //OVENSTÅENDE MANGLER USERID
         //GET A USERS BOOKMARK LISTS
+        
+        
+        
         [Authorize]
         [HttpGet("user/{id}/lists")]
         public IActionResult getPersonBookmarkLists(int id)
         {
             var personBookmarkList = _dataService.GetUsersPersonBookmarkLists(id);
             var titleBookmarkList = _dataService.GetUsersTitleBookmarkLists(id);
-            
-            IList<TitleBookmarkListDTO> titleList = titleBookmarkList.Select(x => new TitleBookmarkListDTO
-            {
-                Type = "tlist",
-                Id = "t"+x.Id,
-                UserId = x.UserId,
-                ListName = x.ListName,
-                Url = "http://localhost:5001/api/tlist/"+x.Id
-            }).ToList();
-            
-            IList<PersonBookmarkListDto> personList = personBookmarkList.Select(x => new PersonBookmarkListDto
-            {
-                Type = "plist",
-                Id = "p"+x.Id,
-                UserId = x.UserId,
-                ListName = x.ListName,
-                Url = "http://localhost:5001/api/plist/"+x.Id
-            }).ToList();
+            var user = _dataService.GetUser(id).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var username = claim[0].Value;
+            Console.WriteLine(claim.Count);
 
-            List<object> result = titleList.Cast<object>()
-                .Concat(personList)
-                .ToList();
-            return Ok(result);
-            //return Ok(new {personList, titleList});
+            if (user == username)
+            {
+                IList<TitleBookmarkListDTO> titleList = titleBookmarkList.Select(x => new TitleBookmarkListDTO
+                {
+                    Type = "tlist",
+                    Id = "t"+x.Id,
+                    UserId = x.UserId,
+                    ListName = x.ListName,
+                    Url = "http://localhost:5001/api/tlist/"+x.Id
+                }).ToList();
             
+                IList<PersonBookmarkListDto> personList = personBookmarkList.Select(x => new PersonBookmarkListDto
+                {
+                    Type = "plist",
+                    Id = "p"+x.Id,
+                    UserId = x.UserId,
+                    ListName = x.ListName,
+                    Url = "http://localhost:5001/api/plist/"+x.Id
+                }).ToList();
+
+                List<object> result = titleList.Cast<object>()
+                    .Concat(personList)
+                    .ToList();
+                return Ok(result);
+            }
+
+            return BadRequest("User not authorized");
+            //return Ok(new {personList, titleList});
+
         }
+        
+        
+        
         
         //RATE A MOVIE
         [Authorize]
         [HttpPost("title/{titleid}/RateMovie/{userid}/{thisRating}/")]
         public IActionResult rateMovie(int userid, int thisRating, string titleid)
         {
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var rateThisMovie = _dataService.RateMovie(userid, thisRating, titleid);
+                return Ok(rateThisMovie);
+            }
+            
             if (titleid == null)
             {
                 return NotFound();
             }
-            
-            var rateThisMovie = _dataService.RateMovie(userid, thisRating, titleid);
-            return Ok(rateThisMovie);
+
+            return BadRequest("User not authorized");
         }
+        
+        
         
         //GET USERS RATED MOVIES
         [Authorize]
         [HttpGet("user/{userid}/ratings/")]
         public IActionResult getRatings(int userid)
         {
-            var ratingsList = _dataService.GetRatingFromUsers(userid);
-            IList<RatingDTO> ratingList = ratingsList.Select(x => new RatingDTO
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
             {
-                user_id = x.User_Id,
-                rating = x.Rating_,
-                title_id = x.Title_Id,
-                url = "http://localhost:5001/api/title/"+x.Title_Id,
-                updateUrl = "/api/title/"
-                            +x.Title_Id+"/RateMovie/"
-                            +x.User_Id+"/",
-                titleName = _titleDataService.GetTitle(x.Title_Id).OriginalTitle,
-                prodYear = _titleDataService.GetTitle(x.Title_Id).StartYear,
-                poster = _titleDataService.GetOmdbData(x.Title_Id).Poster ?? _titleDataService.GetOmdbData("tt11000576").Poster,
-                plot = _titleDataService.GetOmdbData(x.Title_Id).Plot
-            }).ToList();
-            return Ok(ratingList);
+                var ratingsList = _dataService.GetRatingFromUsers(userid);
+                IList<RatingDTO> ratingList = ratingsList.Select(x => new RatingDTO
+                {
+                    user_id = x.User_Id,
+                    rating = x.Rating_,
+                    title_id = x.Title_Id,
+                    url = "http://localhost:5001/api/title/"+x.Title_Id,
+                    updateUrl = "/api/title/"
+                                +x.Title_Id+"/RateMovie/"
+                                +x.User_Id+"/",
+                    titleName = _titleDataService.GetTitle(x.Title_Id).OriginalTitle,
+                    prodYear = _titleDataService.GetTitle(x.Title_Id).StartYear,
+                    poster = _titleDataService.GetOmdbData(x.Title_Id).Poster ?? _titleDataService.GetOmdbData("tt11000576").Poster,
+                    plot = _titleDataService.GetOmdbData(x.Title_Id).Plot
+                }).ToList();
+                return Ok(ratingList);
+            }
+            return BadRequest("User not authorized");
         }
         
         //DELETE USERS RATED MOVIE
@@ -318,13 +410,26 @@ namespace WebService.Controllers
         [HttpDelete("title/{titleid}/RateMovie/{userid}/Delete/")]
         public IActionResult deleteRating(int userid, string titleid)
         {
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var delRating = _dataService.DeleteRatingFromUser(userid, titleid);
+                return Ok(delRating);
+
+            }
+
             if (userid.Equals(null) && titleid == null)
             {
                 return NotFound();
             }
 
-            var delRating = _dataService.DeleteRatingFromUser(userid, titleid);
-            return Ok(delRating);
+            return BadRequest("User not authorized");
+
 
         }
         
