@@ -29,12 +29,10 @@
             })
                 .then(response => {
                     return response.json()
-                })
-                    .then(function (data) {
-                    user(data)
-                    console.log(user(data));
-                })
-                .catch(error => {
+                }).then(function (data) {
+                user(data)
+                console.log(user(data));
+            }).catch(error => {
                 console.error(error);
             });
         }
@@ -55,31 +53,10 @@
                     .then((data) => {
                         tListData(data.titleList)
                         tBookmarks(data.tbookmarkDtos)
-                        // DELETE BOOKMARK FROM LIST
-                        $('.deleteBookmarkTitle').on('click', function(){
-                            if(window.listValue.indexOf('t')>-1) {
-                                let listId = window.listValue.substring(1);
-                                let bookmarkId = $(this).val();
-                                console.log("bookmarkID: " + bookmarkId);
-                                console.log("window val: " + window.listValue);
-                                console.log("URL: " + 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId)
-                                $.ajax({
-                                    type: 'DELETE',
-                                    url: 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId,
-                                    headers: {Authorization: 'Bearer ' + window.tokenString},
-                                    success: function (result) {
-                                        if (result) {
-                                            alert("Bookmark has been removed")
-                                            getListData()
-                                        } else {
-                                            alert("Something went wrong!")
-                                        }
-                                    }
-                                })
-                            }
-                        });
-                        //console.log("TLISTDATA: "+data.titleList)
-                        //console.log("TBOOKMARKS: "+data.tbookmarkDtos)
+                        console.log(tBookmarks())
+                        console.log("TLISTDATA: "+data.titleList())
+                        console.log("TBOOKMARKS: "+data.tbookmarkDtos())
+                        console.log("HEJSA")
                     }).catch((err) => {
                 })
             }
@@ -97,28 +74,6 @@
                     .then((data) => {
                         pListData(data.plistDto)
                         pBookmarks(data.pbookmarkDtos)
-                        $('.deleteBookmarkPerson').on('click', function() {
-                            if (window.listValue.indexOf('p') > -1) {
-                                let listId = window.listValue.substring(1);
-                                let bookmarkId = $(this).val();
-                                console.log("bookmarkID: " + bookmarkId);
-                                console.log("window val: " + window.listValue);
-                                console.log("URL: " + 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId)
-                                $.ajax({
-                                    type: 'DELETE',
-                                    url: 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId,
-                                    headers: {Authorization: 'Bearer ' + window.tokenString},
-                                    success: function (result) {
-                                        if (result) {
-                                            alert("Bookmark has been removed")
-                                            getListData()
-                                        } else {
-                                            alert("Something went wrong!")
-                                        }
-                                    }
-                                })
-                            }
-                        });
                     }).catch((err) => {
                 })
             }
@@ -153,7 +108,49 @@
         });
         
         
-        
+        // DELETE BOOKMARK FROM LIST
+        $(document).on('click', '.deleteBookmark', function(){
+            if(window.listValue.indexOf('t')>-1) {
+                let listId = window.listValue.substring(1);
+                let bookmarkId = $(this).val();
+                console.log("bookmarkID: " + bookmarkId);
+                console.log("window val: " + window.listValue);
+                console.log("URL: " + 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId)
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId,
+                    headers: {Authorization: 'Bearer ' + window.tokenString},
+                    success: function (result) {
+                        if (result) {
+                            alert("Bookmark has been removed")
+                            getListData()
+                        } else {
+                            alert("Something went wrong!")
+                        }
+                    }
+                })
+            }
+            if(window.listValue.indexOf('p')>-1) {
+                let listId = window.listValue.substring(1);
+                let bookmarkId = $(this).val();
+                console.log("bookmarkID: " + bookmarkId);
+                console.log("window val: " + window.listValue);
+                console.log("URL: " + 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId)
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId,
+                    headers: {Authorization: 'Bearer ' + window.tokenString},
+                    success: function (result) {
+                        if (result) {
+                            alert("Bookmark has been removed")
+                            getListData()
+                        } else {
+                            alert("Something went wrong!")
+                        }
+                    }
+                })
+            }
+        });
         
 
         return {
