@@ -53,8 +53,8 @@
                 .then((data) => {
                     tListData(data.titleList)
                     tBookmarks(data.tbookmarkDtos)
-                    console.log("TLISTDATA: "+data.titleList)
-                    console.log("TBOOKMARKS: "+data.tbookmarkDtos)
+                    //console.log("TLISTDATA: "+data.titleList)
+                    //console.log("TBOOKMARKS: "+data.tbookmarkDtos)
                 }).catch((err) => {
             })
         }
@@ -153,6 +153,23 @@
             } else {
                 alert("Please select a type of list.")
             }
+        });
+        
+        $(".deleteBookmark").on('click', function(){
+            let bookmarkId = $(this).val();
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:5001/api/tlist/'+window.value+'/'+bookmarkId,
+                headers: {Authorization: 'Bearer '+window.tokenString},
+                success: function (result) {
+                    if(result) {
+                        alert("Bookmark has been removed")
+                        getUserInfo()                        
+                    } else {
+                        alert("Something went wrong!")
+                    }
+                }
+            })
         });
         
 

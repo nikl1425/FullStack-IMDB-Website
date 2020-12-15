@@ -1,4 +1,7 @@
 ﻿<div>
+    <!--------------------------------------->
+    <!--           TITLE PAGE              -->
+    <!--------------------------------------->
     <div data-bind="foreach: tListData">
         <h1 data-bind="text: listName"></h1>
         created by: <span data-bind="text: username"></span>
@@ -9,12 +12,18 @@
         <dt>
             <a href="#" class="gotomoviepage" data-bind="value: titleId, text: titleName"></a>
             (<span data-bind="text: prodYear"></span>)
+            &nbsp; &nbsp; &nbsp; &nbsp;
         </dt>
         <img width="67px" height="98px" data-bind="attr:{src: poster}">
         <div data-bind="text: plot"></div>
+        <button type="button" class="deleteBookmark" data-bind="value: id">Delete from list</button>
+        
         <br>
     </dl>
 
+    <!--------------------------------------->
+    <!--           PERSON PAGE             -->
+    <!--------------------------------------->
     <div data-bind="foreach: pListData">
         <h1 data-bind="text: listName"></h1>
         created by: <span data-bind="text: username"></span>
