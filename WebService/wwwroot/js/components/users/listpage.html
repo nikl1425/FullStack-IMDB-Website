@@ -11,6 +11,13 @@
                         Created by: <span data-bind="text: username"></span>
                     </h4>
                 </div>
+                <div data-bind="foreach: pListData">
+                    <h1 data-bind="text: listName"></h1>
+                    <h4 class="entity-title">
+                    created by: <span data-bind="text: username"></span>
+                    </h4>
+                    <br>
+                </div>
                 <div class="page-breadcrumbs">
                     <a class="content-link" href="#">Home</a>
                     <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
@@ -102,26 +109,7 @@
 </section>
 
 
-<div data-bind="foreach: pListData">
-    <h1 data-bind="text: listName"></h1>
-    created by: <span data-bind="text: username"></span>
-    <br>
-</div>
 
-<dl data-bind="foreach: pBookmarks">
-    <dt>
-        <a href="#" class="goToPeoplePage" data-bind="value: person_Id, text: personName"></a>
-        (Born: <span data-bind="text: birthYear"></span>)
-    </dt>
-    <img width="67px" height="98px"
-         src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg">
-    <a href="#" class="deleteBookmark" data-bind="value: id">Delete from list</a>
-    <br>
-</dl>
-
-<br>
-<br>
-<a type=button href="#" class="btn btn-primary" id="gotonewlist">CREATE A NEW LIST</a>
 <br>
 <br>
 </div>
