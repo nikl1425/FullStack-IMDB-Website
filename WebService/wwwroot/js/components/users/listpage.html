@@ -27,9 +27,8 @@
     <div class="container">
         <div class="section-pannel">
             <div class="grid row">
-                <div id="scrolltothisdiv">
                     <table>
-                        <tbody data-bind="foreach: tBookmarks" style="width: 100%; display: table; !important;">
+                        <tbody data-bind="foreach: tBookmarks" style="width: 100%; display: table; padding-bottom: 15px; !important;">
                         <tr valign="top">
                             <th scope="row">
                                 <img width="150px" height="150px" data-bind="attr:{src: poster} ">
@@ -66,6 +65,43 @@
 <!--------------------------------------->
 <!--           PERSON PAGE             -->
 <!--------------------------------------->
+
+<section class="section-long">   <!-- GENRES CONFIG HERE-->
+    <div class="container">
+        <div class="section-pannel">
+            <div class="grid row">
+                    <table>
+                        <tbody data-bind="foreach: pBookmarks" style="width: 100%; display: table; padding-bottom: 15px; !important;">
+                        <tr valign="top">
+                            <th scope="row">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="orange" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9.854-2.854a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </th>
+                            <td  style="width: 200px; text-align: center; !important;">
+                                <h4 class="entity-title">
+                                    <a class="gotomovie" href="#" data-bind="value: person_Id"><span
+                                            data-bind="text: personName"></span></a>
+                                </h4>
+                            </td>
+                            <td style="width: 140px; text-align: center; !important;">
+                                <div data-bind="text: birthYear"></div>
+                            </td>
+                            <td style="width: 140px; text-align: center; !important;">
+                                <button href="#" class="deleteBookmark btn btn-warning" data-bind="value: id">Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <div data-bind="foreach: pListData">
     <h1 data-bind="text: listName"></h1>
     created by: <span data-bind="text: username"></span>
