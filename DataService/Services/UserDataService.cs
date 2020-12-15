@@ -239,6 +239,10 @@ namespace DataService.Services
         public bool NewPersonBookmark(string personid, int listid)
         {
             using var ctx = new ImdbContext();
+            var query = ctx.person_bookmarks
+                .Where(x => x.List_Id == listid && x.Person_Id == personid);
+            if (query.Count() > 0) return false;
+                
             ctx.person_bookmarks
                 .Add(new Person_Bookmark()
                     {List_Id = listid, Person_Id = personid});
@@ -342,6 +346,9 @@ namespace DataService.Services
         public bool NewTitleBookmark(string titleid, int listid)
         {
             using var ctx = new ImdbContext();
+            var query = ctx.title_bookmarks
+                .Where(x => x.ListId == listid && x.TitleId == titleid);
+            if (query.Count() > 0) return false;
             ctx.title_bookmarks
                 .Add(new Title_Bookmark()
                     {ListId = listid, TitleId = titleid});

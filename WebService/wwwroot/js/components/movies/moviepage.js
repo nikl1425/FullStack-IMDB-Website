@@ -1,6 +1,7 @@
 ﻿define(['knockout', 'postman'], (ko, postman) => {
     return function () {
         console.log(window.movieValue)
+        window.value = "";
 
         let titleData = ko.observableArray([])
         let titleGenreData = ko.observableArray([])
@@ -32,42 +33,40 @@
                 .then(function (data){
                     bookmarkList(data);
                     console.log(data);
+                    /*   ADD MOVIE TO BOOKMARK   */
+                    $('.addToBookmark.info-text').on('click', function(){
+                        let value = $(this).val();
+                        if(window.movieValue.includes('tt') && value.includes('t')){
+                            let trimVal = value.substring(1);
+                            let data = {"titleId":window.movieValue, "listid":trimVal};
+                            const json = JSON.stringify(data);
+                            console.log("DATA: "+data)
+                            $.ajax({
+                                type: 'POST',
+                                url: 'http://localhost:5001/api/tlist/'+trimVal+'/bookmark',
+                                headers: {Authorization: 'Bearer '+window.tokenString},
+                                dataType: 'json',
+                                data: json,
+                                contentType: 'application/json',
+                                success: function (result) {
+                                    if(result){
+                                        alert("The movie has been added!")
+                                    } else {
+                                        alert("Movie already exists in list!")
+                                    }
+                                }
+                            })
+                        }
+                        else {
+                            alert("Cannot add to list or is a Person List")
+                        }
+                    })
                 })
                 .catch(function(error){
                     console.log("Error: "+error)
                 });
         }
         getList();
-        
-        
-        
-        
-        /*   ADD MOVIE TO BOOKMARK   */
-        $(document).on('click', '.addToBookmark.info-text', function(){
-            let value = $(this).val();
-            if(window.movieValue.includes('tt') && value.includes('t')){
-                let trimVal = value.substring(1);
-                let data = {"titleId":window.movieValue, "listid":trimVal};
-                const json = JSON.stringify(data)
-                console.log("DATA: "+data)
-                    $.ajax({
-                        type: 'POST',
-                        url: 'http://localhost:5001/api/tlist/'+trimVal+'/bookmark',
-                        headers: {Authorization: 'Bearer '+window.tokenString},
-                        dataType: 'json',
-                        data: json,
-                        contentType: 'application/json',
-                        success: function (result) {
-                            if(result) {
-                                alert("The movie has been added!")
-                            } 
-                        }
-                    })
-            }
-            else {
-                alert("Cannot add to person list")
-            }
-        })
 
    
 
