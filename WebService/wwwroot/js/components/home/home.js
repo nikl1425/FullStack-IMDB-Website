@@ -47,7 +47,7 @@ let titleData = ko.observableArray([])
         
 window.value = "";
         
-$(document).on("keyup", "input", function(e){
+$(document).on("keyup", ".form-control", function(e){
     const inputVal = $(this).val();
     let inputValLength = $(this).val().length;
     const url = 'http://localhost:5001/api/search/';

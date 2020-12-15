@@ -5,7 +5,7 @@
         let bookmarkList = ko.observableArray([]);
         let user = ko.observableArray([]);
         window.listValue = "";
-        
+      
         let urlRating = 'http://localhost:5001/api/user/'+ window.userIdString +'/ratings';
         let urlLists = 'http://localhost:5001/api/user/'+ window.userIdString +'/lists';
         let urlUser = 'http://localhost:5001/api/user/'+ window.userIdString;
@@ -18,6 +18,70 @@
         });
         
         window.testidvariable = urlUser;
+
+        let newTListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/tlist/create'
+        let newPListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/plist/create'
+        
+
+
+        /*  CREATE NEW BOOKMARK LIST  */
+        const serialize_form_list = form => JSON.stringify(
+            Array.from(new FormData(form).entries())
+                .reduce((m,[key,value]) => Object.assign(m,{[key]: value}),{})
+        );
+
+        $(".new_list_form").submit(function (e) {
+            e.preventDefault();
+            const json = serialize_form_list(this);
+            console.log();
+            let s = json.toString();
+            console.log("STRING: "+s)
+            if(s.includes('tlist')) {
+                console.log("tlist")
+                $.ajax({
+                    type: 'POST',
+                    url: newTListUrl,
+                    headers: {Authorization: 'Bearer '+window.tokenString},
+                    dataType: 'json',
+                    data: json,
+                    contentType: 'application/json',
+                    success: function(x) {
+                        getList()
+                        $('.modal').modal('hide');
+                        $('.modal-backdrop').remove();
+                        console.log("we r sending.... plist"+x)
+                        alert("Your title list has been created!")
+                    }
+                });
+            } else
+            if(s.includes('plist')) {
+                console.log("plist")
+                $.ajax({
+                    type: 'POST',
+                    url: newPListUrl,
+                    headers: {Authorization: 'Bearer '+window.tokenString},
+                    dataType: 'json',
+                    data: json,
+                    contentType: 'application/json',
+                    success: function (data) {
+                        getList()
+                        $('.modal').modal('hide');
+                        $('.modal-backdrop').remove();
+                        console.log("we r sending.... plist")
+                        if(data) {
+                            alert("Your person list has been created!")
+                        }
+                    }
+                });
+            } else {
+                alert("Please select a type of list.")
+            }
+        });
+        
+        
+        
+        
+        
         
         /*  FETCH RATING FROM USER  */
         function getRating(){
@@ -215,7 +279,10 @@
         function goToUpdate(){
             postman.publish("changeContent", "Updateuser");
         }
-
+        
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
 
        
 

@@ -13,8 +13,7 @@
         let urlUser = 'http://localhost:5001/api/user/'+window.userIdString;
         const tlistUrl = 'http://localhost:5001/api/tlist/';
         const plistUrl = 'http://localhost:5001/api/plist/';
-        let newTListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/tlist/create'
-        let newPListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/plist/create'
+        
 
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
@@ -90,10 +89,7 @@
         let goToNewList = () => {
             postman.publish("changeContent", "createlist");
         }
-        let goToProfilePage = () => {
-            postman.publish("changeContent", "profile");
-        }
-
+   
         $('#gotonewlist').on('click', function(){
             console.log("Has focus")
             window.value = $(this).val();
@@ -109,55 +105,6 @@
             window.movieValue = $(this).val();
             console.log($(this).val());
             goToMoviePage();
-        });
-
-        /*  CREATE NEW BOOKMARK LIST  */
-        const serialize_form_list = form => JSON.stringify(
-            Array.from(new FormData(form).entries())
-                .reduce((m,[key,value]) => Object.assign(m,{[key]: value}),{})
-        );
-        $(".new_list_form").submit(function (e) {
-            e.preventDefault();
-            const json = serialize_form_list(this);
-            console.log();
-            let s = json.toString();
-            console.log("STRING: "+s)
-            if(s.includes('tlist')) {
-                console.log("tlist")
-                $.ajax({
-                    type: 'POST',
-                    url: newTListUrl,
-                    headers: {Authorization: 'Bearer '+window.tokenString},
-                    dataType: 'json',
-                    data: json,
-                    contentType: 'application/json',
-                    success: function(x) {
-                        console.log("we r sending.... plist"+x)
-                        alert("Your title list has been created!")
-                        goToProfilePage();
-                    }
-                });
-            } else 
-                if(s.includes('plist')) {
-                console.log("plist")
-                $.ajax({
-                    type: 'POST',
-                    url: newPListUrl,
-                    headers: {Authorization: 'Bearer '+window.tokenString},
-                    dataType: 'json',
-                    data: json,
-                    contentType: 'application/json',
-                    success: function (data) {
-                        console.log("we r sending.... plist")
-                        if(data) {
-                            alert("Your person list has been created!")
-                            goToProfilePage();
-                        }
-                    }
-                });
-            } else {
-                alert("Please select a type of list.")
-            }
         });
         
         // DELETE BOOKMARK FROM LIST

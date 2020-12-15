@@ -43,6 +43,27 @@
     .dropdown-content a:hover {background-color: #ddd;}
     .dropdown:hover .dropdown-content {display: block;}
     .dropdown:hover .dropbtn {background-color: darkorange;}
+
+
+
+    .modal {
+        text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+        .modal:before {
+            display: inline-block;
+            vertical-align: middle;
+            content: " ";
+            height: 100%;
+        }
+    }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
 </style>
 
 <!--  USERS INFORMATION  TODO: USE BOOTSTRAP FORMS!-->
@@ -231,7 +252,7 @@
                 <div>
                     <h2 class="text-theme">Showing all of your lists here: </h2>
                     <br>
-                    <a type=button href="#" class="btn btn-warning" id="gotonewlist">CREATE A NEW LIST</a>
+                    <a type=button href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">CREATE A NEW LIST</a>
                     <br>
                     <br>
                     <table class="table table-dark">
@@ -272,6 +293,37 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create new bookmark list</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="formContent" >
+                    <form class="new_list_form" method="post" data-bind="foreach: user">
+                        <input type=hidden name="userid" data-bind="value: id">
+                        <label for="listname"> List Name: </label>
+                        <input type="text" id="listname" required name="listname"><br>
+                        <label for="list"> Choose a list:
+                            <select id="list" name="list">
+                                <option name="tlist" value="tlist">Title List</option>
+                                <option name="plist" value="plist">Person List</option>
+                            </select>
+                        </label>
+                        <div class="modal-footer">
+                            <button type="submit" value="Create List" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--DOESNT DO ANYTHING, BUT MESSES UP THE REST OF THE HTML IF ITS REMOVED?-->
 <form style="display: none">

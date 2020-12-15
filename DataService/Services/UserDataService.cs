@@ -31,10 +31,13 @@ namespace DataService.Services
         public bool Login(string username, string password, string email)
         {
             using var ctx = new ImdbContext();
-            
             var getUser = ctx.users.FirstOrDefault(x => x.Username.ToLower() == username.ToLower());
-            return getUser != null && username.ToLower() == getUser.Username.ToLower() && email == getUser.Email && 
-                   _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt);
+            if (getUser.Username.ToLower() == username.ToLower() && getUser.Email.ToLower() == email.ToLower() && _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt))
+            {
+                return true;
+            }
+
+            return false;
         }
         
 
@@ -77,7 +80,7 @@ namespace DataService.Services
         }
         
         //CREATE NEW USER
-        public bool CreateUser(string username, string password, string surname, string lastname, int age, string email)
+        public bool CreateUser(string username, string password, string surname, string lastname, int? age, string email)
         {
             Hashing.HashSalt hashSalt = hashing.PasswordHash(16, password);
             
@@ -115,7 +118,7 @@ namespace DataService.Services
                 return false;
             } 
             ctx.users.Add(new User
-                {Id = maxId+1, Username = username, Password = hashSalt.Hash, Salt = hashSalt.Salt, Age = age, Surname = surname, Lastname = lastname, Email = email});
+                {Id = maxId+1, Username = username, Password = hashSalt.Hash, Salt = hashSalt.Salt, Age = age.Value, Surname = surname, Lastname = lastname, Email = email});
             ctx.SaveChanges();
             return true;
             //return ctx.users.Find(maxId + 1);
@@ -138,10 +141,15 @@ namespace DataService.Services
         }
         
         //UPDATE USER PROFILE
-        public bool UpdateUser(int id, string username, string surname, string lastname, int age, string email)
+        public bool UpdateUser(int id, string username, string surname, string lastname, int? age, string email)
         {
             using var ctx = new ImdbContext();
-            var getUser = ctx.users.FirstOrDefault(x => x.Username == username);
+            var getUser = ctx.users.Find(id);
+            username ??= getUser.Username;
+            surname ??= getUser.Surname;
+            lastname ??= getUser.Lastname;
+            age ??= getUser.Age;
+            email ??= getUser.Email;
             //if (getUser == null) return false;
             //PASSWORD
             //if (_userValidation.VerifyPassword(password, ctx.users.Find(id).Password, ctx.users.Find(id).Salt))
@@ -167,7 +175,7 @@ namespace DataService.Services
                 //AGE
                 if (age != 0)
                 {
-                    ctx.users.Update(ctx.users.Find(id)).Entity.Age = age;
+                    ctx.users.Update(ctx.users.Find(id)).Entity.Age = age.Value;
                 }
 
                 //EMAIL
