@@ -38,7 +38,7 @@
                         <tbody data-bind="foreach: tBookmarks" style="width: 100%; display: table; padding-bottom: 15px; !important;">
                         <tr valign="top">
                             <th scope="row">
-                                <img width="150px" height="150px" data-bind="attr:{src: poster} ">
+                                <img width="150px" height="250px" data-bind="attr:{src: poster} ">
                             </th>
                             <td valign="top" style="width: 140px">
                                 <h4 class="entity-title">
@@ -46,6 +46,7 @@
                                             data-bind="text: titleName"></span></a>
                                 </h4>
                             </td>
+                            
                             <td valign="top"> 
                                 <div data-bind="text: plot"></div>
                             </td>
@@ -87,7 +88,7 @@
                             </th>
                             <td  style="width: 200px; text-align: center; !important;">
                                 <h4 class="entity-title">
-                                    <a class="gotomovie" href="#" data-bind="value: person_Id"><span
+                                    <a class="goToPeoplePage" href="#" data-bind="value: person_Id"><span
                                             data-bind="text: personName"></span></a>
                                 </h4>
                             </td>
