@@ -23,6 +23,8 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + window.tokenString
         });
+        
+        
         window.testidvariable = urlUser;
         console.log(window.testidvariable)
         console.log(window.tokenString)

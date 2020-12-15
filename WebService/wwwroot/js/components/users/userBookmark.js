@@ -12,6 +12,11 @@
         const tlistUrl = 'http://localhost:5001/api/tlist/';
         const plistUrl = 'http://localhost:5001/api/plist/';
 
+        const myHeaders = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + window.tokenString
+        });
+
         function goToMoviePage(){
             postman.publish("changeContent", "moviePage");
         }
@@ -20,7 +25,10 @@
             let listId = window.listValue.substring(1);
             console.log("listid: "+listId);
             console.log(tlistUrl+listId);
-            fetch(tlistUrl + listId)
+            fetch(tlistUrl + listId, {
+                method: 'GET',
+                headers: myHeaders
+              })
                 .then((response) => {
                     return response.json()
                 })
@@ -36,7 +44,10 @@
             let listId = window.listValue.substring(1);
             console.log("listid: "+listId);
             console.log(plistUrl+listId);
-            fetch(plistUrl + listId)
+            fetch(plistUrl + listId, {
+                method: 'GET',
+                headers: myHeaders
+            })
                 .then((response) => {
                     return response.json()
                 })
