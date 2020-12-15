@@ -44,12 +44,7 @@ require(['knockout', 'text'], (ko) => {
         viewModel: { require: "components/profile/profile" },
         template: { require: "text!components/profile/Profile.html" }
     });
-
-    ko.components.register('about', {
-        viewModel: { require: "components/about/about" },
-        template: { require: "text!components/about/about.html" }
-    });
-
+    
     ko.components.register('peoplepage', {
         viewModel: { require: "components/people/peoplepage" },
         template: { require: "text!components/people/peoplepage.html" }

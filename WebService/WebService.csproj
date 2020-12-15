@@ -353,6 +353,8 @@
       <_ContentIncludedByDefault Remove="wwwroot\js\components\users\userConfig.js" />
       <_ContentIncludedByDefault Remove="wwwroot\js\components\users\userRating.js" />
       <_ContentIncludedByDefault Remove="wwwroot\js\components\users\YourLists.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\About\About.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\About\About.js" />
     </ItemGroup>
 
     <ItemGroup>

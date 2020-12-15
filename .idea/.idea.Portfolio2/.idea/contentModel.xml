@@ -444,10 +444,6 @@
           <e p="index.html" t="Include" />
           <e p="js" t="Include">
             <e p="components" t="Include">
-              <e p="About" t="Include">
-                <e p="About.html" t="Include" />
-                <e p="About.js" t="Include" />
-              </e>
               <e p="DataService" t="Include">
                 <e p="DataService.js" t="Include" />
               </e>
