@@ -64,14 +64,12 @@
                 data: json,
                 contentType: 'application/json',
                 success: function (data) {
-                    if(data > 1) {
                         alert("Welcome!")
                         console.log(data.tokenStr)
                         console.log(data.id)
                         window.userIdString = data.id;
                         window.tokenString = data.tokenStr;
                         goToProfilePage();
-                    }
                 },
                 error: function (data){
                     alert("Username or password is incorrect!")
