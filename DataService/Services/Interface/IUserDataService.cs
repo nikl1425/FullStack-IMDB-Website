@@ -12,6 +12,7 @@ namespace DataService.Services
         bool UpdateUser(int id, string username, string surname, string lastname, int age, string email);
         public bool ChangePassword(string username, string oldpassword, string newpassword);
         bool DeleteUser(int id);
+        int GetUserIDByUsername(string username);
         Person_Bookmark_list NewPersonBookmarkList(int userid, string listName);
         Title_Bookmark_List NewTitleBookmarkList(int userid, string listName);
         Person_Bookmark NewPersonBookmark(string personid, int listid);

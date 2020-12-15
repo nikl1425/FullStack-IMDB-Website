@@ -21,6 +21,7 @@
         })
         
 window.tokenString = "";
+        window.userIdString = "";
 
         const serialize_form = form => JSON.stringify(
             Array.from(new FormData(form).entries())
@@ -66,6 +67,8 @@ window.tokenString = "";
                     if(data) {
                         alert("You are now logged in!")
                         console.log(data.tokenStr)
+                        console.log(data.id)
+                        window.userIdString = data.id;
                         window.tokenString = data.tokenStr;
                         goToProfilePage();
                         //location.replace("http://localhost:5001")

@@ -43,11 +43,12 @@ namespace WebService.Controllers
         public IActionResult Login(UserDto userDto)
         {
             var user = _dataService.Login(userDto.Username, userDto.Password, userDto.Email);
+            
             IActionResult response = Unauthorized();
             if (user)
             {
                 var tokenStr = GenerateJSONWebToken(userDto);
-                response = Ok(new {username = userDto.Username, email = userDto.Email, tokenStr});
+                response = Ok(new {id = _dataService.GetUserIDByUsername(userDto.Username), username = userDto.Username, email = userDto.Email, tokenStr});
             }
             else
             {

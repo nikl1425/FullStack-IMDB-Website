@@ -32,11 +32,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Began work on profile frontend">
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Added headers to bookmark fetches">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/UserDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/UserDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userBookmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userBookmark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataService/Services/Interface/IPersonDataService.cs" />
         <option value="$PROJECT_DIR$/DataService/Services/PersonDataService.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/TitleDTOs/TitleEpisodeDto.cs" />
         <option value="$PROJECT_DIR$/TestQueryConsole/Program.cs" />
@@ -122,12 +125,9 @@
         <option value="$PROJECT_DIR$/WebService/wwwroot/css/searchbar.css" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" />
         <option value="$PROJECT_DIR$/UnitTest/UserDataServiceTest.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/css/userlogin.css" />
-        <option value="$PROJECT_DIR$/DataService/Services/UserDataService.cs" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/people/peopleTwo.html" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/config.js" />
@@ -136,12 +136,16 @@
         <option value="$PROJECT_DIR$/WebService/Authentication/JwtConfig.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/login.html" />
         <option value="$PROJECT_DIR$/WebService/Startup.cs" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" />
-        <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/WebService/Models/ObjectDto/UserDTOs/UserDto.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" />
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userBookmark.js" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/register.html" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userConfig.js" />
+        <option value="$PROJECT_DIR$/DataService/Services/Interface/IUserDataService.cs" />
+        <option value="$PROJECT_DIR$/WebService/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/UserDataService.cs" />
       </list>
     </option>
   </component>
@@ -581,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608000154017</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Added headers to bookmark fetches">
+      <created>1608036195430</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1608036195430</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +619,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="akas" />
     <MESSAGE value="akas akas type type akas type" />
     <MESSAGE value="Akas attribute" />
     <MESSAGE value="Akas" />
@@ -633,7 +643,8 @@
     <MESSAGE value="people page done" />
     <MESSAGE value="Token-Based authentication added to javascript fetches. Security requirements are met." />
     <MESSAGE value="Began work on profile frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Began work on profile frontend" />
+    <MESSAGE value="Added headers to bookmark fetches" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added headers to bookmark fetches" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="156" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604402509785">
@@ -648,7 +659,7 @@
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="771" y="445" width="497" height="198" key="Github.ShareDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1604402239002" />
-    <state width="1750" height="178" key="GridCell.Tab.0.bottom" timestamp="1608036024451">
+    <state width="1750" height="178" key="GridCell.Tab.0.bottom" timestamp="1608038486445">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -658,9 +669,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1321" height="254" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
-    <state width="1750" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1608036024451" />
+    <state width="1750" height="178" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1608038486444" />
     <state width="1259" height="249" key="GridCell.Tab.0.bottom/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755043" />
-    <state width="1750" height="178" key="GridCell.Tab.0.center" timestamp="1608036024450">
+    <state width="1750" height="178" key="GridCell.Tab.0.center" timestamp="1608038486444">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -670,9 +681,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1321" height="254" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
-    <state width="1750" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1608036024450" />
+    <state width="1750" height="178" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1608038486444" />
     <state width="1259" height="249" key="GridCell.Tab.0.center/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755042" />
-    <state width="1750" height="178" key="GridCell.Tab.0.left" timestamp="1608036024450">
+    <state width="1750" height="178" key="GridCell.Tab.0.left" timestamp="1608038486443">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -682,9 +693,9 @@
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866792" />
     <state width="1321" height="254" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752610" />
-    <state width="1750" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1608036024450" />
+    <state width="1750" height="178" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1608038486443" />
     <state width="1259" height="249" key="GridCell.Tab.0.left/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755042" />
-    <state width="1750" height="178" key="GridCell.Tab.0.right" timestamp="1608036024451">
+    <state width="1750" height="178" key="GridCell.Tab.0.right" timestamp="1608038486444">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606404366337" />
@@ -694,7 +705,7 @@
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022511653" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605016866793" />
     <state width="1321" height="254" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607985752611" />
-    <state width="1750" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1608036024451" />
+    <state width="1750" height="178" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1608038486444" />
     <state width="1259" height="249" key="GridCell.Tab.0.right/0.25.2560.1358@0.25.2560.1358" timestamp="1607687755043" />
     <state width="1259" height="484" key="GridCell.Tab.1.bottom" timestamp="1607658295443">
       <screen x="0" y="25" width="2560" height="1358" />
@@ -840,14 +851,14 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2394" y="100" width="949" height="1200" key="VCS.FileHistoryDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1604408159408" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1608000155246">
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2" timestamp="1608036197159">
       <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606403703516" />
     <state x="536" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.87.1920.1040@0.0.1920.1040" timestamp="1607958876278" />
     <state x="536" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605022782551" />
     <state x="960" y="345" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607985743989" />
-    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1608000155246" />
+    <state x="500" y="281" key="Vcs.Push.Dialog.v2/0.25.1792.1038@0.25.1792.1038" timestamp="1608036197159" />
     <state x="715" y="359" key="Vcs.Push.Dialog.v2/0.25.2560.1358@0.25.2560.1358" timestamp="1607657941281" />
     <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605206083810">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -11,11 +11,11 @@
         
         let testId = 2;
         //let url = 'api/user/'+id+'/ratings/';
-        let urlRating = 'http://localhost:5001/api/user/'+userId+'/ratings';
-        let urlLists = 'http://localhost:5001/api/user/'+userId+'/lists';
-        let urlUser = 'http://localhost:5001/api/user/'+userId;
-        let urlUpdate = 'http://localhost:5001/api/user/'+userId+'/update'
-        let urlUpdatePW = 'http://localhost:5001/api/user/'+userId+'/changepassword'
+        let urlRating = 'http://localhost:5001/api/user/'+ window.userIdString +'/ratings';
+        let urlLists = 'http://localhost:5001/api/user/'+ window.userIdString +'/lists';
+        let urlUser = 'http://localhost:5001/api/user/'+ window.userIdString;
+        let urlUpdate = 'http://localhost:5001/api/user/'+ window.userIdString +'/update'
+        let urlUpdatePW = 'http://localhost:5001/api/user/'+ window.userIdString +'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
         let baseUrl = 'http://localhost:5001/api/'
 
@@ -23,7 +23,6 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + window.tokenString
         });
-        
         
         window.testidvariable = urlUser;
         console.log(window.testidvariable)
@@ -46,6 +45,9 @@
                     $.ajax({
                        type: 'POST',
                        url: baseUrl+'title/'+titleid+'/RateMovie/'+userId+'/'+rating,
+                        beforeSend: function(request) {
+                            request.setRequestHeader("Bearer ", window.tokenString);
+                        },
                        success: function (result) {
                            if(result) {
                                //alert("Your list has been deleted!")

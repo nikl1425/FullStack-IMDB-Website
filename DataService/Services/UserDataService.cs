@@ -44,6 +44,14 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             return ctx.users.Find(id);
         }
+        
+        //GET USER PROFILE
+        public int GetUserIDByUsername(string username)
+        {
+            using var ctx = new ImdbContext();
+            var query = ctx.users.Where(x => x.Username == username).FirstOrDefault().Id;
+            return query;
+        }
 
         //CHECK IF AN EMAIL IS AN EMAIL && DOESNT EXISTS IN THE DB
         private static bool IsValidEmail(string email)
