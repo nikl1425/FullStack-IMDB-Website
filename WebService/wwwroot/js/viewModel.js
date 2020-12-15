@@ -9,6 +9,7 @@
     let listElement = ["Listpage"];
     let loginElement = ["Login"];
     let registerElement = ["Register"];
+    let updateContentElement = ["Updateuser"];
     
     let changeContent = element => {
         currentComponent(element.toLowerCase());
@@ -44,7 +45,8 @@
         listcreateElement,
         listElement,
         loginElement,
-        registerElement
+        registerElement,
+        updateContentElement
 
     };
 });

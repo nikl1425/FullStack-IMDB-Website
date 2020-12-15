@@ -69,6 +69,11 @@ require(['knockout', 'text'], (ko) => {
         viewModel: { require: "components/users/userBookmark" },
         template: { require: "text!components/users/createlist.html" }
     });
+
+    ko.components.register('updateuser', {
+        viewModel: { require: "components/users/updateuser" },
+        template: { require: "text!components/users/updateuser.html" }
+    });
 });
 
 require(['knockout', 'viewModel',  'bootstrap'], function(ko, vm) {

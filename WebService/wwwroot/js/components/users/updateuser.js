@@ -26,6 +26,8 @@ const serialize_form_PW = form => JSON.stringify(
     Array.from(new FormData(form).entries())
         .reduce((m,[key,value]) => Object.assign(m,{[key]: value}),{})
 );
+
+
 $(".updatePWForm").submit(function (e) {
     e.preventDefault();
     const json = serialize_form_PW(this);
@@ -54,6 +56,8 @@ const serialize_form = form => JSON.stringify(
     Array.from(new FormData(form).entries())
         .reduce((m,[key,value]) => Object.assign(m,{[key]: value}),{})
 );
+
+
 $(".updateProfile").submit(function (e) {
     e.preventDefault();
     const json = serialize_form(this);
