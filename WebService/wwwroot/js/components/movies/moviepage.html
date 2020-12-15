@@ -1,4 +1,35 @@
-﻿<div class="container">
+﻿<style>
+    .dropbtn {
+        background-color: orange;
+        color: white;
+        padding: 5px;
+        border: none;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: darkorange;}
+</style>
+<div class="container">
     <div class="sidebar-container">
         <div class="content">
             <section class="section-long">
@@ -75,6 +106,14 @@
                                         <div data-bind="with: languages">
                                             <span class="entity-list-title" >Language: </span>
                                             <p data-bind="text: $data" style="display: inline-block; color: white"></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dropdown">
+                                        Add to list: <button class="dropbtn">X</button>
+                                        <div class="dropdown-content" data-bind="foreach: bookmarkList">
+                                            <a href="#" class="addToBookmark" data-bind="value: id, text: listName"></a>
                                         </div>
                                     </div>
                                 </li>
