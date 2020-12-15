@@ -15,6 +15,11 @@
         let urlUser = 'http://localhost:5001/api/user/'+ window.userIdString;
         let urlUpdate = 'http://localhost:5001/api/user/'+ window.userIdString +'/update'
         let urlUpdatePW = 'http://localhost:5001/api/user/'+ window.userIdString +'/changepassword'
+        let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
+        let baseUrl = 'http://localhost:5001/api/';
+        let loggedIn = ko.observableArray([]);
+        
+
         let urlDelete = 'http://localhost:5001/api/user/'+ window.userIdString +'/delete'
         let baseUrl = 'http://localhost:5001/api/'
         
@@ -264,11 +269,28 @@
                 }
             });
         });
+        
+        
+        
+        let changeContentToLogin = () => {
+                goToLogin();
+        }
+        
+        
+        function goToLogin(){
+            postman.publish("changeContent", "Login");
+        }
+
+
+       
 
         return {
             userRatingList,
             bookmarkList,
             user,
+            loggedIn,
+            changeContentToLogin
+            
         };
     }
     
