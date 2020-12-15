@@ -2,12 +2,13 @@
 
     let currentComponent = ko.observable("home");
     let bodyComponent = ko.observable("home");
-    let menuElements = ["Home", "Movie", "People", "Profile", "Login", "Register", "About"];
+    let menuElements = ["Home", "Movie", "People", "Profile", "About"];
     let subElements = ["Peoplepage"];
     let movieElement = ["Moviepage"];
     let listcreateElement = ["Createlist"];
     let listElement = ["Listpage"];
-    let loginElement = ["Loginpage"];
+    let loginElement = ["Login"];
+    let registerElement = ["Register"];
     
     let changeContent = element => {
         currentComponent(element.toLowerCase());
@@ -42,7 +43,8 @@
         movieElement,
         listcreateElement,
         listElement,
-        loginElement
+        loginElement,
+        registerElement
 
     };
 });
