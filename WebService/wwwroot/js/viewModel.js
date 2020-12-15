@@ -23,12 +23,21 @@
     let isActive = element => {
         return element.toLowerCase() === currentComponent() ? "active" : "";
     }
-
-
-
-
+    
     postman.subscribe("changeContent", component => {
         changeContent(component);
+    });
+
+    function goToHome(){
+        postman.publish("changeContent", "home");
+    }
+
+    $(document).on('click', '.navbar-brand', function() {
+        goToHome()
+    });
+    
+    $(document).on('click', '.footer-logo', function() {
+        goToHome()
     });
 
 

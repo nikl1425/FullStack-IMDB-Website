@@ -113,7 +113,7 @@
                                     <div class="dropdown">
                                         <button class="btn btn-warning btn-rounded dropbtn">Add to list</button>
                                         <div class="dropdown-content" data-bind="foreach: bookmarkList">
-                                            <a href="#" class="addToBookmark" data-bind="value: id, text: listName"></a>
+                                            <a href="#" class="addToBookmark info-text" data-bind="value: id, text: listName"></a>
                                         </div>
                                     </div>
                                 </li>
@@ -125,7 +125,7 @@
                         <h2 class="section-title text-uppercase" style="padding-top: 1.5rem" ;>Synopsis</h2>
                     </div>
                     <div class="section-description">
-                        <div data-bind="foreach: titleData"><p class="lead" data-bind="text: plot"
+                        <div data-bind="foreach: titleData"><p class="lead"  data-bind="text: plot"
                                                                style="color:white;"></p></div>
                     </div>
                     <div class="section-line">

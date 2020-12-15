@@ -39,8 +39,11 @@
         }
         getList();
         
+        
+        
+        
         /*   ADD MOVIE TO BOOKMARK   */
-        $(document).on('click', '.addToBookmark', function(){
+        $(document).on('click', '.addToBookmark.info-text', function(){
             let value = $(this).val();
             if(window.movieValue.includes('tt') && value.includes('t')){
                 let trimVal = value.substring(1);

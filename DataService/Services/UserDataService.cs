@@ -218,7 +218,6 @@ namespace DataService.Services
         public bool NewPersonBookmarkList(int userid, string listName)
         {
             using var ctx = new ImdbContext();
-            var maxId = ctx.person_bookmark_list.Max(x => x.Id);
             var dbUser = GetUser(userid).Id;
             ctx.person_bookmark_list
                 .Add(new Person_Bookmark_list
@@ -322,7 +321,6 @@ namespace DataService.Services
         public bool NewTitleBookmarkList(int userid, string listName)
         {
             using var ctx = new ImdbContext();
-            var maxId = ctx.person_bookmark_list.Max(x => x.Id);
             var dbUser = GetUser(userid).Id;
             ctx.title_bookmark_list
                 .Add(new Title_Bookmark_List()
@@ -336,7 +334,6 @@ namespace DataService.Services
         public bool NewTitleBookmark(string titleid, int listid)
         {
             using var ctx = new ImdbContext();
-            var maxId = ctx.title_bookmarks.Max(x => x.Id);
             ctx.title_bookmarks
                 .Add(new Title_Bookmark()
                     {ListId = listid, TitleId = titleid});
