@@ -56,9 +56,7 @@
                         success: function (result) {
                             if(result) {
                                 alert("The movie has been added!")
-                            } else {
-                                alert("Cannot add to person list")
-                            }
+                            } 
                         }
                     })
             }

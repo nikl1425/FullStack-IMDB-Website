@@ -1,4 +1,35 @@
-﻿<div class="container">
+﻿<style>
+    .dropbtn {
+        background-color: orange;
+        color: white;
+        padding: 5px;
+        border: none;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: darkorange;}
+</style>
+<div class="container">
         <div class="sidebar-container">
             <div class="content">
                 <section class="section-long">
@@ -36,14 +67,15 @@
                                             <div data-bind="foreach: personData">
                                                 <span class="info-text" data-bind="text: deathYear"></span>
                                             </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                <div class="entity-info">
+                                    <div class="dropdown">
+                                        <button class="btn btn-warning btn-rounded dropbtn">Add to list</button>
+                                        <div class="dropdown-content" data-bind="foreach: bookmarkList">
+                                            <a href="#" class="addPersonToBookmark info-text" data-bind="value: id, text: listName"></a>
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="btn btn-warning btn-rounded dropbtn">Add to list</button>
-                                            <div class="dropdown-content" data-bind="foreach: bookmarkList">
-                                                <a href="#" class="addToBookmark info-text" data-bind="value: id, text: listName"></a>
-                                            </div>
-                                        </div>
-                                        
                                     </div>
                                 </div>
                             </div>

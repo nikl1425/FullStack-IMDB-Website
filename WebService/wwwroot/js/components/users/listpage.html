@@ -15,6 +15,12 @@
         <br>
     </dl>
 
+    <div data-bind="foreach: pListData">
+        <h1 data-bind="text: listName"></h1>
+        created by: <span data-bind="text: username"></span>
+        <br>
+    </div>
+
     <dl data-bind="foreach: pBookmarks">
         <dt>
             <a href="#" class="goToPeoplePage" data-bind="value: person_Id, text: personName"></a>

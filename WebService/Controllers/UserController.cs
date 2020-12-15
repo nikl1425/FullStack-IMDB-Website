@@ -214,25 +214,22 @@ namespace WebService.Controllers
         
         //ADD PERSON BOOKMARK TO LIST
         [Authorize]
-        [HttpPost("user/{userid}/plist/bookmark")] 
-        //[HttpPost("name/{personid}/bookmark/")] 
-        public IActionResult newPersonBookmark(PersonBookmarkDto pbDto, int userid)
+        [HttpPost("plist/{listid}/bookmark")]
+        public IActionResult newPersonBookmark(PersonBookmarkDto pbDto)
         {
-            var queryUserName = _dataService.GetUser(userid).Username;
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-            IList<Claim> claim = identity.Claims.ToList();
-            var tokenUserName = claim[0].Value;
-            Console.WriteLine(claim.Count);
-
-            if (queryUserName == tokenUserName)
-            {
-                var newBookmark = _dataService.NewPersonBookmark(pbDto.Person_Id, pbDto.List_Id);
-                return Created("",newBookmark);
-            }
-
-            return BadRequest("User not authorized");
+            var newBookmark = _dataService.NewPersonBookmark(pbDto.Person_Id, pbDto.List_Id);
+            return Created("",newBookmark);
         }
-        
+        /*
+         * //ADD TITLE BOOKMARK TO LIST
+        [Authorize]
+        [HttpPost("tlist/{listid}/bookmark")]
+        public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto)
+        {
+            var newBookmark = _dataService.NewTitleBookmark(tbDto.TitleId, tbDto.ListId);
+            return Created("",newBookmark);
+        }
+         */
         
         
         
@@ -269,7 +266,6 @@ namespace WebService.Controllers
         //ADD TITLE BOOKMARK TO LIST
         [Authorize]
         [HttpPost("tlist/{listid}/bookmark")]
-        //[HttpPost("title/{titleid}/bookmark/")]
         public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto)
         {
             var newBookmark = _dataService.NewTitleBookmark(tbDto.TitleId, tbDto.ListId);

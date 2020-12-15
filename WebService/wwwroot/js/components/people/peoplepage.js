@@ -33,11 +33,11 @@ define(['knockout', 'postman'], (ko, postman) => {
         }
         getList();
         /*   ADD PERSON TO BOOKMARK   */
-        $(document).on('click', '.addToBookmark', function(){
+        $(document).on('click', '.addPersonToBookmark', function(){
             let value = $(this).val();
-            if(window.movieValue.includes('nm') && value.includes('p')){
+            if(window.value.includes('nm') && value.includes('p')){
                 let trimVal = value.substring(1);
-                let data = {"titleId":window.movieValue, "listid":trimVal};
+                let data = {"person_Id":window.value, "list_Id":trimVal};
                 const json = JSON.stringify(data)
                 console.log("DATA: "+data)
                 $.ajax({
