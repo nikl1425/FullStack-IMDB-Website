@@ -16,7 +16,8 @@
         let urlUpdate = 'http://localhost:5001/api/user/'+ window.userIdString +'/update'
         let urlUpdatePW = 'http://localhost:5001/api/user/'+ window.userIdString +'/changepassword'
         let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
-        let baseUrl = 'http://localhost:5001/api/'
+        let baseUrl = 'http://localhost:5001/api/';
+        let loggedIn = ko.observableArray([]);
 
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
@@ -163,6 +164,7 @@
                 }).then(function (data) {
                    user(data)
                     console.log(user(data));
+                   loggedIn.push("true");
                  }).catch(error => {
                     console.error(error);
                 });
@@ -269,6 +271,7 @@
             userRatingList,
             bookmarkList,
             user,
+            loggedIn
         };
     }
     
