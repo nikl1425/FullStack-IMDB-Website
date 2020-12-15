@@ -39,6 +39,10 @@
     .dropdown:hover .dropbtn {
         background-color: darkorange;
     }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: darkorange;}
 </style>
 
 <!--  USERS INFORMATION  TODO: USE BOOTSTRAP FORMS!-->
@@ -57,6 +61,20 @@
                                 <path fill-rule="evenodd"
                                       d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                             </svg>
+                            <div class="info info-short" style="alignment: center">
+                                <p style="text-align: center;">
+                                <!-- DENNE SKAL HENVISE TIL UPDATE USER SIDEN-->
+                                <button class="btn btn-warning" id="changeContentToUpdate">UPDATE INFO</button>
+                                </p>
+                                <br>
+
+                                <!-- DENNE SKAL HENVISE TIL UPDATE USER SIDEN-->
+                                <div class="entity-content">
+                                    <p style="text-align: center;">
+                                    <button class="btn btn-warning" id="logOutButton">Logout</button>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="entity-content">
                             <div data-bind="with: user"><h2 class="text-theme" data-bind="text: username"></h2></div>
@@ -123,18 +141,10 @@
 
 
 
-<!-- DENNE SKAL HENVISE TIL UPDATE USER SIDEN-->
-<div class="entity-content">
-    <button class="btn btn-warning" id="changeContentToUpdate">Update User</button>
-</div>
 
 
 
 
-<!-- DENNE SKAL HENVISE TIL UPDATE USER SIDEN-->
-<div class="entity-content">
-    <button class="btn btn-warning" id="logOutButton">Logout</button>
-</div>
 
 
 
@@ -142,54 +152,92 @@
 
 
 <!-- SEE YOUR RATINGS -->
-<div>
-    <h1>Showing all of your ratings here: </h1>
-    <br>
-    <dl data-bind="foreach: userRatingList">
-        <dt>
-            <a href="#" class="gotomoviepage" data-bind="value: title_id, text: titleName">x</a>
-            <!--<a data-bind="attr: {href: url}, text: titleName"></a>-->
-            (<span data-bind="text: prodYear"></span>) &nbsp; | &nbsp;
-            <!-- HOVER TO SET NEW RATING -->
-            <div class="dropdown">
-                Your rating:
-                <button class="dropbtn" data-bind="text: rating"></button>
-                <div class="dropdown-content">
-                    <a class="updateRating" data-bind="value: title_id, text: 1"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 2"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 3"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 4"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 5"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 6"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 7"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 8"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 9"></a>
-                    <a class="updateRating" data-bind="value: title_id, text: 10"></a>
-                </div>
-            </div>
-        </dt>
-        <img width="140px" height="210px" data-bind="attr:{src: poster}">
-        <div data-bind="text: plot"></div>
-        <br>
-    </dl>
-    <br>
-    <br>
+
+<div class="container">
+    <div class="sidebar-container">
+        <div class="content">
+            <section class="section-long" data-bind="visible: loggedIn().length >= 1">
+                <h2 class="text-theme">Showing all of your ratings here: </h2>
+                <br>
+                <table class="table table-dark">
+                    <thead>
+                    <tr> 
+                        <th scope="col">Poster</th>
+                        <th scope="col">Title</th>
+                        <th scope="col" style="width: 250px"> plot</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Set New rating</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: userRatingList">
+                    <tr >
+                        <td ><img width="140px" height="210px" data-bind="attr:{src: poster}"></td>
+                        <td><a href="#" class="gotomoviepage" data-bind="value: title_id, text: titleName">x</a> (<span data-bind="text: prodYear"></span>) &nbsp; | &nbsp;</td>
+                        <td><div data-bind="text: plot"></div></td>
+                        <td scope="row">
+                            <div data-bind="if: rating <= 3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="orange" class="bi bi-emoji-angry" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path fill-rule="evenodd" d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683z"/>
+                                    <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+                                    <path fill-rule="evenodd" d="M4.053 4.276a.5.5 0 0 1 .67-.223l2 1a.5.5 0 1 1-.447.894l-2-1a.5.5 0 0 1-.223-.67zm7.894 0a.5.5 0 0 0-.67-.223l-2 1a.5.5 0 1 0 .447.894l2-1a.5.5 0 0 0 .223-.67z"/>
+                                </svg>
+                            </div>
+                            <div data-bind="if: rating > 3 && rating < 7">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="orange" class="bi bi-emoji-sunglasses" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path fill-rule="evenodd" d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM6.5 6.497V6.5h-1c0-.568.447-.947.862-1.154C6.807 5.123 7.387 5 8 5s1.193.123 1.638.346c.415.207.862.586.862 1.154h-1v-.003l-.003-.01a.213.213 0 0 0-.036-.053.86.86 0 0 0-.27-.194C8.91 6.1 8.49 6 8 6c-.491 0-.912.1-1.19.24a.86.86 0 0 0-.271.194.213.213 0 0 0-.036.054l-.003.01z"/>
+                                    <path d="M2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2h-.438a2 2 0 0 1-1.94-1.515L2.31 5.243zM9 5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-2-2V5z"/>
+                                </svg>
+                            </div>
+                            <div data-bind="if: rating >= 8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="orange" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path fill-rule="evenodd" d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                Your rating:
+                                <button class="dropbtn btn btn-warning" data-bind="text: rating"></button>
+                                <div class="dropdown-content">
+                                    <a class="updateRating" data-bind="value: title_id, text: 1"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 2"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 3"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 4"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 5"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 6"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 7"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 8"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 9"></a>
+                                    <a class="updateRating" data-bind="value: title_id, text: 10"></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
 </div>
 
 <!-- SEE YOUR BOOKMARK LISTS -->
 
 
-    <div class="container">
-        <div class="sidebar-container">
-               
-                <div class="content">
-                <section class="section-long" data-bind="visible: loggedIn().length >= 1">
-                    <div>
-                        <h2 class="text-theme">Showing all of your lists here: </h2>
-                        <br>
-                        <a type=button href="#" class="btn btn-warning" id="gotonewlist">CREATE A NEW LIST</a>
-                        <br>
-                        <br>
+<div class="container">
+    <div class="sidebar-container">
+
+        <div class="content">
+            <section class="section-long" data-bind="visible: loggedIn().length >= 1">
+                <div>
+                    <h2 class="text-theme">Showing all of your lists here: </h2>
+                    <br>
+                    <a type=button href="#" class="btn btn-warning" id="gotonewlist">CREATE A NEW LIST</a>
+                    <br>
+                    <br>
                     <table class="table table-dark">
                         <thead>
                         <tr>
@@ -204,35 +252,30 @@
                         <tr class="table-active">
                             <th scope="row"></th>
                             <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="orange" class="bi bi-book-half" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="orange"
+                                     class="bi bi-book-half" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M8.5 2.687v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                                 </svg>
-                            </td>.
-                            <td>
-                                <a class="gotolist" href="#" data-bind="value: id, text: listName" style="font-size:30px !important;"></a>
                             </td>
                             <td>
-                                <button type="button" class="deleteBookmarkList btn btn-warning" data-bind="value: id">Delete List</button>
+                                <a class="gotolist" href="#" data-bind="value: id, text: listName"
+                                   style="font-size:30px !important;"></a>
+                            </td>
+                            <td>
+                                <button type="button" class="deleteBookmarkList btn btn-warning" data-bind="value: id">
+                                    Delete List
+                                </button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
-                    </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
     </div>
+</div>
 
-    <ul data-bind="foreach: bookmarkList">
-        <li>
-            <!--<a data-bind="attr: {href: url}, text: listName"></a>-->
-            <a class="gotolist" href="#" data-bind="value: id, text: listName" style="font-size:20px !important;">
-            </a>
-            &nbsp; &nbsp; &nbsp; &nbsp;
-            <button type="button" class="deleteBookmarkList" data-bind="value: id">Delete List</button>
-
-        </li>
-    </ul>
 
 <!--DOESNT DO ANYTHING, BUT MESSES UP THE REST OF THE HTML IF ITS REMOVED?-->
 <form style="display: none">

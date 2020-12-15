@@ -36,7 +36,7 @@
                     let rating = $(this).text();
                     $.ajax({
                         type: 'POST',
-                        url: baseUrl+'title/'+titleid+'/RateMovie/'+userId+'/'+rating, 
+                        url: baseUrl+'title/'+titleid+'/RateMovie/'+window.userIdString+'/'+rating, 
                         headers: {Authorization: 'Bearer '+window.tokenString},
                         success: function (result) {
                            if(result) {
