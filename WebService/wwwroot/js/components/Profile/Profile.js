@@ -7,8 +7,7 @@
         window.listValue = "";
         
         //TODO : incooporate session user smth
-        let userId = 1;
-        
+        let userId = 6;
         let testId = 2;
         //let url = 'api/user/'+id+'/ratings/';
         let urlRating = 'http://localhost:5001/api/user/'+ window.userIdString +'/ratings';
@@ -185,6 +184,9 @@
             $.ajax({
                 type: 'POST',
                 url: urlUpdate,
+                beforeSend: function(request) {
+                    request.setRequestHeader("Bearer ", window.tokenString);
+                },
                 dataType: 'json',
                 data: json,
                 contentType: 'application/json',

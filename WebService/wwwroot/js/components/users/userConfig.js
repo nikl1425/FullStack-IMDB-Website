@@ -20,7 +20,7 @@
             goToLoginPage();
         })
         
-window.tokenString = "";
+        window.tokenString = "";
         window.userIdString = "";
 
         const serialize_form = form => JSON.stringify(

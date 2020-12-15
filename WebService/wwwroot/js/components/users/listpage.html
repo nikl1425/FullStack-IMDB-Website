@@ -18,10 +18,15 @@
     <dl data-bind="foreach: pBookmarks">
         <dt>
             <a href="#" class="goToPeoplePage" data-bind="value: person_Id, text: personName"></a>
+            (Born: <span data-bind="text: birthYear"></span>)
         </dt>
+        <img width="67px" height="98px" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg">
         <br>
     </dl>
     
+    <br>
+    <br>
+    <a type=button href="#" class="btn btn-primary" id="gotonewlist" >CREATE A NEW LIST</a>
     <br>
     <br>
 </div>

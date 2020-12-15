@@ -46,6 +46,7 @@ namespace WebService.Controllers
                 List_Id = x.List_Id,
                 Person_Id = x.Person_Id,
                 PersonName = _personDataService.GetPersonSingle(x.Person_Id).Name,
+                BirthYear = _personDataService.GetPersonSingle(x.Person_Id).BirthYear,
                 Url = "http://localhost:5001/api/name/"+x.Person_Id
             }).ToList();
 

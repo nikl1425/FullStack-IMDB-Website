@@ -1,5 +1,18 @@
 ﻿<div>
     <h1>CREATE A NEW LIST:</h1>
-    
-    
+    <div id="formContent" >
+        <form class="new_list_form" method="post" data-bind="foreach: user">
+            <input type=hidden name="userid" data-bind="value: id">
+            <label for="listname"> List Name: </label>
+            <input type="text" id="listname" required name="listname"><br>
+            <label for="list"> Choose a list:
+                <select id="list" name="list">
+                    <option name="tlist" value="tlist">Title List</option>
+                    <option name="plist" value="plist">Person List</option>
+                </select>
+            </label>
+            <input type="submit" value="Create List">
+        </form>
+    </div>
 </div>
+
