@@ -32,12 +32,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Delete bookmark from list - wb">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Movie rating på moviepage - works!">
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +67,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/59/5b106b0e/XunitTestInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/30/4ccbedb9/TestRunner`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
@@ -215,13 +212,6 @@
       <workItem from="1608049500368" duration="756000" />
       <workItem from="1608058008747" duration="1056000" />
       <workItem from="1608067380774" duration="1788000" />
-    </task>
-    <task id="LOCAL-00002" summary="Portfolio 2">
-      <created>1604402398471</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1604402398471</updated>
     </task>
     <task id="LOCAL-00003" summary="Portfolio 2">
       <created>1604402402882</created>
@@ -559,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608073867741</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Movie rating på moviepage - works!">
+      <created>1608075475248</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1608075475248</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +577,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Users Updated" />
     <MESSAGE value="Person stuff" />
     <MESSAGE value="Person" />
     <MESSAGE value="Fixed everything" />
@@ -605,7 +601,8 @@
     <MESSAGE value="Person page fix" />
     <MESSAGE value="Your list delete fix" />
     <MESSAGE value="Delete bookmark from list - wb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete bookmark from list - wb" />
+    <MESSAGE value="Movie rating på moviepage - works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Movie rating på moviepage - works!" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
