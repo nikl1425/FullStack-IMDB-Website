@@ -38,6 +38,7 @@
                 });
         }
         getList();
+        
         /*   ADD MOVIE TO BOOKMARK   */
         $(document).on('click', '.addToBookmark', function(){
             let value = $(this).val();

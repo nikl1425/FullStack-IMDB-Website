@@ -232,7 +232,6 @@ namespace DataService.Services
         public bool NewPersonBookmark(string personid, int listid)
         {
             using var ctx = new ImdbContext();
-            var maxId = ctx.person_bookmarks.Max(x => x.Id);
             ctx.person_bookmarks
                 .Add(new Person_Bookmark()
                     {List_Id = listid, Person_Id = personid});
