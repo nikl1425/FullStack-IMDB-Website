@@ -31,10 +31,13 @@ namespace DataService.Services
         public bool Login(string username, string password, string email)
         {
             using var ctx = new ImdbContext();
-            
             var getUser = ctx.users.FirstOrDefault(x => x.Username.ToLower() == username.ToLower());
-            return getUser != null && username.ToLower() == getUser.Username.ToLower() && email == getUser.Email && 
-                   _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt);
+            if (getUser.Username.ToLower() == username.ToLower() && getUser.Email.ToLower() == email.ToLower() && _userValidation.VerifyPassword(password, getUser.Password, getUser.Salt))
+            {
+                return true;
+            }
+
+            return false;
         }
         
 

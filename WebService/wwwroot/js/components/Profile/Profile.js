@@ -5,7 +5,7 @@
         let bookmarkList = ko.observableArray([]);
         let user = ko.observableArray([]);
         window.listValue = "";
-        
+      
         let urlRating = 'http://localhost:5001/api/user/'+ window.userIdString +'/ratings';
         let urlLists = 'http://localhost:5001/api/user/'+ window.userIdString +'/lists';
         let urlUser = 'http://localhost:5001/api/user/'+ window.userIdString;
