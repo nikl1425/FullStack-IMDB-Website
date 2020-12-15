@@ -27,7 +27,7 @@
                                             "options: types,
                                              optionsText: 'name',
                                              value: selectedType,
-                                             click: ChangeMovies,
+                                             
                                              optionsCaption: 'select type....'
                                             ">
                                     </select>
@@ -55,7 +55,7 @@
         <table>
             <tbody>  <!-- FOR HVER FETCHED -->
             <tr>
-                <td data-bind="foreach: movieList">
+                <td data-bind="foreach:  filteredMovieList">
                     <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
                             <div class="embed-responsive embed-responsive-poster">
