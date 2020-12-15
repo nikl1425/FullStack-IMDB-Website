@@ -26,40 +26,41 @@ define(['knockout', 'postman'], (ko, postman) => {
                 .then(function (data){
                     bookmarkList(data);
                     console.log(data);
+                    /*   ADD PERSON TO BOOKMARK   */
+                    $('.addPersonToBookmark').on('click', function(){
+                        let value = $(this).val();
+                        if(window.value.includes('nm') && value.includes('p')){
+                            let trimVal = value.substring(1);
+                            let data = {"person_Id":window.value, "list_Id":trimVal};
+                            const json = JSON.stringify(data)
+                            console.log("DATA: "+data)
+                            $.ajax({
+                                type: 'POST',
+                                url: 'http://localhost:5001/api/plist/'+trimVal+'/bookmark',
+                                headers: {Authorization: 'Bearer '+window.tokenString},
+                                dataType: 'json',
+                                data: json,
+                                contentType: 'application/json',
+                                success: function (result) {
+                                    if(result) {
+                                        alert("The person has been added!")
+                                    } else {
+                                        alert("Already exists!")
+                                    }
+                                }
+                            })
+                        }
+                        else {
+                            alert("Cannot add to list or is a Title List")
+                        }
+                    })
                 })
                 .catch(function(error){
                     console.log("Error: "+error)
                 });
         }
         getList();
-        /*   ADD PERSON TO BOOKMARK   */
-        $(document).on('click', '.addPersonToBookmark', function(){
-            let value = $(this).val();
-            if(window.value.includes('nm') && value.includes('p')){
-                let trimVal = value.substring(1);
-                let data = {"person_Id":window.value, "list_Id":trimVal};
-                const json = JSON.stringify(data)
-                console.log("DATA: "+data)
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://localhost:5001/api/plist/'+trimVal+'/bookmark',
-                    headers: {Authorization: 'Bearer '+window.tokenString},
-                    dataType: 'json',
-                    data: json,
-                    contentType: 'application/json',
-                    success: function (result) {
-                        if(result) {
-                            alert("The person has been added!")
-                        } else {
-                            alert("Cannot add to title list")
-                        }
-                    }
-                })
-            }
-            else {
-                alert("Cannot add to title list")
-            }
-        })        
+           
         
     function goToMoviePage(){
             postman.publish("changeContent", "moviePage");
