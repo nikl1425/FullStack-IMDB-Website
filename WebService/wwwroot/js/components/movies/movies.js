@@ -11,6 +11,7 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         let objGenre = ko.observable();
         let movieGenres = ko.observable();
         let types = ko.observableArray([]);
+        self = this;
        
 
         selectedType.subscribe(() => {
@@ -22,6 +23,8 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         function goToMoviePage(){
             postman.publish("changeContent", "moviePage");
         }
+        
+        
         let ChangeMovies = () => {
             change = function () {
                 fetch('http://localhost:5001/api/title/type/'+objGenre)
@@ -147,6 +150,16 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         $(document).on('click', '.content-link', function() {
             goToHome()
         });
+
+        let filteredMovieList = ko.computed(() => {
+            let tempList = ko.toJS(movieList);
+            if (selectedType()) {
+                tempList = tempList.filter(movie => movie.type === selectedType().name);
+                console.log(tempList)
+            }
+            return tempList;
+        });
+      
         
 
         return {
@@ -163,6 +176,7 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             types,
             ChangeMovies,
             postman,
+            filteredMovieList
             
             
             
