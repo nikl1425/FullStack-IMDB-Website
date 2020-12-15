@@ -194,6 +194,7 @@ namespace DataService.Services
             {
                 return false;
             }
+            
             ctx.users.Remove(dbUser);
             ctx.SaveChanges();
             return true;
@@ -228,7 +229,7 @@ namespace DataService.Services
         }
         
         //ADD PERSON BOOKMARK TO LIST
-        public Person_Bookmark NewPersonBookmark(string personid, int listid)
+        public bool NewPersonBookmark(string personid, int listid)
         {
             using var ctx = new ImdbContext();
             var maxId = ctx.person_bookmarks.Max(x => x.Id);
@@ -236,7 +237,7 @@ namespace DataService.Services
                 .Add(new Person_Bookmark()
                     {List_Id = listid, Person_Id = personid});
             ctx.SaveChanges();
-            return ctx.person_bookmarks.Find(maxId + 1);
+            return true;
         }
         
         //GET USERS PERSON BOOKMARK LIST
@@ -333,7 +334,7 @@ namespace DataService.Services
         }
 
         //CREATE NEW TITLE BOOKMARK
-        public Title_Bookmark NewTitleBookmark(string titleid, int listid)
+        public bool NewTitleBookmark(string titleid, int listid)
         {
             using var ctx = new ImdbContext();
             var maxId = ctx.title_bookmarks.Max(x => x.Id);
@@ -341,7 +342,7 @@ namespace DataService.Services
                 .Add(new Title_Bookmark()
                     {ListId = listid, TitleId = titleid});
             ctx.SaveChanges();
-            return ctx.title_bookmarks.Find(maxId + 1);
+            return true;
         }
         
         //GET TITLE BOOKMARK LISTS

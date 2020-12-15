@@ -106,15 +106,7 @@ namespace PortFolio2.Tests
 
         
 
-        [Fact]
-        public void newPersonBookmark()
-        {
-            var service = new UserDataService();
-            var newBookmark = service.NewPersonBookmark("nm0000002", 1);
-            Assert.Equal("nm0000002",newBookmark.Person_Id);
-            Assert.Equal(1, newBookmark.List_Id);
-        }
-
+        
         [Fact]
         public void RateMovie()
         {

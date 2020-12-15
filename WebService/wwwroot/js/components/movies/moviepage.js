@@ -38,23 +38,33 @@
                 });
         }
         getList();
-        
+        /*   ADD MOVIE TO BOOKMARK   */
         $(document).on('click', '.addToBookmark', function(){
             let value = $(this).val();
-            let trimVal = value.substring(1);
-            console.log("VALUE: "+value+"..trim "+trimVal);
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:5001/api/tlist/'+trimVal+'/bookmark',
-                headers: {Authorization: 'Bearer '+window.tokenString},
-                success: function (result) {
-                    if(result) {
-                        alert("Your list has been added!")
-                    } else {
-                        alert("Something went wrong!")
-                    }
-                }
-            })
+            if(window.movieValue.includes('tt') && value.includes('t')){
+                let trimVal = value.substring(1);
+                let data = {"titleId":window.movieValue, "listid":trimVal};
+                const json = JSON.stringify(data)
+                console.log("DATA: "+data)
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost:5001/api/tlist/'+trimVal+'/bookmark',
+                        headers: {Authorization: 'Bearer '+window.tokenString},
+                        dataType: 'json',
+                        data: json,
+                        contentType: 'application/json',
+                        success: function (result) {
+                            if(result) {
+                                alert("Your list has been added!")
+                            } else {
+                                alert("Cannot add to title list")
+                            }
+                        }
+                    })
+            }
+            else {
+                alert("Cannot add to title list")
+            }
         })
 
    
