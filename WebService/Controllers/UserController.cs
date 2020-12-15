@@ -428,9 +428,6 @@ namespace WebService.Controllers
             }
 
             return BadRequest("User not authorized");
-
-
         }
-        
     }
 }
