@@ -216,7 +216,7 @@ namespace WebService.Controllers
         
         //ADD TITLE BOOKMARK TO LIST
         [Authorize]
-        [HttpPost("user/{userid}/tlist/bookmark")]
+        [HttpPost("tlist/{listid}/bookmark")]
         //[HttpPost("title/{titleid}/bookmark/")]
         public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto)
         {
