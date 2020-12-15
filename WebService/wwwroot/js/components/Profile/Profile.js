@@ -42,12 +42,10 @@
                     let titleid = $(this).val();
                     let rating = $(this).text();
                     $.ajax({
-                       type: 'POST',
-                       url: baseUrl+'title/'+titleid+'/RateMovie/'+userId+'/'+rating,
-                        beforeSend: function(request) {
-                            request.setRequestHeader("Bearer ", window.tokenString);
-                        },
-                       success: function (result) {
+                        type: 'POST',
+                        url: baseUrl+'title/'+titleid+'/RateMovie/'+userId+'/'+rating, 
+                        headers: {Authorization: 'Bearer '+window.tokenString},
+                        success: function (result) {
                            if(result) {
                                //alert("Your list has been deleted!")
                                getRating();
@@ -107,6 +105,7 @@
                             $.ajax({
                                 type: 'DELETE',
                                 url: 'http://localhost:5001/api/tlist/'+trimValTitle+'/delete',
+                                headers: {Authorization: 'Bearer '+window.tokenString},
                                 success: function (result) {
                                     if(result) {
                                         //alert("Your list has been deleted!")                                    
@@ -125,6 +124,7 @@
                             $.ajax({
                                 type: 'DELETE',
                                 url: 'http://localhost:5001/api/plist/'+trimVal+'/delete',
+                                headers: {Authorization: 'Bearer '+window.tokenString},
                                 success: function (result) {
                                     if(result) {
                                         //alert("Your list has been deleted!")                                    
@@ -170,7 +170,11 @@
             
             getUserInfo()
         
-        
+        /*
+        beforeSend: function(request) {
+                    request.setRequestHeader("Bearer ", window.tokenString);
+                },
+         */
 
         /*  UPDATE PROFILE  */
         const serialize_form = form => JSON.stringify(
@@ -184,9 +188,7 @@
             $.ajax({
                 type: 'POST',
                 url: urlUpdate,
-                beforeSend: function(request) {
-                    request.setRequestHeader("Bearer ", window.tokenString);
-                },
+                headers: {Authorization: 'Bearer '+window.tokenString},
                 dataType: 'json',
                 data: json,
                 contentType: 'application/json',
@@ -215,6 +217,7 @@
                 dataType: 'json',
                 data: json,
                 contentType: 'application/json',
+                headers: {Authorization: 'Bearer '+window.tokenString},
                 success: function (data) {
                     if(data) {
                         alert("Your password has been updated!");
@@ -234,6 +237,7 @@
             $.ajax({
                 type: 'GET',
                 url: $(this).attr("href"),
+                headers: {Authorization: 'Bearer '+window.tokenString},
                 success: function (result) {
                     if(result) {
                         alert("You have updated the rating!")
@@ -249,6 +253,7 @@
             $.ajax({
                 type: 'DELETE',
                 url: urlDelete,
+                headers: {Authorization: 'Bearer '+window.tokenString},
                 success: function (result) {
                     if(result) {
                         alert("Your account has been deleted!")

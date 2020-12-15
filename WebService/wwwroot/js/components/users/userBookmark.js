@@ -20,6 +20,7 @@
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + window.tokenString
         });
+        console.log(window.tokenString);
 
         /*  FETCH USER INFO  */
         function getUserInfo() {
@@ -115,38 +116,34 @@
             const json = serialize_form_list(this);
             console.log();
             let s = json.toString();
-            //let ss = s.substr(s.length-7)
-            console.log("TRIM: "+s)
+            console.log("STRING: "+s)
             if(s.includes('tlist')) {
                 console.log("tlist")
                 $.ajax({
                     type: 'POST',
                     url: newTListUrl,
+                    headers: {Authorization: 'Bearer '+window.tokenString},
                     dataType: 'json',
                     data: json,
                     contentType: 'application/json',
-                    beforeSend: function(request) {
-                        request.setRequestHeader("Bearer ", window.tokenString);
-                    },
-                    success: function (data) {
-                        if(data){
-                            alert("Your title list has been created!")
-                            goToProfilePage();
-                        }
+                    success: function(x) {
+                        console.log("we r sending.... plist"+x)
+                        alert("Your title list has been created!")
+                        goToProfilePage();
                     }
                 });
-            } else if(s.includes('plist')) {
+            } else 
+                if(s.includes('plist')) {
                 console.log("plist")
                 $.ajax({
                     type: 'POST',
                     url: newPListUrl,
+                    headers: {Authorization: 'Bearer '+window.tokenString},
                     dataType: 'json',
                     data: json,
                     contentType: 'application/json',
-                    beforeSend: function(request) {
-                        request.setRequestHeader("Bearer ", window.tokenString);
-                    },
                     success: function (data) {
+                        console.log("we r sending.... plist")
                         if(data) {
                             alert("Your person list has been created!")
                             goToProfilePage();
