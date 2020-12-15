@@ -343,6 +343,16 @@
       <_ContentIncludedByDefault Remove="wwwroot\slick\slick.less" />
       <_ContentIncludedByDefault Remove="wwwroot\slick\slick.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\slick\slick.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\createlist.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\listpage.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\login.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\register.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\sign-in.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\updateuser.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\userBookmark.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\userConfig.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\userRating.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\components\users\YourLists.html" />
     </ItemGroup>
 
     <ItemGroup>
