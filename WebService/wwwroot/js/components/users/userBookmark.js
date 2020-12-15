@@ -54,8 +54,10 @@
                     .then((data) => {
                         tListData(data.titleList)
                         tBookmarks(data.tbookmarkDtos)
-                        //console.log("TLISTDATA: "+data.titleList)
-                        //console.log("TBOOKMARKS: "+data.tbookmarkDtos)
+                        console.log(tBookmarks())
+                        console.log("TLISTDATA: "+data.titleList())
+                        console.log("TBOOKMARKS: "+data.tbookmarkDtos())
+                        console.log("HEJSA")
                     }).catch((err) => {
                 })
             }

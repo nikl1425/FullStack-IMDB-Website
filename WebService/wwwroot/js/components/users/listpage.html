@@ -1,48 +1,92 @@
-﻿<div>
-    <!--------------------------------------->
-    <!--           TITLE PAGE              -->
-    <!--------------------------------------->
-    <div data-bind="foreach: tListData">
-        <h1 data-bind="text: listName"></h1>
-        created by: <span data-bind="text: username"></span>
-        <br>
-    </div>
-    
-    <dl data-bind="foreach: tBookmarks">
-        <dt>
-            <a href="#" class="gotomoviepage" data-bind="value: titleId, text: titleName"></a>
-            (<span data-bind="text: prodYear"></span>)
-            &nbsp; &nbsp; &nbsp; &nbsp;
-        </dt>
-        <img width="67px" height="98px" data-bind="attr:{src: poster}">
-        <div data-bind="text: plot"></div>
-        <a href="#" class="deleteBookmark" data-bind="value: id" >Delete from list</a>
-        <br>
-    </dl>
+﻿<!--------------------------------------->
+<!--           TITLE PAGE              -->
+<!--------------------------------------->
+<div>
+    <section class="after-head d-flex section-text-white position-relative">
+        <div class="top-block top-inner container">
+            <div class="top-block-content">
+                <div data-bind="foreach: tListData">
+                    <h1 class="section-title" data-bind="text: listName"></h1>
+                    <h4 class="entity-title">
+                        Created by: <span data-bind="text: username"></span>
+                    </h4>
+                </div>
+                <div class="page-breadcrumbs">
+                    <a class="content-link" href="#">Home</a>
+                    <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
+                    <span>Profile</span>
+                    <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
+                    <span>Title-List</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-    <!--------------------------------------->
-    <!--           PERSON PAGE             -->
-    <!--------------------------------------->
-    <div data-bind="foreach: pListData">
-        <h1 data-bind="text: listName"></h1>
-        created by: <span data-bind="text: username"></span>
-        <br>
-    </div>
+<section class="section-long">   <!-- GENRES CONFIG HERE-->
+    <div class="container">
+        <div class="section-pannel">
+            <div class="grid row">
+                <div id="scrolltothisdiv">
+                    <table>
+                        <tbody data-bind="foreach: tBookmarks" style="width: 100%; display: table; !important;">
+                        <tr valign="top">
+                            <th scope="row">
+                                <img width="150px" height="150px" data-bind="attr:{src: poster} ">
+                            </th>
+                            <td valign="top" style="width: 140px">
+                                <h4 class="entity-title">
+                                    <a class="gotomovie" href="#" data-bind="value: titleId"><span
+                                            data-bind="text: titleName"></span></a>
+                                </h4>
+                            </td>
+                            <td valign="top">
+                                <div data-bind="text: plot"></div>
+                            </td>
+                            <td>
+                                <button href="#" class="deleteBookmark btn btn-warning" data-bind="value: id">Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-    <dl data-bind="foreach: pBookmarks">
-        <dt>
-            <a href="#" class="goToPeoplePage" data-bind="value: person_Id, text: personName"></a>
-            (Born: <span data-bind="text: birthYear"></span>)
-        </dt>
-        <img width="67px" height="98px" src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg">
-        <a href="#" class="deleteBookmark" data-bind="value: id" >Delete from list</a>
-        <br>
-    </dl>
-    
+                    <br>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------------------------------->
+<!--           TITLE PAGE              -->
+<!--------------------------------------->
+
+
+<!--------------------------------------->
+<!--           PERSON PAGE             -->
+<!--------------------------------------->
+<div data-bind="foreach: pListData">
+    <h1 data-bind="text: listName"></h1>
+    created by: <span data-bind="text: username"></span>
     <br>
+</div>
+
+<dl data-bind="foreach: pBookmarks">
+    <dt>
+        <a href="#" class="goToPeoplePage" data-bind="value: person_Id, text: personName"></a>
+        (Born: <span data-bind="text: birthYear"></span>)
+    </dt>
+    <img width="67px" height="98px"
+         src="https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder-300x300.jpg">
+    <a href="#" class="deleteBookmark" data-bind="value: id">Delete from list</a>
     <br>
-    <a type=button href="#" class="btn btn-primary" id="gotonewlist" >CREATE A NEW LIST</a>
-    <br>
-    <br>
+</dl>
+
+<br>
+<br>
+<a type=button href="#" class="btn btn-primary" id="gotonewlist">CREATE A NEW LIST</a>
+<br>
+<br>
 </div>
     
