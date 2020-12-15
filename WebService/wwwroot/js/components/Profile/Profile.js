@@ -6,22 +6,14 @@
         let user = ko.observableArray([]);
         window.listValue = "";
         
-        //TODO : incooporate session user smth
-        let userId = 6;
-        let testId = 2;
-        //let url = 'api/user/'+id+'/ratings/';
         let urlRating = 'http://localhost:5001/api/user/'+ window.userIdString +'/ratings';
         let urlLists = 'http://localhost:5001/api/user/'+ window.userIdString +'/lists';
         let urlUser = 'http://localhost:5001/api/user/'+ window.userIdString;
         let urlUpdate = 'http://localhost:5001/api/user/'+ window.userIdString +'/update'
         let urlUpdatePW = 'http://localhost:5001/api/user/'+ window.userIdString +'/changepassword'
-        let urlDelete = 'http://localhost:5001/api/user/'+testId+'/delete'
-        let baseUrl = 'http://localhost:5001/api/';
-        let loggedIn = ko.observableArray([]);
-        
-
         let urlDelete = 'http://localhost:5001/api/user/'+ window.userIdString +'/delete'
         let baseUrl = 'http://localhost:5001/api/'
+        let loggedIn = ko.observableArray([]);
         
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
