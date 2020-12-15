@@ -7,13 +7,13 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         let prev = ko.observableArray();
         let next = ko.observableArray();
         let selectedPage = ko.observableArray([10]);
-        self.selectedType = ko.observable();
+        let selectedType = ko.observable();
         let objGenre = ko.observable();
         let movieGenres = ko.observable();
         let types = ko.observableArray([]);
        
 
-        self.selectedType.subscribe(() => {
+        selectedType.subscribe(() => {
             objGenre = selectedType().name;
             console.log(objGenre)
             });
