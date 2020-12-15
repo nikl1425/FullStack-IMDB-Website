@@ -107,6 +107,7 @@
             goToMoviePage();
         });
         
+        
         // DELETE BOOKMARK FROM LIST
         $(document).on('click', '.deleteBookmark', function(){
             if(window.listValue.indexOf('t')>-1) {
