@@ -64,17 +64,17 @@
                 data: json,
                 contentType: 'application/json',
                 success: function (data) {
-                    if(data) {
+                    if(data > 1) {
                         alert("Welcome!")
                         console.log(data.tokenStr)
                         console.log(data.id)
                         window.userIdString = data.id;
                         window.tokenString = data.tokenStr;
                         goToProfilePage();
-                        //location.replace("http://localhost:5001")
-                    } else {
-                        alert("Username or password is incorrect!")
                     }
+                },
+                error: function (data){
+                    alert("Username or password is incorrect!")
                 }
             });
         });

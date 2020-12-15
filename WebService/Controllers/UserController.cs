@@ -43,6 +43,12 @@ namespace WebService.Controllers
         public IActionResult Login(UserDto userDto)
         {
             var user = _dataService.Login(userDto.Username.ToLower(), userDto.Password, userDto.Email.ToLower());
+
+            if (user == false)
+            {
+                return BadRequest("No user found");
+            }
+            
             
             IActionResult response = Unauthorized();
             if (user)
