@@ -160,6 +160,7 @@
                 }).then(function (data) {
                    user(data)
                     console.log(user(data));
+                   loggedIn.push("true")
                  }).catch(error => {
                     console.error(error);
                 });
