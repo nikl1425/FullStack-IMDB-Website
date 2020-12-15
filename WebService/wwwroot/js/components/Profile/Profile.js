@@ -186,6 +186,11 @@
         $('#changeContentToLogin').click(function(){
             goToLogin()
         })
+
+        $('#changeContentToUpdate').click(function(){
+            goToUpdate()
+        })
+        
         
         let changeContentToLogin = () => {
                 goToLogin();
@@ -195,6 +200,10 @@
         
         function goToLogin(){
             postman.publish("changeContent", "Login");
+        }
+        
+        function goToUpdate(){
+            postman.publish("changeContent", "Updateuser");
         }
 
 

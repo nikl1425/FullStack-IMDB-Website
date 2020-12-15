@@ -1,0 +1,28 @@
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateBtnLabel">UPDATE PASSWORD</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please enter your username, old password and a new password:
+                <form class="updatePWForm" method="post">
+                    <label for="username"> Username: </label>
+                    <input type="text" id="username" required name="username"><br>
+                    <label for="password"> Old password: </label>
+                    <input type="password" id="password" required name="password"><br>
+                    <label for="newpassword">New password: </label>
+                    <input type="password" id="newpassword" required name="newpassword"><br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+                        <button type="submit" class="btn btn-primary" id="confirmNewPassword">Update Password
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

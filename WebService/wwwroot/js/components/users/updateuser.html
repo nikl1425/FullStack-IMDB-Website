@@ -1,51 +1,123 @@
-<div id="formContent">
-    <form class="updateProfile" method="post" data-bind="with: user">
-        <label for="surname"> First name: </label>
-        <input type="text" id="surname" required name="surname" data-bind="value: surname"><br>
-        <label for="lastname">Last name: </label>
-        <input type="text" id="lastname" required name="lastname" data-bind="value: lastname"><br>
-        <label for="age">Age: </label>
-        <input type="number" id="age" required name="age" min="1" max="99" data-bind="value: age"><br>
-        <label for="email">Email: </label>
-        <input type="email" id="email" required name="email" data-bind="value: email"><br><br>
-        <input type="submit" value="Save changes">
+
+<style>
+    .loginContainer{
+        border-radius: 5px;
+        padding: 20px;
+        justify-content: center !important;
+        text-align:center !important;
+    }
+
+    .updateProfile{
+        border-radius: 5px;
+        padding: 20px;
+        justify-content: center !important;
+        text-align:center !important;
+        display: grid;
+    }
+
+    .firstnameBox{
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .lastnameBox{
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .ageBox{
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    .usernameBox {
+        width: 400px;
+        outline: none;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+    .emailBox{
+        outline: none;
+        padding: 12px 20px;
+        text-align:center;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+    .passwordBox {
+        outline: none;
+        padding: 12px 20px;
+        text-align:center;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        box-sizing: border-box;
+    }
+
+    #loginButton{
+        top: 25px;
+        position:relative;
+        width:50%;
+        right:25% !important;
+        left: 25% !important;
+    }
+
+    #formFooter{
+        top: 25px;
+        position:relative;
+    }
+
+
+</style>
+<div class="loginContainer">
+    <form class="updateProfile" method="post" style="padding: 35px">
+        <label for="surname" class="entity-title" style="font-size: 28px; color:white;">First name</label>
+        <input class="firstnameBox" type="text" id="surname"  name="surname" placeholder="...">
+
+        <label for="lastname" class="entity-title" style="font-size: 28px; color:white;">Last name</label>
+        <input class="lastnameBox" type="text" id="lastname"  name="lastname">
+ 
+        
+        <label for="username" class="entity-title" style="font-size: 28px; color:white;">Username</label>
+        <input class="usernameBox" type="text" id="username"  name="username" placeholder="...">
+
+        <label for="age" class="entity-title" style="font-size: 28px; color:white;">Age</label>
+        <input class="ageBox" type="number" id="age"  name="age" placeholder="Age"  min="1" max="99">
+
+        <label for="email" class="entity-title" style="font-size: 28px; color:white;">Email</label>
+        <input class="emailBox" type="email" id="email"  name="email">
+
+        <button id="loginButton" value="Save changes" type="submit" class="btn btn-warning btn-rounded entity-title" style="font-size: 24px">Update</button>
     </form>
-
-    <br>
-
-    <!--    UPDATE PASSWORD    -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateBtn">Update Password</button>
-    <div class="modal fade" id="updateBtn" tabindex="-1" role="dialog" aria-labelledby="updateBtnLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="updateBtnLabel">UPDATE PASSWORD</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Please enter your username, old password and a new password:
-                    <form class="updatePWForm" method="post">
-                        <label for="username"> Username: </label>
-                        <input type="text" id="username" required name="username"><br>
-                        <label for="password"> Old password: </label>
-                        <input type="password" id="password" required name="password"><br>
-                        <label for="newpassword">New password: </label>
-                        <input type="password" id="newpassword" required name="newpassword"><br>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
-                            <button type="submit" class="btn btn-primary" id="confirmNewPassword">Update Password
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
 
     <!--    DELETE ACCOUNT     -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteBtn">Delete Account</button>
@@ -69,3 +141,14 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
