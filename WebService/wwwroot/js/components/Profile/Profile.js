@@ -106,7 +106,6 @@
                             headers: {Authorization: 'Bearer '+window.tokenString},
                             success: function (result) {
                                 if(result) {
-                                    //alert("Your list has been deleted!")
                                     getRating();
                                 } else {
                                     alert("Something went wrong!")
@@ -179,7 +178,7 @@
                                 let trimValTitle = value.substring(1);
                                 $.ajax({
                                     type: 'DELETE',
-                                    url: 'http://localhost:5001/api/tlist/'+trimValTitle+'/delete',
+                                    url: 'http://localhost:5001/api/tlist/' + window.userIdString + '/' +trimValTitle+'/delete',
                                     headers: {Authorization: 'Bearer '+window.tokenString},
                                     success: function (result) {
                                         if(result) {
@@ -198,7 +197,7 @@
                                 let trimVal = value.substring(1);
                                 $.ajax({
                                     type: 'DELETE',
-                                    url: 'http://localhost:5001/api/plist/'+trimVal+'/delete',
+                                    url: 'http://localhost:5001/api/plist/' + window.userIdString + '/' +trimVal+'/delete',
                                     headers: {Authorization: 'Bearer '+window.tokenString},
                                     success: function (result) {
                                         if(result) {

@@ -218,87 +218,150 @@ namespace WebService.Controllers
             return BadRequest("User not authorized");
         }
         
-        //ADD PERSON BOOKMARK TO LIST
-        [Authorize]
-        [HttpPost("plist/{listid}/bookmark")]
-        public IActionResult newPersonBookmark(PersonBookmarkDto pbDto)
-        {
-            var newBookmark = _dataService.NewPersonBookmark(pbDto.Person_Id, pbDto.List_Id);
-            return Created("",newBookmark);
-        }
-        /*
-         * //ADD TITLE BOOKMARK TO LIST
-        [Authorize]
-        [HttpPost("tlist/{listid}/bookmark")]
-        public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto)
-        {
-            var newBookmark = _dataService.NewTitleBookmark(tbDto.TitleId, tbDto.ListId);
-            return Created("",newBookmark);
-        }
-         */
-        
-        
-        
-        
         
         //NEDENSTÅENDE MANGLER TOKEN VALID
+        
+        //ADD PERSON BOOKMARK TO LIST
+        [Authorize]
+        [HttpPost("plist/{userid}/{listid}/bookmark")]
+        public IActionResult newPersonBookmark(PersonBookmarkDto pbDto, int userid)
+        {
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var newBookmark = _dataService.NewPersonBookmark(pbDto.Person_Id, pbDto.List_Id);
+                return Created("",newBookmark);
+            }
+
+            return BadRequest("User not authorized");
+        }
+
         //DELETE USERS BOOKMARK LIST
         [Authorize]
-        [HttpDelete("plist/{listid}/delete")] 
-        public IActionResult deletePersonBookmarkList(int listid)
+        [HttpDelete("plist/{userid}/{listid}/delete")] 
+        public IActionResult deletePersonBookmarkList(int listid, int userid)
         {
-            var delete = _dataService.deletePersonBookmarkList(listid);
-            return Ok(delete);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var delete = _dataService.deletePersonBookmarkList(listid);
+                return Ok(delete);
+            }
+            return BadRequest("User not authorized");
         }
         
         //DELETE PERSON BOOKMARK FROM LIST
         [Authorize]
-        [HttpDelete("plist/{listid}/{bookmarkid}")]
-        public IActionResult deletePersonBookmark(int bookmarkid)
+        [HttpDelete("plist/{userid}/{listid}/{bookmarkid}")]
+        public IActionResult deletePersonBookmark(int bookmarkid, int userid)
         {
-            var delete = _dataService.deletePersonBookmark(bookmarkid);
-            return Ok(delete);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var delete = _dataService.deletePersonBookmark(bookmarkid);
+                return Ok(delete);
+            }
+
+            return BadRequest("User not authorized");
         }
         
         //NEW TITLE BOOKMARK LIST
         [Authorize]
         [HttpPost("user/{userid}/tlist/create")] 
-        public IActionResult newTitleBookmarkList(TitleBookmarkListDTO tblDto)
+        public IActionResult newTitleBookmarkList(TitleBookmarkListDTO tblDto, int userid)
         {
-            var list = _dataService.NewTitleBookmarkList(tblDto.UserId, tblDto.ListName);
-            return Created("New list: ", list);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var list = _dataService.NewTitleBookmarkList(tblDto.UserId, tblDto.ListName);
+                return Created("New list: ", list);
+            }
+
+            return BadRequest("User not authorized");
         }
         
         //ADD TITLE BOOKMARK TO LIST
         [Authorize]
-        [HttpPost("tlist/{listid}/bookmark")]
-        public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto)
+        [HttpPost("tlist/{userid}/{listid}/bookmark")]
+        public IActionResult newTitleBookmark(TitleBookmarkDTO tbDto, int userid)
         {
-            var newBookmark = _dataService.NewTitleBookmark(tbDto.TitleId, tbDto.ListId);
-            return Created("",newBookmark);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var newBookmark = _dataService.NewTitleBookmark(tbDto.TitleId, tbDto.ListId);
+                return Created("",newBookmark);
+            }
+
+            return BadRequest("User not authorized");
         }
         
         //DELETE USERS TITLE BOOKMARK LIST
         [Authorize]
-        [HttpDelete("tlist/{listid}/delete")] 
-        public IActionResult deleteTitleBookmarkList(int listid)
+        [HttpDelete("tlist/{userid}/{listid}/delete")] 
+        public IActionResult deleteTitleBookmarkList(int listid, int userid)
         {
-            var delete = _dataService.deleteTitleBookmarkList(listid);
-            return Ok(delete);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var delete = _dataService.deleteTitleBookmarkList(listid);
+                return Ok(delete);
+            }
+
+            return BadRequest("User not authorized");
         }
         
         //DELETE TITLE BOOKMARK FROM LIST
         [Authorize]
-        [HttpDelete("tlist/{listid}/{bookmarkid}")]
-        public IActionResult deleteTitleBookmark(int bookmarkid)
+        [HttpDelete("tlist/{userid}/{listid}/{bookmarkid}")]
+        public IActionResult deleteTitleBookmark(int bookmarkid, int userid)
         {
-            var delete = _dataService.deleteTitleBookmark(bookmarkid);
-            return Ok(delete);
+            var queryUserName = _dataService.GetUser(userid).Username;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            IList<Claim> claim = identity.Claims.ToList();
+            var tokenUserName = claim[0].Value;
+            Console.WriteLine(claim.Count);
+
+            if (queryUserName == tokenUserName)
+            {
+                var delete = _dataService.deleteTitleBookmark(bookmarkid);
+                return Ok(delete);
+            }
+
+            return BadRequest("User not authorized");
         }
 
         //OVENSTÅENDE MANGLER USERID
         //GET A USERS BOOKMARK LISTS
-        
         
         
         [Authorize]

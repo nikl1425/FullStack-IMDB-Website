@@ -63,7 +63,7 @@
                                 console.log("URL: " + 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId)
                                 $.ajax({
                                     type: 'DELETE',
-                                    url: 'http://localhost:5001/api/tlist/' + listId + '/' + bookmarkId,
+                                    url: 'http://localhost:5001/api/tlist/' + window.userIdString + '/' + listId + '/' + bookmarkId,
                                     headers: {Authorization: 'Bearer ' + window.tokenString},
                                     success: function (result) {
                                         if (result) {
@@ -100,10 +100,10 @@
                                 let bookmarkId = $(this).val();
                                 console.log("bookmarkID: " + bookmarkId);
                                 console.log("window val: " + window.listValue);
-                                console.log("URL: " + 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId)
+                                console.log("URL: " + 'http://localhost:5001/api/plist/'+ window.userIdString + '/' + listId + '/' + bookmarkId)
                                 $.ajax({
                                     type: 'DELETE',
-                                    url: 'http://localhost:5001/api/plist/' + listId + '/' + bookmarkId,
+                                    url: 'http://localhost:5001/api/plist/'+ window.userIdString + '/' + listId + '/' + bookmarkId,
                                     headers: {Authorization: 'Bearer ' + window.tokenString},
                                     success: function (result) {
                                         if (result) {

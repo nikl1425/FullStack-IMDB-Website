@@ -43,7 +43,7 @@
                             console.log("DATA: "+data)
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://localhost:5001/api/tlist/'+trimVal+'/bookmark',
+                                url: 'http://localhost:5001/api/tlist/'+ window.userIdString + '/' + trimVal+'/bookmark',
                                 headers: {Authorization: 'Bearer '+window.tokenString},
                                 dataType: 'json',
                                 data: json,

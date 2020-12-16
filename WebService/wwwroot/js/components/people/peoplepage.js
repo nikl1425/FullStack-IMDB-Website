@@ -36,7 +36,7 @@ define(['knockout', 'postman'], (ko, postman) => {
                             console.log("DATA: "+data)
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://localhost:5001/api/plist/'+trimVal+'/bookmark',
+                                url: 'http://localhost:5001/api/plist/'+ window.userIdString + '/' + trimVal+'/bookmark',
                                 headers: {Authorization: 'Bearer '+window.tokenString},
                                 dataType: 'json',
                                 data: json,
