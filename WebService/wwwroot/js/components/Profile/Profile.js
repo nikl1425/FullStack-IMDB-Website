@@ -25,8 +25,7 @@
         let newTListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/tlist/create'
         let newPListUrl = 'http://localhost:5001/api/user/'+window.userIdString+'/plist/create'
         
-
-
+        
         /*  CREATE NEW BOOKMARK LIST  */
         const serialize_form_list = form => JSON.stringify(
             Array.from(new FormData(form).entries())
