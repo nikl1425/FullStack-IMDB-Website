@@ -84,13 +84,13 @@
                             </svg>
                             <div class="info info-short" style="alignment: center">
                                 <p style="text-align: center;">
-                                <button class="btn btn-warning" id="changeContentToUpdate" style="width: 100%;">UPDATE INFO</button>
+                                    <button class="btn btn-warning" id="changeContentToUpdate" style="width: 100%;">UPDATE INFO</button>
                                 </p>
                                 <br>
-                                    <p style="text-align: center;">
+                                <p style="text-align: center;">
                                     <button class="btn btn-warning" id="logOutButton" style="width: 100%;">Logout</button>
-                                    </p>
-                          
+                                </p>
+
                             </div>
                         </div>
                         <div class="entity-content">
@@ -178,13 +178,14 @@
                 <br>
                 <table class="table table-dark">
                     <thead>
-                    <tr> 
+                    <tr>
                         <th scope="col">Poster</th>
                         <th scope="col">Title</th>
                         <th scope="col" style="width: 250px"> plot</th>
                         <th scope="col">Rating</th>
-                        <th scope="col">Set New rating</th>
-                        
+                        <th scope="col">Set New Rating</th>
+                        <th scope="col">Delete Rating</th>
+
                     </tr>
                     </thead>
                     <tbody data-bind="foreach: userRatingList">
@@ -231,6 +232,11 @@
                                     <a class="updateRating" data-bind="value: title_id, text: 9" style="color: black"></a>
                                     <a class="updateRating" data-bind="value: title_id, text: 10" style="color: black"></a>
                                 </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="deleteRating" data-bind="rating">
+                                <button class="deleteRating btn btn-warning" data-bind="value: title_id">Delete rating</button>
                             </div>
                         </td>
                     </tr>

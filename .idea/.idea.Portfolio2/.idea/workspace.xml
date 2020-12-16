@@ -32,8 +32,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Movie rating på moviepage - works!">
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Color to rating dropdown">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +67,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/31/7aeb5dd7/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/css/theme.css" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/jjfiv/Desktop/RAWDATA/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
@@ -83,9 +89,11 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
       <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.html" />
       <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/moviepage.js" />
+      <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/users/userBookmark.js" />
+      <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.js" />
+      <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/Profile/Profile.html" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jmGrcphClSvAKu3pwemx3IMvtn" />
@@ -212,20 +220,6 @@
       <workItem from="1608049500368" duration="756000" />
       <workItem from="1608058008747" duration="1056000" />
       <workItem from="1608067380774" duration="1788000" />
-    </task>
-    <task id="LOCAL-00003" summary="Portfolio 2">
-      <created>1604402402882</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1604402402882</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Hej jesper">
-      <created>1604405604835</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1604405604835</updated>
     </task>
     <task id="LOCAL-00005" summary="hej jesper">
       <created>1604405867641</created>
@@ -556,7 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608075475248</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Color to rating dropdown">
+      <created>1608075746056</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1608075746056</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Color to rating dropdown">
+      <created>1608075778665</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1608075778665</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,10 +582,24 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="feature.knockout" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Person stuff" />
     <MESSAGE value="Person" />
     <MESSAGE value="Fixed everything" />
     <MESSAGE value="Bookmark stuff" />
@@ -602,7 +624,8 @@
     <MESSAGE value="Your list delete fix" />
     <MESSAGE value="Delete bookmark from list - wb" />
     <MESSAGE value="Movie rating på moviepage - works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Movie rating på moviepage - works!" />
+    <MESSAGE value="Color to rating dropdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="Color to rating dropdown" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

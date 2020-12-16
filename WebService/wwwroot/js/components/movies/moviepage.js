@@ -89,7 +89,7 @@
                             headers: {Authorization: 'Bearer '+window.tokenString},
                             success: function (result) {
                                 if(result) {
-                                    alert("You have rated this movie"+rating+"!")
+                                    alert("You have rated this movie "+rating+"!")
                                     getMovieData();
                                 } else {
                                     alert("Something went wrong!")
