@@ -32,13 +32,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="filter">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="filter midlertidigt">
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio2.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +68,7 @@
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/css/theme.css" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -206,14 +202,7 @@
       <workItem from="1608049500368" duration="756000" />
       <workItem from="1608058008747" duration="1056000" />
       <workItem from="1608067380774" duration="1788000" />
-      <workItem from="1608129294378" duration="2146000" />
-    </task>
-    <task id="LOCAL-00003" summary="Portfolio 2">
-      <created>1604402402882</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1604402402882</updated>
+      <workItem from="1608129294378" duration="2486000" />
     </task>
     <task id="LOCAL-00004" summary="Hej jesper">
       <created>1604405604835</created>
@@ -551,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608075475248</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="filter midlertidigt">
+      <created>1608131775202</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1608131775202</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +568,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Person stuff" />
     <MESSAGE value="Person" />
     <MESSAGE value="Fixed everything" />
     <MESSAGE value="Bookmark stuff" />
@@ -597,7 +592,8 @@
     <MESSAGE value="Your list delete fix" />
     <MESSAGE value="Delete bookmark from list - wb" />
     <MESSAGE value="Movie rating på moviepage - works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Movie rating på moviepage - works!" />
+    <MESSAGE value="filter midlertidigt" />
+    <option name="LAST_COMMIT_MESSAGE" value="filter midlertidigt" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1313" height="376" key="GridCell.Tab.0.bottom" timestamp="1608129673618">
@@ -616,6 +612,14 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state width="1313" height="376" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1608129673618" />
+    <state x="1169" y="419" key="Vcs.Push.Dialog.v2" timestamp="1608131777012">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1169" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1608131777012" />
+    <state x="1395" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608131752311">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1395" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1608131752311" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

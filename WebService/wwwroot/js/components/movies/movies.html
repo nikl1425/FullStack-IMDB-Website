@@ -27,7 +27,8 @@
                                             "options: types,
                                              optionsText: 'name',
                                              value: selectedType,
-                                             
+                                             click: ChangeMovies
+                                           
                                              optionsCaption: 'select type....'">
                                         <!-- gammel change movie click: ChangeMovies-->
                                     </select>
@@ -49,13 +50,15 @@
                 </div>
             </div>
         </div>
-
+        
+        
+        <!-- INDSÆT DENNE VED KO:FILTER " foreach: { data: getCurrentLocations(), as: 'movieList' }"-->
 
         <!-- WRAP DEN HER IN I KNOCKOUT ARRAY -->
         <table>
             <tbody>  <!-- FOR HVER FETCHED -->
             <tr>
-                <td data-bind="foreach: { data: getCurrentLocations(), as: 'movieList' }">
+                <td data-bind="foreach: movieList">
                     <article class="movie-line-entity"> <!-- HVER ARTICLE I TABLE HER CONFIG-->
                         <div class="entity-poster" data-role="hover-wrap"> <!-- HOVER OVER BILLEDER -->
                             <div class="embed-responsive embed-responsive-poster">
