@@ -11,6 +11,7 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         let objGenre = ko.observable();
         let movieGenres = ko.observable();
         let types = ko.observableArray([]);
+        let allDataList = ko.observableArray([])
         self = this;
        
 
@@ -64,6 +65,8 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 next(data.next || undefined);
                 movieList(data.movieList);
                 movieGenres(movieList.genre)
+                allDataList(data)
+                
                 $('.gotomovie').focus(function(){
                     console.log("Has focus")
                     window.movieValue = $(this).val();
@@ -150,15 +153,49 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
         $(document).on('click', '.content-link', function() {
             goToHome()
         });
+        
+        
 
         let filteredMovieList = ko.computed(() => {
             let tempList = ko.toJS(movieList);
             if (selectedType()) {
                 tempList = tempList.filter(movie => movie.type === selectedType().name);
-                console.log(tempList)
+                
             }
+            console.log(typeof(tempList))
             return tempList;
         });
+        
+        console.log(filteredMovieList)
+
+        let getCurrentLocations = function() {
+            let selectedVal = this.selectedType();
+
+            if (!selectedVal)
+                return this.movieList;
+
+            if (selectedVal.name === "select type...")
+                return this.movieList;
+
+
+
+            $('.gotomovie').focus(function(){
+                console.log("Has focus")
+                window.movieValue = $(this).val();
+                goToMoviePage()
+            })
+
+            return this.movieList().filter(function(f) {
+                return f.type === selectedVal.name;
+            });
+            
+        }
+        
+       
+
+        
+        
+       
       
         
 
@@ -176,7 +213,8 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             types,
             ChangeMovies,
             postman,
-            filteredMovieList
+            filteredMovieList,
+            getCurrentLocations
             
             
             
