@@ -122,7 +122,7 @@ namespace WebService.Controllers
                 movieList
             };
             
-            //hej jacob
+            
 
             return Ok(result);
         }

@@ -33,15 +33,14 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">  <!-- START YEAR AND END YEAR HERE -->
-                                <div class="input-view-flat date input-group" data-toggle="datetimepicker"
-                                     data-target="#release-year-field">
-                                    <input class="datetimepicker-input form-control" id="release-year-field"
-                                           name="releaseYear" type="text" placeholder="release year"
-                                           data-target="#release-year-field" data-date-format="Y"/>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                                    </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div id="scrolltothisdiv"></div>
+                                <div class="input-view-flat input-group">
+                                    <select class="form-control" data-bind=
+                                            "options: pageSizes,
+                                             selectedOptions: selectedPage">
+                                        <!-- gammel change movie click: ChangeMovies-->
+                                    </select>
                                 </div>
                             </div>
                         </div>
