@@ -191,6 +191,7 @@ namespace WebService.Controllers
 
             titleDto.TypeUrl = "http://localhost:5001/api/type/" + titleType.Type.Id;
             titleDto.Rating = titleRating.Average_Rating;
+            titleDto.NumVotes = titleRating.Num_Votes;
             if (titlePlot == null)
             {
                 titleDto.plot = "";

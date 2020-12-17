@@ -53,8 +53,7 @@
                             </div>
                         </div>
                         <div class="entity-content">
-                            <div data-bind="foreach: titleData"><h2 class="text-theme"
-                                                                    data-bind="text: primaryTitle"></h2></div>
+                            <div data-bind="foreach: titleData"><h2 class="text-theme" data-bind="text: primaryTitle"></h2></div>
 
                             <div class="entity-category" data-bind="foreach: titleGenreData">
                                 <a class="content-link" data-bind="text: name"></a>,
@@ -65,6 +64,11 @@
                                         <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
                                         <span class="info-text" data-bind="text: rating"></span>
                                         <span class="info-rest">/10</span>
+                                    </div>
+                                    <div class="info info-short">
+                                        <span class="text-theme info-icon"><i class="fas fa-hand-pointer"></i></span>
+                                        <span class="info-text" data-bind="text: numVotes"></span>
+                                        <span class="info-rest">&nbsp;votes</span>
                                     </div>
                                     <div class="info info-short">
                                         <span class="text-theme info-icon"><i class="fas fa-clock"></i></span>

@@ -34,6 +34,7 @@ namespace WebService.ObjectDto
         
         // Mangler
         public double Rating { get; set; }
+        public int NumVotes { get; set; }
         
       
     }
