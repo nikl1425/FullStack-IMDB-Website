@@ -33,13 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="filter midlertidigt">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_05-11-2020_11_47__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_05-11-2020_11_47__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2020__16_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/shelf/Uncommitted_changes_before_Update_at_16_11_2020__16_35__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +68,7 @@
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/css/theme.css" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/viewModel.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -601,22 +596,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="filter midlertidigt" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1046" height="376" key="GridCell.Tab.0.bottom" timestamp="1608213928900">
+    <state width="1313" height="376" key="GridCell.Tab.0.bottom" timestamp="1608129673618">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state width="1046" height="376" key="GridCell.Tab.0.center" timestamp="1608213928900">
+    <state width="1313" height="376" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1608129673618" />
+    <state width="1313" height="376" key="GridCell.Tab.0.center" timestamp="1608129673618">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state width="1046" height="376" key="GridCell.Tab.0.left" timestamp="1608213928900">
+    <state width="1313" height="376" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1608129673618" />
+    <state width="1313" height="376" key="GridCell.Tab.0.left" timestamp="1608129673618">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state width="1046" height="376" key="GridCell.Tab.0.right" timestamp="1608213928900">
+    <state width="1313" height="376" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1608129673618" />
+    <state width="1313" height="376" key="GridCell.Tab.0.right" timestamp="1608129673618">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
+    <state width="1313" height="376" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1608129673618" />
     <state x="1169" y="419" key="Vcs.Push.Dialog.v2" timestamp="1608131777012">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

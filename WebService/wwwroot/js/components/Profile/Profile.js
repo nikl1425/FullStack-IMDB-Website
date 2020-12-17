@@ -14,6 +14,7 @@
         let urlUser = 'http://localhost:5001/api/user/'+ window.userIdString;
         let baseUrl = 'http://localhost:5001/api/'
         let loggedIn = ko.observableArray([]);
+        let plotData = ko.observableArray([]);
 
         const myHeaders = new Headers({
             'Content-Type': 'application/json',
@@ -80,10 +81,12 @@
             }
         });
 
-
-
-
-
+/*
+        function shorten(str, maxLen, seperator = ''){
+            if (str.length <= maxLen) return str;
+            return str.substring(0, str.lastIndexOf(seperator, maxLen));
+        }
+*/
 
         /*  FETCH RATING FROM USER  */
         function getRating(){
@@ -96,7 +99,7 @@
                 })
                 .then(function (data) {
                     userRatingList(data);
-                    console.log("rating: "+data);
+                    console.log("rating: " + data);
                     $(".updateRating").on('click', function(){
                         let titleid = $(this).val();
                         let rating = $(this).text();
