@@ -191,13 +191,6 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
             
         }
         
-       
-
-        
-        
-       
-      
-        
 
         return {
             pageSizes,
