@@ -218,6 +218,7 @@ namespace DataService
             modelBuilder.Entity<Search_History>().Property(x => x.User_Id).HasColumnName("user_id");
             modelBuilder.Entity<Search_History>().Property(x => x.Search_Name).HasColumnName("search_name");
             modelBuilder.Entity<Search_History>().Property(x => x.Timestamp).HasColumnName("timestamp");
+            
 
             //Akas_type
             modelBuilder.Entity<Akas_Type>().ToTable("akas_type");

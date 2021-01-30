@@ -27,7 +27,7 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             return ctx.genre.ToList();
         }
-        
+
         public IList<Title_Search> TitleSearches(string titleid)
         {
             using var ctx = new ImdbContext();
@@ -68,15 +68,11 @@ namespace DataService.Services
                     EndYear = x.Title.EndYear
                 })
                 .ToList();
-
             return query;
-
-
         }
 
-        
 
-        public IList<Title_Genre> GetTitleGenres (string id)
+        public IList<Title_Genre> GetTitleGenres(string id)
         {
             using var ctx = new ImdbContext();
             var query = ctx.title_genre
@@ -229,7 +225,7 @@ namespace DataService.Services
             var query = ctx.title
                 .Include(x => x.Type)
                 .FirstOrDefault();
-                
+
 
             return query;
         }
@@ -265,15 +261,13 @@ namespace DataService.Services
 
         public OmdbData GetOmdbData(string id)
         {
-         using var ctx = new ImdbContext();
+            using var ctx = new ImdbContext();
 
-         var query = ctx.omdb_data
-             .Where(x => x.Id == id)
-             .FirstOrDefault();
+            var query = ctx.omdb_data
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
 
-         return query;
-         
-         
+            return query;
         }
 
         public List<TopPoster> GetTopTenPoster()
@@ -287,13 +281,14 @@ namespace DataService.Services
 
         public List<Movies> GetAllMovies(int page, int pageSize)
         {
-            using var ctx = new ImdbContext() ;
+            using var ctx = new ImdbContext();
             var query = ctx.Movies
                 .FromSqlInterpolated($"select * from titlesformoviepage()")
                 .Skip(page * pageSize)
                 .Take(pageSize)
-                .ToList();;
-            
+                .ToList();
+            ;
+
             return query.ToList();
         }
 
@@ -303,26 +298,28 @@ namespace DataService.Services
             var query = ctx.Movies.FromSqlInterpolated($"select * from titlesformoviepage()").Count();
             return query;
         }
-        
+
         public IQueryable<Title> GetTitleBySubstring(string substring)
         {
             var ctx = new ImdbContext();
-            var query = ctx.title.Where(x => x.PrimaryTitle.ToLower().Contains(substring.ToLower()) || x.OriginalTitle.ToLower().Contains(substring.ToLower()));
+            var query = ctx.title.Where(x =>
+                x.PrimaryTitle.ToLower().Contains(substring.ToLower()) ||
+                x.OriginalTitle.ToLower().Contains(substring.ToLower()));
             return query;
         }
 
         public List<Movies> GetAllMoviesWithType(string typeName, int page, int pageSize)
         {
-            using var ctx = new ImdbContext() ;
+            using var ctx = new ImdbContext();
             var query = ctx.Movies
                 .FromSqlInterpolated($"select * from titlesformovieType({typeName})")
                 .Skip(page * pageSize)
                 .Take(pageSize)
                 .ToList();
-            
+
             return query.ToList();
         }
-        
+
         public int GetNumberOfMoviesWithType(string typeName)
         {
             using var ctx = new ImdbContext();
@@ -335,7 +332,6 @@ namespace DataService.Services
             using var ctx = new ImdbContext();
             var query = ctx.title_rating.Where(x => x.Title_Id == id).FirstOrDefault();
             return query;
-
         }
 
         public TitleRuntime GetTitleRuntime(string id)
@@ -345,15 +341,11 @@ namespace DataService.Services
             return query;
         }
 
-        public List<TitlePersonsInMovie>  GetPersonsInMovie(string id)
+        public List<TitlePersonsInMovie> GetPersonsInMovie(string id)
         {
             using var ctx = new ImdbContext();
             var query = ctx.TitlePersonsInMovies.FromSqlInterpolated($"select * from personsformovie({id})").ToList();
             return query;
         }
-        
-        
-     
-
     }
 }

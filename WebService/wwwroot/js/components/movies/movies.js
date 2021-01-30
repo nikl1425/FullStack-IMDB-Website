@@ -66,18 +66,12 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 movieList(data.movieList);
                 movieGenres(movieList.genre)
                 allDataList(data)
-                
                 $('.gotomovie').focus(function(){
                     console.log("Has focus")
                     window.movieValue = $(this).val();
                     goToMoviePage()
                 })
-                
-
-              
             })
-
-            
         }
         
         let getGenres = function () {
@@ -99,7 +93,6 @@ define(['knockout', 'dataservice', 'postman'], (ko, dataservice, postman) => {
                 .then(function (data) {
                     types(data);
                     console.log(types());
-                  
                 })
         };
 

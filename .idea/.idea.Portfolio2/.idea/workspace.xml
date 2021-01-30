@@ -32,11 +32,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="filter midlertidigt">
+    <list default="true" id="c3fa2458-08ac-4054-b3a8-420ce5695d4a" name="Default Changelist" comment="Page Size">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Portfolio2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/Controllers/TitleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,6 @@
     <option name="projectConfigVersion" value="2" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/45535/Desktop/RAWDATA/C#/Projects/Portfolio2/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/8b/31e18c55/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebService/wwwroot/js/components/home/home.html" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377B61B6-13EA-444F-826F-377D9474FFCA/31/7aeb5dd7/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,9 +78,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
-        <option value="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" />
         <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.html" />
+        <option value="$PROJECT_DIR$/DataService/Services/Mapping/PostgresSQL_Connect_String.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/Mapping/ImdbContext.cs" />
+        <option value="$PROJECT_DIR$/DataService/Services/TitleDataService.cs" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/js/components/movies/movies.js" />
+        <option value="$PROJECT_DIR$/WebService/wwwroot/index.html" />
       </list>
     </option>
   </component>
@@ -99,7 +104,7 @@
     <property name="XThreadsFramesViewSplitterKey" value="0.3017544" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebService">
@@ -207,13 +212,20 @@
       <workItem from="1608058008747" duration="1056000" />
       <workItem from="1608067380774" duration="1788000" />
       <workItem from="1608129294378" duration="2486000" />
-    </task>
-    <task id="LOCAL-00004" summary="Hej jesper">
-      <created>1604405604835</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1604405604835</updated>
+      <workItem from="1608223471523" duration="295000" />
+      <workItem from="1608243622325" duration="1307000" />
+      <workItem from="1608362402405" duration="208000" />
+      <workItem from="1608377221163" duration="1118000" />
+      <workItem from="1610612092857" duration="5240000" />
+      <workItem from="1611475873509" duration="76000" />
+      <workItem from="1611566688125" duration="1975000" />
+      <workItem from="1611614854217" duration="2326000" />
+      <workItem from="1611666915768" duration="609000" />
+      <workItem from="1611691569601" duration="605000" />
+      <workItem from="1611692233784" duration="677000" />
+      <workItem from="1611744017941" duration="6854000" />
+      <workItem from="1612010599274" duration="17000" />
+      <workItem from="1612010635695" duration="4000" />
     </task>
     <task id="LOCAL-00005" summary="hej jesper">
       <created>1604405867641</created>
@@ -551,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608131775202</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Page Size">
+      <created>1608219929399</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1608219929399</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +591,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Person" />
     <MESSAGE value="Fixed everything" />
     <MESSAGE value="Bookmark stuff" />
     <MESSAGE value="Bookmark stuff 2.0" />
@@ -597,37 +615,54 @@
     <MESSAGE value="Delete bookmark from list - wb" />
     <MESSAGE value="Movie rating på moviepage - works!" />
     <MESSAGE value="filter midlertidigt" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter midlertidigt" />
+    <MESSAGE value="Page Size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page Size" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1046" height="376" key="GridCell.Tab.0.bottom" timestamp="1608213928900">
+    <state width="1725" height="373" key="GridCell.Tab.0.bottom" timestamp="1611761110705">
+      <screen x="-3440" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1725" height="373" key="GridCell.Tab.0.bottom/-3440.0.3440.1400/0.0.1920.1040@-3440.0.3440.1400" timestamp="1611761110705" />
+    <state width="1301" height="378" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1610626709802" />
+    <state width="1725" height="373" key="GridCell.Tab.0.center" timestamp="1611761110705">
+      <screen x="-3440" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1725" height="373" key="GridCell.Tab.0.center/-3440.0.3440.1400/0.0.1920.1040@-3440.0.3440.1400" timestamp="1611761110705" />
+    <state width="1301" height="378" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1610626709802" />
+    <state width="1725" height="373" key="GridCell.Tab.0.left" timestamp="1611761110705">
+      <screen x="-3440" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1725" height="373" key="GridCell.Tab.0.left/-3440.0.3440.1400/0.0.1920.1040@-3440.0.3440.1400" timestamp="1611761110705" />
+    <state width="1301" height="378" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1610626709802" />
+    <state width="1725" height="373" key="GridCell.Tab.0.right" timestamp="1611761110705">
+      <screen x="-3440" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1725" height="373" key="GridCell.Tab.0.right/-3440.0.3440.1400/0.0.1920.1040@-3440.0.3440.1400" timestamp="1611761110705" />
+    <state width="1301" height="378" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1610626709802" />
+    <state x="2427" y="435" key="Rider.ProjectTemplateDialog.Size" timestamp="1610613709151">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state width="1046" height="376" key="GridCell.Tab.0.center" timestamp="1608213928900">
+    <state x="2427" y="435" key="Rider.ProjectTemplateDialog.Size/0.0.3440.1400@0.0.3440.1400" timestamp="1610613709151" />
+    <state x="248" y="344" key="SettingsEditor" timestamp="1611666920140">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state width="1046" height="376" key="GridCell.Tab.0.left" timestamp="1608213928900">
+    <state x="248" y="344" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1611666920140" />
+    <state x="-1683" y="101" width="1585" height="1194" key="VCS.FileHistoryDialog" timestamp="1611758872313">
+      <screen x="-3440" y="0" width="3440" height="1400" />
+    </state>
+    <state x="-1683" y="101" width="1585" height="1194" key="VCS.FileHistoryDialog/-3440.0.3440.1400/0.0.1920.1040@-3440.0.3440.1400" timestamp="1611758872313" />
+    <state x="1169" y="419" key="Vcs.Push.Dialog.v2" timestamp="1608219930844">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state width="1046" height="376" key="GridCell.Tab.0.right" timestamp="1608213928900">
+    <state x="1169" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1608219930844" />
+    <state x="1395" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608243628701">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1046" height="376" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1608213928900" />
-    <state x="248" y="344" key="SettingsEditor" timestamp="1608219287626">
+    <state x="1395" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1608243628701" />
+    <state x="410" y="318" width="672" height="678" key="search.everywhere.popup" timestamp="1608223484461">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="248" y="344" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1608219287626" />
-    <state x="1169" y="419" key="Vcs.Push.Dialog.v2" timestamp="1608131777012">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state x="1169" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1608131777012" />
-    <state x="1395" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608219383443">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state x="1395" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1608219383443" />
+    <state x="410" y="318" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1608223484461" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
